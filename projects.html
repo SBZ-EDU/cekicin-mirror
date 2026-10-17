@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Çekicin · Uygulama incelemesi, yapay zekâ demosu ve projeler</title>
+<meta name="description" content="Çekicin müşteri ve sürücü uygulamalarının incelemesi, istenen yapay zekâ modüllerinin demo durumu ve ilgili GitHub / Hugging Face projeleri.">
+<meta name="robots" content="noindex">
+<style>
+:root{--blue:#0a6fd1;--blue-deep:#0756a8;--blue-soft:#e8f3ff;--navy:#08111f;--ink:#0f172a;--muted:#5b677a;--line:#e6edf5;--bg:#f5f8fc;--yellow:#ffd000;--green:#0f8a4b;--green-soft:#e6f6ee;--amber:#9a6300;--amber-soft:#fff4d6;--grey-soft:#eef1f5;--radius:18px;--shadow:0 14px 40px rgba(8,17,31,.10)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Plus Jakarta Sans","Segoe UI",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+a{color:var(--blue-deep)}
+h1,h2,h3,p{margin:0;overflow-wrap:break-word}
+.wrap{width:min(1120px,100%);margin-inline:auto;padding:0 18px}
+body.l-tr .en,body.l-en .tr{display:none!important}
+header.top{background:var(--navy);color:#fff;padding:14px 0;position:sticky;top:0;z-index:5}
+header.top .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header.top a.home{color:#fff;font-weight:800;text-decoration:none;font-size:18px}
+header.top a.home b{color:var(--yellow)}
+header.top nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}
+header.top nav a{color:#cfe0f5;text-decoration:none}
+header.top nav a:hover{color:#fff}
+.lang{margin-left:auto;display:flex;gap:4px}
+.lang button{border:1px solid #33465f;background:transparent;color:#cfe0f5;border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
+.lang button.on{background:var(--yellow);color:#1a1400;border-color:var(--yellow);font-weight:700}
+.hero{background:linear-gradient(135deg,#0a6fd1,#08111f);color:#fff;padding:46px 0 40px}
+.hero h1{font-size:clamp(26px,4vw,40px);line-height:1.15;margin-bottom:12px}
+.hero p{max-width:820px;color:#dbe9fb}
+.hero .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.hero .chips a{background:rgba(255,255,255,.12);color:#fff;text-decoration:none;border-radius:999px;padding:6px 14px;font-size:14px}
+section{padding:38px 0}
+.kicker{color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12.5px;margin-bottom:6px}
+h2{font-size:clamp(22px,3vw,30px);line-height:1.2;margin-bottom:10px}
+.lead{color:var(--muted);max-width:860px;margin-bottom:22px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.card h3{font-size:17px;margin-bottom:6px}
+.card p{color:var(--muted);font-size:14px}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0 12px}
+.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:var(--blue-soft);color:var(--blue-deep)}
+.pill.g{background:var(--green-soft);color:var(--green)}
+.pill.a{background:var(--amber-soft);color:var(--amber)}
+.pill.x{background:var(--grey-soft);color:#475467}
+ul.feat{margin:0;padding-left:18px;font-size:14px}
+ul.feat li{margin:3px 0}
+ul.feat b{color:var(--ink)}
+.stores{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:14px;border-radius:999px;padding:8px 16px;background:var(--blue);color:#fff}
+.btn.ghost{background:#fff;color:var(--blue-deep);border:1px solid var(--blue)}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;counter-reset:s}
+.flow div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;font-size:13.5px;position:relative}
+.flow div::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--yellow);font-weight:800;font-size:13px;margin-bottom:6px}
+.flow b{display:block;font-size:14px}
+.note{background:var(--amber-soft);border:1px solid #f3dc9a;border-radius:14px;padding:14px 16px;font-size:14px;margin-top:16px}
+.note.blue{background:var(--blue-soft);border-color:#bcd9f7}
+.tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);font-size:14px}
+.tbl th,.tbl td{text-align:left;vertical-align:top;padding:12px 14px;border-bottom:1px solid var(--line)}
+.tbl th{background:var(--navy);color:#fff;font-size:13px}
+.tbl td:first-child{font-weight:700;white-space:nowrap}
+.tblwrap{overflow-x:auto}
+.repo{display:flex;flex-direction:column;gap:4px}
+.repo h3{font-size:15.5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.repo h3 code{font-size:14.5px}
+.repo .links{display:flex;gap:12px;flex-wrap:wrap;font-size:13.5px;margin-top:6px}
+.cat{margin:26px 0 10px;font-size:16px;color:var(--navy)}
+footer{background:var(--navy);color:#a9b8cc;padding:26px 0;font-size:13.5px}
+footer a{color:#fff}
+@media (max-width:900px){.grid2,.grid3{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.tbl td:first-child{white-space:normal}}
+</style>
+<meta property="og:title" content="Çekicin · Uygulama incelemesi, yapay zekâ demosu ve projeler">
+<meta property="og:description" content="Çekicin müşteri ve sürücü uygulamalarının incelemesi, istenen yapay zekâ modüllerinin demo durumu ve ilgili GitHub / Hugging Face projeleri.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sosa123454321-cekicin-site.static.hf.space/projects.html">
+<meta property="og:image" content="https://sosa123454321-cekicin-site.static.hf.space/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="l-tr">
+<header class="top">
+  <div class="wrap">
+    <a class="home" href="index.html">Çekic<b>in</b></a>
+    <nav>
+      <a href="#uygulama"><span class="tr">Uygulama incelemesi</span><span class="en">App review</span></a>
+      <a href="#ai"><span class="tr">Yapay zekâ ↔ uygulama</span><span class="en">AI ↔ app</span></a>
+      <a href="#cekicin-repo"><span class="tr">Çekicin projeleri</span><span class="en">Çekicin projects</span></a>
+      <a href="#portfoy"><span class="tr">Diğer projeler</span><span class="en">Other projects</span></a>
+    </nav>
+    <div class="lang"><button type="button" data-l="tr">TR</button><button type="button" data-l="en">EN</button></div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1><span class="tr">Çekicin uygulaması: inceleme, yapay zekâ demosu ve projeler</span><span class="en">The Çekicin app: review, AI demo and projects</span></h1>
+    <p><span class="tr">Bu sayfa üç şeyi bir araya getiriyor: bugünkü Çekicin müşteri ve sürücü uygulamalarının ne yaptığı ve nasıl çalıştığı; Çekicin ekibinin istediği yapay zekâ modüllerinin hangisinin demo olarak hazır olduğu; ve ilgili GitHub ile Hugging Face projelerinin bağlantıları.</span><span class="en">This page brings three things together: what today's Çekicin customer and driver apps do and how they work; which of the AI modules requested by the Çekicin team are ready as demos; and links to the related GitHub and Hugging Face projects.</span></p>
+    <div class="chips">
+      <a href="ai-lab/index.html">AI Lab →</a>
+      <a href="ai-lab/impact.html"><span class="tr">Çevre, güvenlik ve COP31 →</span><span class="en">Environment, safety and COP31 →</span></a>
+      <a href="ai-lab/model-test.html"><span class="tr">Hasar modelini test et →</span><span class="en">Test the damage model →</span></a>
+      <a href="ai-lab/scenarios.html"><span class="tr">12 senaryo + anlatım videosu →</span><span class="en">12 scenarios + explainer video →</span></a>
+      <a href="ai-lab/benchmark-1000.html#decision"><span class="tr">1000 fotoğraflık test →</span><span class="en">1000-photo test →</span></a>
+    </div>
+  </div>
+</div>
+
+<!-- 1. APP REVIEW -->
+<section id="uygulama">
+  <div class="wrap">
+    <p class="kicker"><span class="tr">1 · Uygulama incelemesi</span><span class="en">1 · App review</span></p>
+    <h2><span class="tr">Bugünkü Çekicin: iki uygulamalı bir teklif pazaryeri</span><span class="en">Çekicin today: a two-app offer marketplace</span></h2>
+    <p class="lead"><span class="tr">Çekicin, Alfa Asistans Destek Hizmetleri A.Ş.'nin uygulamasıdır. Müşteri çekici talebi açar, çekici sürücüleri teklif verir, müşteri teklifi seçer ve uygulama içinde öder. Aşağıdaki bilgiler mağaza sayfalarından ve sürüm notlarından derlendi (Ekim 2026).</span><span class="en">Çekicin is an app by Alfa Asistans Destek Hizmetleri A.Ş. The customer opens a tow request, tow drivers send offers, the customer picks one and pays in the app. The details below are compiled from the store pages and release notes (October 2026).</span></p>
+
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="tr">Müşteri uygulaması: “Çekicin – 7/24 Cebindeki Çekici”</span><span class="en">Customer app: “Çekicin – 7/24 Cebindeki Çekici”</span></h3>
+        <div class="meta">
+          <span class="pill">Android 100+</span><span class="pill">iOS 4.8★ (6)</span><span class="pill x">v1.1.12 · <span class="tr">Eki 2026</span><span class="en">Oct 2026</span></span><span class="pill x"><span class="tr">Seyahat ve Yerel</span><span class="en">Travel &amp; Local</span></span>
+        </div>
+        <ul class="feat">
+          <li><b><span class="tr">Talep:</span><span class="en">Request:</span></b> <span class="tr">tek dokunuşla çekici; şehir içi ve şehirler arası taşıma; marka/model seçimi veya elle giriş; kayıtlı araçlar; talebe fotoğraf ve açıklama ekleme.</span><span class="en">one-tap tow request; city and intercity transport; brand/model selection or manual entry; saved vehicles; photos and a description in the request.</span></li>
+          <li><b><span class="tr">Teklif:</span><span class="en">Offers:</span></b> <span class="tr">gelen teklifleri reddetme, karşı teklif verme ve iptal; teklif listesinde sohbet.</span><span class="en">reject, counter-offer and cancel incoming offers; chat inside the offer list.</span></li>
+          <li><b><span class="tr">Ödeme:</span><span class="en">Payment:</span></b> <span class="tr">3D Secure ile mobil ödeme; KDV dökümü.</span><span class="en">mobile payment with 3D Secure; VAT breakdown.</span></li>
+          <li><b><span class="tr">Takip:</span><span class="en">Tracking:</span></b> <span class="tr">sürücünün rotasını haritada izleme; yolculuk durumu için anlık bildirimler.</span><span class="en">driver route tracking on the map; push notifications for trip status.</span></li>
+          <li><b><span class="tr">Sigorta:</span><span class="en">Insurance:</span></b> <span class="tr">poliçe sorgulama ve poliçeye bağlı hizmetler; poliçesiz taleplerde mesafe sınırı uyarısı.</span><span class="en">policy lookup and policy-based services; distance-limit warning for uninsured requests.</span></li>
+          <li><b><span class="tr">Kaza ve araç:</span><span class="en">Accident and vehicle:</span></b> <span class="tr">araç tanımalı kaza tutanağı; plaka doğrulama; zırh sertifikası görüntüleme.</span><span class="en">accident report with vehicle recognition; plate verification; armour certificate viewing.</span></li>
+          <li><b><span class="tr">Destek:</span><span class="en">Support:</span></b> <span class="tr">fotoğraf paylaşımlı canlı destek; kayıtlı araç seçmeli ve ücretli sorgulu chatbot.</span><span class="en">live support chat with photo sharing; chatbot with saved-vehicle selection and paid queries.</span></li>
+          <li><b><span class="tr">Yeni hizmetler:</span><span class="en">New services:</span></b> <span class="tr">akü, lastik, elektrikli araç şarjı, oto yıkama.</span><span class="en">battery, tyre, EV charging, car wash.</span></li>
+          <li><b><span class="tr">Diğer:</span><span class="en">Other:</span></b> <span class="tr">tanıtım turu, yazı boyutu ayarı, KVKK onayı. Paylaşılan veri: konum ve kişisel bilgiler.</span><span class="en">onboarding tour, font-size setting, KVKK (privacy) consent. Data shared: location and personal info.</span></li>
+        </ul>
+        <div class="stores">
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.alfaasistans.cekicin" target="_blank" rel="noopener">Google Play</a>
+          <a class="btn ghost" href="https://apps.apple.com/tr/app/id6740084439" target="_blank" rel="noopener">App Store</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3><span class="tr">Sürücü ve tedarikçi uygulaması: “Diji Alfa” (Alfa Asistans)</span><span class="en">Driver and supplier app: “Diji Alfa” (Alfa Asistans)</span></h3>
+        <div class="meta">
+          <span class="pill">Android 500+</span><span class="pill x"><span class="tr">~8 yorum</span><span class="en">~8 reviews</span></span><span class="pill x"><span class="tr">30 Eyl 2026 güncel</span><span class="en">updated 30 Sep 2026</span></span>
+        </div>
+        <ul class="feat">
+          <li><b><span class="tr">Talepler:</span><span class="en">Requests:</span></b> <span class="tr">çekici sürücüleri araç taşıma ve kurtarma taleplerini alır; talepler ve teklifler ayrı listelerde, durum filtreleriyle.</span><span class="en">tow drivers receive vehicle transport and recovery requests; requests and offers in separate lists with status filters.</span></li>
+          <li><b><span class="tr">Teklif verme:</span><span class="en">Offering:</span></b> <span class="tr">teklifte müşteri, araç, konum ve mesafe görünür; teklif güncellenebilir; indirim talebi kabul ya da reddedilebilir; hizmet bedeli ve rota bilgisi gösterilir.</span><span class="en">an offer shows customer, vehicle, location and distance; offers can be updated; discount requests can be accepted or rejected; service fee and route info are shown.</span></li>
+          <li><b><span class="tr">Tarife ve ekipman:</span><span class="en">Tariff and equipment:</span></b> <span class="tr">sürücü tarife yönetimi; araç ekipman seçenekleri.</span><span class="en">driver tariff management; vehicle equipment options.</span></li>
+          <li><b><span class="tr">İletişim:</span><span class="en">Messaging:</span></b> <span class="tr">okunmamış sohbet sayısı; derin bağlantılı ve silinebilir bildirimler.</span><span class="en">unread chat counts; deep-linked, deletable notifications.</span></li>
+        </ul>
+        <div class="stores">
+          <a class="btn" href="https://play.google.com/store/apps/details?id=com.alfaasistans.alfa.asistans" target="_blank" rel="noopener">Google Play</a>
+          <a class="btn ghost" href="https://apps.apple.com/tr/app/id6740146345" target="_blank" rel="noopener">App Store</a>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="cat" style="margin-top:30px"><span class="tr">Nasıl çalışıyor: bir çekici işinin akışı</span><span class="en">How it works: the flow of one tow job</span></h3>
+    <div class="flow">
+      <div><b><span class="tr">Talep</span><span class="en">Request</span></b><span class="tr">Müşteri konumu, aracı, hizmet türünü ve isterse fotoğraf girer.</span><span class="en">The customer enters location, vehicle, service type and optional photos.</span></div>
+      <div><b><span class="tr">Teklifler</span><span class="en">Offers</span></b><span class="tr">Uygun sürücüler talebi görür; tarife ve mesafeye göre teklif gönderir.</span><span class="en">Eligible drivers see the request and send offers based on tariff and distance.</span></div>
+      <div><b><span class="tr">Pazarlık</span><span class="en">Negotiation</span></b><span class="tr">Müşteri kabul eder, reddeder veya karşı teklif verir; sohbet açıktır.</span><span class="en">The customer accepts, rejects or counters; chat is open.</span></div>
+      <div><b><span class="tr">Ödeme</span><span class="en">Payment</span></b><span class="tr">3D Secure ile ödeme veya poliçe kapsamında hizmet.</span><span class="en">3D Secure payment or service covered by the policy.</span></div>
+      <div><b><span class="tr">Yolda</span><span class="en">En route</span></b><span class="tr">Sürücünün rotası haritada izlenir; durum bildirimleri gelir.</span><span class="en">The driver's route is tracked on the map; status notifications arrive.</span></div>
+      <div><b><span class="tr">Teslim</span><span class="en">Delivery</span></b><span class="tr">Araç servise veya adrese taşınır; destek ve kayıt uygulamada kalır.</span><span class="en">The vehicle is taken to a workshop or address; support and records stay in the app.</span></div>
+    </div>
+    <div class="note"><b><span class="tr">%70 hedefi için önemli bulgu:</span><span class="en">Key finding for the 70% target:</span></b> <span class="tr">Çekicin bugün otomatik atama değil, teklif ve pazarlık modeliyle çalışıyor. Bu, çağrı merkezine göre hızlı olabilir ama “talep → kabul edilen teklif” süresi de bekleme süresine eklenir. Uygulama zaten durum bildirimleri ve rota takibi yaptığı için bu zaman damgaları kayıtlıdır: pilot ölçüm bunlardan yapılabilir (bkz. <a href="ai-lab/impact.html#olcum">ölçüm planı</a>). İsteğe bağlı “en yakın uygun çekiciye otomatik ata” modu, simülasyondaki en büyük kazancı veren seçenektir.</span><span class="en">Çekicin currently runs on an offer-and-negotiation model, not automatic dispatch. That can be faster than a call centre, but the “request → accepted offer” time also adds to waiting time. Because the app already sends status notifications and tracks routes, these timestamps exist and a pilot can measure from them (see the <a href="ai-lab/impact.html#olcum">measurement plan</a>). An optional “auto-assign the nearest suitable truck” mode is the option with the largest gain in the simulation.</span></div>
+  </div>
+</section>
+
+<!-- 2. AI <-> APP -->
+<section id="ai" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <p class="kicker"><span class="tr">2 · Yapay zekâ ↔ uygulama</span><span class="en">2 · AI ↔ app</span></p>
+    <h2><span class="tr">İstenen modüller, uygulamadaki bağlantı noktası ve demo durumu</span><span class="en">Requested modules, where they plug into the app, and demo status</span></h2>
+    <p class="lead"><span class="tr">Çekicin ekibinin listelediği her modül için: uygulamada bugün hangi özellik buna zemin hazırlıyor, hangi demo hazır ve canlı entegrasyon için ne eksik.</span><span class="en">For each module listed by the Çekicin team: which app feature already prepares the ground, which demo is ready, and what is missing for live integration.</span></p>
+    <div class="tblwrap">
+    <table class="tbl">
+      <thead><tr><th><span class="tr">Modül</span><span class="en">Module</span></th><th><span class="tr">Uygulamadaki zemin</span><span class="en">Existing app hook</span></th><th><span class="tr">Hazır demo</span><span class="en">Ready demo</span></th><th><span class="tr">Durum / sonraki adım</span><span class="en">Status / next step</span></th></tr></thead>
+      <tbody>
+        <tr><td>📷 <span class="tr">Hasar tespiti</span><span class="en">Damage detection</span></td>
+          <td><span class="tr">Talebe fotoğraf ekleme; araç tanımalı kaza tutanağı</span><span class="en">Photo upload in requests; accident report with vehicle recognition</span></td>
+          <td><a href="ai-lab/model-test.html"><span class="tr">Model testi</span><span class="en">Model test</span></a> · <a href="ai-lab/scenarios.html"><span class="tr">12 senaryo</span><span class="en">12 scenarios</span></a> · <a href="ai-lab/index.html#damage">AI Lab</a> · YOLO11m <span class="tr">hasar + parça modeli, tarayıcıda</span><span class="en">damage + parts models, in the browser</span> · <a href="ai-lab/benchmark-1000.html#decision"><span class="tr">1000 fotoğraf testi</span><span class="en">1000-photo test</span></a></td>
+          <td><span class="pill g"><span class="tr">Demo hazır</span><span class="en">Demo ready</span></span> <span class="tr">Fotoğraf yüklenince API çağrısı eklenmeli; Çekicin fotoğraflarıyla (KVKK onaylı) yeniden eğitim.</span><span class="en">Call the API after photo upload; retrain on Çekicin photos (with KVKK consent).</span></td></tr>
+        <tr><td>💰 <span class="tr">Parça ve kaporta maliyeti</span><span class="en">Parts and body-repair cost</span></td>
+          <td><span class="tr">Marka/model ve kayıtlı araç bilgisi</span><span class="en">Brand/model and saved-vehicle data</span></td>
+          <td><a href="ai-lab/index.html#damage">AI Lab</a> · <span class="tr">tamir / boya / değişim önerisi ve TRY aralığı</span><span class="en">repair / paint / replace suggestion and TRY range</span></td>
+          <td><span class="pill a"><span class="tr">Örnek fiyatlar</span><span class="en">Sample prices</span></span> <span class="tr">Gerçek parça ve işçilik fiyat listesi gerekli.</span><span class="en">Needs a real parts and labour price list.</span></td></tr>
+        <tr><td>🏪 <span class="tr">Yedek parça tedarikçileri</span><span class="en">Parts suppliers</span></td>
+          <td><span class="tr">Sürücü ağı ve hizmet kategorileri</span><span class="en">Driver network and service categories</span></td>
+          <td><a href="ai-lab/index.html#nearby"><span class="tr">Yakın noktalar</span><span class="en">Nearby</span></a> · <span class="tr">OpenStreetMap ile yedek parçacı, oto cam</span><span class="en">parts shops and auto glass via OpenStreetMap</span></td>
+          <td><span class="pill a"><span class="tr">Konum hazır</span><span class="en">Locations ready</span></span> <span class="tr">Tedarikçi fiyatları için anlaşmalı tedarikçi verisi gerekli.</span><span class="en">Supplier prices need data from partner suppliers.</span></td></tr>
+        <tr><td>🎙️ <span class="tr">Sesli yönlendirme</span><span class="en">Voice routing</span></td>
+          <td><span class="tr">Chatbot ve canlı destek</span><span class="en">Chatbot and live support</span></td>
+          <td><a href="ai-lab/index.html#voice"><span class="tr">Sesli asistan</span><span class="en">Voice assistant</span></a> · Whisper + <span class="tr">çok dilli SSS eşleştirme + sesli yanıt</span><span class="en">multilingual FAQ matching + spoken answer</span></td>
+          <td><span class="pill a"><span class="tr">Demo hazır</span><span class="en">Demo ready</span></span> <span class="tr">Sonraki adım: LLM ile niyet algılama ve doğru hizmete yönlendirme.</span><span class="en">Next: LLM intent detection and routing to the right service.</span></td></tr>
+        <tr><td>⛽ <span class="tr">Ücretsiz yakın hizmetler</span><span class="en">Free nearby services</span></td>
+          <td><span class="tr">Akü, lastik, EV şarj, oto yıkama kategorileri</span><span class="en">Battery, tyre, EV charging, car-wash categories</span></td>
+          <td><a href="ai-lab/index.html#nearby"><span class="tr">Yakın noktalar</span><span class="en">Nearby</span></a> · <span class="tr">akaryakıt, şarj, lastikçi, çilingir</span><span class="en">fuel, charging, tyre shops, locksmiths</span></td>
+          <td><span class="pill g"><span class="tr">Demo hazır</span><span class="en">Demo ready</span></span> <span class="tr">Uygulama için API uç noktası olarak sunulmalı.</span><span class="en">Should be exposed to the app as an API endpoint.</span></td></tr>
+        <tr><td>🌍 <span class="tr">%70 hedefi, emisyon, güvenlik</span><span class="en">70% target, emissions, safety</span></td>
+          <td><span class="tr">Durum bildirimleri ve rota takibi (zaman damgaları)</span><span class="en">Status notifications and route tracking (timestamps)</span></td>
+          <td><a href="ai-lab/impact.html#sim"><span class="tr">Atama simülatörü</span><span class="en">Dispatch simulator</span></a> · <a href="ai-lab/impact.html#kaza"><span class="tr">ikincil kaza</span><span class="en">secondary crashes</span></a></td>
+          <td><span class="pill a"><span class="tr">Simülasyon</span><span class="en">Simulation</span></span> <span class="tr">Merkezi senaryo: bekleme −%62, CO₂ −%25, ikincil kaza riski −%28. Kanıt için pilot verisi gerekli.</span><span class="en">Central scenario: waiting −62%, CO₂ −25%, secondary-crash risk −28%. A pilot is needed as proof.</span></td></tr>
+        <tr><td>🇹🇷 COP31 · 🇪🇺 <span class="tr">AB fonları</span><span class="en">EU funds</span></td>
+          <td>—</td>
+          <td><a href="ai-lab/impact.html#cop31">COP31</a> · <a href="ai-lab/impact.html#ab">Eurostars / TÜBİTAK</a></td>
+          <td><span class="pill"><span class="tr">Plan hazır</span><span class="en">Plan ready</span></span> <span class="tr">10 Kasım Enerji ve Ulaşım günü; Eurostars Çağrı 12 kapanışı 4 Mart 2027.</span><span class="en">10 November Energy &amp; Transport day; Eurostars Call 12 closes 4 March 2027.</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+    <div class="note blue"><span class="tr">Önemli: bu modüller henüz mobil uygulamada değil; web demosu ve bir bulut API'si olarak çalışıyor. Uygulama kaynak kodu GitHub hesaplarında yok. Entegrasyon için Çekicin geliştirici ekibiyle API sözleşmesi gerekir.</span><span class="en">Important: these modules are not in the mobile app yet; they run as a web demo and a cloud API. The app source code is not in these GitHub accounts. Integration needs an API agreement with the Çekicin development team.</span></div>
+  </div>
+</section>
+
+<!-- 3. CEKICIN REPOS -->
+<section id="cekicin-repo">
+  <div class="wrap">
+    <p class="kicker"><span class="tr">3 · Çekicin projeleri</span><span class="en">3 · Çekicin projects</span></p>
+    <h2><span class="tr">GitHub ve Hugging Face bağlantıları</span><span class="en">GitHub and Hugging Face links</span></h2>
+    <p class="lead"><span class="tr">Bu demonun kaynakları. Gizli depolar yalnızca talep üzerine paylaşılır.</span><span class="en">The sources of this demo. Private repositories are shared on request only.</span></p>
+
+    <h3 class="cat">GitHub</h3>
+    <div class="grid3">
+      <div class="card repo"><h3><code>cekicin-site</code> <span class="pill x"><span class="tr">gizli</span><span class="en">private</span></span></h3><p><span class="tr">Bu web sitesi, AI Lab, etki simülatörü ve test sayfaları (6 dil).</span><span class="en">This website, the AI Lab, the impact simulator and test pages (6 languages).</span></p><div class="links"><span><span class="tr">Erişim talep üzerine</span><span class="en">Access on request</span></span></div></div>
+      <div class="card repo"><h3><code>cekicin-ai-api</code> <span class="pill x"><span class="tr">gizli</span><span class="en">private</span></span></h3><p><span class="tr">Cloudflare Workers üzerinde hasar değerlendirme API'si v1.2.2 (bulut + cihaz hibrit).</span><span class="en">Damage-assessment API v1.2.2 on Cloudflare Workers (cloud + on-device hybrid).</span></p><div class="links"><a href="https://cekicin-ai-api.elasa2next.workers.dev/" target="_blank" rel="noopener"><span class="tr">Canlı API</span><span class="en">Live API</span></a></div></div>
+      <div class="card repo"><h3><code>cekicin-mirror</code> <span class="pill g"><span class="tr">açık</span><span class="en">public</span></span></h3><p><span class="tr">Sitenin GitHub Pages yansıması (Türkiye'den erişim için).</span><span class="en">GitHub Pages mirror of the site (for access from Türkiye).</span></p><div class="links"><a href="https://github.com/SBZ-EDU/cekicin-mirror" target="_blank" rel="noopener">GitHub</a><a href="https://sbz-edu.github.io/cekicin-mirror/" target="_blank" rel="noopener"><span class="tr">Site</span><span class="en">Site</span></a></div></div>
+    </div>
+
+    <h3 class="cat">Hugging Face</h3>
+    <div class="grid3">
+      <div class="card repo"><h3>Spaces</h3><p><span class="tr">Canlı demolar (Türkiye'den açılan adresler).</span><span class="en">Live demos (addresses that open from Türkiye).</span></p><div class="links"><a href="https://huggingface.co/spaces/sosa123454321/cekicin-ai-lab" target="_blank" rel="noopener">cekicin-ai-lab</a><a href="https://huggingface.co/spaces/sosa123454321/cekicin-site" target="_blank" rel="noopener">cekicin-site</a><a href="https://huggingface.co/spaces/sosa123454321/cekicin-assistant" target="_blank" rel="noopener">cekicin-assistant</a></div></div>
+      <div class="card repo"><h3><span class="tr">Modeller (ONNX)</span><span class="en">Models (ONNX)</span></h3><p><span class="tr">Tarayıcıda çalışan hasar ve parça modelleri.</span><span class="en">Damage and parts models that run in the browser.</span></p><div class="links"><a href="https://huggingface.co/sosa123454321/cekicin-damage-yolo11m-neg-onnx" target="_blank" rel="noopener">damage-yolo11m-neg <span class="tr">(varsayılan)</span><span class="en">(default)</span></a><a href="https://huggingface.co/sosa123454321/cekicin-damage-yolo11n-onnx" target="_blank" rel="noopener">damage-yolo11n <span class="tr">(parça)</span><span class="en">(parts)</span></a><a href="https://huggingface.co/sosa123454321/cekicin-cardd-yolov8s-seg-onnx" target="_blank" rel="noopener">cardd-yolov8s-seg</a></div></div>
+      <div class="card repo"><h3><span class="tr">Veri setleri</span><span class="en">Datasets</span></h3><p><span class="tr">Bilgi tabanı, test sonuçları ve makale veritabanı. Toplanan fotoğraf seti gizlidir (KVKK).</span><span class="en">Knowledge base, test results and paper database. The collected-photo set is private (KVKK).</span></p><div class="links"><a href="https://huggingface.co/datasets/sosa123454321/cekicin-ai-knowledge" target="_blank" rel="noopener">ai-knowledge</a><a href="https://huggingface.co/datasets/sosa123454321/cekicin-damage-benchmark" target="_blank" rel="noopener">damage-benchmark</a><a href="https://huggingface.co/datasets/sosa123454321/cekicin-ai-papers" target="_blank" rel="noopener">ai-papers</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PORTFOLIO -->
+<section id="portfoy" style="background:#fff;border-top:1px solid var(--line)">
+  <div class="wrap">
+    <p class="kicker"><span class="tr">4 · Diğer projeler</span><span class="en">4 · Other projects</span></p>
+    <h2><span class="tr">Aynı ekipten açık GitHub projeleri</span><span class="en">Public GitHub projects by the same team</span></h2>
+    <p class="lead"><span class="tr">SBZ-EDU ve Websites-by-AI hesaplarından, Çekicin'in ihtiyaçlarıyla ilgili seçilmiş açık projeler: pazarlama ve pazar analizi, COP31 ve iklim, atık ve enerji, yapay zekâ asistanları.</span><span class="en">Selected public projects from the SBZ-EDU and Websites-by-AI accounts that relate to Çekicin's needs: marketing and market analysis, COP31 and climate, waste and energy, AI assistants.</span></p>
+
+    <h3 class="cat"><span class="tr">📈 Pazarlama, müşteri bulma, pazar analizi</span><span class="en">📈 Marketing, lead finding, market analysis</span></h3>
+    <div class="grid3">
+      <div class="card repo"><h3><code>export-agent</code></h3><p><span class="tr">Alıcı bulucu ve pazar analizi ajanları; Cloudflare Workers + D1 + Hugging Face.</span><span class="en">Buyer-finder and market-analysis agents; Cloudflare Workers + D1 + Hugging Face.</span></p><div class="links"><a href="https://github.com/SBZ-EDU/export-agent" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="card repo"><h3><code>Marketing-by-map-neshan</code></h3><p><span class="tr">Harita üzerinde yerel pazar istihbaratı: yerel işletmeleri ve komşuluk ağını keşfetme.</span><span class="en">Local market intelligence on a map: discovering local businesses and neighbourhood networks.</span></p><div class="links"><a href="https://github.com/Websites-by-AI/Marketing-by-map-neshan" target="_blank" rel="noopener">GitHub</a><a href="https://neshan-m.exhibition2world.ir" target="_blank" rel="noopener">Demo</a></div></div>
+      <div class="card repo"><h3><code>seo-liderfer</code></h3><p><span class="tr">SEO satışları için akıllı müşteri radarı.</span><span class="en">Smart lead radar for SEO sales.</span></p><div class="links"><a href="https://github.com/Websites-by-AI/seo-liderfer" target="_blank" rel="noopener">GitHub</a><a href="https://seo-liderfer.vercel.app" target="_blank" rel="noopener">Demo</a></div></div>
+      <div class="card repo"><h3><code>Adv-seo-2</code></h3><p><span class="tr">Klinikler için müşteri adayı ve SEO ajanı (Clinic Signal).</span><span class="en">Lead and SEO agent for clinics (Clinic Signal).</span></p><div class="links"><a href="https://github.com/Websites-by-AI/Adv-seo-2" target="_blank" rel="noopener">GitHub</a><a href="https://adv-seo-2.vercel.app" target="_blank" rel="noopener">Demo</a></div></div>
+      <div class="card repo"><h3><code>istanbul-web-factory</code></h3><p><span class="tr">İstanbul işletmeleri için ücretsiz web taslağı üretimi.</span><span class="en">Free website drafts for Istanbul businesses.</span></p><div class="links"><a href="https://github.com/Websites-by-AI/istanbul-web-factory" target="_blank" rel="noopener">GitHub</a><a href="https://websites-by-ai.github.io/istanbul-web-factory/" target="_blank" rel="noopener">Demo</a></div></div>
+    </div>
+
+    <h3 class="cat"><span class="tr">🌍 COP31 ve iklim</span><span class="en">🌍 COP31 and climate</span></h3>
+    <div class="grid3">
+      <div class="card repo"><h3><code>yyd-cop31-website</code></h3><p><span class="tr">Yeryüzü Doktorları × COP31 Antalya 2026 Yeşil Bölge tanıtım sitesi.</span><span class="en">Yeryüzü Doktorları × COP31 Antalya 2026 Green Zone promotion site.</span></p><div class="links"><a href="https://github.com/SBZ-EDU/yyd-cop31-website" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="card repo"><h3><code>yetim-vakfi-cop31</code></h3><p><span class="tr">Yetim Vakfı × COP31: bağış takibi, Yeşil Bölge kaydı, Telegram botu, RAG.</span><span class="en">Yetim Vakfı × COP31: fundraising tracker, Green Zone registration, Telegram bot, RAG.</span></p><div class="links"><a href="https://github.com/Websites-by-AI/yetim-vakfi-cop31" target="_blank" rel="noopener">GitHub</a><a href="https://yetim-vakfi-cop31.pages.dev" target="_blank" rel="noopener">Demo</a></div></div>
+      <div class="card repo"><h3><code>atikova-cop31-zero-waste</code></h3><p><span class="tr">İklim ve sıfır atık merkezi: COP31 için 10 etki sektörü ve kurumsal adaylar, Hugging Face yapay zekâsı.</span><span class="en">Climate and zero-waste hub: 10 impact sectors and corporate leads for COP31, with Hugging Face AI.</span></p><div class="links"><a href="https://github.com/Websites-by-AI/atikova-cop31-zero-waste" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="card repo"><h3><code>greenroot</code></h3><p><span class="tr">Bağımlılıktan kurtuluş × yeşil iş × yapay zekâ; COP31 kampanya sitesi (EN/FA/TR).</span><span class="en">Addiction recovery × green work × AI; COP31 campaign site (EN/FA/TR).</span></p><div class="links"><a href="https://github.com/Websites-by-AI/greenroot" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="card repo"><h3><code>amqx-cityair</code></h3><p><span class="tr">Bağımsız hava kalitesi hazırlığı, şehir gezgini, inovasyon eşleştirme ve RAG asistanı.</span><span class="en">Independent air-quality readiness, city explorer, innovation matching and a RAG assistant.</span></p><div class="links"><a href="https://github.com/Websites-by-AI/amqx-cityair" target="_blank" rel="noopener">GitHub</a></div></div>
+      <div class="card repo"><h3><code>greenhope-site</code></h3><p><span class="tr">GreenHope · ForestAI · CityAir sitesi.</span><span class="en">GreenHope · ForestAI · CityAir site.</span></p><div class="links"><a href="https://github.com/SBZ-EDU/greenhope-site" target="_blank" rel="noopener">GitHub</a><a href="https://sbz-edu.github.io/greenhope-site/" target="_blank" rel="noopener">Demo</a></div></div>
+    </div>
+
+    <h3 class="cat"><span class="tr">♻️ Atık, enerji, afet</span><span class="en">♻️ Waste, energy, disasters</span></h3>
+    <div class="grid3">
+      <div class="card repo"><h3><code>GreenPars-SmartWaste</code></h3><p><span class="tr">Plastik atıktan granül ve atıktan enerji yatırım paneli, RAG yapay zekâ (FA/EN/TR).</span><span class="en">Plastic-waste-to-granule and waste-to-energy investment dashboard with RAG AI (FA/EN/TR).</span></p><div class="links"><a href="https://github.com/SBZ-EDU/GreenPars-SmartWaste" target="_blank" rel="noopener">GitHub</a><a href="https://greenpars-smartwaste.pages.dev" target="_blank" rel="noopener">Demo</a></div></div>
+      <div class="card repo"><h3><code>Wildfires-SatelliteVu…</code></h3><p><span class="tr">AWS Disaster Response hackathonu için uydu verisiyle orman yangını çalışması.</span><span class="en">Satellite-data wildfire work for the AWS Disaster Response hackathon.</span></p><div class="links"><a href="https://github.com/Websites-by-AI/Wildfires-SatelliteVu-AWS-Disaster-Response-Hackathon" target="_blank" rel="noopener">GitHub</a></div></div>
+    </div>
+
+    <h3 class="cat"><span class="tr">🤖 Yapay zekâ asistanları ve işletme siteleri</span><span class="en">🤖 AI assistants and business sites</span></h3>
+    <div class="grid3">
+      <div class="card repo"><h3><code>inif-assistant-web</code></h3><p><span class="tr">İnovasyon fonu asistanı; tarayıcıda çalışan demo.</span><span class="en">Innovation-fund assistant; browser demo.</span></p><div class="links"><a href="https://github.com/SBZ-EDU/inif-assistant-web" target="_blank" rel="noopener">GitHub</a><a href="https://sbz-edu.github.io/inif-assistant-web/" target="_blank" rel="noopener">Demo</a></div></div>
+      <div class="card repo"><h3><code>findexpert-ecoai</code></h3><p><span class="tr">Uzman bulma sitesi, Telegram botu, Cloudflare Pages/Worker ve topluluk veritabanı.</span><span class="en">Expert-finder site, Telegram bot, Cloudflare Pages/Worker and a community database.</span></p><div class="links"><a href="https://github.com/Websites-by-AI/findexpert-ecoai" target="_blank" rel="noopener">GitHub</a><a href="https://websites-by-ai.github.io/findexpert-ecoai/" target="_blank" rel="noopener">Demo</a></div></div>
+      <div class="card repo"><h3><code>shamse-restaurant</code></h3><p><span class="tr">İstanbul'da iki şubeli restoran sitesi (Taksim, Kocatepe).</span><span class="en">Website for a two-branch restaurant in Istanbul (Taksim, Kocatepe).</span></p><div class="links"><a href="https://github.com/Websites-by-AI/shamse-restaurant" target="_blank" rel="noopener">GitHub</a><a href="https://websites-by-ai.github.io/shamse-restaurant/" target="_blank" rel="noopener">Demo</a></div></div>
+      <div class="card repo"><h3><code>aykan-et-mangal</code></h3><p><span class="tr">Kasap ve ızgara için çevrimiçi vitrin (Bağcılar ve Esenler).</span><span class="en">Online storefront for a butcher and grill (Bağcılar and Esenler).</span></p><div class="links"><a href="https://github.com/SBZ-EDU/aykan-et-mangal" target="_blank" rel="noopener">GitHub</a><a href="https://sbz-edu.github.io/aykan-et-mangal/" target="_blank" rel="noopener">Demo</a></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="tr">Çekicin · Alfa Asistans · 0850 474 23 23 · <a href="mailto:info@cekicin.com.tr">info@cekicin.com.tr</a> · <a href="index.html">Ana sayfa</a> · <a href="ai-lab/index.html">AI Lab</a>. Mağaza verileri Ekim 2026 itibarıyla.</span>
+    <span class="en">Çekicin · Alfa Asistans · 0850 474 23 23 · <a href="mailto:info@cekicin.com.tr">info@cekicin.com.tr</a> · <a href="index.html">Home</a> · <a href="ai-lab/index.html">AI Lab</a>. Store data as of October 2026.</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var b = document.body;
+  function set(l) {
+    b.className = 'l-' + l;
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(function (x) { x.classList.toggle('on', x.dataset.l === l); });
+    try { localStorage.setItem('ck_lang', l); } catch (e) {}
+  }
+  var l0 = 'tr';
+  try {
+    var s = localStorage.getItem('ck_lang') || localStorage.getItem('cekicin-lang');
+    if (s === 'tr' || s === 'en') l0 = s;
+    else if (s) l0 = 'en';
+    else l0 = (navigator.language || 'tr').toLowerCase().indexOf('tr') === 0 ? 'tr' : 'en';
+  } catch (e) {}
+  var q = (location.search.match(/[?&]lang=(tr|en)/) || [])[1];
+  if (q) l0 = q;
+  document.querySelectorAll('.lang button').forEach(function (x) { x.addEventListener('click', function () { set(x.dataset.l); }); });
+  set(l0);
+})();
+</script>
+</body>
+</html>

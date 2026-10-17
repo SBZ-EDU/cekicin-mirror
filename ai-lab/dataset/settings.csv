@@ -1,0 +1,5 @@
+key,value,unit,note
+labour_rate_try,1500,TRY/hour,Illustrative workshop labour rate; adjustable in the Space
+paint_material_try_per_h,900,TRY/paint-hour,Illustrative paint + consumables per paint hour
+currency,TRY,,
+status,illustrative,,All prices are placeholders for a pilot and must be calibrated with real supplier and workshop quotes

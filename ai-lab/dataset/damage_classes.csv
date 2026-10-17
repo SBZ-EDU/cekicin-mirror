@@ -1,0 +1,15 @@
+class_id,model_label,part_key,damage_type,label_tr,label_en
+0,Front-windscreen-damage,windscreen_front,glass,Ön cam hasarı,Front windscreen damage
+1,Headlight-damage,headlight,lamp,Far hasarı,Headlight damage
+2,Rear-windscreen-Damage,windscreen_rear,glass,Arka cam hasarı,Rear windscreen damage
+3,Runningboard-Damage,running_board,panel,Marşpiyel hasarı,Running board damage
+4,Sidemirror-Damage,side_mirror,mirror,Yan ayna hasarı,Side mirror damage
+5,Taillight-Damage,taillight,lamp,Stop lambası hasarı,Taillight damage
+6,bonnet-dent,bonnet,dent,Kaput göçüğü,Bonnet dent
+7,boot-dent,boot,dent,Bagaj kapağı göçüğü,Boot lid dent
+8,doorouter-dent,door,dent,Kapı göçüğü,Door dent
+9,fender-dent,fender,dent,Çamurluk göçüğü,Fender dent
+10,front-bumper-dent,bumper_front,bumper,Ön tampon hasarı,Front bumper damage
+11,quaterpanel-dent,quarter_panel,dent,Arka çamurluk göçüğü,Quarter panel dent
+12,rear-bumper-dent,bumper_rear,bumper,Arka tampon hasarı,Rear bumper damage
+13,roof-dent,roof,dent,Tavan göçüğü,Roof dent

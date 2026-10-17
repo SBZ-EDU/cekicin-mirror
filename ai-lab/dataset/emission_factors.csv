@@ -1,0 +1,4 @@
+key,label_en,value,unit,source,url
+tow_truck_km,"HGV diesel rigid 7.5–17 t, 100% laden (proxy for a loaded tow truck)",0.70603,kg CO2e/km,UK DESNZ GHG conversion factors 2025 (via Climatiq),https://www.climatiq.io/data/emission-factor/e6a19243-20bc-49a7-b236-82259908ab64
+diesel_car_km,Average diesel car,0.17336,kg CO2e/km,UK DESNZ 2025 (Energy Saving Trust toolkit),https://fleetdecarbonisationtoolkit.energysavingtrust.org.uk/t/decarbonisation-strategy/emissions-calculated/car-van-ghg-kwh-calculations-2/
+diesel_litre,"Diesel (average biofuel blend), per litre",2.51,kg CO2e/litre,UK DESNZ (Energy Saving Trust toolkit),https://fleetdecarbonisationtoolkit.energysavingtrust.org.uk/t/decarbonisation-strategy/emissions-calculated/car-van-ghg-kwh-calculations-2/

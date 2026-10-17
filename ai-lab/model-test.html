@@ -1,0 +1,821 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Çekicin · Hasar tespit modelini test edin / Test the damage-detection model</title>
+<meta name="description" content="Çekicin hasar tespit modeli (YOLO11m): test fotoğrafları üzerinde sonuçlar, tarayıcıda canlı test, diğer uzman modellerle karşılaştırma ve kavram haritası.">
+<style>
+:root{--blue:#0a6fd1;--blue-deep:#0756a8;--blue-soft:#e8f3ff;--navy:#08111f;--ink:#0f172a;--muted:#5b677a;--line:#e6edf5;--bg:#f5f8fc;--yellow:#ffd000;--ok:#0a6b3a;--ok-s:#e6f6ee;--bad:#b42318;--bad-s:#fde8e7;--amb:#9a6300;--amb-s:#fff4d6}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;font-size:15px}
+a{color:var(--blue-deep)}
+h1,h2,h3,p{margin:0}
+body.l-tr .en,body.l-en .tr{display:none!important}
+.wrap{width:min(1180px,100%);margin-inline:auto;padding:0 18px}
+header.top{background:var(--navy);color:#fff;position:sticky;top:0;z-index:20}
+header.top .wrap{display:flex;gap:14px;align-items:center;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.home{color:#fff;font-weight:800;text-decoration:none;font-size:18px}.home b{color:var(--yellow)}
+header nav{display:flex;gap:14px;flex-wrap:wrap;font-size:14px}header nav a{color:#cfe0f5;text-decoration:none}header nav a:hover{color:#fff}
+.lang{margin-left:auto;display:flex;gap:4px}
+.lang button{border:1px solid #33465f;background:transparent;color:#cfe0f5;border-radius:999px;padding:4px 12px;font:inherit;font-size:13px;cursor:pointer}
+.lang button.on{background:var(--yellow);color:#1a1400;border-color:var(--yellow);font-weight:700}
+.hero{background:linear-gradient(135deg,#0a6fd1,#08111f);color:#fff;padding:36px 0 30px}
+.hero h1{font-size:clamp(24px,3.6vw,36px);line-height:1.15;margin-bottom:10px}
+.hero p{color:#dbe9fb;max-width:860px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px}
+.kpi{background:rgba(255,255,255,.1);border-radius:16px;padding:14px}
+.kpi b{display:block;font-size:26px;color:var(--yellow)}.kpi span{font-size:13px;color:#dbe9fb}
+section{padding:34px 0;scroll-margin-top:64px}
+section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.kicker{color:var(--blue);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:12.5px;margin-bottom:4px}
+h2{font-size:clamp(21px,2.8vw,28px);line-height:1.2;margin-bottom:8px}
+.lead{color:var(--muted);max-width:900px;margin-bottom:18px}
+.ctrl{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.ctrl label{font-size:13px;color:var(--muted);display:flex;gap:6px;align-items:center}
+select,button.b,.b{font:inherit;font-size:14px;border-radius:10px;border:1px solid #c9d6e6;padding:7px 10px;background:#fff;color:var(--ink)}
+button.b,.b{cursor:pointer;font-weight:700}
+.b.blue{background:var(--blue);color:#fff;border-color:var(--blue);text-decoration:none;display:inline-block}
+.b.y{background:var(--yellow);border-color:var(--yellow);color:#1a1400;text-decoration:none;display:inline-block}
+.bars{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 24px;margin:6px 0 16px;font-size:13px}
+.bar{display:grid;grid-template-columns:230px 1fr 92px;gap:8px;align-items:center}
+.bar .t{height:12px;background:#e9eef5;border-radius:6px;overflow:hidden}.bar .t i{display:block;height:100%;background:var(--blue)}
+.bar.on{font-weight:700}.bar.on .t i{background:var(--yellow)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;transition:transform .12s}
+.card:hover{transform:translateY(-2px)}
+.ph{position:relative;background:#111;line-height:0}
+.ph img{width:100%;display:block}
+.bx{position:absolute;border:2px solid;border-radius:2px;pointer-events:none}
+.bx.gt{border:2px dashed #fff;outline:1px solid rgba(0,0,0,.55)}
+.bx span{position:absolute;left:-2px;top:-17px;font-size:10.5px;line-height:15px;padding:0 4px;color:#fff;white-space:nowrap;border-radius:3px}
+.bx.gt span{background:rgba(0,0,0,.65);top:auto;bottom:-17px}
+.bx.pt{border-style:dotted}
+.meta{padding:8px 10px;display:flex;gap:4px;flex-wrap:wrap;align-items:center;min-height:42px}
+.meta .n{font-size:11px;color:var(--muted);margin-right:4px}
+.chip{font-size:11.5px;font-weight:700;border-radius:999px;padding:2px 8px}
+.chip.ok{background:var(--ok-s);color:var(--ok)}.chip.no{background:var(--bad-s);color:var(--bad)}.chip.ex{background:var(--amb-s);color:var(--amb)}.chip.na{background:#eef1f5;color:#475467}
+.legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin:4px 0 12px}
+.legend i{display:inline-block;width:14px;height:10px;border:2px solid;margin-right:4px;vertical-align:-1px}
+.modal{position:fixed;inset:0;background:rgba(8,17,31,.82);z-index:50;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.on{display:flex}
+.mbox{background:#fff;border-radius:16px;max-width:1100px;width:100%;max-height:94vh;overflow:auto;display:grid;grid-template-columns:1fr 300px}
+.mbox .ph{border-radius:16px 0 0 16px;overflow:hidden}
+.mside{padding:16px;font-size:13.5px}
+.mside h3{font-size:16px;margin-bottom:6px}
+.mside ul{padding-left:18px;margin:6px 0 12px}
+.x{float:right;border:0;background:#eef1f5;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer}
+.live{display:grid;grid-template-columns:1fr 340px;gap:16px}
+.drop{display:block;border:2px dashed #b9cbe0;border-radius:14px;padding:18px;text-align:center;background:#fff;cursor:pointer}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px;font-size:14px}
+#lvView{background:#fff;border:1px solid var(--line);border-radius:14px;min-height:240px;display:grid;place-items:center;overflow:hidden}
+#lvView .ph{width:100%}
+#lvStatus{font-size:13px;color:var(--muted);margin:8px 0}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:13.5px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--navy);color:#fff;font-size:12px}
+td.num{text-align:right;white-space:nowrap}
+tr.ours td{background:#fff9db}
+.tw{overflow-x:auto;border-radius:14px;border:1px solid var(--line)}
+.note{background:var(--amb-s);border:1px solid #f3dc9a;border-radius:14px;padding:12px 14px;font-size:13.5px;margin-top:12px}
+.note.blue{background:var(--blue-soft);border-color:#bcd9f7}
+.map svg{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);background:#f5f8fc}
+.dl{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+footer{background:var(--navy);color:#a9b8cc;padding:22px 0;font-size:13px}footer a{color:#fff}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}.bars{grid-template-columns:1fr}.live{grid-template-columns:1fr}.mbox{grid-template-columns:1fr}.mbox .ph{border-radius:16px 16px 0 0}.kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){header.top{position:static}section{scroll-margin-top:0}}
+@media(max-width:520px){.bar{grid-template-columns:150px 1fr 80px}}
+
+/* ===== Material 3 checker (UX pass 2026-10-17) ===== */
+[hidden]{display:none!important}
+.kpi b span{font-size:inherit!important;color:inherit!important;display:inline!important}
+body.l-tr .kpi b .en,body.l-en .kpi b .tr{display:none!important}
+body{font-size:16px}
+.hero{padding:22px 0 18px}
+.hero .eyebrow{color:var(--yellow);font-weight:700;font-size:13px;letter-spacing:.04em;margin-bottom:6px}
+.hero h1{font-size:clamp(24px,4.2vw,36px);margin-bottom:6px}
+.hero .sub{color:#cfe0f5;font-size:14.5px}
+.checker{padding:0 0 30px;background:var(--bg)}
+.tool{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:0 6px 24px rgba(8,17,31,.08);padding:18px;margin-top:-6px;position:relative}
+.pick-btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn-xl{display:flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap;min-height:60px;border-radius:18px;font-weight:700;font-size:17px;cursor:pointer;user-select:none;transition:filter .15s,transform .1s;padding:0 14px;text-align:center}
+.btn-xl:active{transform:scale(.98)}
+.btn-xl.primary{background:var(--blue);color:#fff;box-shadow:0 2px 8px rgba(10,111,209,.35)}
+.btn-xl.tonal{background:var(--blue-soft);color:var(--blue-deep)}
+.btn-xl:hover{filter:brightness(1.06)}
+.btn-xl:focus-within{outline:3px solid #ffb800;outline-offset:2px}
+.samples-t{margin:14px 0 8px;font-size:14px;color:var(--muted)}
+.samples{min-height:70px;display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.samples button{flex:0 0 auto;scroll-snap-align:start;border:2px solid var(--line);border-radius:14px;padding:0;overflow:hidden;width:84px;height:64px;background:#e9eef5;cursor:pointer}
+.samples button:focus-visible,.samples button:hover{border-color:var(--blue)}
+.samples img{width:100%;height:100%;object-fit:cover;display:block}
+.tips{list-style:none;padding:0;margin:14px 0 0;display:flex;gap:6px 14px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.tips li::before{content:"✓ ";color:var(--ok);font-weight:700}
+.result{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px}
+.viewer{position:relative}
+#lvView{background:#0f172a;border-radius:18px;overflow:hidden;min-height:200px;display:grid;place-items:center;border:0}
+#lvView .ph{width:100%}
+#lvView.nobox .bx{display:none}
+.progress{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(8,17,31,.86);color:#fff;border-radius:14px;padding:10px 12px}
+.pbar{height:6px;background:rgba(255,255,255,.2);border-radius:3px;overflow:hidden}
+.pbar i{display:block;height:100%;width:0;background:var(--yellow);transition:width .2s}
+.pbar.indet i{width:35%!important;animation:ind 1.1s infinite linear}
+@keyframes ind{from{transform:translateX(-100%)}to{transform:translateX(300%)}}
+#lvStatus{color:#fff;font-size:13.5px;margin:6px 0 0}
+.verdict{border-radius:18px;padding:14px 16px;margin-bottom:12px}
+.verdict.hi{background:var(--bad-s);color:#7a1610}.verdict.mid{background:var(--amb-s);color:#6b4500}.verdict.lo{background:var(--ok-s);color:#0b5d33}.verdict.none{background:#eef3f9;color:#1e3a5f}
+.verdict b{display:block;font-size:19px;line-height:1.25;margin-bottom:4px}
+.verdict p{font-size:14px}
+.det{list-style:none;padding:0;margin:0 0 10px}
+.det li{display:grid;grid-template-columns:14px 1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);font-size:15px}
+.det li:last-child{border-bottom:0}
+.det .dot{width:14px;height:14px;border-radius:4px}
+.det .cf{font-size:12.5px;font-weight:700;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.cf.h{background:#e6f6ee;color:#0a6b3a}.cf.m{background:#fff4d6;color:#7a5200}.cf.l{background:#eef1f5;color:#475467}
+.det small{display:block;color:var(--muted);font-size:12.5px}
+.parts{font-size:14px;color:var(--ink);margin:6px 0 10px}
+.parts span{display:inline-block;background:#eef3f9;border-radius:999px;padding:4px 10px;margin:3px 4px 0 0;font-size:13px}
+.meta-run{font-size:12.5px;color:var(--muted);margin:4px 0 10px}
+.row-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.btn-m{min-height:48px;border-radius:999px;padding:0 20px;font:inherit;font-weight:700;font-size:15px;cursor:pointer}
+.btn-m.filled{background:var(--blue);color:#fff;border:0}
+.btn-m.outlined{background:#fff;color:var(--blue-deep);border:1px solid #9fb6cf}
+.mode-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+.mode-l{font-size:14px;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid #9fb6cf;border-radius:999px;overflow:hidden}
+.seg button{min-height:44px;padding:0 16px;border:0;background:#fff;font:inherit;font-size:14px;font-weight:600;color:var(--ink);cursor:pointer}
+.seg button+button{border-left:1px solid #9fb6cf}
+.seg button[aria-checked="true"]{background:var(--blue-soft);color:var(--blue-deep)}
+.seg button[aria-checked="true"]::before{content:"✓ "}
+.lock{margin-left:auto;font-size:13px;color:var(--ok);font-weight:600}
+.tech{margin-top:12px;font-size:14px;color:var(--muted)}
+.tech summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--blue-deep);font-weight:600}
+.checker .kpis{margin-top:8px}
+.checker .kpi{background:#fff;border:1px solid var(--line)}
+.checker .kpi b{color:var(--blue-deep)}.checker .kpi span{color:var(--muted)}
+.swipe-hint{display:none;font-size:12.5px;color:var(--muted);text-align:center;margin:0 0 6px}
+.tw table th:first-child,.tw table td:first-child{position:sticky;left:0;z-index:1}
+.tw table td:first-child{background:#fff;box-shadow:2px 0 4px rgba(0,0,0,.06)}
+.tw table tr.ours td:first-child{background:#fff9db}
+.lang button{min-height:36px;min-width:44px}
+@media(max-width:1000px){.result{grid-template-columns:1fr}}
+@media(max-width:700px){
+  header.top .wrap{flex-wrap:nowrap;gap:10px;padding-top:8px;padding-bottom:8px}
+  header nav{flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:4px;mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  header nav::-webkit-scrollbar{display:none}
+  header nav a{padding:10px 8px}
+  header.top{position:sticky}
+  .tool{padding:14px;border-radius:20px}
+  .btn-xl{min-height:56px;font-size:15.5px;padding:0 8px}
+  .swipe-hint{display:block}
+  .tw table{min-width:720px}
+  .lock{margin-left:0}
+}
+@media(max-width:520px){
+  .pick-btns{grid-template-columns:1fr}
+  .mode-row{gap:8px}
+  .seg{display:flex;width:100%}
+  .seg button{flex:1;white-space:nowrap;padding:0 8px}
+}
+.btn-xl,.pick-btns>*{min-width:0}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.careful{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;min-height:44px;cursor:pointer}.careful input{width:20px;height:20px}
+</style>
+<meta property="og:title" content="Çekicin · Hasar tespit modelini test edin / Test the damage-detection model">
+<meta property="og:description" content="Çekicin hasar tespit modeli (YOLO11m): test fotoğrafları üzerinde sonuçlar, tarayıcıda canlı test, diğer uzman modellerle karşılaştırma ve kavram haritası.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sosa123454321-cekicin-site.static.hf.space/ai-lab/model-test.html">
+<meta property="og:image" content="https://sosa123454321-cekicin-site.static.hf.space/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style id="axs-css">
+.axs{margin:28px auto;max-width:1100px;background:linear-gradient(135deg,#0b2545,#13315c);color:#fff;border-radius:22px;padding:22px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center;font-family:inherit;box-sizing:border-box}
+.axs *{box-sizing:border-box}.axs h2{margin:0 0 6px;font-size:clamp(19px,2.3vw,24px);line-height:1.25;color:#fff}.axs p{margin:0 0 12px;color:#d6e2f2;font-size:15px;line-height:1.5}
+.axs-flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 14px;padding:0;list-style:none}
+.axs-flow li{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:6px 12px;font-size:14px;font-weight:700;color:#fff}
+.axs-flow li.ar{background:none;border:0;padding:0 2px;color:#ffd000}
+.axs-btn{display:inline-flex;align-items:center;gap:10px;min-height:50px;padding:0 20px;border-radius:14px;background:#17689e;color:#fff!important;font-weight:800;font-size:16px;text-decoration:none}
+.axs-btn:focus-visible{outline:3px solid #ffd000;outline-offset:2px}
+.axs-qr{background:#fff;border-radius:16px;padding:10px;text-align:center}.axs-qr svg{width:120px;height:120px;display:block}.axs-qr span{display:block;font-size:12px;color:#334155;font-weight:700;margin-top:4px}
+.axs small{display:block;margin-top:10px;color:#b9c8dc;font-size:12.5px}
+section .axs,.card .axs{margin-inline:0}
+@media (max-width:640px){.axs{grid-template-columns:1fr;margin:20px 12px;padding:18px}section .axs{margin-inline:0}.axs-qr{display:none}.axs-btn{width:100%;justify-content:center}}
+</style></head>
+<body class="l-tr">
+<header class="top"><div class="wrap">
+  <a class="home" id="homeLink" href="../index.html">Çekic<b>in</b></a>
+  <nav>
+    <a href="#canli"><span class="tr">Kontrol et</span><span class="en">Check</span></a>
+    <a href="#galeri"><span class="tr">Test sonuçları</span><span class="en">Test results</span></a>
+    <a href="#karsilastirma"><span class="tr">Karşılaştırma</span><span class="en">Comparison</span></a>
+    <a href="#harita"><span class="tr">Kavram haritası</span><span class="en">Concept map</span></a>
+    <a href="scenarios.html"><span class="tr">12 senaryo + video</span><span class="en">12 scenarios + video</span></a>
+    <a href="index.html">AI Lab</a>
+  </nav>
+  <div class="lang"><button type="button" data-l="tr">TR</button><button type="button" data-l="en">EN</button></div>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <p class="eyebrow"><span class="tr">Çekicin AI Lab · Hasar kontrolü</span><span class="en">Çekicin AI Lab · Damage check</span></p>
+  <h1><span class="tr">Aracın fotoğrafını yükleyin, hasarı yapay zekâ bulsun</span><span class="en">Upload a car photo — the AI finds the damage</span></h1>
+  <p class="sub"><span class="tr">Ücretsiz · kayıt yok · fotoğraf telefonunuzdan çıkmaz</span><span class="en">Free · no sign-up · your photo never leaves your phone</span></p>
+</div></div>
+
+<!-- CHECKER (live test) -->
+<section id="canli" class="checker"><div class="wrap">
+  <div class="tool">
+    <div class="pick" id="pick">
+      <div class="pick-btns">
+        <label class="btn-xl primary"><input type="file" id="fileCam" accept="image/*" capture="environment" hidden><span aria-hidden="true">📷</span> <span class="tr">Fotoğraf çek</span><span class="en">Take a photo</span></label>
+        <label class="btn-xl tonal" id="drop"><input type="file" id="file" accept="image/*" hidden><span aria-hidden="true">🖼️</span> <span class="tr">Galeriden seç</span><span class="en">Choose from gallery</span></label>
+      </div>
+      <p class="samples-t"><span class="tr">veya örnek bir fotoğrafla deneyin:</span><span class="en">or try a sample photo:</span></p>
+      <div class="samples" id="samples"></div>
+      <ul class="tips">
+        <li><span class="tr">Hasara 1–2 m yaklaşın, ortalayın</span><span class="en">Get 1–2 m close, centre the damage</span></li>
+        <li><span class="tr">Gün ışığında, flaşsız</span><span class="en">Daylight, no flash</span></li>
+        <li><span class="tr">Her hasar için ayrı fotoğraf</span><span class="en">One photo per damage</span></li>
+      </ul>
+    </div>
+
+    <div class="result" id="result" hidden>
+      <div class="viewer">
+        <div id="lvView"></div>
+        <div class="progress" id="prog" hidden><div class="pbar"><i id="pbarI"></i></div><p id="lvStatus" role="status" aria-live="polite"></p></div>
+      </div>
+      <div class="summary" id="summary" aria-live="polite">
+        <div id="lvOut"></div>
+        <div class="row-btns">
+          <button type="button" class="btn-m filled" id="again"><span class="tr">↻ Başka fotoğraf</span><span class="en">↻ Another photo</span></button>
+          <button type="button" class="btn-m outlined" id="toggleBoxes" aria-pressed="true"><span class="tr">Kutuları gizle</span><span class="en">Hide boxes</span></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mode-row">
+      <span class="mode-l"><span class="tr">Yapay zekâ</span><span class="en">AI version</span></span>
+      <div class="seg" role="radiogroup" aria-label="AI version">
+        <button type="button" role="radio" aria-checked="true" data-ai="v2"><span class="tr">Hasar AI 2.0 · yeni</span><span class="en">Hasar AI 2.0 · new</span></button>
+        <button type="button" role="radio" aria-checked="false" data-ai="v1.3"><span class="tr">v1.3 · önceki</span><span class="en">v1.3 · previous</span></button>
+      </div>
+      <select id="lvMode" hidden aria-hidden="true" tabindex="-1"><option value="both">both</option><option value="neg">neg</option></select>
+      <label class="careful" id="carefulL"><input type="checkbox" id="careful"> <span class="tr">Dikkatli mod (aynalı 2. geçiş, ~2× süre)</span><span class="en">Careful mode (mirrored 2nd pass, ~2× time)</span></label>
+      <span class="lock">🔒 <span class="tr">Cihazınızda çalışır</span><span class="en">Runs on your device</span></span>
+    </div>
+    <details class="tech"><summary><span class="tr">Nasıl çalışır? (teknik ayrıntı)</span><span class="en">How does it work? (technical details)</span></summary>
+      <p><span class="tr">Model Hugging Face'ten bir kez indirilir (~20 MB + 11 MB), sonra telefonunuzda saklanır ve tekrar indirilmez. Hasar modeli YOLO11m (sağlam araç fotoğraflarıyla da eğitildi), eşik 0,10 (lamba/lastik 0,60); parça modeli YOLO11n, eşik 0,25 ve yalnızca hasar bulunduğunda gösterilir. <b>Hasar AI 2.0:</b> iki model de düşük eşikle (0,05) çalışır; kutular 34 özelliğe dönüştürülür ve kalibre edilmiş bir karar katmanı (lojistik regresyon, 1336 fotoğrafla doğrulandı) hasar olasılığını ve türünü verir. Bulanık veya karanlık fotoğrafta yeniden çekmeniz istenir. Ayrıntılar: <a href="wiki.html">AI wiki</a>. Bu bir ön değerlendirmedir, eksper raporu değildir.</span><span class="en">The model is downloaded once from Hugging Face (~20 MB + 11 MB), then kept on your phone and not downloaded again. Damage model YOLO11m (also trained on intact cars), threshold 0.10 (lamp/tyre 0.60); parts model YOLO11n, threshold 0.25, shown only when damage is found. <b>Hasar AI 2.0:</b> both models run at a low threshold (0.05); the boxes become 34 features and a calibrated decision layer (logistic regression, validated on 1336 photos) gives the damage probability and type. Blurry or dark photos get a retake prompt. Details: <a href="wiki.html">AI wiki</a>. This is a pre-assessment, not an expert report.</span></p>
+    </details>
+  </div>
+  <p class="kicker" style="margin-top:28px"><span class="tr">1000 fotoğraflık bağımsız testte</span><span class="en">In an independent 1000-photo test</span></p>
+  <div class="kpis">
+    <div class="kpi"><b>1000</b><span class="tr">test fotoğrafı (888 hasarlı + 112 sağlam)</span><span class="en">test photos (888 damaged + 112 intact)</span></div>
+    <div class="kpi"><b><span class="tr">0,588</span><span class="en">0.588</span></b><span class="tr">F1 (hasar türü), “İkisi birlikte” modu</span><span class="en">F1 (damage type), “Both” mode</span></div>
+    <div class="kpi"><b><span class="tr">%86</span><span class="en">86%</span></b><span class="tr">hasarlı fotoğrafta hasar yakalama</span><span class="en">of damaged photos flagged</span></div>
+    <div class="kpi"><b><span class="tr">%20,5</span><span class="en">20.5%</span></b><span class="tr">sağlam araçta yanlış alarm (önce %53,6)</span><span class="en">false alarms on intact cars (was 53.6%)</span></div>
+  </div>
+</div></section>
+
+<!-- GALLERY -->
+<section id="galeri"><div class="wrap">
+  <p class="kicker"><span class="tr">Test sonuçları</span><span class="en">Test results</span></p>
+  <h2><span class="tr">48 test fotoğrafı: modelin gördüğü ve gözden kaçırdığı</span><span class="en">48 test photos: what the model sees and what it misses</span></h2>
+  <p class="lead"><span class="tr">Fotoğraflar 1000'lik test setinden rastgele seçildi (her hasar türünden 12, seed 42); iyi örnekler ayıklanmadı. Kesikli beyaz kutular uzmanların işaretlediği gerçek hasarlar, renkli kutular modelin bulduğu hasarlardır. Kartın altında: ✓ bulunan tür, ✗ kaçırılan tür, + fazladan tahmin edilen tür. Bir fotoğrafa tıklayınca büyür.</span><span class="en">Photos were drawn at random from the 1000-photo test set (12 per damage type, seed 42); good examples were not hand-picked. Dashed white boxes are the true damages marked by annotators, coloured boxes are what the model found. Under each card: ✓ type found, ✗ type missed, + extra type predicted. Click a photo to enlarge it.</span></p>
+  <div class="ctrl">
+    <label><span class="tr">Model</span><span class="en">Model</span> <select id="gModel"></select></label>
+    <label><span class="tr">Hasar türü</span><span class="en">Damage type</span> <select id="gType"></select></label>
+    <label><input type="checkbox" id="gGt" checked> <span class="tr">Gerçek hasarı göster</span><span class="en">Show ground truth</span></label>
+  </div>
+  <div class="legend" id="legend"></div>
+  <div class="bars" id="bars"></div>
+  <div class="grid" id="grid"></div>
+  <div style="text-align:center;margin-top:14px"><button type="button" class="btn-m outlined" id="more" hidden></button></div>
+  <p class="note blue" style="margin-top:16px"><span class="tr">Sağlam araç fotoğrafları (Stanford Cars) lisans gereği yeniden yayınlanamadığı için galeride yok; yanlış alarm oranı yukarıdaki %20,5 değeridir. Fotoğraflar: AutoDamageIQ (VehiDE kaynaklı), CC-BY-4.0. Gerçek hasar türleri bu veri setinde 4 tanedir (çatlak, göçük, cam kırığı, çizik).</span><span class="en">Intact-car photos (Stanford Cars) cannot be redistributed under their licence, so they are not in the gallery; the false-alarm rate is the 20.5% above. Photos: AutoDamageIQ (VehiDE origin), CC-BY-4.0. This dataset labels 4 damage types (crack, dent, glass shatter, scratch).</span></p>
+</div></section>
+
+<!-- LIVE -->
+<!-- COMPARISON -->
+<section id="karsilastirma"><div class="wrap">
+  <p class="kicker"><span class="tr">3 · Diğer uzman modellerle karşılaştırma</span><span class="en">3 · Comparison with other specialised models</span></p>
+  <h2><span class="tr">Aynı 1000 fotoğraf, aynı puanlama</span><span class="en">Same 1000 photos, same scoring</span></h2>
+  <p class="lead"><span class="tr">Hugging Face'teki açık hasar modelleri, Çekicin modelleriyle aynı fotoğraflarda ve aynı kurallarla test edildi. F1: hasar türünü doğru bulma (yüksek iyi). Yakalama: hasarlı fotoğrafta en az bir hasar bulma. Yanlış alarm: sağlam araçta hasar görme (düşük iyi).</span><span class="en">Open damage models from Hugging Face were tested on the same photos with the same rules as the Çekicin models. F1: finding the right damage type (higher is better). Recall: flagging at least one damage on a damaged photo. False alarm: seeing damage on an intact car (lower is better).</span></p>
+  <p class="swipe-hint">← <span class="tr">tabloyu kaydırın</span><span class="en">swipe the table</span> →</p><div class="tw"><table>
+    <thead><tr><th>Model</th><th><span class="tr">Tür</span><span class="en">Type</span></th><th><span class="tr">Nerede çalışır</span><span class="en">Runs where</span></th><th class="num">F1</th><th class="num"><span class="tr">Yakalama</span><span class="en">Recall</span></th><th class="num"><span class="tr">Yanlış alarm</span><span class="en">False alarm</span></th><th class="num"><span class="tr">Süre/foto</span><span class="en">Time/photo</span></th><th><span class="tr">Lisans</span><span class="en">Licence</span></th></tr></thead>
+    <tbody>
+      <tr class="ours"><td><b>⭐ Çekicin AI Lab · <span class="tr">İkisi birlikte</span><span class="en">Both</span></b><br><small>YOLO11m-neg int8 + YOLO11n</small></td><td><span class="tr">6 tür + 14 parça</span><span class="en">6 types + 14 parts</span></td><td><span class="tr">tarayıcı / telefon</span><span class="en">browser / phone</span></td><td class="num"><b>0,588</b></td><td class="num">%86,4</td><td class="num">%20,5</td><td class="num">~0,5 s</td><td><span class="tr">araştırma/pilot (CarDD lisansı)</span><span class="en">research/pilot (CarDD licence)</span></td></tr>
+      <tr class="ours"><td><b>⭐ <span class="tr">Çekicin hasar modeli</span><span class="en">Çekicin damage model</span></b><br><small>YOLO11m-neg int8, 20 MB</small></td><td><span class="tr">6 hasar türü</span><span class="en">6 damage types</span></td><td><span class="tr">tarayıcı / telefon</span><span class="en">browser / phone</span></td><td class="num">0,550</td><td class="num">%86,4</td><td class="num">%20,5</td><td class="num">~0,5 s</td><td><span class="tr">araştırma/pilot</span><span class="en">research/pilot</span></td></tr>
+      <tr><td><span class="tr">Önceki Çekicin modeli</span><span class="en">Previous Çekicin model</span><br><small>CarDD YOLOv8s-seg int8</small></td><td><span class="tr">6 tür + maske</span><span class="en">6 types + mask</span></td><td><span class="tr">tarayıcı</span><span class="en">browser</span></td><td class="num">0,524</td><td class="num">%79,7</td><td class="num">%27,7</td><td class="num">0,24 s</td><td><span class="tr">ticari olmayan</span><span class="en">non-commercial</span></td></tr>
+      <tr><td>shanexf/car-damage-yolo11m-ft<br><small><span class="tr">orijinal fp32 (bizim modelin kaynağı)</span><span class="en">original fp32 (source of our model)</span></small></td><td><span class="tr">6 hasar türü</span><span class="en">6 damage types</span></td><td><span class="tr">sunucu</span><span class="en">server</span></td><td class="num">0,512</td><td class="num">%76,2</td><td class="num">%14,3</td><td class="num">0,45 s</td><td><span class="tr">belirtilmemiş</span><span class="en">not stated</span></td></tr>
+      <tr><td>Naiscorp/car-damage-detection<br><small>Mask R-CNN R101, 764 MB · <span class="tr">300 fotoğraflık alt küme</span><span class="en">300-photo subset</span></small></td><td><span class="tr">7 sınıf + maske</span><span class="en">7 classes + mask</span></td><td><span class="tr">sunucu</span><span class="en">server</span></td><td class="num">0,636*</td><td class="num">%82,8</td><td class="num">%12,1</td><td class="num">4,4 s</td><td><span class="tr">özel (kapalı)</span><span class="en">proprietary</span></td></tr>
+      <tr><td>beingamit99/car_damage_detection<br><small>ViT-Base, 86 M</small></td><td><span class="tr">fotoğraf başına 1 etiket</span><span class="en">1 label per photo</span></td><td><span class="tr">sunucu</span><span class="en">server</span></td><td class="num">0,462</td><td class="num">%98,1</td><td class="num">%94,6</td><td class="num">0,17 s</td><td>MIT</td></tr>
+      <tr><td><span class="tr">Çekicin parça modeli (tek başına)</span><span class="en">Çekicin parts model (alone)</span><br><small>YOLO11n, 10,6 MB</small></td><td><span class="tr">14 hasarlı parça</span><span class="en">14 damaged parts</span></td><td><span class="tr">tarayıcı</span><span class="en">browser</span></td><td class="num">0,248</td><td class="num">%70,0</td><td class="num">%46,4</td><td class="num">0,05 s</td><td>Apache-2.0</td></tr>
+      <tr><td>tatar01230/car-damage-yolo11n</td><td><span class="tr">16 hasarlı parça</span><span class="en">16 damaged parts</span></td><td><span class="tr">telefon olabilir</span><span class="en">phone-capable</span></td><td class="num">0,178</td><td class="num">%77,7</td><td class="num">%51,8</td><td class="num">0,03 s</td><td>AGPL-3.0</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note"><span class="tr">* Naiscorp en yüksek F1'e sahip, ama yalnızca 300 fotoğrafta çalıştırılabildi (2 GB RAM), fotoğraf başına 4,4 saniye ve 764 MB sunucu gerektiriyor, lisansı kapalı ve Vietnam sigorta fotoğraflarıyla eğitildiği için test setiyle aynı kaynaktan olabilir (avantajlı olabilir). Telefonda/tarayıcıda çalışan modeller arasında en iyi denge Çekicin “İkisi birlikte” modudur. ViT her fotoğrafa hasar dediği için yakalaması yüksek ama sağlam araçların %95'inde yanlış alarm veriyor. Ayrıntılar: <a href="benchmark-1000.html#decision" class="bmLink">1000 fotoğraf testi</a>.</span><span class="en">* Naiscorp has the highest F1, but could only run on 300 photos (2 GB RAM), needs 4.4 s per photo and a 764 MB server, has closed weights, and was trained on Vietnamese insurance photos, so it may share the test set's source (possible advantage). Among models that run on the phone/in the browser, the Çekicin “Both” mode has the best balance. ViT calls every photo damaged, so its recall is high but it false-alarms on 95% of intact cars. Details: <a href="benchmark-1000.html#decision" class="bmLink">1000-photo test</a>.</span></p>
+
+  <h3 style="margin:26px 0 8px;font-size:18px"><span class="tr">Ticari çözümler (bizim testimizde değil, kendi beyanları)</span><span class="en">Commercial solutions (not in our test; their own claims)</span></h3>
+  <div class="tw"><table>
+    <thead><tr><th><span class="tr">Firma</span><span class="en">Company</span></th><th><span class="tr">Ne yapar</span><span class="en">What it does</span></th><th><span class="tr">Beyan edilen</span><span class="en">Claimed</span></th><th><span class="tr">Çekicin için not</span><span class="en">Note for Çekicin</span></th></tr></thead>
+    <tbody>
+      <tr><td><b>Tractable</b> (UK)</td><td><span class="tr">Sigortalının fotoğraflarından hasar ve onarım maliyeti tahmini; sigorta hasar dosyası entegrasyonu</span><span class="en">Damage and repair-cost estimate from policyholder photos; claims-system integration</span></td><td><span class="tr">~%95 doğruluk; dünyanın ilk 100 sigortacısından 25'i müşteri</span><span class="en">~95% accuracy; 25 of the world's top-100 insurers as clients</span></td><td><span class="tr">Sigortacı odaklı, kapalı ve ücretli; Çekicin'in poliçe akışına benzer hedef</span><span class="en">Insurer-focused, closed, paid; similar goal to Çekicin's policy flow</span></td></tr>
+      <tr><td><b>Inspektlabs</b> (US)</td><td><span class="tr">Fotoğraf/video ile denetim, 21 hasar türü, 163 parça, API ve web uygulaması</span><span class="en">Photo/video inspection, 21 damage types, 163 parts, API and web app</span></td><td><span class="tr">%90–95 (nadir durumlar hariç)</span><span class="en">90–95% (excluding rare corner cases)</span></td><td><span class="tr">Denetim başına ücret; fotoğraf kalitesi kontrolü iyi bir fikir</span><span class="en">Per-inspection pricing; photo-quality checks are a good idea</span></td></tr>
+      <tr><td><b>Monk</b> (FR, ACV)</td><td><span class="tr">Telefonla 360° tarama, SDK/API</span><span class="en">360° smartphone scan, SDK/API</span></td><td>—</td><td><span class="tr">Kiralama ve bayi odaklı</span><span class="en">Rental and dealer focus</span></td></tr>
+      <tr><td><b>UVeye</b> (US/IL)</td><td><span class="tr">Donanım geçitleri: gövde, lastik, alt takım taraması</span><span class="en">Hardware gates: body, tyre and underbody scans</span></td><td><span class="tr">700+ lokasyon, ayda 3 milyon+ tarama</span><span class="en">700+ locations, 3M+ scans/month</span></td><td><span class="tr">Sabit tesis gerektirir; yol kenarı için uygun değil</span><span class="en">Needs fixed installations; not for roadside</span></td></tr>
+      <tr><td><b>ProovStation</b> (FR)</td><td><span class="tr">Geçişli tarama istasyonu, Michelin lastik analizi</span><span class="en">Drive-through scanning station, Michelin tyre analysis</span></td><td>—</td><td><span class="tr">Servis/filo tesisleri için</span><span class="en">For workshops and fleet sites</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note blue"><span class="tr">Ticari firmaların doğruluk oranları kendi beyanlarıdır, farklı veri ve ölçütlerle verilir; yukarıdaki tabloyla doğrudan karşılaştırılamaz. Çekicin'in farkı: ücretsiz ve açık modeller, telefonda çalışma (fotoğraf cihazdan çıkmaz, KVKK), çekici ve yol yardım akışına özel çıktı (çekici gerekli mi, hangi ekipman) ve Çekicin fotoğraflarıyla yeniden eğitilebilme. Kaynaklar: <a href="https://inspektlabs.com/blog/top-10-ai-powered-car-damage-inspection-solutions-2/" target="_blank" rel="noopener">Inspektlabs</a>, <a href="https://www.usatoday.com/press-release/story/44894/inspektlabs-announces-ai-powered-vehicle-damage-assessment-for-insurance-claims/" target="_blank" rel="noopener">USA Today</a>, <a href="https://www.analyticsinsight.net/artificial-intelligence/10-leading-ai-powered-insurtech-companies-in-2026" target="_blank" rel="noopener">Analytics Insight</a>, <a href="https://timestech.in/autonomous-vehicle-damage-detection-market-to-reach-13-47-billion-by-2035/" target="_blank" rel="noopener">TimesTech</a>, <a href="https://binariks.com/blog/ai-car-damage-detection/" target="_blank" rel="noopener">Binariks</a>.</span><span class="en">Commercial accuracy figures are self-reported, on different data and metrics; they cannot be compared directly with the table above. What sets Çekicin apart: free and open models, on-phone inference (the photo never leaves the device, KVKK), outputs tailored to towing and roadside assistance (is a tow needed, which equipment) and the ability to retrain on Çekicin photos. Sources: <a href="https://inspektlabs.com/blog/top-10-ai-powered-car-damage-inspection-solutions-2/" target="_blank" rel="noopener">Inspektlabs</a>, <a href="https://www.usatoday.com/press-release/story/44894/inspektlabs-announces-ai-powered-vehicle-damage-assessment-for-insurance-claims/" target="_blank" rel="noopener">USA Today</a>, <a href="https://www.analyticsinsight.net/artificial-intelligence/10-leading-ai-powered-insurtech-companies-in-2026" target="_blank" rel="noopener">Analytics Insight</a>, <a href="https://timestech.in/autonomous-vehicle-damage-detection-market-to-reach-13-47-billion-by-2035/" target="_blank" rel="noopener">TimesTech</a>, <a href="https://binariks.com/blog/ai-car-damage-detection/" target="_blank" rel="noopener">Binariks</a>.</span></p>
+</div></section>
+
+<!-- MAP -->
+<section id="harita" class="alt"><div class="wrap">
+  <p class="kicker"><span class="tr">4 · Kavram haritası</span><span class="en">4 · Concept map</span></p>
+  <h2><span class="tr">Modül bir bakışta</span><span class="en">The module at a glance</span></h2>
+  <div class="map"><div class="tr"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-label="Çekicin Yapay Zekâ Hasar Tespiti"><rect width="1600" height="1000" fill="#f5f8fc"/><path d="M662.0,400 C615.0,400 615.0,129.5 430,129.5" fill="none" stroke="#0a6fd1" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M662.0,400 C615.0,400 615.0,475.0 430,475.0" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M662.0,400 C615.0,400 615.0,802.0 430,802.0" fill="none" stroke="#0f766e" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M938.0,400 C985.0,400 985.0,129.5 1170,129.5" fill="none" stroke="#ea580c" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M938.0,400 C985.0,400 985.0,459.5 1170,459.5" fill="none" stroke="#0756a8" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M938.0,400 C985.0,400 985.0,777.0 1170,777.0" fill="none" stroke="#15803d" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M800,550 L800,680" stroke="#9b1c1c" stroke-width="4" stroke-dasharray="8 8" opacity=".75"/><g><rect x="30" y="30" width="400" height="199" rx="20" fill="#fff" stroke="#0a6fd1" stroke-width="3"/>
+<rect x="30" y="30" width="400" height="48" rx="20" fill="#0a6fd1"/><rect x="30" y="58" width="400" height="20" fill="#0a6fd1"/>
+<text x="48" y="62" font-size="21" font-weight="800" fill="#fff">📥 Girdi</text>
+<circle cx="52" cy="104" r="4" fill="#0a6fd1"/>
+<text x="64" y="110" font-size="17" fill="#0f172a">Müşterinin uygulamada çektiği fotoğraf</text>
+<text x="64" y="135" font-size="17" fill="#0f172a">(çekici talebi, kaza tutanağı)</text>
+<circle cx="52" cy="154" r="4" fill="#0a6fd1"/>
+<text x="64" y="160" font-size="17" fill="#0f172a">Araç bilgisi: marka, model, kayıtlı araç</text>
+<circle cx="52" cy="179" r="4" fill="#0a6fd1"/>
+<text x="64" y="185" font-size="17" fill="#0f172a">KVKK açık rızası (fotoğraf yalnızca onayla</text>
+<text x="64" y="210" font-size="17" fill="#0f172a">saklanır)</text>
+</g><g><rect x="30" y="360" width="400" height="249" rx="20" fill="#fff" stroke="#7c3aed" stroke-width="3"/>
+<rect x="30" y="360" width="400" height="48" rx="20" fill="#7c3aed"/><rect x="30" y="388" width="400" height="20" fill="#7c3aed"/>
+<text x="48" y="392" font-size="21" font-weight="800" fill="#fff">🧠 Modeller</text>
+<circle cx="52" cy="434" r="4" fill="#7c3aed"/>
+<text x="64" y="440" font-size="17" fill="#0f172a">YOLO11m hasar modeli: 6 tür, sağlam</text>
+<text x="64" y="465" font-size="17" fill="#0f172a">araçlarla da eğitildi</text>
+<circle cx="52" cy="484" r="4" fill="#7c3aed"/>
+<text x="64" y="490" font-size="17" fill="#0f172a">YOLO11n parça modeli: 14 hasarlı parça</text>
+<text x="64" y="515" font-size="17" fill="#0f172a">sınıfı</text>
+<circle cx="52" cy="534" r="4" fill="#7c3aed"/>
+<text x="64" y="540" font-size="17" fill="#0f172a">Tarayıcıda / telefonda çalışır (int8 ONNX,</text>
+<text x="64" y="565" font-size="17" fill="#0f172a">20 MB)</text>
+<circle cx="52" cy="584" r="4" fill="#7c3aed"/>
+<text x="64" y="590" font-size="17" fill="#0f172a">İsteğe bağlı bulut ikinci görüş (API)</text>
+</g><g><rect x="30" y="690" width="400" height="224" rx="20" fill="#fff" stroke="#0f766e" stroke-width="3"/>
+<rect x="30" y="690" width="400" height="48" rx="20" fill="#0f766e"/><rect x="30" y="718" width="400" height="20" fill="#0f766e"/>
+<text x="48" y="722" font-size="21" font-weight="800" fill="#fff">🧪 Test ve kanıt</text>
+<circle cx="52" cy="764" r="4" fill="#0f766e"/>
+<text x="64" y="770" font-size="17" fill="#0f172a">1000 fotoğraf: 888 hasarlı + 112 sağlam</text>
+<text x="64" y="795" font-size="17" fill="#0f172a">araç</text>
+<circle cx="52" cy="814" r="4" fill="#0f766e"/>
+<text x="64" y="820" font-size="17" fill="#0f172a">F1 0,588 · hasar yakalama %86</text>
+<circle cx="52" cy="839" r="4" fill="#0f766e"/>
+<text x="64" y="845" font-size="17" fill="#0f172a">Sağlam araçta yanlış alarm %53,6 → %20,5</text>
+<circle cx="52" cy="864" r="4" fill="#0f766e"/>
+<text x="64" y="870" font-size="17" fill="#0f172a">Hugging Face’teki 4 uzman modelle</text>
+<text x="64" y="895" font-size="17" fill="#0f172a">karşılaştırma</text>
+</g><g><rect x="1170" y="30" width="400" height="199" rx="20" fill="#fff" stroke="#ea580c" stroke-width="3"/>
+<rect x="1170" y="30" width="400" height="48" rx="20" fill="#ea580c"/><rect x="1170" y="58" width="400" height="20" fill="#ea580c"/>
+<text x="1188" y="62" font-size="21" font-weight="800" fill="#fff">📤 Çıktılar</text>
+<circle cx="1192" cy="104" r="4" fill="#ea580c"/>
+<text x="1204" y="110" font-size="17" fill="#0f172a">Hasar türü ve yeri (kutu)</text>
+<circle cx="1192" cy="129" r="4" fill="#ea580c"/>
+<text x="1204" y="135" font-size="17" fill="#0f172a">Hasarlı parça</text>
+<circle cx="1192" cy="154" r="4" fill="#ea580c"/>
+<text x="1204" y="160" font-size="17" fill="#0f172a">Onar / boya / değiştir önerisi</text>
+<circle cx="1192" cy="179" r="4" fill="#ea580c"/>
+<text x="1204" y="185" font-size="17" fill="#0f172a">TRY maliyet aralığı</text>
+<circle cx="1192" cy="204" r="4" fill="#ea580c"/>
+<text x="1204" y="210" font-size="17" fill="#0f172a">Çekici gerekli mi?</text>
+</g><g><rect x="1170" y="360" width="400" height="199" rx="20" fill="#fff" stroke="#0756a8" stroke-width="3"/>
+<rect x="1170" y="360" width="400" height="48" rx="20" fill="#0756a8"/><rect x="1170" y="388" width="400" height="20" fill="#0756a8"/>
+<text x="1188" y="392" font-size="21" font-weight="800" fill="#fff">🔗 Uygulamaya entegrasyon</text>
+<circle cx="1192" cy="434" r="4" fill="#0756a8"/>
+<text x="1204" y="440" font-size="17" fill="#0f172a">Talep fotoğrafı → API /v1/damage/assess</text>
+<circle cx="1192" cy="459" r="4" fill="#0756a8"/>
+<text x="1204" y="465" font-size="17" fill="#0f172a">Sürücüye hasar özeti: doğru ekipman, doğru</text>
+<text x="1204" y="490" font-size="17" fill="#0f172a">teklif</text>
+<circle cx="1192" cy="509" r="4" fill="#0756a8"/>
+<text x="1204" y="515" font-size="17" fill="#0f172a">Servis ve parça tedarikçisi eşleştirme</text>
+<circle cx="1192" cy="534" r="4" fill="#0756a8"/>
+<text x="1204" y="540" font-size="17" fill="#0f172a">Geri bildirimle modeli yeniden eğitme</text>
+</g><g><rect x="1170" y="690" width="400" height="174" rx="20" fill="#fff" stroke="#15803d" stroke-width="3"/>
+<rect x="1170" y="690" width="400" height="48" rx="20" fill="#15803d"/><rect x="1170" y="718" width="400" height="20" fill="#15803d"/>
+<text x="1188" y="722" font-size="21" font-weight="800" fill="#fff">🌱 Değer</text>
+<circle cx="1192" cy="764" r="4" fill="#15803d"/>
+<text x="1204" y="770" font-size="17" fill="#0f172a">Daha hızlı ve tutarlı ön ekspertiz</text>
+<circle cx="1192" cy="789" r="4" fill="#15803d"/>
+<text x="1204" y="795" font-size="17" fill="#0f172a">Yanlış ekipman ve boş yolculuk azalır</text>
+<circle cx="1192" cy="814" r="4" fill="#15803d"/>
+<text x="1204" y="820" font-size="17" fill="#0f172a">Sigorta ve poliçe süreçlerine veri</text>
+<circle cx="1192" cy="839" r="4" fill="#15803d"/>
+<text x="1204" y="845" font-size="17" fill="#0f172a">COP31 ve AB fonları için ölçülebilir etki</text>
+</g><g><rect x="590" y="680" width="420" height="199" rx="20" fill="#fff" stroke="#9b1c1c" stroke-width="3"/>
+<rect x="590" y="680" width="420" height="48" rx="20" fill="#9b1c1c"/><rect x="590" y="708" width="420" height="20" fill="#9b1c1c"/>
+<text x="608" y="712" font-size="21" font-weight="800" fill="#fff">⚠️ Sınırlar ve sonraki adımlar</text>
+<circle cx="612" cy="754" r="4" fill="#9b1c1c"/>
+<text x="624" y="760" font-size="17" fill="#0f172a">Gerçek parça ve işçilik fiyatları gerekli</text>
+<circle cx="612" cy="779" r="4" fill="#9b1c1c"/>
+<text x="624" y="785" font-size="17" fill="#0f172a">Çekicin fotoğraflarıyla yeniden eğitim</text>
+<text x="624" y="810" font-size="17" fill="#0f172a">(KVKK onaylı)</text>
+<circle cx="612" cy="829" r="4" fill="#9b1c1c"/>
+<text x="624" y="835" font-size="17" fill="#0f172a">Mekanik ve iç hasarlar fotoğrafta görünmez</text>
+<circle cx="612" cy="854" r="4" fill="#9b1c1c"/>
+<text x="624" y="860" font-size="17" fill="#0f172a">Pilot: sahada ölçüm</text>
+</g><circle cx="800" cy="400" r="164" fill="#ffd000" opacity=".35"/><circle cx="800" cy="400" r="150" fill="#08111f"/><text x="800" y="362" font-size="34" font-weight="800" fill="#ffd000" text-anchor="middle">Çekicin</text><text x="800" y="402" font-size="30" font-weight="800" fill="#fff" text-anchor="middle">Yapay Zekâ</text><text x="800" y="442" font-size="30" font-weight="800" fill="#fff" text-anchor="middle">Hasar Tespiti</text><text x="800" y="488" font-size="14" fill="#9fb0c8" text-anchor="middle">fotoğraf → hasar → parça → maliyet</text></svg></div><div class="en"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-label="Çekicin AI Damage Detection"><rect width="1600" height="1000" fill="#f5f8fc"/><path d="M662.0,400 C615.0,400 615.0,129.5 430,129.5" fill="none" stroke="#0a6fd1" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M662.0,400 C615.0,400 615.0,475.0 430,475.0" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M662.0,400 C615.0,400 615.0,789.5 430,789.5" fill="none" stroke="#0f766e" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M938.0,400 C985.0,400 985.0,129.5 1170,129.5" fill="none" stroke="#ea580c" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M938.0,400 C985.0,400 985.0,459.5 1170,459.5" fill="none" stroke="#0756a8" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M938.0,400 C985.0,400 985.0,777.0 1170,777.0" fill="none" stroke="#15803d" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M800,550 L800,680" stroke="#9b1c1c" stroke-width="4" stroke-dasharray="8 8" opacity=".75"/><g><rect x="30" y="30" width="400" height="199" rx="20" fill="#fff" stroke="#0a6fd1" stroke-width="3"/>
+<rect x="30" y="30" width="400" height="48" rx="20" fill="#0a6fd1"/><rect x="30" y="58" width="400" height="20" fill="#0a6fd1"/>
+<text x="48" y="62" font-size="21" font-weight="800" fill="#fff">📥 Input</text>
+<circle cx="52" cy="104" r="4" fill="#0a6fd1"/>
+<text x="64" y="110" font-size="17" fill="#0f172a">Photo the customer takes in the app (tow</text>
+<text x="64" y="135" font-size="17" fill="#0f172a">request, accident report)</text>
+<circle cx="52" cy="154" r="4" fill="#0a6fd1"/>
+<text x="64" y="160" font-size="17" fill="#0f172a">Vehicle data: brand, model, saved vehicle</text>
+<circle cx="52" cy="179" r="4" fill="#0a6fd1"/>
+<text x="64" y="185" font-size="17" fill="#0f172a">KVKK consent (photo stored only with</text>
+<text x="64" y="210" font-size="17" fill="#0f172a">consent)</text>
+</g><g><rect x="30" y="360" width="400" height="249" rx="20" fill="#fff" stroke="#7c3aed" stroke-width="3"/>
+<rect x="30" y="360" width="400" height="48" rx="20" fill="#7c3aed"/><rect x="30" y="388" width="400" height="20" fill="#7c3aed"/>
+<text x="48" y="392" font-size="21" font-weight="800" fill="#fff">🧠 Models</text>
+<circle cx="52" cy="434" r="4" fill="#7c3aed"/>
+<text x="64" y="440" font-size="17" fill="#0f172a">YOLO11m damage model: 6 types, also</text>
+<text x="64" y="465" font-size="17" fill="#0f172a">trained on intact cars</text>
+<circle cx="52" cy="484" r="4" fill="#7c3aed"/>
+<text x="64" y="490" font-size="17" fill="#0f172a">YOLO11n parts model: 14 damaged-part</text>
+<text x="64" y="515" font-size="17" fill="#0f172a">classes</text>
+<circle cx="52" cy="534" r="4" fill="#7c3aed"/>
+<text x="64" y="540" font-size="17" fill="#0f172a">Runs in the browser / on the phone (int8</text>
+<text x="64" y="565" font-size="17" fill="#0f172a">ONNX, 20 MB)</text>
+<circle cx="52" cy="584" r="4" fill="#7c3aed"/>
+<text x="64" y="590" font-size="17" fill="#0f172a">Optional cloud second opinion (API)</text>
+</g><g><rect x="30" y="690" width="400" height="199" rx="20" fill="#fff" stroke="#0f766e" stroke-width="3"/>
+<rect x="30" y="690" width="400" height="48" rx="20" fill="#0f766e"/><rect x="30" y="718" width="400" height="20" fill="#0f766e"/>
+<text x="48" y="722" font-size="21" font-weight="800" fill="#fff">🧪 Test and evidence</text>
+<circle cx="52" cy="764" r="4" fill="#0f766e"/>
+<text x="64" y="770" font-size="17" fill="#0f172a">1000 photos: 888 damaged + 112 intact cars</text>
+<circle cx="52" cy="789" r="4" fill="#0f766e"/>
+<text x="64" y="795" font-size="17" fill="#0f172a">F1 0.588 · damage recall 86%</text>
+<circle cx="52" cy="814" r="4" fill="#0f766e"/>
+<text x="64" y="820" font-size="17" fill="#0f172a">False alarms on intact cars 53.6% → 20.5%</text>
+<circle cx="52" cy="839" r="4" fill="#0f766e"/>
+<text x="64" y="845" font-size="17" fill="#0f172a">Compared with 4 specialised Hugging Face</text>
+<text x="64" y="870" font-size="17" fill="#0f172a">models</text>
+</g><g><rect x="1170" y="30" width="400" height="199" rx="20" fill="#fff" stroke="#ea580c" stroke-width="3"/>
+<rect x="1170" y="30" width="400" height="48" rx="20" fill="#ea580c"/><rect x="1170" y="58" width="400" height="20" fill="#ea580c"/>
+<text x="1188" y="62" font-size="21" font-weight="800" fill="#fff">📤 Outputs</text>
+<circle cx="1192" cy="104" r="4" fill="#ea580c"/>
+<text x="1204" y="110" font-size="17" fill="#0f172a">Damage type and location (box)</text>
+<circle cx="1192" cy="129" r="4" fill="#ea580c"/>
+<text x="1204" y="135" font-size="17" fill="#0f172a">Damaged part</text>
+<circle cx="1192" cy="154" r="4" fill="#ea580c"/>
+<text x="1204" y="160" font-size="17" fill="#0f172a">Repair / paint / replace suggestion</text>
+<circle cx="1192" cy="179" r="4" fill="#ea580c"/>
+<text x="1204" y="185" font-size="17" fill="#0f172a">Cost range in TRY</text>
+<circle cx="1192" cy="204" r="4" fill="#ea580c"/>
+<text x="1204" y="210" font-size="17" fill="#0f172a">Is a tow truck needed?</text>
+</g><g><rect x="1170" y="360" width="400" height="199" rx="20" fill="#fff" stroke="#0756a8" stroke-width="3"/>
+<rect x="1170" y="360" width="400" height="48" rx="20" fill="#0756a8"/><rect x="1170" y="388" width="400" height="20" fill="#0756a8"/>
+<text x="1188" y="392" font-size="21" font-weight="800" fill="#fff">🔗 App integration</text>
+<circle cx="1192" cy="434" r="4" fill="#0756a8"/>
+<text x="1204" y="440" font-size="17" fill="#0f172a">Request photo → API /v1/damage/assess</text>
+<circle cx="1192" cy="459" r="4" fill="#0756a8"/>
+<text x="1204" y="465" font-size="17" fill="#0f172a">Damage summary for the driver: right</text>
+<text x="1204" y="490" font-size="17" fill="#0f172a">equipment, right offer</text>
+<circle cx="1192" cy="509" r="4" fill="#0756a8"/>
+<text x="1204" y="515" font-size="17" fill="#0f172a">Matching workshops and parts suppliers</text>
+<circle cx="1192" cy="534" r="4" fill="#0756a8"/>
+<text x="1204" y="540" font-size="17" fill="#0f172a">Retraining from feedback</text>
+</g><g><rect x="1170" y="690" width="400" height="174" rx="20" fill="#fff" stroke="#15803d" stroke-width="3"/>
+<rect x="1170" y="690" width="400" height="48" rx="20" fill="#15803d"/><rect x="1170" y="718" width="400" height="20" fill="#15803d"/>
+<text x="1188" y="722" font-size="21" font-weight="800" fill="#fff">🌱 Value</text>
+<circle cx="1192" cy="764" r="4" fill="#15803d"/>
+<text x="1204" y="770" font-size="17" fill="#0f172a">Faster, more consistent pre-assessment</text>
+<circle cx="1192" cy="789" r="4" fill="#15803d"/>
+<text x="1204" y="795" font-size="17" fill="#0f172a">Fewer wrong-equipment and empty trips</text>
+<circle cx="1192" cy="814" r="4" fill="#15803d"/>
+<text x="1204" y="820" font-size="17" fill="#0f172a">Data for insurance and policy processes</text>
+<circle cx="1192" cy="839" r="4" fill="#15803d"/>
+<text x="1204" y="845" font-size="17" fill="#0f172a">Measurable impact for COP31 and EU funds</text>
+</g><g><rect x="590" y="680" width="420" height="224" rx="20" fill="#fff" stroke="#9b1c1c" stroke-width="3"/>
+<rect x="590" y="680" width="420" height="48" rx="20" fill="#9b1c1c"/><rect x="590" y="708" width="420" height="20" fill="#9b1c1c"/>
+<text x="608" y="712" font-size="21" font-weight="800" fill="#fff">⚠️ Limits and next steps</text>
+<circle cx="612" cy="754" r="4" fill="#9b1c1c"/>
+<text x="624" y="760" font-size="17" fill="#0f172a">Real parts and labour prices needed</text>
+<circle cx="612" cy="779" r="4" fill="#9b1c1c"/>
+<text x="624" y="785" font-size="17" fill="#0f172a">Retrain on Çekicin photos (with KVKK</text>
+<text x="624" y="810" font-size="17" fill="#0f172a">consent)</text>
+<circle cx="612" cy="829" r="4" fill="#9b1c1c"/>
+<text x="624" y="835" font-size="17" fill="#0f172a">Mechanical and hidden damage is not</text>
+<text x="624" y="860" font-size="17" fill="#0f172a">visible</text>
+<circle cx="612" cy="879" r="4" fill="#9b1c1c"/>
+<text x="624" y="885" font-size="17" fill="#0f172a">Pilot: field measurement</text>
+</g><circle cx="800" cy="400" r="164" fill="#ffd000" opacity=".35"/><circle cx="800" cy="400" r="150" fill="#08111f"/><text x="800" y="362" font-size="34" font-weight="800" fill="#ffd000" text-anchor="middle">Çekicin</text><text x="800" y="402" font-size="30" font-weight="800" fill="#fff" text-anchor="middle">AI Damage</text><text x="800" y="442" font-size="30" font-weight="800" fill="#fff" text-anchor="middle">Detection</text><text x="800" y="488" font-size="14" fill="#9fb0c8" text-anchor="middle">photo → damage → part → cost</text></svg></div></div>
+  <div class="dl">
+    <a class="b y" href="docs/Cekicin_AI_Hasar_Tespiti_Sunum.pptx" download>📊 <span class="tr">Sunumu indir (PowerPoint, TR)</span><span class="en">Download the presentation (PowerPoint, TR)</span></a>
+    <a class="b blue" href="docs/concept-map-tr.png" download>🗺️ <span class="tr">Kavram haritası (PNG)</span><span class="en">Concept map (PNG)</span></a>
+    <a class="b blue bmLink" href="benchmark-1000.html#decision"><span class="tr">1000 fotoğraf testi</span><span class="en">1000-photo test</span></a>
+    <a class="b blue" href="https://huggingface.co/sosa123454321/cekicin-damage-yolo11m-neg-onnx" target="_blank" rel="noopener"><span class="tr">Model (Hugging Face)</span><span class="en">Model (Hugging Face)</span></a>
+    <a class="b blue" href="https://huggingface.co/datasets/sosa123454321/cekicin-damage-benchmark" target="_blank" rel="noopener"><span class="tr">Test verisi (Hugging Face)</span><span class="en">Test data (Hugging Face)</span></a>
+  </div>
+</div></section>
+
+<div class="modal" id="modal"><div class="mbox"><div class="ph" id="mPh"></div><div class="mside"><button class="x" id="mX" aria-label="close">×</button><div id="mInfo"></div></div></div></div>
+
+<!-- AXS START -->
+<aside class="axs" aria-label="Telegram AI asistanı">
+  <div>
+    <h2>🤖 <span class="tr">Aynı yapay zekâ Telegram'da: @Cekicin_bot</span><span class="en">The same AI on Telegram: @Cekicin_bot</span></h2>
+    <p><span class="tr">Fotoğraf gönderin; asistan hasarı bulur, 3 kısa soru sorar, çekici mi yol yardımı mı gerektiğini söyler ve en yakın uygun servisi gösterir. Sesli mesajı da anlar.</span><span class="en">Send a photo: the assistant finds the damage, asks 3 short questions, says whether a tow or roadside help is needed and shows the nearest suitable workshop. It understands voice messages too.</span></p>
+    <ol class="axs-flow"><li>📷 <span class="tr">Fotoğraf</span><span class="en">Photo</span></li><li class="ar" aria-hidden="true">→</li><li>🧠 <span class="tr">Hasar + maliyet</span><span class="en">Damage + cost</span></li><li class="ar" aria-hidden="true">→</li><li>❓ <span class="tr">3 soru</span><span class="en">3 questions</span></li><li class="ar" aria-hidden="true">→</li><li>🚛 <span class="tr">Çekici / yol yardımı</span><span class="en">Tow / roadside</span></li><li class="ar" aria-hidden="true">→</li><li>📍 <span class="tr">En yakın servis</span><span class="en">Nearest workshop</span></li></ol>
+    <a class="axs-btn" href="https://t.me/Cekicin_bot" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M21.9 4.3 18.7 19.5c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.4-5 9-8.2c.4-.4-.1-.6-.6-.2L6.3 13.1l-4.8-1.5c-1-.3-1-1 .2-1.5l18.8-7.2c.9-.3 1.6.2 1.4 1.4z"/></svg><span class="tr">Telegram'da dene</span><span class="en">Try it on Telegram</span></a>
+    <small><span class="tr">Demo: talep çekiciye iletilmez (gerçek talep 0850 474 23 23). Fotoğraf ve ses saklanmaz. WhatsApp sürümü hazır, Meta hesabı bekleniyor.</span><span class="en">Demo: no tow request is sent (real requests: 0850 474 23 23). Photos and voice are not stored. A WhatsApp version is built and waits for a Meta business account.</span></small>
+  </div>
+  <div class="axs-qr"><svg viewBox="0 0 29 29" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="QR t.me/Cekicin_bot"><path fill="#0f172a" d="M2,2H3V3H2zM3,2H4V3H3zM4,2H5V3H4zM5,2H6V3H5zM6,2H7V3H6zM7,2H8V3H7zM8,2H9V3H8zM10,2H11V3H10zM11,2H12V3H11zM13,2H14V3H13zM14,2H15V3H14zM15,2H16V3H15zM16,2H17V3H16zM17,2H18V3H17zM18,2H19V3H18zM20,2H21V3H20zM21,2H22V3H21zM22,2H23V3H22zM23,2H24V3H23zM24,2H25V3H24zM25,2H26V3H25zM26,2H27V3H26zM2,3H3V4H2zM8,3H9V4H8zM11,3H12V4H11zM13,3H14V4H13zM16,3H17V4H16zM18,3H19V4H18zM20,3H21V4H20zM26,3H27V4H26zM2,4H3V5H2zM4,4H5V5H4zM5,4H6V5H5zM6,4H7V5H6zM8,4H9V5H8zM12,4H13V5H12zM14,4H15V5H14zM16,4H17V5H16zM17,4H18V5H17zM18,4H19V5H18zM20,4H21V5H20zM22,4H23V5H22zM23,4H24V5H23zM24,4H25V5H24zM26,4H27V5H26zM2,5H3V6H2zM4,5H5V6H4zM5,5H6V6H5zM6,5H7V6H6zM8,5H9V6H8zM10,5H11V6H10zM14,5H15V6H14zM15,5H16V6H15zM16,5H17V6H16zM18,5H19V6H18zM20,5H21V6H20zM22,5H23V6H22zM23,5H24V6H23zM24,5H25V6H24zM26,5H27V6H26zM2,6H3V7H2zM4,6H5V7H4zM5,6H6V7H5zM6,6H7V7H6zM8,6H9V7H8zM10,6H11V7H10zM12,6H13V7H12zM13,6H14V7H13zM16,6H17V7H16zM17,6H18V7H17zM18,6H19V7H18zM20,6H21V7H20zM22,6H23V7H22zM23,6H24V7H23zM24,6H25V7H24zM26,6H27V7H26zM2,7H3V8H2zM8,7H9V8H8zM10,7H11V8H10zM14,7H15V8H14zM15,7H16V8H15zM16,7H17V8H16zM18,7H19V8H18zM20,7H21V8H20zM26,7H27V8H26zM2,8H3V9H2zM3,8H4V9H3zM4,8H5V9H4zM5,8H6V9H5zM6,8H7V9H6zM7,8H8V9H7zM8,8H9V9H8zM10,8H11V9H10zM12,8H13V9H12zM14,8H15V9H14zM16,8H17V9H16zM18,8H19V9H18zM20,8H21V9H20zM21,8H22V9H21zM22,8H23V9H22zM23,8H24V9H23zM24,8H25V9H24zM25,8H26V9H25zM26,8H27V9H26zM10,9H11V10H10zM16,9H17V10H16zM18,9H19V10H18zM2,10H3V11H2zM6,10H7V11H6zM8,10H9V11H8zM9,10H10V11H9zM10,10H11V11H10zM11,10H12V11H11zM12,10H13V11H12zM14,10H15V11H14zM17,10H18V11H17zM19,10H20V11H19zM20,10H21V11H20zM21,10H22V11H21zM22,10H23V11H22zM23,10H24V11H23zM26,10H27V11H26zM2,11H3V12H2zM3,11H4V12H3zM4,11H5V12H4zM6,11H7V12H6zM10,11H11V12H10zM11,11H12V12H11zM16,11H17V12H16zM17,11H18V12H17zM18,11H19V12H18zM21,11H22V12H21zM22,11H23V12H22zM23,11H24V12H23zM25,11H26V12H25zM2,12H3V13H2zM3,12H4V13H3zM8,12H9V13H8zM10,12H11V13H10zM11,12H12V13H11zM13,12H14V13H13zM14,12H15V13H14zM15,12H16V13H15zM16,12H17V13H16zM17,12H18V13H17zM20,12H21V13H20zM23,12H24V13H23zM24,12H25V13H24zM2,13H3V14H2zM4,13H5V14H4zM6,13H7V14H6zM9,13H10V14H9zM13,13H14V14H13zM17,13H18V14H17zM19,13H20V14H19zM20,13H21V14H20zM21,13H22V14H21zM24,13H25V14H24zM25,13H26V14H25zM4,14H5V15H4zM5,14H6V15H5zM7,14H8V15H7zM8,14H9V15H8zM9,14H10V15H9zM10,14H11V15H10zM11,14H12V15H11zM12,14H13V15H12zM15,14H16V15H15zM19,14H20V15H19zM20,14H21V15H20zM23,14H24V15H23zM24,14H25V15H24zM25,14H26V15H25zM26,14H27V15H26zM2,15H3V16H2zM3,15H4V16H3zM5,15H6V16H5zM6,15H7V16H6zM10,15H11V16H10zM11,15H12V16H11zM14,15H15V16H14zM17,15H18V16H17zM18,15H19V16H18zM22,15H23V16H22zM25,15H26V16H25zM4,16H5V17H4zM5,16H6V17H5zM8,16H9V17H8zM13,16H14V17H13zM14,16H15V17H14zM15,16H16V17H15zM16,16H17V17H16zM17,16H18V17H17zM20,16H21V17H20zM21,16H22V17H21zM22,16H23V17H22zM23,16H24V17H23zM24,16H25V17H24zM4,17H5V18H4zM6,17H7V18H6zM10,17H11V18H10zM11,17H12V18H11zM12,17H13V18H12zM13,17H14V18H13zM16,17H17V18H16zM18,17H19V18H18zM21,17H22V18H21zM22,17H23V18H22zM24,17H25V18H24zM25,17H26V18H25zM2,18H3V19H2zM3,18H4V19H3zM6,18H7V19H6zM8,18H9V19H8zM9,18H10V19H9zM10,18H11V19H10zM14,18H15V19H14zM18,18H19V19H18zM19,18H20V19H19zM20,18H21V19H20zM21,18H22V19H21zM22,18H23V19H22zM23,18H24V19H23zM24,18H25V19H24zM10,19H11V20H10zM11,19H12V20H11zM15,19H16V20H15zM16,19H17V20H16zM18,19H19V20H18zM22,19H23V20H22zM2,20H3V21H2zM3,20H4V21H3zM4,20H5V21H4zM5,20H6V21H5zM6,20H7V21H6zM7,20H8V21H7zM8,20H9V21H8zM10,20H11V21H10zM15,20H16V21H15zM17,20H18V21H17zM18,20H19V21H18zM20,20H21V21H20zM22,20H23V21H22zM2,21H3V22H2zM8,21H9V22H8zM12,21H13V22H12zM14,21H15V22H14zM18,21H19V22H18zM22,21H23V22H22zM23,21H24V22H23zM24,21H25V22H24zM25,21H26V22H25zM2,22H3V23H2zM4,22H5V23H4zM5,22H6V23H5zM6,22H7V23H6zM8,22H9V23H8zM10,22H11V23H10zM12,22H13V23H12zM13,22H14V23H13zM14,22H15V23H14zM18,22H19V23H18zM19,22H20V23H19zM20,22H21V23H20zM21,22H22V23H21zM22,22H23V23H22zM23,22H24V23H23zM24,22H25V23H24zM2,23H3V24H2zM4,23H5V24H4zM5,23H6V24H5zM6,23H7V24H6zM8,23H9V24H8zM11,23H12V24H11zM12,23H13V24H12zM14,23H15V24H14zM16,23H17V24H16zM17,23H18V24H17zM18,23H19V24H18zM19,23H20V24H19zM20,23H21V24H20zM21,23H22V24H21zM24,23H25V24H24zM25,23H26V24H25zM26,23H27V24H26zM2,24H3V25H2zM4,24H5V25H4zM5,24H6V25H5zM6,24H7V25H6zM8,24H9V25H8zM12,24H13V25H12zM13,24H14V25H13zM15,24H16V25H15zM16,24H17V25H16zM19,24H20V25H19zM20,24H21V25H20zM23,24H24V25H23zM25,24H26V25H25zM2,25H3V26H2zM8,25H9V26H8zM11,25H12V26H11zM13,25H14V26H13zM14,25H15V26H14zM16,25H17V26H16zM17,25H18V26H17zM21,25H22V26H21zM22,25H23V26H22zM23,25H24V26H23zM24,25H25V26H24zM25,25H26V26H25zM2,26H3V27H2zM3,26H4V27H3zM4,26H5V27H4zM5,26H6V27H5zM6,26H7V27H6zM7,26H8V27H7zM8,26H9V27H8zM10,26H11V27H10zM12,26H13V27H12zM19,26H20V27H19zM20,26H21V27H20zM24,26H25V27H24zM25,26H26V27H25zM26,26H27V27H26z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none"/></svg><span>t.me/Cekicin_bot</span></div>
+</aside>
+<!-- AXS END -->
+<footer><div class="wrap">Çekicin · Alfa Asistans · <a href="mailto:info@cekicin.com.tr">info@cekicin.com.tr</a> · <a href="index.html">AI Lab</a> · <a class="bmLink" href="benchmark-1000.html">benchmark-1000</a> · <span class="tr">Ön değerlendirmedir, ekspertiz raporu değildir.</span><span class="en">A pre-assessment, not an expert report.</span></div></footer>
+
+<script type="module">
+import * as V2 from './ai/hasar-ai-v2.js';
+let AIV = /^v1/.test(new URLSearchParams(location.search).get('ai') || '') ? 'v1.3' : 'v2';
+/* ---------- language ---------- */
+let LANG = 'tr';
+const onLab = /cekicin-ai-lab/.test(location.host);
+if (onLab) {   // the HF lab Space has no homepage / benchmark page of its own
+  const SITE = 'https://sosa123454321-cekicin-site.static.hf.space/';
+  document.getElementById('homeLink').href = SITE + 'index.html';
+  document.querySelectorAll('.bmLink').forEach(a => a.href = SITE + 'ai-lab/' + a.getAttribute('href'));
+}
+const L = {
+  tr: { types: { dent: 'Göçük', scratch: 'Çizik', crack: 'Çatlak', glass_shatter: 'Cam kırığı', lamp_broken: 'Kırık lamba', tire_flat: 'Patlak lastik', other: 'Diğer' },
+        all: 'Tümü', gt: 'Gerçek', found: 'bulunan tür', extra: 'fazla tür', na: 'bu modelle çalıştırılmadı', label: 'tahmin', live: '▶ Canlı test et',
+        models: { v2: '⭐ Hasar AI 2.0 (yeni)', both: 'Hasar AI v1.3 · ikisi birlikte', neg: 'Çekicin hasar modeli YOLO11m', cardd: 'Önceki Çekicin modeli (CarDD)', parts: 'Çekicin parça modeli YOLO11n', shanexf: 'shanexf YOLO11m (orijinal)', naiscorp: 'Naiscorp Mask R-CNN (10 foto)', vit: 'beingamit99 ViT (yalnızca etiket)', tatar: 'tatar01230 YOLO11n' },
+        barT: 'Bu 48 fotoğrafta bulunan hasar türü oranı', gtList: 'Gerçek hasarlar', pList: 'Model çıktısı', none: 'hasar bulunmadı',
+        loading: 'Model indiriliyor (ilk sefer ~30 MB)…', running: 'Çalışıyor…', done: 'Bitti: {ms} ms', err: 'Hata: ', lvNone: 'Hasar bulunmadı (eşiğin altında).', lvGated: 'Parça modeli {n} kutu buldu ama hasar modeli hasar bulmadığı için gösterilmedi.', cmp: 'Gerçek hasarla karşılaştırma', dm: 'hasar', pt: 'parça' },
+  en: { types: { dent: 'Dent', scratch: 'Scratch', crack: 'Crack', glass_shatter: 'Glass shatter', lamp_broken: 'Broken lamp', tire_flat: 'Flat tyre', other: 'Other' },
+        all: 'All', gt: 'Truth', found: 'types found', extra: 'extra types', na: 'not run with this model', label: 'prediction', live: '▶ Live test',
+        models: { v2: '⭐ Hasar AI 2.0 (new)', both: 'Hasar AI v1.3 · both', neg: 'Çekicin damage model YOLO11m', cardd: 'Previous Çekicin model (CarDD)', parts: 'Çekicin parts model YOLO11n', shanexf: 'shanexf YOLO11m (original)', naiscorp: 'Naiscorp Mask R-CNN (10 photos)', vit: 'beingamit99 ViT (label only)', tatar: 'tatar01230 YOLO11n' },
+        barT: 'Share of damage types found on these 48 photos', gtList: 'True damages', pList: 'Model output', none: 'no damage found',
+        loading: 'Downloading the model (first time ~30 MB)…', running: 'Running…', done: 'Done: {ms} ms', err: 'Error: ', lvNone: 'No damage found (below threshold).', lvGated: 'The parts model found {n} boxes but they are hidden because the damage model found no damage.', cmp: 'Comparison with ground truth', dm: 'damage', pt: 'part' }
+};
+const t = k => L[LANG][k];
+const TCOL = { dent: '#f97316', scratch: '#eab308', crack: '#e11d48', glass_shatter: '#06b6d4', lamp_broken: '#a855f7', tire_flat: '#22c55e', other: '#64748b' };
+const PART_TR = { 'Front-windscreen-damage': 'Ön cam', 'Headlight-damage': 'Far', 'Rear-windscreen-Damage': 'Arka cam', 'Runningboard-Damage': 'Marşpiyel', 'Sidemirror-Damage': 'Yan ayna', 'Taillight-Damage': 'Stop lambası', 'bonnet-dent': 'Kaput', 'boot-dent': 'Bagaj', 'doorouter-dent': 'Kapı', 'fender-dent': 'Çamurluk', 'front-bumper-dent': 'Ön tampon', 'quaterpanel-dent': 'Arka çamurluk', 'rear-bumper-dent': 'Arka tampon', 'roof-dent': 'Tavan' };
+const PART_EN = { 'Front-windscreen-damage': 'Windscreen', 'Headlight-damage': 'Headlight', 'Rear-windscreen-Damage': 'Rear screen', 'Runningboard-Damage': 'Running board', 'Sidemirror-Damage': 'Side mirror', 'Taillight-Damage': 'Taillight', 'bonnet-dent': 'Bonnet', 'boot-dent': 'Boot', 'doorouter-dent': 'Door', 'fender-dent': 'Fender', 'front-bumper-dent': 'Front bumper', 'quaterpanel-dent': 'Quarter panel', 'rear-bumper-dent': 'Rear bumper', 'roof-dent': 'Roof' };
+const partName = raw => ((LANG === 'tr' ? PART_TR : PART_EN)[raw] || raw);
+const PART_TYPE = raw => /windscreen/i.test(raw) ? 'glass_shatter' : /light/i.test(raw) ? 'lamp_broken' : /mirror|running/i.test(raw) ? 'other' : 'dent';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+/* ---------- gallery ---------- */
+let G = null, cur = null, showAll = false;
+const ORDER = ['v2', 'both', 'neg', 'cardd', 'shanexf', 'naiscorp', 'vit', 'parts', 'tatar'];
+function predsOf(it, key) {          // -> [{cls, score, box|null, raw?, part?}]
+  const P = it.p;
+  const conv = (arr, part) => (arr || []).map(d => ({ cls: d[0], score: d[1], box: d.length >= 6 ? d.slice(2, 6) : null, raw: d[6], part }));
+  if (key === 'both') { const neg = conv(P.neg); return neg.length ? neg.concat(conv(P.parts, true)) : neg; }
+  if (!(key in P)) return null;
+  return conv(P[key], key === 'parts' || key === 'tatar');
+}
+function ink(hex) { const n = parseInt(hex.slice(1), 16), r = n >> 16 & 255, g = n >> 8 & 255, b = n & 255;
+  const L = [r, g, b].map(v => { v /= 255; return v <= .03928 ? v / 12.92 : Math.pow((v + .055) / 1.055, 2.4); }); const lum = .2126 * L[0] + .7152 * L[1] + .0722 * L[2];
+  return (1.05) / (lum + .05) >= 4.5 ? '#fff' : '#0b1220'; }
+function boxesHTML(it, preds, showGt) {
+  let h = '';
+  if (showGt) it.gt.forEach(g => { h += `<div class="bx gt" style="left:${g[1]*100}%;top:${g[2]*100}%;width:${(g[3]-g[1])*100}%;height:${(g[4]-g[2])*100}%"><span>${esc(t('types')[g[0]])}</span></div>`; });
+  (preds || []).forEach(d => { if (!d.box) return; const c = TCOL[d.cls] || '#64748b';
+    const lab = d.part && d.raw ? partName(d.raw) : t('types')[d.cls] || d.cls;
+    h += `<div class="bx${d.part ? ' pt' : ''}" style="border-color:${c};left:${d.box[0]*100}%;top:${d.box[1]*100}%;width:${(d.box[2]-d.box[0])*100}%;height:${(d.box[3]-d.box[1])*100}%"><span style="background:${c};color:${ink(c)}">${esc(lab)} ${Math.round(d.score*100)}</span></div>`; });
+  return h;
+}
+function typeChips(it, preds) {
+  if (!preds) return `<span class="chip na">${esc(t('na'))}</span>`;
+  const P = new Set(preds.map(d => d.cls).filter(c => c !== 'other')), Gt = new Set(it.types);
+  let h = '';
+  it.types.forEach(c => { h += `<span class="chip ${P.has(c) ? 'ok' : 'no'}">${P.has(c) ? '✓' : '✗'} ${esc(t('types')[c])}</span>`; });
+  [...P].filter(c => !Gt.has(c)).forEach(c => { h += `<span class="chip ex">+ ${esc(t('types')[c])}</span>`; });
+  return h;
+}
+function renderControls() {
+  const m = document.getElementById('gModel'), v = m.value || 'v2';
+  m.innerHTML = ORDER.map(k => `<option value="${k}">${esc(t('models')[k])}</option>`).join(''); m.value = v;
+  const ty = document.getElementById('gType'), tv = ty.value || '';
+  ty.innerHTML = `<option value="">${esc(t('all'))}</option>` + ['crack', 'dent', 'glass_shatter', 'scratch'].map(c => `<option value="${c}">${esc(t('types')[c])}</option>`).join(''); ty.value = tv;
+  document.getElementById('legend').innerHTML = `<span><i style="border:2px dashed #555"></i>${esc(t('gt'))}</span>` + Object.keys(TCOL).filter(k => k !== 'other').map(k => `<span><i style="border-color:${TCOL[k]}"></i>${esc(t('types')[k])}</span>`).join('');
+  const S = G.stats, key = m.value;
+  document.getElementById('bars').innerHTML = `<div style="grid-column:1/-1;font-weight:700;font-size:13px">${esc(t('barT'))}</div>` + ORDER.map(k => { const s = S[k]; return `<div class="bar${k === key ? ' on' : ''}"><span>${esc(t('models')[k])}</span><span class="t"><i style="width:${s.found_pct}%"></i></span><span>%${s.found_pct} · +${s.fp}${s.n < 48 ? ' (n=' + s.n + ')' : ''}</span></div>`; }).join('');
+}
+function renderGrid() {
+  const key = document.getElementById('gModel').value, ty = document.getElementById('gType').value, gt = document.getElementById('gGt').checked;
+  const all = G.items.filter(it => !ty || it.types.includes(ty)), items = showAll ? all : all.slice(0, 12);
+  const mb = document.getElementById('more'); mb.hidden = all.length <= 12; mb.textContent = showAll ? u('less') : u('more').replace('{n}', all.length);
+  document.getElementById('grid').innerHTML = items.map(it => { const pr = predsOf(it, key);
+    return `<div class="card" data-n="${it.n}"><div class="ph"><img loading="lazy" src="${it.file}" alt="test ${it.n}" width="${it.w}" height="${it.h}" style="height:auto">${boxesHTML(it, pr, gt)}</div><div class="meta"><span class="n">#${it.n}</span>${typeChips(it, pr)}${key === 'vit' && pr && pr[0] ? `<span class="chip na">${esc(t('label'))}: ${esc(t('types')[pr[0].cls])}</span>` : ''}</div></div>`; }).join('');
+  document.querySelectorAll('#grid .card').forEach(c => c.onclick = () => openModal(+c.dataset.n));
+}
+function openModal(n) {
+  const it = G.items.find(x => x.n === n), key = document.getElementById('gModel').value, pr = predsOf(it, key); cur = it;
+  document.getElementById('mPh').innerHTML = `<img src="${it.file}" alt="">` + boxesHTML(it, pr, document.getElementById('gGt').checked);
+  const li = (pr || []).map(d => `<li>${d.part && d.raw ? esc(partName(d.raw)) + ' (' + t('pt') + ')' : esc(t('types')[d.cls] || d.cls)} · ${Math.round(d.score * 100)}%</li>`).join('');
+  document.getElementById('mInfo').innerHTML = `<h3>#${it.n} · ${esc(t('models')[key])}</h3><div class="meta" style="padding:0">${typeChips(it, pr)}</div>
+    <p style="margin-top:10px"><b>${esc(t('gtList'))}</b></p><ul>${it.gt.map(g => `<li>${esc(t('types')[g[0]])}</li>`).join('')}</ul>
+    <p><b>${esc(t('pList'))}</b></p><ul>${li || `<li>${esc(t('none'))}</li>`}</ul>
+    <button class="b blue" id="mLive">${esc(t('live'))}</button><p style="font-size:11.5px;color:var(--muted);margin-top:10px">${esc(it.id)} · AutoDamageIQ / VehiDE · CC-BY-4.0</p>`;
+  document.getElementById('mLive').onclick = () => { closeModal(); liveFromItem(it); };
+  document.getElementById('modal').classList.add('on');
+}
+function closeModal() { document.getElementById('modal').classList.remove('on'); }
+document.getElementById('mX').onclick = closeModal;
+document.getElementById('modal').onclick = e => { if (e.target.id === 'modal') closeModal(); };
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.getElementById('more').onclick = () => { showAll = !showAll; renderGrid(); if (!showAll) document.getElementById('galeri').scrollIntoView(); };
+['gModel', 'gType', 'gGt'].forEach(id => document.getElementById(id).addEventListener('change', () => { renderControls(); renderGrid(); }));
+
+/* ---------- live inference (same pipeline as the AI Lab) ---------- */
+const NEG_URL = 'https://huggingface.co/sosa123454321/cekicin-damage-yolo11m-neg-onnx/resolve/main/model_quant.onnx';
+const PARTS_URL = 'https://huggingface.co/sosa123454321/cekicin-damage-yolo11n-onnx/resolve/main/model.onnx';
+const NEG_CLS = ['dent', 'scratch', 'crack', 'glass_shatter', 'lamp_broken', 'tire_flat'];
+const PARTS_RAW = ['Front-windscreen-damage', 'Headlight-damage', 'Rear-windscreen-Damage', 'Runningboard-Damage', 'Sidemirror-Damage', 'Taillight-Damage', 'bonnet-dent', 'boot-dent', 'doorouter-dent', 'fender-dent', 'front-bumper-dent', 'quaterpanel-dent', 'rear-bumper-dent', 'roof-dent'];
+let ort = null; const sess = {};
+async function getOrt() {
+  if (!ort) { ort = await import('https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.min.mjs'); ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/'; ort.env.wasm.numThreads = 1; }
+  return ort;
+}
+const MB = n => (n / 1048576).toFixed(1);
+async function fetchModel(url, onp) {
+  let cache = null;
+  try { cache = await caches.open('cekicin-models-v1'); const hit = await cache.match(url); if (hit) { onp && onp(1, 0, 0, true); return new Uint8Array(await hit.arrayBuffer()); } } catch (e) { cache = null; }
+  const r = await fetch(url); if (!r.ok) throw new Error('HTTP ' + r.status);
+  const total = +r.headers.get('content-length') || 0, rd = r.body.getReader(), parts = []; let got = 0;
+  for (;;) { const { done, value } = await rd.read(); if (done) break; parts.push(value); got += value.length; onp && onp(total ? got / total : -1, got, total, false); }
+  const buf = new Uint8Array(got); let o = 0; for (const p of parts) { buf.set(p, o); o += p.length; }
+  try { cache && await cache.put(url, new Response(buf.slice(), { headers: { 'content-type': 'application/octet-stream' } })); } catch (e) {}
+  return buf;
+}
+async function getSess(url, onp) {
+  if (!sess[url]) sess[url] = (async () => { const o = await getOrt(); const buf = await fetchModel(url, onp); return o.InferenceSession.create(buf, { executionProviders: ['wasm'] }); })();
+  try { return await sess[url]; } catch (e) { delete sess[url]; throw e; }
+}
+function letterbox(img, mirror = false) {
+  const S = 640, r = Math.min(S / img.naturalWidth, S / img.naturalHeight), nw = Math.round(img.naturalWidth * r), nh = Math.round(img.naturalHeight * r), px = (S - nw) / 2, py = (S - nh) / 2;
+  const c = document.createElement('canvas'); c.width = c.height = S; const g = c.getContext('2d'); g.fillStyle = 'rgb(114,114,114)'; g.fillRect(0, 0, S, S); if (mirror) { g.translate(S, 0); g.scale(-1, 1); } g.drawImage(img, px, py, nw, nh); g.setTransform(1, 0, 0, 1, 0, 0);
+  const d = g.getImageData(0, 0, S, S).data, n = S * S, f = new Float32Array(3 * n);
+  for (let i = 0; i < n; i++) { f[i] = d[i * 4] / 255; f[n + i] = d[i * 4 + 1] / 255; f[2 * n + i] = d[i * 4 + 2] / 255; }
+  return { tensor: new ort.Tensor('float32', f, [1, 3, S, S]), r, px, py };
+}
+function iou(a, b) { const x1 = Math.max(a[0], b[0]), y1 = Math.max(a[1], b[1]), x2 = Math.min(a[2], b[2]), y2 = Math.min(a[3], b[3]); const i = Math.max(0, x2 - x1) * Math.max(0, y2 - y1); return i / ((a[2] - a[0]) * (a[3] - a[1]) + (b[2] - b[0]) * (b[3] - b[1]) - i + 1e-9); }
+async function run(url, nc, thr, floors, img, lb, topk = 20) {
+  const s = await getSess(url), out = await s.run({ [s.inputNames[0]]: lb.tensor }), o = out[s.outputNames[0]].data, N = 8400;
+  const W = img.naturalWidth, H = img.naturalHeight, { r, px, py } = lb; let bx = [];
+  for (let i = 0; i < N; i++) { let best = 0, cls = -1; for (let c = 0; c < nc; c++) { const v = o[(4 + c) * N + i]; if (v > best) { best = v; cls = c; } }
+    if (best < Math.max(thr, floors[cls] || 0)) continue;
+    const cx = o[i], cy = o[N + i], w = o[2 * N + i], h = o[3 * N + i];
+    bx.push({ c: cls, score: best, box: [Math.max(0, (cx - w / 2 - px) / r / W), Math.max(0, (cy - h / 2 - py) / r / H), Math.min(1, (cx + w / 2 - px) / r / W), Math.min(1, (cy + h / 2 - py) / r / H)] }); }
+  bx.sort((a, b) => b.score - a.score); const keep = [];
+  for (const b of bx) if (!keep.some(k => k.c === b.c && iou(k.box, b.box) > 0.45)) keep.push(b);
+  return keep.slice(0, topk);
+}
+const st = s => document.getElementById('lvStatus').textContent = s;
+const prog = (on, frac) => { const p = document.getElementById('prog'), b = p.querySelector('.pbar'); p.hidden = !on; if (!on) return;
+  b.classList.toggle('indet', frac == null || frac < 0); document.getElementById('pbarI').style.width = (frac > 0 ? Math.round(frac * 100) : 0) + '%'; };
+const SEV = { tire_flat: 3, glass_shatter: 3, lamp_broken: 2, crack: 2, dent: 2, scratch: 1, other: 1 };
+const ADV = {
+  tr: { tire_flat: 'Patlak lastik: yol yardımı (lastik değişimi) yeterli olabilir; jant veya aks zarar gördüyse çekici gerekir.',
+        glass_shatter: 'Cam kırığı: görüşü kapatıyorsa araç sürülmemeli; çekici veya mobil cam servisi.',
+        lamp_broken: 'Kırık far/stop lambası: gece sürüşü güvensiz; servise gidilmesi önerilir.',
+        crack: 'Çatlak (tampon/panel): sarkan parça varsa sürmeyin; çekici gerekebilir.',
+        dent: 'Göçük: çoğu zaman araç sürülebilir; tekerlek veya süspansiyona yakınsa çekici önerilir.',
+        scratch: 'Çizik: genellikle kozmetik; çekici gerekmez.' },
+  en: { tire_flat: 'Flat tyre: roadside help (tyre change) may be enough; if the rim or axle is damaged, a tow truck is needed.',
+        glass_shatter: 'Broken glass: if it blocks the view, do not drive; tow truck or mobile glass service.',
+        lamp_broken: 'Broken head/tail light: unsafe at night; a workshop visit is recommended.',
+        crack: 'Crack (bumper/panel): if parts hang loose, do not drive; a tow may be needed.',
+        dent: 'Dent: usually drivable; near a wheel or suspension, a tow truck is recommended.',
+        scratch: 'Scratch: usually cosmetic; no tow needed.' } };
+const UXS = {
+  tr: { dl: 'Model indiriliyor (yalnızca ilk sefer)', cached: 'Model telefonunuzda hazır', analysing: 'Fotoğraf inceleniyor…',
+        vHi: 'Çekici veya yol yardımı gerekebilir', vMid: 'Hasar var — kontrol önerilir', vLo: 'Hafif / kozmetik hasar', vNone: 'Belirgin hasar bulunamadı',
+        vNoneP: 'Hasar yakından ve gün ışığında görünüyorsa yeni bir fotoğrafla tekrar deneyin. Model geniş açılarda zayıftır.',
+        conf: { h: 'Yüksek', m: 'Orta', l: 'Düşük' }, confT: 'güven', parts: 'Etkilenen parça', ran: '{ms} ms · cihazınızda · fotoğraf yüklenmedi',
+        disc: 'Ön değerlendirmedir; kesin karar için uygulamadaki 3 kısa soru ve operatör onayı gerekir.', more: 'Tümünü göster ({n})', less: 'Daha az göster',
+        hide: 'Kutuları gizle', show: 'Kutuları göster', boxes: '{n} bölge',
+        qBlur: 'Fotoğraf bulanık görünüyor', qDark: 'Fotoğraf çok karanlık', qP: 'Sonuç güvenilir olmayabilir. Telefonu sabit tutun, hasara 1–2 m yaklaşın ve aydınlık bir yerde yeniden çekin.', retake: 'Yeniden çek',
+        pDmg: 'Hasar olasılığı', ver: 'Hasar AI {v}' },
+  en: { dl: 'Downloading the model (first time only)', cached: 'Model ready on your phone', analysing: 'Analysing the photo…',
+        vHi: 'A tow truck or roadside help may be needed', vMid: 'Damage found — a check is recommended', vLo: 'Light / cosmetic damage', vNone: 'No clear damage found',
+        vNoneP: 'If damage is visible up close and in daylight, try another photo. The model is weaker on wide shots.',
+        conf: { h: 'High', m: 'Medium', l: 'Low' }, confT: 'confidence', parts: 'Affected part', ran: '{ms} ms · on your device · photo not uploaded',
+        disc: 'A pre-assessment; the final decision uses the 3 short questions in the app and operator approval.', more: 'Show all ({n})', less: 'Show less',
+        hide: 'Hide boxes', show: 'Show boxes', boxes: '{n} areas',
+        qBlur: 'The photo looks blurry', qDark: 'The photo is too dark', qP: 'The result may be unreliable. Hold the phone still, get 1–2 m from the damage and retake it in good light.', retake: 'Retake',
+        pDmg: 'Damage probability', ver: 'Hasar AI {v}' } };
+const u = k => UXS[LANG][k];
+let lastSrc = null, lastItem = null;
+function summaryHTML(dmg, parts, ms, gated, item, v2) {
+  const by = {}; dmg.forEach(d => { (by[d.cls] = by[d.cls] || []).push(d.score); });
+  if (v2) v2.res.types.forEach(tp => { if (!by[tp.cls]) by[tp.cls] = []; });
+  const cf = c => v2 ? (v2.res.types.find(x => x.cls === c) || {}).confidence || 0 : Math.max(...by[c]);
+  const types = Object.keys(by).sort((a, b) => (SEV[b] - SEV[a]) || (Math.max(...by[b]) - Math.max(...by[a])));
+  let h = '';
+  if (v2 && v2.q && !v2.q.ok) h += `<div class="verdict mid"><b>${esc(u(v2.q.blurry ? 'qBlur' : 'qDark'))}</b><p>${esc(u('qP'))}</p><p><button type="button" class="btn" onclick="document.getElementById('again').click()">📷 ${esc(u('retake'))}</button></p></div>`;
+  if (!types.length) h += `<div class="verdict none"><b>${esc(u('vNone'))}</b><p>${esc(u('vNoneP'))}</p></div>`;
+  else { const top = Math.max(...types.map(c => SEV[c] || 1)), cls = top >= 3 ? 'hi' : top === 2 ? 'mid' : 'lo';
+    h += `<div class="verdict ${cls}"><b>${esc(u(cls === 'hi' ? 'vHi' : cls === 'mid' ? 'vMid' : 'vLo'))}</b><p>${esc(ADV[LANG][types[0]] || '')}</p></div>`;
+    h += '<ul class="det">' + types.map(c => { const mx = cf(c), lv = mx >= 0.5 ? 'h' : mx >= 0.25 ? 'm' : 'l';
+      return `<li><span class="dot" style="background:${TCOL[c]}"></span><span>${esc(t('types')[c])}${by[c].length > 1 ? ` <small>${esc(u('boxes').replace('{n}', by[c].length))}</small>` : ''}${c !== types[0] && ADV[LANG][c] ? `<small>${esc(ADV[LANG][c])}</small>` : ''}</span><span class="cf ${lv}" title="${Math.round(mx * 100)}%">${esc(u('conf')[lv])} · ${Math.round(mx * 100)}%</span></li>`; }).join('') + '</ul>'; }
+  const pn = [...new Set(parts.map(d => partName(d.raw)))];
+  if (pn.length) h += `<p class="parts"><b>${esc(u('parts'))}:</b><br>${pn.map(x => `<span>${esc(x)}</span>`).join('')}</p>`;
+  if (gated) h += `<p class="meta-run">${esc(t('lvGated').replace('{n}', gated))}</p>`;
+  if (item) h += `<p class="meta-run"><b>${esc(t('cmp'))}</b></p><div class="meta" style="padding:0 0 8px">${typeChips(item, dmg.concat(parts))}</div>`;
+  if (v2) h += `<p class="meta-run">🧠 ${esc(u('ver').replace('{v}', v2.res.version))}${v2.res.mode === 'careful' ? (LANG === 'tr' ? ' · dikkatli mod' : ' · careful mode') : ''} · ${esc(u('pDmg'))} ${Math.round(v2.res.gate * 100)}% <small>(${LANG === 'tr' ? 'eşik' : 'threshold'} ${Math.round(v2.res.gate_threshold * 100)}%)</small> · <a href="wiki.html">wiki</a></p>`;
+  h += `<p class="meta-run">⚡ ${esc(u('ran').replace('{ms}', ms))}</p><p class="meta-run">${esc(u('disc'))}</p>`;
+  return h;
+}
+async function liveRun(src, item) {
+  lastSrc = src; lastItem = item || null;
+  const img = new Image(); img.src = src; await img.decode();
+  const mode = document.getElementById('lvMode').value;
+  document.getElementById('pick').hidden = true; document.getElementById('result').hidden = false;
+  const view = document.getElementById('lvView'); view.classList.remove('nobox');
+  view.innerHTML = `<div class="ph"><img src="${src}" alt=""></div>`;
+  document.getElementById('lvOut').innerHTML = `<div class="verdict none"><b>${esc(u('analysing'))}</b></div>`;
+  document.getElementById('canli').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  try {
+    prog(true, -1); st(u('dl') + '…');
+    const urls = mode === 'both' || AIV === 'v2' ? [NEG_URL, PARTS_URL] : [NEG_URL]; const sizes = { [NEG_URL]: 0, [PARTS_URL]: 0 }, got = { [NEG_URL]: 0, [PARTS_URL]: 0 };
+    let anyNet = false;
+    await getOrt();
+    await Promise.all(urls.map(url => getSess(url, (f, g, tot, cached) => {
+      if (cached) return; anyNet = true; got[url] = g; sizes[url] = tot;
+      const G2 = urls.reduce((a, k) => a + got[k], 0), T2 = urls.reduce((a, k) => a + sizes[k], 0);
+      prog(true, T2 ? G2 / T2 : -1); st(`${u('dl')} · ${MB(G2)}${T2 ? ' / ' + MB(T2) : ''} MB`);
+    })));
+    prog(true, -1); st(anyNet ? u('analysing') : u('cached') + ' · ' + u('analysing'));
+    await new Promise(r => setTimeout(r, 30));
+    const t0 = performance.now(), lb = letterbox(img);
+    if (AIV === 'v2') {
+      // Hasar AI 2.0: low-threshold detections from both models -> calibrated decision layer; photo-quality gate first
+      const qc = document.createElement('canvas'), k = 256 / Math.max(img.naturalWidth, img.naturalHeight);
+      qc.width = Math.max(8, Math.round(img.naturalWidth * k)); qc.height = Math.max(8, Math.round(img.naturalHeight * k));
+      const qg = qc.getContext('2d'); qg.drawImage(img, 0, 0, qc.width, qc.height); const q = V2.quality(qg.getImageData(0, 0, qc.width, qc.height));
+      const all = (await run(NEG_URL, 6, 0.05, {}, img, lb, 100)).map(b => ({ cls: NEG_CLS[b.c], score: b.score, box: b.box }));
+      const pall = (await run(PARTS_URL, 14, 0.05, {}, img, lb, 100)).map(b => ({ cls: PART_TYPE(PARTS_RAW[b.c]), raw: PARTS_RAW[b.c], part: true, score: b.score, box: b.box }));
+      let flip = null;
+      if (document.getElementById('careful') && document.getElementById('careful').checked) {
+        const lf = letterbox(img, true);
+        flip = { dets: (await run(NEG_URL, 6, 0.05, {}, img, lf, 100)).map(b => ({ cls: NEG_CLS[b.c], score: b.score, box: b.box })),
+                 parts: (await run(PARTS_URL, 14, 0.05, {}, img, lf, 100)).map(b => ({ cls: PART_TYPE(PARTS_RAW[b.c]), score: b.score, box: b.box })) };
+      }
+      const res = V2.assess(all, pall, undefined, flip), sel = res.types.map(x => x.cls);
+      let dmg = all.filter(d => sel.includes(d.cls) && d.score >= (V2.HASAR_AI_V2.floors[d.cls] || 0.1));
+      for (const c of sel) if (!dmg.some(d => d.cls === c)) { const top = all.find(d => d.cls === c); if (top) dmg.push(top); }
+      const parts = res.damaged ? pall.filter(d => d.score >= 0.25) : [], gated = res.damaged ? 0 : pall.filter(d => d.score >= 0.25).length;
+      const ms = Math.round(performance.now() - t0), fake = item || { gt: [], types: [] };
+      view.innerHTML = `<div class="ph"><img src="${src}" alt="">${boxesHTML(fake, dmg.concat(parts), !!item)}</div>`;
+      prog(false); st('');
+      document.getElementById('lvOut').innerHTML = summaryHTML(dmg, parts, ms, gated, item, { res, q });
+      setBoxBtn(true); return;
+    }
+    const dmg = (await run(NEG_URL, 6, 0.10, { 4: 0.6, 5: 0.6 }, img, lb)).map(b => ({ cls: NEG_CLS[b.c], score: b.score, box: b.box }));
+    let parts = [], gated = 0;
+    if (mode === 'both') { const p = (await run(PARTS_URL, 14, 0.25, {}, img, lb)).map(b => ({ cls: PART_TYPE(PARTS_RAW[b.c]), raw: PARTS_RAW[b.c], part: true, score: b.score, box: b.box })); if (dmg.length) parts = p; else gated = p.length; }
+    const ms = Math.round(performance.now() - t0), fake = item || { gt: [], types: [] };
+    view.innerHTML = `<div class="ph"><img src="${src}" alt="">${boxesHTML(fake, dmg.concat(parts), !!item)}</div>`;
+    prog(false); st('');
+    document.getElementById('lvOut').innerHTML = summaryHTML(dmg, parts, ms, gated, item);
+    setBoxBtn(true);
+  } catch (e) { prog(false); document.getElementById('lvOut').innerHTML = `<div class="verdict hi"><b>${esc(t('err'))}</b><p>${esc(e && e.message || e)}</p></div>`; console.error(e); }
+}
+function setBoxBtn(on) { const b = document.getElementById('toggleBoxes'); b.setAttribute('aria-pressed', on); b.textContent = u(on ? 'hide' : 'show'); document.getElementById('lvView').classList.toggle('nobox', !on); }
+document.getElementById('toggleBoxes').onclick = () => setBoxBtn(document.getElementById('toggleBoxes').getAttribute('aria-pressed') !== 'true');
+document.getElementById('again').onclick = () => { document.getElementById('result').hidden = true; document.getElementById('pick').hidden = false; document.getElementById('canli').scrollIntoView({ behavior: 'smooth' }); };
+const segSync = () => { document.querySelectorAll('.seg button').forEach(x => x.setAttribute('aria-checked', x.dataset.ai === AIV)); document.getElementById('carefulL').hidden = AIV !== 'v2'; };
+document.getElementById('careful').onchange = () => { if (lastSrc && !document.getElementById('result').hidden) liveRun(lastSrc, lastItem); };
+segSync();
+document.querySelectorAll('.seg button').forEach(b => b.onclick = () => {
+  AIV = b.dataset.ai; segSync(); document.getElementById('lvMode').value = 'both';
+  try { const U = new URL(location.href); if (AIV === 'v2') U.searchParams.delete('ai'); else U.searchParams.set('ai', AIV); history.replaceState(null, '', U); } catch (e) {}
+  if (lastSrc && !document.getElementById('result').hidden) liveRun(lastSrc, lastItem); });
+function liveFromItem(it) { liveRun(it.file, it); }
+const fileIn = document.getElementById('file');
+fileIn.onchange = () => { const f = fileIn.files[0]; if (f) liveRun(URL.createObjectURL(f), null); fileIn.value = ''; };
+const camIn = document.getElementById('fileCam'); camIn.onchange = () => { const f = camIn.files[0]; if (f) liveRun(URL.createObjectURL(f), null); camIn.value = ''; };
+const drop = document.querySelector('.tool');
+drop.addEventListener('dragover', e => { e.preventDefault(); });
+drop.addEventListener('drop', e => { e.preventDefault(); const f = e.dataTransfer.files[0]; if (f) liveRun(URL.createObjectURL(f), null); });
+
+/* ---------- boot ---------- */
+function setLang(l) {
+  LANG = l; document.body.className = 'l-' + l; document.documentElement.lang = l;
+  document.querySelectorAll('.lang button').forEach(x => x.classList.toggle('on', x.dataset.l === l));
+  try { localStorage.setItem('ck_lang', l); } catch (e) {}
+  if (G) { renderControls(); renderGrid(); }
+  const tb = document.getElementById('toggleBoxes'); if (tb) tb.textContent = u(tb.getAttribute('aria-pressed') === 'true' ? 'hide' : 'show');
+}
+let l0 = 'tr';
+try { const s = localStorage.getItem('ck_lang') || localStorage.getItem('cekicin-lang'); l0 = s ? (s === 'tr' ? 'tr' : 'en') : ((navigator.language || 'tr').toLowerCase().startsWith('tr') ? 'tr' : 'en'); } catch (e) {}
+const q = (location.search.match(/[?&]lang=(tr|en)/) || [])[1]; if (q) l0 = q;
+document.querySelectorAll('.lang button').forEach(x => x.onclick = () => setLang(x.dataset.l));
+setLang(l0);
+fetch('test-gallery.json').then(r => r.json()).then(j => {
+  G = j; renderControls(); renderGrid();
+  document.getElementById('samples').innerHTML = [3, 15, 27, 40, 13, 7].map(n => { const it = G.items.find(x => x.n === n); return it ? `<button type="button" data-n="${n}" aria-label="sample ${n}"><img src="${it.file}" alt="" loading="lazy" width="84" height="64"></button>` : ''; }).join('');
+  document.querySelectorAll('#samples button').forEach(b => b.onclick = () => liveFromItem(G.items.find(x => x.n === +b.dataset.n)));
+}).catch(e => { document.getElementById('grid').textContent = 'test-gallery.json: ' + e; });
+</script>
+<script>/* on the HF lab Space there is no parent site: send ../ links to the Türkiye-reachable site mirror */(function(){if(!/cekicin-ai-lab/.test(location.host))return;var S="https://sosa123454321-cekicin-site.static.hf.space/";document.querySelectorAll('a[href^="../"]').forEach(function(a){a.href=S+a.getAttribute("href").replace(/^(\.\.\/)+/,"")});})();</script>
+</body>
+</html>
