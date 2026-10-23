@@ -1,0 +1,11 @@
+key,label_tr,label_en,osm_filters
+tow,Çekici / kurtarıcı,Tow truck,amenity=vehicle_recovery
+battery,Akü takviyesi,Jump start,shop=car_parts;shop=car_repair
+tyre,Lastikçi,Tyre service,shop=tyres
+fuel,Akaryakıt,Fuel,amenity=fuel
+charging,Şarj istasyonu,EV charging,amenity=charging_station
+lock,Çilingir,Locksmith,shop=locksmith;craft=locksmith
+repair,Oto tamir,Car repair,shop=car_repair;craft=mechanic
+glass,Oto cam,Auto glass,shop=glaziery;craft=glaziery
+parts,Yedek parça,Spare parts,shop=car_parts
+inspection,Araç muayene,Vehicle inspection,amenity=vehicle_inspection

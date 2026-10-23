@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" font-family="Segoe UI, Roboto, Helvetica, Arial, sans-serif" role="img" aria-label="Çekicin AI Damage Detection"><rect width="1600" height="1000" fill="#f5f8fc"/><path d="M662.0,400 C615.0,400 615.0,129.5 430,129.5" fill="none" stroke="#0a6fd1" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M662.0,400 C615.0,400 615.0,475.0 430,475.0" fill="none" stroke="#7c3aed" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M662.0,400 C615.0,400 615.0,789.5 430,789.5" fill="none" stroke="#0f766e" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M938.0,400 C985.0,400 985.0,129.5 1170,129.5" fill="none" stroke="#ea580c" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M938.0,400 C985.0,400 985.0,459.5 1170,459.5" fill="none" stroke="#0756a8" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M938.0,400 C985.0,400 985.0,777.0 1170,777.0" fill="none" stroke="#15803d" stroke-width="4" stroke-linecap="round" opacity=".75"/><path d="M800,550 L800,680" stroke="#9b1c1c" stroke-width="4" stroke-dasharray="8 8" opacity=".75"/><g><rect x="30" y="30" width="400" height="199" rx="20" fill="#fff" stroke="#0a6fd1" stroke-width="3"/>
+<rect x="30" y="30" width="400" height="48" rx="20" fill="#0a6fd1"/><rect x="30" y="58" width="400" height="20" fill="#0a6fd1"/>
+<text x="48" y="62" font-size="21" font-weight="800" fill="#fff">📥 Input</text>
+<circle cx="52" cy="104" r="4" fill="#0a6fd1"/>
+<text x="64" y="110" font-size="17" fill="#0f172a">Photo the customer takes in the app (tow</text>
+<text x="64" y="135" font-size="17" fill="#0f172a">request, accident report)</text>
+<circle cx="52" cy="154" r="4" fill="#0a6fd1"/>
+<text x="64" y="160" font-size="17" fill="#0f172a">Vehicle data: brand, model, saved vehicle</text>
+<circle cx="52" cy="179" r="4" fill="#0a6fd1"/>
+<text x="64" y="185" font-size="17" fill="#0f172a">KVKK consent (photo stored only with</text>
+<text x="64" y="210" font-size="17" fill="#0f172a">consent)</text>
+</g><g><rect x="30" y="360" width="400" height="249" rx="20" fill="#fff" stroke="#7c3aed" stroke-width="3"/>
+<rect x="30" y="360" width="400" height="48" rx="20" fill="#7c3aed"/><rect x="30" y="388" width="400" height="20" fill="#7c3aed"/>
+<text x="48" y="392" font-size="21" font-weight="800" fill="#fff">🧠 Models</text>
+<circle cx="52" cy="434" r="4" fill="#7c3aed"/>
+<text x="64" y="440" font-size="17" fill="#0f172a">YOLO11m damage model: 6 types, also</text>
+<text x="64" y="465" font-size="17" fill="#0f172a">trained on intact cars</text>
+<circle cx="52" cy="484" r="4" fill="#7c3aed"/>
+<text x="64" y="490" font-size="17" fill="#0f172a">YOLO11n parts model: 14 damaged-part</text>
+<text x="64" y="515" font-size="17" fill="#0f172a">classes</text>
+<circle cx="52" cy="534" r="4" fill="#7c3aed"/>
+<text x="64" y="540" font-size="17" fill="#0f172a">Runs in the browser / on the phone (int8</text>
+<text x="64" y="565" font-size="17" fill="#0f172a">ONNX, 20 MB)</text>
+<circle cx="52" cy="584" r="4" fill="#7c3aed"/>
+<text x="64" y="590" font-size="17" fill="#0f172a">Optional cloud second opinion (API)</text>
+</g><g><rect x="30" y="690" width="400" height="199" rx="20" fill="#fff" stroke="#0f766e" stroke-width="3"/>
+<rect x="30" y="690" width="400" height="48" rx="20" fill="#0f766e"/><rect x="30" y="718" width="400" height="20" fill="#0f766e"/>
+<text x="48" y="722" font-size="21" font-weight="800" fill="#fff">🧪 Test and evidence</text>
+<circle cx="52" cy="764" r="4" fill="#0f766e"/>
+<text x="64" y="770" font-size="17" fill="#0f172a">1000 photos: 888 damaged + 112 intact cars</text>
+<circle cx="52" cy="789" r="4" fill="#0f766e"/>
+<text x="64" y="795" font-size="17" fill="#0f172a">F1 0.588 · damage recall 86%</text>
+<circle cx="52" cy="814" r="4" fill="#0f766e"/>
+<text x="64" y="820" font-size="17" fill="#0f172a">False alarms on intact cars 53.6% → 20.5%</text>
+<circle cx="52" cy="839" r="4" fill="#0f766e"/>
+<text x="64" y="845" font-size="17" fill="#0f172a">Compared with 4 specialised Hugging Face</text>
+<text x="64" y="870" font-size="17" fill="#0f172a">models</text>
+</g><g><rect x="1170" y="30" width="400" height="199" rx="20" fill="#fff" stroke="#ea580c" stroke-width="3"/>
+<rect x="1170" y="30" width="400" height="48" rx="20" fill="#ea580c"/><rect x="1170" y="58" width="400" height="20" fill="#ea580c"/>
+<text x="1188" y="62" font-size="21" font-weight="800" fill="#fff">📤 Outputs</text>
+<circle cx="1192" cy="104" r="4" fill="#ea580c"/>
+<text x="1204" y="110" font-size="17" fill="#0f172a">Damage type and location (box)</text>
+<circle cx="1192" cy="129" r="4" fill="#ea580c"/>
+<text x="1204" y="135" font-size="17" fill="#0f172a">Damaged part</text>
+<circle cx="1192" cy="154" r="4" fill="#ea580c"/>
+<text x="1204" y="160" font-size="17" fill="#0f172a">Repair / paint / replace suggestion</text>
+<circle cx="1192" cy="179" r="4" fill="#ea580c"/>
+<text x="1204" y="185" font-size="17" fill="#0f172a">Cost range in TRY</text>
+<circle cx="1192" cy="204" r="4" fill="#ea580c"/>
+<text x="1204" y="210" font-size="17" fill="#0f172a">Is a tow truck needed?</text>
+</g><g><rect x="1170" y="360" width="400" height="199" rx="20" fill="#fff" stroke="#0756a8" stroke-width="3"/>
+<rect x="1170" y="360" width="400" height="48" rx="20" fill="#0756a8"/><rect x="1170" y="388" width="400" height="20" fill="#0756a8"/>
+<text x="1188" y="392" font-size="21" font-weight="800" fill="#fff">🔗 App integration</text>
+<circle cx="1192" cy="434" r="4" fill="#0756a8"/>
+<text x="1204" y="440" font-size="17" fill="#0f172a">Request photo → API /v1/damage/assess</text>
+<circle cx="1192" cy="459" r="4" fill="#0756a8"/>
+<text x="1204" y="465" font-size="17" fill="#0f172a">Damage summary for the driver: right</text>
+<text x="1204" y="490" font-size="17" fill="#0f172a">equipment, right offer</text>
+<circle cx="1192" cy="509" r="4" fill="#0756a8"/>
+<text x="1204" y="515" font-size="17" fill="#0f172a">Matching workshops and parts suppliers</text>
+<circle cx="1192" cy="534" r="4" fill="#0756a8"/>
+<text x="1204" y="540" font-size="17" fill="#0f172a">Retraining from feedback</text>
+</g><g><rect x="1170" y="690" width="400" height="174" rx="20" fill="#fff" stroke="#15803d" stroke-width="3"/>
+<rect x="1170" y="690" width="400" height="48" rx="20" fill="#15803d"/><rect x="1170" y="718" width="400" height="20" fill="#15803d"/>
+<text x="1188" y="722" font-size="21" font-weight="800" fill="#fff">🌱 Value</text>
+<circle cx="1192" cy="764" r="4" fill="#15803d"/>
+<text x="1204" y="770" font-size="17" fill="#0f172a">Faster, more consistent pre-assessment</text>
+<circle cx="1192" cy="789" r="4" fill="#15803d"/>
+<text x="1204" y="795" font-size="17" fill="#0f172a">Fewer wrong-equipment and empty trips</text>
+<circle cx="1192" cy="814" r="4" fill="#15803d"/>
+<text x="1204" y="820" font-size="17" fill="#0f172a">Data for insurance and policy processes</text>
+<circle cx="1192" cy="839" r="4" fill="#15803d"/>
+<text x="1204" y="845" font-size="17" fill="#0f172a">Measurable impact for COP31 and EU funds</text>
+</g><g><rect x="590" y="680" width="420" height="224" rx="20" fill="#fff" stroke="#9b1c1c" stroke-width="3"/>
+<rect x="590" y="680" width="420" height="48" rx="20" fill="#9b1c1c"/><rect x="590" y="708" width="420" height="20" fill="#9b1c1c"/>
+<text x="608" y="712" font-size="21" font-weight="800" fill="#fff">⚠️ Limits and next steps</text>
+<circle cx="612" cy="754" r="4" fill="#9b1c1c"/>
+<text x="624" y="760" font-size="17" fill="#0f172a">Real parts and labour prices needed</text>
+<circle cx="612" cy="779" r="4" fill="#9b1c1c"/>
+<text x="624" y="785" font-size="17" fill="#0f172a">Retrain on Çekicin photos (with KVKK</text>
+<text x="624" y="810" font-size="17" fill="#0f172a">consent)</text>
+<circle cx="612" cy="829" r="4" fill="#9b1c1c"/>
+<text x="624" y="835" font-size="17" fill="#0f172a">Mechanical and hidden damage is not</text>
+<text x="624" y="860" font-size="17" fill="#0f172a">visible</text>
+<circle cx="612" cy="879" r="4" fill="#9b1c1c"/>
+<text x="624" y="885" font-size="17" fill="#0f172a">Pilot: field measurement</text>
+</g><circle cx="800" cy="400" r="164" fill="#ffd000" opacity=".35"/><circle cx="800" cy="400" r="150" fill="#08111f"/><text x="800" y="362" font-size="34" font-weight="800" fill="#ffd000" text-anchor="middle">Çekicin</text><text x="800" y="402" font-size="30" font-weight="800" fill="#fff" text-anchor="middle">AI Damage</text><text x="800" y="442" font-size="30" font-weight="800" fill="#fff" text-anchor="middle">Detection</text><text x="800" y="488" font-size="14" fill="#9fb0c8" text-anchor="middle">photo → damage → part → cost</text></svg>

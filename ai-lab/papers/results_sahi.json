@@ -1,0 +1,110 @@
+{
+ "fast": {
+  "best_cfg": {
+   "fusion": "nms",
+   "thr": 0.5,
+   "drop_edge": true,
+   "max_area": 0.1,
+   "w_tile": 0.3
+  },
+  "val": {
+   "AP": 64.95,
+   "AP50": 79.26,
+   "APs": 14.12
+  },
+  "val_baseline": {
+   "AP": 64.75,
+   "AP50": 79.16,
+   "APs": 12.76
+  },
+  "test": {
+   "AP": 59.92,
+   "AP50": 75.65,
+   "AP75": 61.99,
+   "APs": 26.82,
+   "APm": 39.04,
+   "APl": 58.29,
+   "AR100": 70.59,
+   "per_class": {
+    "dent": {
+     "AP": 32.9,
+     "AP50": 57.8
+    },
+    "scratch": {
+     "AP": 38.3,
+     "AP50": 66.9
+    },
+    "crack": {
+     "AP": 32.0,
+     "AP50": 53.3
+    },
+    "glass shatter": {
+     "AP": 93.2,
+     "AP50": 97.2
+    },
+    "lamp broken": {
+     "AP": 76.7,
+     "AP50": 87.8
+    },
+    "tire flat": {
+     "AP": 86.4,
+     "AP50": 91.0
+    }
+   }
+  }
+ },
+ "careful": {
+  "best_cfg": {
+   "fusion": "add",
+   "thr": 0.5,
+   "drop_edge": true,
+   "max_area": 0.01,
+   "w_tile": 0.3
+  },
+  "val": {
+   "AP": 66.48,
+   "AP50": 80.94,
+   "APs": 13.9
+  },
+  "val_baseline": {
+   "AP": 66.56,
+   "AP50": 81.13,
+   "APs": 14.78
+  },
+  "test": {
+   "AP": 62.17,
+   "AP50": 77.83,
+   "AP75": 64.36,
+   "APs": 31.27,
+   "APm": 41.4,
+   "APl": 61.16,
+   "AR100": 73.38,
+   "per_class": {
+    "dent": {
+     "AP": 37.5,
+     "AP50": 63.6
+    },
+    "scratch": {
+     "AP": 42.0,
+     "AP50": 69.6
+    },
+    "crack": {
+     "AP": 32.3,
+     "AP50": 53.9
+    },
+    "glass shatter": {
+     "AP": 93.4,
+     "AP50": 97.3
+    },
+    "lamp broken": {
+     "AP": 80.8,
+     "AP50": 90.7
+    },
+    "tire flat": {
+     "AP": 87.0,
+     "AP50": 91.9
+    }
+   }
+  }
+ }
+}

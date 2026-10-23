@@ -1,0 +1,200 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.663
+Bu videoda Çekicin'in yeni hasar yapay zekâsını, Hasar AI 2.0'ı anlatıyoruz.
+
+00:00:06.663 --> 00:00:13.922
+Bir araç fotoğrafı birkaç saniyede nasıl bir ön değerlendirmeye dönüşüyor, bu sürümde neler
+
+00:00:13.922 --> 00:00:17.033
+değişti ve sonuçlar ne kadar güvenilir?
+
+00:00:17.033 --> 00:00:22.640
+Her şey gerçek model çıktıları ve gerçek test sonuçlarıyla.
+
+00:00:22.640 --> 00:00:26.099
+Bir fotoğrafın yolculuğu 5 adım.
+
+00:00:26.099 --> 00:00:32.263
+Önce telefon fotoğrafın net ve aydınlık olup olmadığını kontrol eder.
+
+00:00:32.263 --> 00:00:35.122
+Sonra 2 model aynı anda çalışır:
+
+00:00:35.122 --> 00:00:38.785
+biri hasarı, diğeri hasarlı parçayı arar.
+
+00:00:38.785 --> 00:00:45.039
+Yeni karar katmanı bulguları birleştirip gerçek bir olasılığa çevirir.
+
+00:00:45.039 --> 00:00:46.915
+Ardından 3 kısa soru;
+
+00:00:46.915 --> 00:00:50.667
+gerekirse bulut modeli ikinci görüş verir.
+
+00:00:50.667 --> 00:00:56.570
+İlk adımlar telefonda çalışır, fotoğraf cihazdan çıkmaz.
+
+00:00:56.570 --> 00:00:58.424
+Birinci yenilik:
+
+00:00:58.424 --> 00:01:00.384
+fotoğraf kalite kontrolü.
+
+00:01:00.384 --> 00:01:05.951
+Bulanık ya da karanlık fotoğrafta hiçbir model güvenilir sonuç veremez.
+
+00:01:05.951 --> 00:01:09.870
+v2 bu fotoğrafları yakalar ve yeniden çekim ister.
+
+00:01:09.870 --> 00:01:17.318
+Testte 100 bulanık fotoğrafın tamamında, 100 karanlık fotoğrafın 95'inde ya hasar bulundu ya da
+
+00:01:17.318 --> 00:01:19.043
+yeniden çekim istendi.
+
+00:01:19.043 --> 00:01:26.450
+Önceki sürüm karanlık fotoğrafların yarısında hasarı kaçırıyor ve uyarı vermiyordu.
+
+00:01:26.450 --> 00:01:29.445
+İkinci adımda 2 model çalışır.
+
+00:01:29.445 --> 00:01:31.361
+Hasar modeli 6 tür arar:
+
+00:01:31.361 --> 00:01:36.230
+göçük, çizik, çatlak, cam kırığı, kırık lamba, patlak lastik.
+
+00:01:36.230 --> 00:01:40.461
+Parça modeli far, kapı, tampon gibi 14 parçayı tanır.
+
+00:01:40.461 --> 00:01:47.805
+v2 modelleri bilerek çok düşük eşikle çalıştırır ve %5'in üzerindeki her aday kutuyu saklar.
+
+00:01:47.805 --> 00:01:55.810
+Hangi kutunun gerçekten hasar olduğuna artık sabit eşik değil, karar katmanı karar verir.
+
+00:01:55.810 --> 00:01:58.220
+En büyük değişiklik:
+
+00:01:58.220 --> 00:02:00.936
+kalibre edilmiş karar katmanı.
+
+00:02:00.936 --> 00:02:04.194
+Kutular 34 sayısal özelliğe dönüşür:
+
+00:02:04.194 --> 00:02:10.983
+her türün en yüksek puanı, kutu sayısı, hasar alanı, parça modelinin onayı.
+
+00:02:10.983 --> 00:02:16.323
+Önce hasar olasılığı, sonra her türün olasılığı hesaplanır.
+
+00:02:16.323 --> 00:02:23.202
+Katman 1000 test fotoğrafı ve sağlam araçların 336 yakın çekimiyle eğitildi.
+
+00:02:23.202 --> 00:02:30.800
+Hasarlı fotoğrafların çoğu eşiğin üstünde, sağlamların çoğu altında kalır.
+
+00:02:30.800 --> 00:02:33.791
+Güvenlik kuralı korunuyor:
+
+00:02:33.791 --> 00:02:41.609
+çekici kararını etkileyen kırık lamba ve patlak lastik, puanı %60'ı geçince her zaman
+
+00:02:41.609 --> 00:02:42.620
+gösterilir.
+
+00:02:42.620 --> 00:02:49.518
+Bu fotoğrafta genel hasar olasılığı düşük olsa da lastik bulgusu kaybolmaz.
+
+00:02:49.518 --> 00:02:54.944
+Yeni dikkatli mod fotoğrafı aynalayarak ikinci kez inceler:
+
+00:02:54.944 --> 00:03:02.190
+süre ~2 kat, sağlam yakın çekimlerde yanlış alarm %31'den %25'e iner.
+
+00:03:02.190 --> 00:03:05.712
+Bulut ikinci görüşü de daha dikkatli.
+
+00:03:05.712 --> 00:03:12.662
+Yeni araştırmalar, büyük görüntü modellerinin yansımalarda olmayan hasar uydurabildiğini
+
+00:03:12.662 --> 00:03:18.980
+dedektör bulgularıyla yönlendirilince bu hatanın belirgin azaldığını gösteriyor.
+
+00:03:18.980 --> 00:03:26.246
+Bu yüzden API 1.5 telefonun bulgularını bulut modeline “doğrula, göremiyorsan çıkar” notuyla
+
+00:03:26.246 --> 00:03:26.957
+gönderir.
+
+00:03:26.957 --> 00:03:32.280
+Telegram botu ve WhatsApp asistanı aynı API'yi kullanır.
+
+00:03:32.280 --> 00:03:34.424
+12 gerçek senaryo.
+
+00:03:34.424 --> 00:03:42.486
+Yakın çekimlerde v2 tampon hasarını, kırık farı, patlak lastiği ve dolu nedeniyle kırılan camı
+
+00:03:42.486 --> 00:03:43.515
+doğru buldu.
+
+00:03:43.515 --> 00:03:48.661
+Ön camdaki çatlağı artık yanlış değil, kısmen doğru tanıyor.
+
+00:03:48.661 --> 00:03:56.638
+Ama ağaca ya da direğe çarpmış araçların 4 geniş açılı sahnesini yakalayamadı ve sağlam aracı
+
+00:03:56.638 --> 00:03:58.525
+sınırda hasarlı saydı.
+
+00:03:58.525 --> 00:03:58.954
+Ders:
+
+00:03:58.954 --> 00:04:03.370
+kullanıcıdan mutlaka yakın çekim isteyin.
+
+00:04:03.370 --> 00:04:07.331
+1000 fotoğraflık testte gidişat:
+
+00:04:07.331 --> 00:04:12.478
+ilk sürümde sağlam araçlarda yanlış alarm %41'di;
+
+00:04:12.478 --> 00:04:14.579
+v1.3'te %20'ye indi.
+
+00:04:14.579 --> 00:04:20.776
+Hasar AI 2.0'da hasar türü F1 puanı 0,59'dan 0,62'ye çıktı.
+
+00:04:20.776 --> 00:04:29.704
+Yanlış alarm bütün araç fotoğraflarında %16'ya, yakın çekimlerde %40'tan %31'e düştü.
+
+00:04:29.704 --> 00:04:34.910
+Hasar yakalama oranı %85 civarında kaldı.
+
+00:04:34.910 --> 00:04:37.441
+Bu doğruluk yeterli mi?
+
+00:04:37.441 --> 00:04:43.823
+Ön değerlendirme ve doğru yardıma yönlendirme için, operatör onayıyla, evet.
+
+00:04:43.823 --> 00:04:46.510
+Otomatik karar için henüz hayır:
+
+00:04:46.510 --> 00:04:52.303
+çatlak gibi zor türlerde ve sağlam yakın çekimlerde hata hâlâ yüksek.
+
+00:04:52.303 --> 00:04:52.555
+v3:
+
+00:04:52.555 --> 00:04:59.356
+ticari lisanslı yeni model, izinli gerçek Çekicin fotoğraflarıyla yeniden eğitim.
+
+00:04:59.356 --> 00:05:00.868
+Şimdi siz deneyin:
+
+00:05:00.868 --> 00:05:06.050
+model test sayfasında kendi fotoğrafınızı yükleyin.
+

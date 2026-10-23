@@ -1,0 +1,61 @@
+country,currency,part_key,part_en,part_tr,price_min,price_max,estimate,source_urls
+TR,TRY,bumper_front,Front bumper,Ön tampon,8000,30000,0,https://www.otocikma.com/fiat-egea-kaporta-karoser-on-tampon ; https://www.fiatparcacim.com/urun/on-tampon-fiat-egea-cross-orjinal-fiat-yedek-parca-735753212/
+TR,TRY,bumper_rear,Rear bumper,Arka tampon,7000,26000,1,https://www.otocikma.com/fiat-egea-kaporta-karoser-on-tampon
+TR,TRY,fender,Front fender / wing,Ön çamurluk,2260,8090,0,https://www.parcafilosu.com.tr/fiat-egea-camurluk-ve-parcalari ; https://www.unluoto.com.tr/product/fiat-egea-sag-on-camurluk-orijinal-52012209
+TR,TRY,windscreen,Windscreen,Ön cam,5000,14000,0,https://www.otocikma.com/fiat-egea-kaporta-karoser-on-tampon ; https://www.parcario.com/meta-etiket/fiat-egea-on-cam-fiyati
+TR,TRY,headlight,Headlight,Far,3540,16000,1,https://www.n11.com/yedek-parca-otomobil/far-ve-aydinlatma/on-far?q=fiat+egea
+TR,TRY,taillight,Tail light,Stop lambası,1800,7000,1,
+TR,TRY,bonnet,Bonnet / hood,Kaput,7000,18000,1,
+TR,TRY,boot,Boot lid,Bagaj kapağı,6500,17000,1,
+TR,TRY,door,Door,Kapı,8000,22000,1,
+TR,TRY,quarter_panel,Quarter panel,Arka çamurluk,6000,15000,1,
+TR,TRY,roof,Roof,Tavan,9000,25000,1,
+TR,TRY,running_board,Rocker panel,Marşpiyel,2500,8000,1,
+TR,TRY,rear_window,Rear window,Arka cam,4500,11000,1,
+TR,TRY,mirror,Side mirror,Yan ayna,1500,6500,1,
+TR,TRY,tyre,Tyre,Lastik,2500,6000,1,
+DE,EUR,bumper_front,Front bumper,Ön tampon,73,317,0,https://www.autodoc.de/autoteile/stossfanger-einzelteile-10287/vw/golf/golf-vii-5g1-be1
+DE,EUR,bumper_rear,Rear bumper,Arka tampon,71,300,1,https://www.autodoc.de/autoteile/stossfanger-einzelteile-10287/vw/golf/golf-vii-5g1-be1
+DE,EUR,fender,Front fender / wing,Ön çamurluk,68,277,0,https://www.autodoc.de/autoteile/stossfanger-einzelteile-10287/vw/golf/golf-vii-5g1-be1
+DE,EUR,headlight,Headlight,Far,104,1050,0,https://www.autodoc.de/autoteile/stossfanger-einzelteile-10287/vw/golf/golf-vii-5g1-be1
+DE,EUR,windscreen,Windscreen,Ön cam,250,900,0,https://www.autodoc.de/autoteile/stossfanger-einzelteile-10287/vw/golf/golf-vii-5g1-be1
+DE,EUR,taillight,Tail light,Stop lambası,60,350,1,
+DE,EUR,bonnet,Bonnet / hood,Kaput,150,600,1,
+DE,EUR,boot,Boot lid,Bagaj kapağı,200,700,1,
+DE,EUR,door,Door,Kapı,250,900,1,
+DE,EUR,quarter_panel,Quarter panel,Arka çamurluk,200,600,1,
+DE,EUR,roof,Roof,Tavan,400,1200,1,
+DE,EUR,running_board,Rocker panel,Marşpiyel,80,300,1,
+DE,EUR,rear_window,Rear window,Arka cam,200,600,1,
+DE,EUR,mirror,Side mirror,Yan ayna,60,350,1,
+DE,EUR,tyre,Tyre,Lastik,70,180,1,
+GB,GBP,bumper_front,Front bumper,Ön tampon,27,218,0,https://www.autodoc.co.uk/s/ford-fiesta-front-bumper ; https://shop.ford.co.uk/products/ford-fiesta-front-o-s-headlight-headlamp-indicator-unit
+GB,GBP,bumper_rear,Rear bumper,Arka tampon,27,200,1,https://www.autodoc.co.uk/s/ford-fiesta-front-bumper
+GB,GBP,fender,Front fender / wing,Ön çamurluk,33,168,0,https://www.autodoc.co.uk/s/ford-fiesta-front-bumper
+GB,GBP,headlight,Headlight,Far,68,204,0,https://shop.ford.co.uk/products/ford-fiesta-front-o-s-headlight-headlamp-indicator-unit
+GB,GBP,windscreen,Windscreen,Ön cam,150,450,1,
+GB,GBP,taillight,Tail light,Stop lambası,40,180,1,
+GB,GBP,bonnet,Bonnet / hood,Kaput,90,400,1,
+GB,GBP,boot,Boot lid,Bagaj kapağı,120,450,1,
+GB,GBP,door,Door,Kapı,150,600,1,
+GB,GBP,quarter_panel,Quarter panel,Arka çamurluk,120,400,1,
+GB,GBP,roof,Roof,Tavan,250,800,1,
+GB,GBP,running_board,Rocker panel,Marşpiyel,50,200,1,
+GB,GBP,rear_window,Rear window,Arka cam,120,400,1,
+GB,GBP,mirror,Side mirror,Yan ayna,40,200,1,
+GB,GBP,tyre,Tyre,Lastik,60,150,1,
+US,USD,bumper_front,Front bumper,Ön tampon,100,300,0,https://toyota.oempartsonline.com/v-2020-toyota-corolla--le--1-8l-l4-gas/body--bumper-and-components-front
+US,USD,bumper_rear,Rear bumper,Arka tampon,100,300,1,https://toyota.oempartsonline.com/v-2020-toyota-corolla--le--1-8l-l4-gas/body--bumper-and-components-front
+US,USD,headlight,Headlight,Far,231,438,0,"https://www.rockauto.com/en/catalog/toyota,2020,corolla,2.0l+l4,3444156,body+&+lamp+assembly,headlamp+assembly,10762"
+US,USD,fender,Front fender / wing,Ön çamurluk,80,250,1,
+US,USD,windscreen,Windscreen,Ön cam,250,600,1,
+US,USD,taillight,Tail light,Stop lambası,80,300,1,
+US,USD,bonnet,Bonnet / hood,Kaput,150,500,1,
+US,USD,boot,Boot lid,Bagaj kapağı,200,600,1,
+US,USD,door,Door,Kapı,250,900,1,
+US,USD,quarter_panel,Quarter panel,Arka çamurluk,200,600,1,
+US,USD,roof,Roof,Tavan,400,1200,1,
+US,USD,running_board,Rocker panel,Marşpiyel,80,300,1,
+US,USD,rear_window,Rear window,Arka cam,200,500,1,
+US,USD,mirror,Side mirror,Yan ayna,60,300,1,
+US,USD,tyre,Tyre,Lastik,90,220,1,

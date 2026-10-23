@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Çekicin · Hasar AI 2.0 — sesli video ve sunum</title>
+<meta name="description" content="Hasar AI 2.0 nasıl çalışır: 5 dakikalık Türkçe sesli video, altyazı, 18 slaytlık sesli sunum (PPTX) ve MP3.">
+<meta property="og:title" content="Çekicin · Hasar AI 2.0 — sesli video">
+<meta property="og:description" content="Fotoğraftan doğru yardıma: 5 dakikalık sesli anlatım, gerçek model çıktıları.">
+<meta property="og:image" content="og.jpg">
+<meta name="theme-color" content="#08111f">
+<style>
+:root{--blue:#0a6fd1;--blue-d:#0756a8;--soft:#e8f3ff;--navy:#08111f;--ink:#0f172a;--muted:#526075;--line:#e3eaf3;--bg:#f5f8fc;--y:#ffd000}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Segoe UI",Roboto,system-ui,-apple-system,sans-serif;color:var(--ink);background:var(--bg);font-size:16px;line-height:1.55}
+body.l-tr .en,body.l-en .tr{display:none!important}
+a{color:var(--blue-d)}
+h1,h2,p{margin:0}
+.wrap{width:min(1100px,100%);margin-inline:auto;padding:0 16px}
+header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:20}
+header .wrap{display:flex;align-items:center;gap:8px;min-height:56px}
+.home{color:#fff;font-weight:800;font-size:18px;text-decoration:none;min-height:48px;display:inline-flex;align-items:center}.home b{color:var(--y)}
+nav{flex:1;min-width:0;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+nav::-webkit-scrollbar{display:none}
+nav a{color:#cfe0f5;text-decoration:none;white-space:nowrap;min-height:48px;display:inline-flex;align-items:center;padding:0 12px;border-radius:999px;font-size:14.5px}
+nav a:hover{background:rgba(255,255,255,.12);color:#fff}
+.lang{display:flex;border:1px solid #33465f;border-radius:999px;overflow:hidden;flex:0 0 auto}
+.lang button{min-height:46px;min-width:46px;border:0;background:transparent;color:#cfe0f5;font:inherit;font-size:14px;cursor:pointer}
+.lang button.on{background:var(--y);color:#1a1400;font-weight:700}
+.hero{background:linear-gradient(135deg,#0a6fd1,#08111f);color:#fff;padding:26px 0 90px}
+.eyebrow{color:var(--y);font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{font-size:clamp(25px,3.6vw,38px);line-height:1.15;margin:6px 0 8px}
+.hero p{color:#dbe9fb;max-width:760px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 6px 24px rgba(8,17,31,.08);overflow:hidden}
+.player{margin-top:-74px}
+.vwrap{position:relative;aspect-ratio:16/9;background:#000}
+.vwrap video{width:100%;height:100%;display:block}
+.vplay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:rgba(5,12,24,.42);border:0;color:#fff;font:inherit;font-weight:800;font-size:18px;cursor:pointer}
+.vplay i{width:84px;height:84px;border-radius:50%;background:var(--y);color:#1a1400;display:grid;place-items:center;font-style:normal;font-size:34px;box-shadow:0 8px 28px rgba(0,0,0,.45)}
+.vplay:focus-visible{outline:3px solid var(--y);outline-offset:-6px}
+.pinfo{padding:14px 16px;display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;font-size:14.5px;color:var(--muted)}
+.pinfo b{color:var(--ink)}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--soft);color:var(--blue-d);font-weight:700;border-radius:999px;padding:6px 12px;font-size:14px}
+section{padding:30px 0 6px;scroll-margin-top:64px}
+h2{font-size:clamp(21px,2.6vw,26px);line-height:1.25;margin-bottom:6px}
+.sub{color:var(--muted);margin-bottom:14px}
+.viewer{padding:12px}
+.stage{position:relative;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#0b1626;touch-action:pan-y}
+.stage img{width:100%;height:100%;display:block;object-fit:contain}
+.navb{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:var(--ink);font-size:22px;font-weight:800;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.navb.prev{left:10px}.navb.next{right:10px}
+.ctrl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:10px 2px 4px}
+.count{font-weight:700;color:var(--muted);font-size:14.5px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border-radius:999px;font:inherit;font-weight:700;font-size:15px;cursor:pointer;text-decoration:none;border:1px solid #9fb6cf;background:#fff;color:var(--blue-d)}
+.btn.filled{background:var(--blue);color:#fff;border-color:var(--blue)}
+.btn:focus-visible,.thumbs button:focus-visible,.navb:focus-visible{outline:3px solid #ffb800;outline-offset:2px}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:8px 2px 4px;scroll-snap-type:x proximity}
+.thumbs button{flex:0 0 auto;width:112px;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:3px solid transparent;padding:0;background:#0b1626;cursor:pointer;scroll-snap-align:start}
+.thumbs button[aria-current="true"]{border-color:var(--y)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.dl{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.dl a{display:flex;flex-direction:column;gap:2px;justify-content:center;min-height:76px;padding:12px 16px;border-radius:16px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink)}
+.dl a b{font-size:16px}.dl a span{font-size:14px;color:var(--muted)}
+.dl a.main{background:var(--blue);border-color:var(--blue);color:#fff}.dl a.main span{color:#dbe9fb}
+.audio{padding:14px 16px}
+.audio audio{width:100%;height:48px}
+.note{font-size:14px;color:var(--muted);margin-top:10px}
+footer{margin-top:36px;padding:22px 0 30px;background:var(--navy);color:#b9c8dc;font-size:14px}
+footer a{color:#fff}
+@media(max-width:600px){.navb{width:44px;height:44px}.thumbs button{width:96px}.hero{padding-bottom:84px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body class="l-tr">
+<header><div class="wrap">
+  <a class="home" href="../../index.html">Çekic<b>in</b></a>
+  <nav aria-label="Sayfa">
+    <a href="#izle"><span class="tr">İzle</span><span class="en">Watch</span></a>
+    <a href="#slaytlar"><span class="tr">Slaytlar</span><span class="en">Slides</span></a>
+    <a href="#indir"><span class="tr">İndir</span><span class="en">Download</span></a>
+    <a href="../model-test.html"><span class="tr">Kendiniz deneyin</span><span class="en">Try it</span></a>
+    <a href="../wiki.html"><span class="tr">Sürüm wikisi</span><span class="en">Version wiki</span></a>
+  </nav>
+  <div class="lang"><button type="button" data-l="tr">TR</button><button type="button" data-l="en">EN</button></div>
+</div></header>
+
+<div class="hero"><div class="wrap">
+  <p class="eyebrow">Çekicin AI Lab · Hasar AI 2.0</p>
+  <h1><span class="tr">Fotoğraftan doğru yardıma: sesli anlatım</span><span class="en">From a photo to the right help: narrated explainer</span></h1>
+  <p><span class="tr">5 dakikada yeni hasar yapay zekâsı: kalite kontrolü, iki dedektör, karar katmanı, güvenlik kuralı, 12 gerçek senaryo ve sürüm gidişatı. Tüm görseller gerçek model çıktılarıdır.</span><span class="en">The new damage AI in 5 minutes: quality gate, two detectors, decision layer, safety rule, 12 real scenarios and the version trend. Every visual is a real model output.</span></p>
+</div></div>
+
+<main class="wrap">
+  <div class="card player" id="izle">
+    <div class="vwrap">
+      <video id="vid" controls playsinline preload="metadata" poster="poster.jpg" width="1920" height="1080">
+        <source src="Cekicin_Hasar_AI_2.0_TR.mp4" type="video/mp4">
+        <track kind="captions" srclang="tr" label="Türkçe" src="Cekicin_Hasar_AI_2.0_TR.vtt">
+      </video>
+      <button type="button" class="vplay" id="play"><i aria-hidden="true">▶</i><span class="tr">Sesli oynat · 5:06</span><span class="en">Play with sound · 5:06</span></button>
+    </div>
+    <div class="pinfo">
+      <span class="chip">🔊 <span class="tr">Bu videoda ses var</span><span class="en">This video has sound</span></span>
+      <span><b><span class="tr">Türkçe anlatım</span><span class="en">Turkish narration</span></b> · <span class="tr">ekranda Türkçe + İngilizce altyazı</span><span class="en">Turkish + English captions on screen</span></span>
+      <span>1080p · H.264 + AAC · −14,5 LUFS</span>
+    </div>
+  </div>
+
+  <section id="slaytlar">
+    <h2><span class="tr">Slaytlar — her birini ayrı dinleyin</span><span class="en">Slides — listen to each one</span></h2>
+    <p class="sub"><span class="tr">Kaydırın veya oklara dokunun. “Bu slaytı dinle” videoyu o slayttan başlatır.</span><span class="en">Swipe or tap the arrows. “Listen to this slide” starts the video at that slide.</span></p>
+    <div class="card viewer">
+      <div class="stage" id="stage"><img id="slide" src="slides/s01.webp" alt="Slayt 1" width="1280" height="720">
+        <button type="button" class="navb prev" id="prev" aria-label="Önceki slayt">‹</button><button type="button" class="navb next" id="next" aria-label="Sonraki slayt">›</button></div>
+      <div class="ctrl"><span class="count" id="count">1 / 18</span><button type="button" class="btn filled" id="listen">▶ <span class="tr">Bu slaytı dinle</span><span class="en">Listen to this slide</span></button></div>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+  </section>
+
+  <section id="indir">
+    <h2><span class="tr">İndir</span><span class="en">Download</span></h2>
+    <p class="sub"><span class="tr">Sesli sunum: her slaytın sesi PowerPoint'in içinde; slayt gösterisinde kendiliğinden çalar ve ilerler. Fotoğraflar slayta gömülüdür, kaybolmaz.</span><span class="en">Narrated deck: each slide's audio is inside the PowerPoint; in slide-show mode it plays and advances by itself. Photos are baked into the slides, so none can go missing.</span></p>
+    <div class="dl">
+      <a class="main" href="Cekicin_Hasar_AI_2.0_TR_sesli.pptx" download><b>⬇ <span class="tr">Sesli sunum (PPTX)</span><span class="en">Narrated deck (PPTX)</span></b><span>18 <span class="tr">slayt · ses gömülü · 7,4 MB</span><span class="en">slides · audio embedded · 7.4 MB</span></span></a>
+      <a href="Cekicin_Hasar_AI_2.0_TR.pptx" download><b>⬇ <span class="tr">Sunum, sessiz (PPTX)</span><span class="en">Deck, no audio (PPTX)</span></b><span><span class="tr">e-posta için küçük · 3,2 MB</span><span class="en">small, for e-mail · 3.2 MB</span></span></a>
+      <a href="Cekicin_Hasar_AI_2.0_TR.mp4" download><b>⬇ <span class="tr">Video (MP4)</span><span class="en">Video (MP4)</span></b><span>5:06 · 1080p · 11,3 MB</span></a>
+      <a href="Cekicin_Hasar_AI_2.0_TR_ses.mp3" download><b>⬇ <span class="tr">Yalnız ses (MP3)</span><span class="en">Audio only (MP3)</span></b><span>5:06 · 4,7 MB</span></a>
+      <a href="Cekicin_Hasar_AI_2.0_TR.srt" download><b>⬇ <span class="tr">Altyazı (SRT)</span><span class="en">Captions (SRT)</span></b><span><span class="tr">Türkçe</span><span class="en">Turkish</span></span></a>
+    </div>
+    <div class="card audio" style="margin-top:14px">
+      <b><span class="tr">Video açılmıyorsa sesi buradan dinleyin</span><span class="en">If the video won't play, listen here</span></b>
+      <audio controls preload="none" src="Cekicin_Hasar_AI_2.0_TR_ses.mp3"></audio>
+      <p class="note"><span class="tr">Ses gelmiyorsa: telefonun sessiz modunu kapatın ve medya sesini açın (yan tuşlar, video oynarken).</span><span class="en">No sound? Turn off silent mode and raise the media volume (side keys, while the video plays).</span></p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">Çekicin · Alfa Asistans · <a href="../index.html">AI Lab</a> · <a href="../model-test.html"><span class="tr">Hasar kontrolü</span><span class="en">Damage check</span></a> · <span class="tr">Ön değerlendirmedir, ekspertiz raporu değildir.</span><span class="en">A pre-assessment, not an expert report.</span></div></footer>
+
+<script>
+const T = [0.0, 22.6, 27.5, 34.6, 39.7, 46.5, 56.6, 73.7, 86.5, 101.6, 115.8, 131.2, 150.8, 167.1, 182.2, 212.3, 243.4, 274.9];
+const N = T.length, v = document.getElementById('vid'), pb = document.getElementById('play');
+let cur = 0, LANG = 'tr';
+function setLang(l) { LANG = l; document.body.className = 'l-' + l; document.documentElement.lang = l; document.querySelectorAll('.lang button').forEach(b => b.classList.toggle('on', b.dataset.l === l)); try { localStorage.setItem('lang', l); } catch (e) {} }
+document.querySelectorAll('.lang button').forEach(b => b.onclick = () => setLang(b.dataset.l));
+const qp = new URLSearchParams(location.search).get('lang'); let saved = null; try { saved = localStorage.getItem('lang'); } catch (e) {}
+setLang(qp === 'en' || qp === 'tr' ? qp : saved || ((navigator.language || 'tr').startsWith('tr') ? 'tr' : 'en'));
+function playSound(t) { if (t != null) v.currentTime = t; v.muted = false; v.volume = 1; const p = v.play(); pb.hidden = true; if (p && p.then) p.then(() => { if (t != null && Math.abs(v.currentTime - t) > 1) v.currentTime = t; }).catch(() => { pb.hidden = false; }); }
+pb.onclick = () => playSound();
+v.addEventListener('play', () => { pb.hidden = true; });
+const th = document.getElementById('thumbs');
+th.innerHTML = T.map((_, i) => `<button type="button" aria-label="Slayt ${i + 1}" data-i="${i}"><img src="slides/s${String(i + 1).padStart(2, '0')}.webp" alt="" loading="lazy" width="112" height="63"></button>`).join('');
+function show(i) { cur = (i + N) % N; const n = String(cur + 1).padStart(2, '0'); const im = document.getElementById('slide'); im.src = `slides/s${n}.webp`; im.alt = 'Slayt ' + (cur + 1);
+  document.getElementById('count').textContent = `${cur + 1} / ${N}`; th.querySelectorAll('button').forEach((b, k) => b.setAttribute('aria-current', k === cur));
+  const b = th.children[cur]; th.scrollTo({ left: b.offsetLeft - th.clientWidth / 2 + b.clientWidth / 2, behavior: 'smooth' });
+  if (cur + 1 < N) { const pre = new Image(); pre.src = `slides/s${String(cur + 2).padStart(2, '0')}.webp`; } }
+th.onclick = e => { const b = e.target.closest('button'); if (b) show(+b.dataset.i); };
+document.getElementById('prev').onclick = () => show(cur - 1); document.getElementById('next').onclick = () => show(cur + 1);
+document.getElementById('listen').onclick = () => { document.getElementById('izle').scrollIntoView({ behavior: 'smooth', block: 'start' }); playSound(T[cur]); };
+let x0 = null; const stg = document.getElementById('stage');
+stg.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+stg.addEventListener('touchend', e => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) show(cur + (dx < 0 ? 1 : -1)); x0 = null; });
+document.addEventListener('keydown', e => { if (e.target.closest('video,input,textarea')) return; if (e.key === 'ArrowRight') show(cur + 1); if (e.key === 'ArrowLeft') show(cur - 1); });
+v.addEventListener('timeupdate', () => { if (v.paused) return; let k = 0; while (k + 1 < N && v.currentTime >= T[k + 1]) k++; if (k !== cur) show(k); });
+show(0);
+</script>
+</body>
+</html>

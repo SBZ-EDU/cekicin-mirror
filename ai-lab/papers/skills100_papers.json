@@ -1,0 +1,1057 @@
+[
+{
+"n": 1,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Evaluate on the official CarDD test split (374 imgs, COCO box AP) so numbers are comparable with papers",
+"papers": [
+9,
+1,
+3
+],
+"status": "v2.1"
+},
+{
+"n": 2,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Report AP50 AND AP50:95 AND per-class AP; never a single accuracy number",
+"papers": [
+9,
+1
+],
+"status": "v2.1"
+},
+{
+"n": 3,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Report image-level recall + false-alarm rate on intact cars next to box AP (papers rarely do)",
+"papers": [
+9,
+11
+],
+"status": "have"
+},
+{
+"n": 4,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Keep an out-of-domain test (VehiDE/AutoDamageIQ) besides in-domain CarDD",
+"papers": [
+76,
+8
+],
+"status": "have"
+},
+{
+"n": 5,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Include intact close-ups as negatives (dealer photos are too easy)",
+"papers": [
+11,
+9
+],
+"status": "have"
+},
+{
+"n": 6,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Use a damaged-vs-intact filter when collecting data (CarDD VGG16 filter: P 91.6 / R 97.6)",
+"papers": [
+9
+],
+"status": "have"
+},
+{
+"n": 7,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Remove near-duplicates across splits (Duplicate Cleaner)",
+"papers": [
+9
+],
+"status": "next"
+},
+{
+"n": 8,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Bootstrap 95% CIs for every headline metric",
+"papers": [
+8
+],
+"status": "have"
+},
+{
+"n": 9,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Small/medium/large AP: small objects are where car-damage models fail (CarDD APs 37 vs APl 66)",
+"papers": [
+9
+],
+"status": "v2.1"
+},
+{
+"n": 10,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Benchmark VLMs with structured (type, part, severity) tuples, not free text",
+"papers": [
+5,
+10
+],
+"status": "next"
+},
+{
+"n": 11,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Separate hallucination rate for VLM answers (text-only 92% → grounded 31%)",
+"papers": [
+2
+],
+"status": "next"
+},
+{
+"n": 12,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Track every version on the same frozen sets (trend page)",
+"papers": [
+8
+],
+"status": "have"
+},
+{
+"n": 13,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Hard set with lamp/tyre and night/blur photos",
+"papers": [
+3,
+11
+],
+"status": "have"
+},
+{
+"n": 14,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Collect consented Çekicin photos (KVKK) into a private dataset for retraining",
+"papers": [
+28,
+33
+],
+"status": "next"
+},
+{
+"n": 15,
+"group": "A",
+"group_name": "Data & evaluation",
+"skill": "Label severity + part, not only type (insurer-style data)",
+"papers": [
+25,
+39,
+73
+],
+"status": "next"
+},
+{
+"n": 16,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "YOLO11m is the best speed/accuracy trade-off on CarDD (63.3 AP50:95 vs RT-DETR-L)",
+"papers": [
+1,
+4
+],
+"status": "have"
+},
+{
+"n": 17,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Licence-clean retrain on RF-DETR-M / D-FINE (Apache-2.0)",
+"papers": [
+12
+],
+"status": "gpu"
+},
+{
+"n": 18,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Multi-scale training (CarDD: +2.0 AP)",
+"papers": [
+9,
+3
+],
+"status": "gpu"
+},
+{
+"n": 19,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Focal loss for hard classes crack/scratch (CarDD: +4.1 AP)",
+"papers": [
+9
+],
+"status": "gpu"
+},
+{
+"n": 20,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Deformable convolutions for irregular damage shapes (DCN+: best in CarDD paper)",
+"papers": [
+9,
+35
+],
+"status": "gpu"
+},
+{
+"n": 21,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Attention modules (CBAM/SE/coordinate) in the YOLO neck",
+"papers": [
+4,
+49,
+23
+],
+"status": "gpu"
+},
+{
+"n": 22,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Heterogeneous / AKConv kernels for thin scratches",
+"papers": [
+49,
+23
+],
+"status": "gpu"
+},
+{
+"n": 23,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "NMS-free heads (YOLOv10) for lower latency",
+"papers": [
+23
+],
+"status": "gpu"
+},
+{
+"n": 24,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Dilated-conv FPN for multi-scale damage (DamageNet)",
+"papers": [
+35
+],
+"status": "gpu"
+},
+{
+"n": 25,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Diffusion-based detectors (DiffusionDet, C-DiffDet+) with scene context",
+"papers": [
+32,
+90
+],
+"status": "gpu"
+},
+{
+"n": 26,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Region-aware mixture-of-experts for fine-grained classes",
+"papers": [
+16
+],
+"status": "gpu"
+},
+{
+"n": 27,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Instance segmentation (mask) for area-based severity",
+"papers": [
+18,
+35,
+68
+],
+"status": "gpu"
+},
+{
+"n": 28,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "IoU-loss variants (CIoU/WIoU) for small boxes",
+"papers": [
+4,
+49
+],
+"status": "gpu"
+},
+{
+"n": 29,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Synthetic / GAN-augmented damage images for rare classes",
+"papers": [
+47,
+52
+],
+"status": "gpu"
+},
+{
+"n": 30,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Hyper-parameter search (e.g. Harris-Hawks-tuned YOLOv8-seg)",
+"papers": [
+53
+],
+"status": "gpu"
+},
+{
+"n": 31,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Knowledge distillation m → n for phones",
+"papers": [
+23,
+49
+],
+"status": "gpu"
+},
+{
+"n": 32,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Train with intact close-ups as background images (hard negatives)",
+"papers": [
+11
+],
+"status": "have"
+},
+{
+"n": 33,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Copy-paste augmentation of damage onto intact panels",
+"papers": [
+47
+],
+"status": "gpu"
+},
+{
+"n": 34,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Self-/semi-supervised pre-training on unlabeled claim photos",
+"papers": [
+67
+],
+"status": "gpu"
+},
+{
+"n": 35,
+"group": "B",
+"group_name": "Detector architecture & training (v3)",
+"skill": "Quantisation-aware training to keep int8 accuracy",
+"papers": [
+23
+],
+"status": "gpu"
+},
+{
+"n": 36,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Low detector threshold (0.05) + learned decision layer instead of a fixed 0.25",
+"papers": [
+11
+],
+"status": "have"
+},
+{
+"n": 37,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Horizontal-flip test-time augmentation",
+"papers": [
+3
+],
+"status": "have"
+},
+{
+"n": 38,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Weighted Boxes Fusion of TTA views instead of NMS (better boxes)",
+"papers": [
+1,
+62
+],
+"status": "v2.1"
+},
+{
+"n": 39,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Evaluate at the COCO protocol (conf 0.001, top 300) AND at the shipped threshold",
+"papers": [
+9
+],
+"status": "v2.1"
+},
+{
+"n": 40,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Class-aware NMS 0.45 (browser = Python parity)",
+"papers": [
+1
+],
+"status": "have"
+},
+{
+"n": 41,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Letterbox exactly like training (resize filter matters: measured)",
+"papers": [
+8
+],
+"status": "have"
+},
+{
+"n": 42,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Tiled / zoomed inference for small damage in wide shots (SAHI-style)",
+"papers": [
+9,
+49
+],
+"status": "next"
+},
+{
+"n": 43,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Ask for a close-up when the car is small in the frame (wide crash scenes fail)",
+"papers": [
+7,
+9
+],
+"status": "have"
+},
+{
+"n": 44,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Photo-quality gate: blur (Laplacian) + darkness → retake",
+"papers": [
+3,
+59
+],
+"status": "have"
+},
+{
+"n": 45,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Glare/reflection check before accepting scratch/dent",
+"papers": [
+11,
+2
+],
+"status": "next"
+},
+{
+"n": 46,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Ensemble the damage model with the parts model (features)",
+"papers": [
+62,
+21
+],
+"status": "have"
+},
+{
+"n": 47,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Visual-embedding (CLIP) score as an extra decision feature",
+"papers": [
+62,
+31
+],
+"status": "next"
+},
+{
+"n": 48,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Damaged-vs-intact global classifier as a pre-filter feature",
+"papers": [
+9,
+21
+],
+"status": "have"
+},
+{
+"n": 49,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "int8 quantised ONNX + WASM for on-device privacy",
+"papers": [
+23,
+64
+],
+"status": "have"
+},
+{
+"n": 50,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Cache models in the browser; never upload the photo",
+"papers": [
+64
+],
+"status": "have"
+},
+{
+"n": 51,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Multi-scale TTA (640 + 800 px) for small damage",
+"papers": [
+9,
+49
+],
+"status": "next"
+},
+{
+"n": 52,
+"group": "C",
+"group_name": "Inference-time, no retraining",
+"skill": "Box-level ensemble of two damage detectors fused with WBF",
+"papers": [
+1,
+62
+],
+"status": "next"
+},
+{
+"n": 53,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Calibrated logistic stacker on 34 features (portable to JS/JSON)",
+"papers": [
+8
+],
+"status": "have"
+},
+{
+"n": 54,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Per-type heads with thresholds chosen inside CV folds only",
+"papers": [
+8
+],
+"status": "have"
+},
+{
+"n": 55,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "False-alarm budget as an explicit constraint",
+"papers": [
+11
+],
+"status": "have"
+},
+{
+"n": 56,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Safety floor: lamp/tyre ≥ 0.60 always shown (tow-relevant)",
+"papers": [
+3
+],
+"status": "have"
+},
+{
+"n": 57,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Grouped CV so crops of one car never leak across folds",
+"papers": [
+8
+],
+"status": "have"
+},
+{
+"n": 58,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Confidence levels (high/medium/low) instead of raw scores in the UI",
+"papers": [
+5
+],
+"status": "have"
+},
+{
+"n": 59,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Abstain (\"retake\") instead of guessing on bad photos",
+"papers": [
+2
+],
+"status": "have"
+},
+{
+"n": 60,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Temperature/Platt check of the reported confidences (reliability diagram)",
+"papers": [
+8
+],
+"status": "next"
+},
+{
+"n": 61,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Per-class operating points tuned for business cost (missed tow ≫ false alarm)",
+"papers": [
+25
+],
+"status": "next"
+},
+{
+"n": 62,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Monitor drift: weekly score histograms on real traffic",
+"papers": [
+28
+],
+"status": "next"
+},
+{
+"n": 63,
+"group": "D",
+"group_name": "Calibration & decision",
+"skill": "Report AUROC damaged-vs-intact for the gate",
+"papers": [
+9,
+21
+],
+"status": "have"
+},
+{
+"n": 64,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Damage + part localisation together (which part is damaged)",
+"papers": [
+17,
+43,
+98
+],
+"status": "have"
+},
+{
+"n": 65,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Severity index from damage area / part area (DSI)",
+"papers": [
+3,
+25
+],
+"status": "v2.1"
+},
+{
+"n": 66,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Severity → action mapping: drivable / workshop / tow",
+"papers": [
+25,
+39
+],
+"status": "have"
+},
+{
+"n": 67,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Three-quarter-view standard photos for consistent assessment",
+"papers": [
+43
+],
+"status": "next"
+},
+{
+"n": 68,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Repair-cost estimation from (type, part, severity)",
+"papers": [
+13,
+15,
+26
+],
+"status": "next"
+},
+{
+"n": 69,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Ontology / rule reasoning for cost (parts catalogue)",
+"papers": [
+82
+],
+"status": "next"
+},
+{
+"n": 70,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Glass damage pipeline separate from body damage",
+"papers": [
+59
+],
+"status": "have"
+},
+{
+"n": 71,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Tyre: flat vs. surface damage distinction",
+"papers": [
+84
+],
+"status": "next"
+},
+{
+"n": 72,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Count instances per type (2 areas of crack) in the result",
+"papers": [
+17
+],
+"status": "have"
+},
+{
+"n": 73,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Show boxes on the photo for transparency (explainability)",
+"papers": [
+54
+],
+"status": "have"
+},
+{
+"n": 74,
+"group": "E",
+"group_name": "Parts & severity",
+"skill": "Damage-area / part-area ratio for repair-vs-replace hints",
+"papers": [
+25,
+3
+],
+"status": "next"
+},
+{
+"n": 75,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "Ground the VLM on detector output (hypotheses to verify) → fewer hallucinations",
+"papers": [
+2,
+50
+],
+"status": "have"
+},
+{
+"n": 76,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "VLM only as a second opinion, never as the detector (weak localisation)",
+"papers": [
+5,
+10
+],
+"status": "have"
+},
+{
+"n": 77,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "Structured JSON answers from the VLM (type, part, severity, confidence)",
+"papers": [
+5
+],
+"status": "next"
+},
+{
+"n": 78,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "Text-guided phrase grounding for user questions (\"is the bumper cracked?\")",
+"papers": [
+31
+],
+"status": "next"
+},
+{
+"n": 79,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "Spatially-aware VLM prompting (regions, coordinates)",
+"papers": [
+50
+],
+"status": "next"
+},
+{
+"n": 80,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "LLM-generated claim report from detections",
+"papers": [
+93,
+98
+],
+"status": "next"
+},
+{
+"n": 81,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "Fraud signals (re-used / edited photos) before claims",
+"papers": [
+46,
+93
+],
+"status": "next"
+},
+{
+"n": 82,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "Language-specific prompts (TR/EN) and answer checks",
+"papers": [
+5
+],
+"status": "have"
+},
+{
+"n": 83,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "Voice questions answered by the assistant (Telegram)",
+"papers": [
+98
+],
+"status": "have"
+},
+{
+"n": 84,
+"group": "F",
+"group_name": "VLM / LLM",
+"skill": "Keep the human operator in the loop for the final decision",
+"papers": [
+10,
+5
+],
+"status": "have"
+},
+{
+"n": 85,
+"group": "G",
+"group_name": "Multi-photo / 3D",
+"skill": "Multi-photo aggregation per incident (close-up + distant)",
+"papers": [
+7
+],
+"status": "v2.1"
+},
+{
+"n": 86,
+"group": "G",
+"group_name": "Multi-photo / 3D",
+"skill": "Close-up/distant pair alignment (patch-to-patch)",
+"papers": [
+67,
+7
+],
+"status": "next"
+},
+{
+"n": 87,
+"group": "G",
+"group_name": "Multi-photo / 3D",
+"skill": "Track damage across video frames (MOT) for walk-around videos",
+"papers": [
+87
+],
+"status": "next"
+},
+{
+"n": 88,
+"group": "G",
+"group_name": "Multi-photo / 3D",
+"skill": "3D lifting of damage (Gaussian splatting) for big repairs",
+"papers": [
+7
+],
+"status": "gpu"
+},
+{
+"n": 89,
+"group": "G",
+"group_name": "Multi-photo / 3D",
+"skill": "Guided capture: ask for missing views (front/side/rear)",
+"papers": [
+43,
+7
+],
+"status": "next"
+},
+{
+"n": 90,
+"group": "G",
+"group_name": "Multi-photo / 3D",
+"skill": "De-duplicate the same damage seen in two photos of one incident",
+"papers": [
+7,
+67
+],
+"status": "next"
+},
+{
+"n": 91,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "Real-time on phone (≤ 2–3 s) as in lightweight YOLO papers",
+"papers": [
+23,
+49,
+64
+],
+"status": "have"
+},
+{
+"n": 92,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "Same decision layer on device, API, Telegram, WhatsApp (one JSON)",
+"papers": [
+28
+],
+"status": "have"
+},
+{
+"n": 93,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "Public wiki + changelog for every version",
+"papers": [
+8
+],
+"status": "have"
+},
+{
+"n": 94,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "Model cards with licence and training data (non-commercial CarDD risk)",
+"papers": [
+9,
+12
+],
+"status": "have"
+},
+{
+"n": 95,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "Clear disclaimer: pre-assessment, not an expert report",
+"papers": [
+10
+],
+"status": "have"
+},
+{
+"n": 96,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "Explain WHY (advice text per type) not only WHAT",
+"papers": [
+54
+],
+"status": "have"
+},
+{
+"n": 97,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "One-tap next action (call tow / workshop)",
+"papers": [
+28,
+40
+],
+"status": "have"
+},
+{
+"n": 98,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "A/B test new versions on the frozen benchmarks before shipping",
+"papers": [
+8
+],
+"status": "have"
+},
+{
+"n": 99,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "Privacy: KVKK consent + no upload by default",
+"papers": [
+28
+],
+"status": "have"
+},
+{
+"n": 100,
+"group": "H",
+"group_name": "Product, deployment, safety",
+"skill": "Publish a paper-style comparison page so partners can check claims",
+"papers": [
+8,
+54
+],
+"status": "v2.1"
+}
+]

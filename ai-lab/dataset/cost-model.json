@@ -1,0 +1,916 @@
+{
+ "name": "Çekicin repair-cost estimate",
+ "version": "1.0.0",
+ "date": "2026-10-23",
+ "parts": {
+  "bumper_front": {
+   "tr": "Ön tampon",
+   "en": "Front bumper",
+   "body_h": 2.0,
+   "paint_h": 2.0,
+   "replace_h": 1.0,
+   "plastic": true
+  },
+  "bumper_rear": {
+   "tr": "Arka tampon",
+   "en": "Rear bumper",
+   "body_h": 2.0,
+   "paint_h": 2.0,
+   "replace_h": 1.0,
+   "plastic": true
+  },
+  "bonnet": {
+   "tr": "Kaput",
+   "en": "Bonnet / hood",
+   "body_h": 3.0,
+   "paint_h": 3.0,
+   "replace_h": 1.0
+  },
+  "boot": {
+   "tr": "Bagaj kapağı",
+   "en": "Boot lid",
+   "body_h": 3.0,
+   "paint_h": 2.8,
+   "replace_h": 1.2
+  },
+  "door": {
+   "tr": "Kapı",
+   "en": "Door",
+   "body_h": 3.0,
+   "paint_h": 2.5,
+   "replace_h": 2.5
+  },
+  "fender": {
+   "tr": "Ön çamurluk",
+   "en": "Front fender / wing",
+   "body_h": 2.0,
+   "paint_h": 2.2,
+   "replace_h": 1.5
+  },
+  "quarter_panel": {
+   "tr": "Arka çamurluk",
+   "en": "Quarter panel",
+   "body_h": 4.0,
+   "paint_h": 2.5,
+   "replace_h": 8.0
+  },
+  "roof": {
+   "tr": "Tavan",
+   "en": "Roof",
+   "body_h": 4.0,
+   "paint_h": 3.0,
+   "replace_h": 12.0
+  },
+  "running_board": {
+   "tr": "Marşpiyel",
+   "en": "Rocker panel",
+   "body_h": 2.0,
+   "paint_h": 1.8,
+   "replace_h": 3.0
+  },
+  "windscreen": {
+   "tr": "Ön cam",
+   "en": "Windscreen",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 2.0,
+   "glass": true
+  },
+  "rear_window": {
+   "tr": "Arka cam",
+   "en": "Rear window",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 2.0,
+   "glass": true
+  },
+  "headlight": {
+   "tr": "Far",
+   "en": "Headlight",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 1.0,
+   "lamp": true
+  },
+  "taillight": {
+   "tr": "Stop lambası",
+   "en": "Tail light",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 0.5,
+   "lamp": true
+  },
+  "mirror": {
+   "tr": "Yan ayna",
+   "en": "Side mirror",
+   "body_h": 0,
+   "paint_h": 0.5,
+   "replace_h": 0.7
+  },
+  "tyre": {
+   "tr": "Lastik",
+   "en": "Tyre",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 0.5
+  }
+ },
+ "countries": {
+  "TR": {
+   "name_tr": "Türkiye",
+   "name_en": "Türkiye",
+   "currency": "TRY",
+   "symbol": "₺",
+   "vat": 0.2,
+   "vehicle": "Fiat Egea (2021+)",
+   "prices_include_vat": false,
+   "body_rate": [
+    1500,
+    3000
+   ],
+   "paint_rate": null,
+   "paint_material": null,
+   "ato_paint": {
+    "bonnet": [
+     16380,
+     18200
+    ],
+    "fender": [
+     12740,
+     15470
+    ],
+    "door": [
+     14560,
+     17290
+    ],
+    "running_board": [
+     10920,
+     12740
+    ],
+    "roof": [
+     16380,
+     18200
+    ],
+    "bumper_front": [
+     12740.0,
+     15470.0
+    ],
+    "bumper_rear": [
+     12740.0,
+     15470.0
+    ],
+    "quarter_panel": [
+     12740.0,
+     15470.0
+    ],
+    "boot": [
+     14560.0,
+     17290.0
+    ],
+    "mirror": [
+     3500,
+     4500
+    ]
+   },
+   "market_floor": 0.45,
+   "parts": {
+    "bumper_front": {
+     "min": 8000,
+     "max": 30000,
+     "src": [
+      "otocikma",
+      "fiatparca"
+     ],
+     "est": false
+    },
+    "bumper_rear": {
+     "min": 7000,
+     "max": 26000,
+     "src": [
+      "otocikma"
+     ],
+     "est": true
+    },
+    "fender": {
+     "min": 2260,
+     "max": 8090,
+     "src": [
+      "parcafilosu",
+      "unluoto"
+     ],
+     "est": false
+    },
+    "windscreen": {
+     "min": 5000,
+     "max": 14000,
+     "src": [
+      "otocikma",
+      "parcario"
+     ],
+     "est": false
+    },
+    "headlight": {
+     "min": 3540,
+     "max": 16000,
+     "src": [
+      "n11far"
+     ],
+     "est": true
+    },
+    "taillight": {
+     "min": 1800,
+     "max": 7000,
+     "src": [],
+     "est": true
+    },
+    "bonnet": {
+     "min": 7000,
+     "max": 18000,
+     "src": [],
+     "est": true
+    },
+    "boot": {
+     "min": 6500,
+     "max": 17000,
+     "src": [],
+     "est": true
+    },
+    "door": {
+     "min": 8000,
+     "max": 22000,
+     "src": [],
+     "est": true
+    },
+    "quarter_panel": {
+     "min": 6000,
+     "max": 15000,
+     "src": [],
+     "est": true
+    },
+    "roof": {
+     "min": 9000,
+     "max": 25000,
+     "src": [],
+     "est": true
+    },
+    "running_board": {
+     "min": 2500,
+     "max": 8000,
+     "src": [],
+     "est": true
+    },
+    "rear_window": {
+     "min": 4500,
+     "max": 11000,
+     "src": [],
+     "est": true
+    },
+    "mirror": {
+     "min": 1500,
+     "max": 6500,
+     "src": [],
+     "est": true
+    },
+    "tyre": {
+     "min": 2500,
+     "max": 6000,
+     "src": [],
+     "est": true
+    }
+   },
+   "sources": [
+    "ato26",
+    "ato25",
+    "armut",
+    "fiatparca",
+    "otocikma",
+    "parcafilosu",
+    "unluoto",
+    "parcario",
+    "n11far"
+   ],
+   "note_tr": "İşçilik ve boya: ATO 2026 azami tarifesi (üst sınır) ile armut.com piyasa teklifleri (alt sınır) arası; parça: sıfır yan sanayi – orijinal (OPAR). Fiyatlar KDV hariç gösterilir. Kaporta saat ücreti (1.500–3.000 TL) piyasa tahminidir.",
+   "note_en": "Labour + paint: between the ATO 2026 maximum tariff (upper bound) and armut.com market quotes (lower bound); parts: new aftermarket – original (OPAR). Shown excluding VAT. Body-work hourly rate (1,500–3,000 TL) is a market estimate.",
+   "body_rate_est": true
+  },
+  "DE": {
+   "name_tr": "Almanya",
+   "name_en": "Germany",
+   "currency": "EUR",
+   "symbol": "€",
+   "vat": 0.19,
+   "vehicle": "VW Golf 7",
+   "prices_include_vat": false,
+   "body_rate": [
+    145.75,
+    235.75
+   ],
+   "paint_rate": [
+    165.25,
+    243.0
+   ],
+   "paint_material": [
+    30,
+    50
+   ],
+   "parts": {
+    "bumper_front": {
+     "min": 73,
+     "max": 317,
+     "src": [
+      "autodoc_de"
+     ],
+     "est": false
+    },
+    "bumper_rear": {
+     "min": 71,
+     "max": 300,
+     "src": [
+      "autodoc_de"
+     ],
+     "est": true
+    },
+    "fender": {
+     "min": 68,
+     "max": 277,
+     "src": [
+      "autodoc_de"
+     ],
+     "est": false
+    },
+    "headlight": {
+     "min": 104,
+     "max": 1050,
+     "src": [
+      "autodoc_de"
+     ],
+     "est": false
+    },
+    "windscreen": {
+     "min": 250,
+     "max": 900,
+     "src": [
+      "autodoc_de"
+     ],
+     "est": false
+    },
+    "taillight": {
+     "min": 60,
+     "max": 350,
+     "src": [],
+     "est": true
+    },
+    "bonnet": {
+     "min": 150,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "boot": {
+     "min": 200,
+     "max": 700,
+     "src": [],
+     "est": true
+    },
+    "door": {
+     "min": 250,
+     "max": 900,
+     "src": [],
+     "est": true
+    },
+    "quarter_panel": {
+     "min": 200,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "roof": {
+     "min": 400,
+     "max": 1200,
+     "src": [],
+     "est": true
+    },
+    "running_board": {
+     "min": 80,
+     "max": 300,
+     "src": [],
+     "est": true
+    },
+    "rear_window": {
+     "min": 200,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "mirror": {
+     "min": 60,
+     "max": 350,
+     "src": [],
+     "est": true
+    },
+    "tyre": {
+     "min": 70,
+     "max": 180,
+     "src": [],
+     "est": true
+    }
+   },
+   "sources": [
+    "dekra",
+    "autodoc_de",
+    "hours"
+   ],
+   "note_tr": "İşçilik: DEKRA DRS 2026 (bölgeler arası en düşük – en yüksek, net); parça: autodoc.de yan sanayi – OE.",
+   "note_en": "Labour: DEKRA DRS 2026 (cheapest – most expensive region, net); parts: autodoc.de aftermarket – OE."
+  },
+  "GB": {
+   "name_tr": "Birleşik Krallık",
+   "name_en": "United Kingdom",
+   "currency": "GBP",
+   "symbol": "£",
+   "vat": 0.2,
+   "vehicle": "Ford Fiesta (Mk7/Mk8)",
+   "prices_include_vat": false,
+   "body_rate": [
+    56.42,
+    92.74
+   ],
+   "paint_rate": [
+    56.42,
+    92.74
+   ],
+   "paint_material": [
+    20,
+    35
+   ],
+   "parts": {
+    "bumper_front": {
+     "min": 27,
+     "max": 218,
+     "src": [
+      "autodoc_uk",
+      "fordshop"
+     ],
+     "est": false
+    },
+    "bumper_rear": {
+     "min": 27,
+     "max": 200,
+     "src": [
+      "autodoc_uk"
+     ],
+     "est": true
+    },
+    "fender": {
+     "min": 33,
+     "max": 168,
+     "src": [
+      "autodoc_uk"
+     ],
+     "est": false
+    },
+    "headlight": {
+     "min": 68,
+     "max": 204,
+     "src": [
+      "fordshop"
+     ],
+     "est": false
+    },
+    "windscreen": {
+     "min": 150,
+     "max": 450,
+     "src": [],
+     "est": true
+    },
+    "taillight": {
+     "min": 40,
+     "max": 180,
+     "src": [],
+     "est": true
+    },
+    "bonnet": {
+     "min": 90,
+     "max": 400,
+     "src": [],
+     "est": true
+    },
+    "boot": {
+     "min": 120,
+     "max": 450,
+     "src": [],
+     "est": true
+    },
+    "door": {
+     "min": 150,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "quarter_panel": {
+     "min": 120,
+     "max": 400,
+     "src": [],
+     "est": true
+    },
+    "roof": {
+     "min": 250,
+     "max": 800,
+     "src": [],
+     "est": true
+    },
+    "running_board": {
+     "min": 50,
+     "max": 200,
+     "src": [],
+     "est": true
+    },
+    "rear_window": {
+     "min": 120,
+     "max": 400,
+     "src": [],
+     "est": true
+    },
+    "mirror": {
+     "min": 40,
+     "max": 200,
+     "src": [],
+     "est": true
+    },
+    "tyre": {
+     "min": 60,
+     "max": 150,
+     "src": [],
+     "est": true
+    }
+   },
+   "sources": [
+    "amonline",
+    "autodoc_uk",
+    "fordshop",
+    "hours"
+   ],
+   "note_tr": "İşçilik: AM-online Haziran 2026 (bağımsız £56 – yetkili £93/saat); parça: autodoc.co.uk – Ford orijinal.",
+   "note_en": "Labour: AM-online June 2026 (independent £56 – franchised £93 per hour); parts: autodoc.co.uk – genuine Ford."
+  },
+  "US": {
+   "name_tr": "ABD",
+   "name_en": "United States",
+   "currency": "USD",
+   "symbol": "$",
+   "vat": 0.0,
+   "vehicle": "Toyota Corolla (2020)",
+   "prices_include_vat": false,
+   "body_rate": [
+    65,
+    110
+   ],
+   "paint_rate": [
+    65,
+    110
+   ],
+   "paint_material": [
+    38,
+    55
+   ],
+   "parts": {
+    "bumper_front": {
+     "min": 100,
+     "max": 300,
+     "src": [
+      "toyotaoem"
+     ],
+     "est": false
+    },
+    "bumper_rear": {
+     "min": 100,
+     "max": 300,
+     "src": [
+      "toyotaoem"
+     ],
+     "est": true
+    },
+    "headlight": {
+     "min": 231,
+     "max": 438,
+     "src": [
+      "rockauto"
+     ],
+     "est": false
+    },
+    "fender": {
+     "min": 80,
+     "max": 250,
+     "src": [],
+     "est": true
+    },
+    "windscreen": {
+     "min": 250,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "taillight": {
+     "min": 80,
+     "max": 300,
+     "src": [],
+     "est": true
+    },
+    "bonnet": {
+     "min": 150,
+     "max": 500,
+     "src": [],
+     "est": true
+    },
+    "boot": {
+     "min": 200,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "door": {
+     "min": 250,
+     "max": 900,
+     "src": [],
+     "est": true
+    },
+    "quarter_panel": {
+     "min": 200,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "roof": {
+     "min": 400,
+     "max": 1200,
+     "src": [],
+     "est": true
+    },
+    "running_board": {
+     "min": 80,
+     "max": 300,
+     "src": [],
+     "est": true
+    },
+    "rear_window": {
+     "min": 200,
+     "max": 500,
+     "src": [],
+     "est": true
+    },
+    "mirror": {
+     "min": 60,
+     "max": 300,
+     "src": [],
+     "est": true
+    },
+    "tyre": {
+     "min": 90,
+     "max": 220,
+     "src": [],
+     "est": true
+    }
+   },
+   "sources": [
+    "nabr",
+    "paintmat",
+    "rockauto",
+    "toyotaoem",
+    "hours"
+   ],
+   "note_tr": "İşçilik: NABR Haziran 2026 ortalaması ($86/saat) çevresinde kırsal – büyük şehir aralığı; boya malzemesi $38–55/saat; parça: RockAuto / Toyota OEM.",
+   "note_en": "Labour: around the NABR June 2026 average ($86/h), rural – metro range; paint materials $38–55/h; parts: RockAuto / Toyota OEM. Sales tax not included."
+  }
+ },
+ "actions": {
+  "scratch": [
+   {
+    "max_area": 0.02,
+    "action": "polish",
+    "tr": "Pasta-cila",
+    "en": "Polish",
+    "body": 0.5,
+    "paint": 0.0,
+    "part": false,
+    "paint_frac": 0.0
+   },
+   {
+    "max_area": 1,
+    "action": "repaint",
+    "tr": "Lokal / parça boya",
+    "en": "Local / panel repaint",
+    "body": 0.5,
+    "paint": 1.0,
+    "part": false,
+    "paint_frac": 0.6
+   }
+  ],
+  "dent": [
+   {
+    "max_area": 0.03,
+    "action": "pdr",
+    "tr": "Boyasız göçük düzeltme",
+    "en": "Paintless dent repair",
+    "body": 0.6,
+    "paint": 0.0,
+    "part": false,
+    "paint_frac": 0.0
+   },
+   {
+    "max_area": 0.15,
+    "action": "repair_paint",
+    "tr": "Düzeltme + boya",
+    "en": "Repair + paint",
+    "body": 1.0,
+    "paint": 1.0,
+    "part": false,
+    "paint_frac": 1.0
+   },
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Panel değişimi + boya",
+    "en": "Replace panel + paint",
+    "body": 0,
+    "paint": 1.0,
+    "part": true,
+    "paint_frac": 1.0
+   }
+  ],
+  "crack": [
+   {
+    "max_area": 0.06,
+    "action": "plastic_repair",
+    "tr": "Plastik kaynak + boya",
+    "en": "Plastic weld + paint",
+    "body": 1.0,
+    "paint": 1.0,
+    "part": false,
+    "paint_frac": 1.0
+   },
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Parça değişimi + boya",
+    "en": "Replace part + paint",
+    "body": 0,
+    "paint": 1.0,
+    "part": true,
+    "paint_frac": 1.0
+   }
+  ],
+  "broken_part": [
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Kırık / eksik parça: değişim + boya",
+    "en": "Broken / missing part: replace + paint",
+    "body": 0,
+    "paint": 1.0,
+    "part": true,
+    "paint_frac": 1.0
+   }
+  ],
+  "glass_shatter": [
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Cam değişimi",
+    "en": "Replace glass",
+    "body": 0,
+    "paint": 0,
+    "part": true,
+    "paint_frac": 0
+   }
+  ],
+  "lamp_broken": [
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Lamba değişimi",
+    "en": "Replace lamp",
+    "body": 0,
+    "paint": 0,
+    "part": true,
+    "paint_frac": 0
+   }
+  ],
+  "tire_flat": [
+   {
+    "max_area": 1,
+    "action": "tyre",
+    "tr": "Lastik tamiri / değişimi",
+    "en": "Tyre repair / replacement",
+    "body": 0,
+    "paint": 0,
+    "part": true,
+    "paint_frac": 0
+   }
+  ]
+ },
+ "default_part": {
+  "scratch": "door",
+  "dent": "door",
+  "crack": "bumper_front",
+  "broken_part": "bumper_front",
+  "glass_shatter": "windscreen",
+  "lamp_broken": "headlight",
+  "tire_flat": "tyre"
+ },
+ "part_of": {
+  "Front-windscreen-damage": "windscreen",
+  "Rear-windscreen-Damage": "rear_window",
+  "Headlight-damage": "headlight",
+  "Taillight-Damage": "taillight",
+  "Runningboard-Damage": "running_board",
+  "Sidemirror-Damage": "mirror",
+  "bonnet-dent": "bonnet",
+  "boot-dent": "boot",
+  "doorouter-dent": "door",
+  "fender-dent": "fender",
+  "front-bumper-dent": "bumper_front",
+  "quaterpanel-dent": "quarter_panel",
+  "rear-bumper-dent": "bumper_rear",
+  "roof-dent": "roof"
+ },
+ "sources": {
+  "ato26": {
+   "title": "ATO 2026 Oto Kaporta İşçilik Azami Fiyat Tarifesi (Ankara Ticaret Odası, meclis onayı 30.04.2026, KDV hariç)",
+   "url": "https://www.atonet.org.tr/Uploads/Birimler/Internet/Hizmetlerimiz/Azami%20Fiyat%20Tarifleri/2026_azami_fiyat_tarifesi/2026_oto_tamir_iscilik_2026_05_18_v2.pdf"
+  },
+  "ato25": {
+   "title": "ATO 2025 Oto Tamir İşçilik Azami Fiyat Tarifesi (bumper / quarter / boot rows; scaled ×1.30 to 2026)",
+   "url": "https://www.atonet.org.tr/Uploads/Birimler/Internet/Hizmetlerimiz/Azami%20Fiyat%20Tarifleri/2025_azami_fiyat_tarifesi/2025_oto_tamir_iscilik_2025_01_03.pdf"
+  },
+  "armut": {
+   "title": "armut.com — 2026 tampon / lokal boya / kaporta tamiri teklifleri (piyasa alt sınırı)",
+   "url": "https://armut.com/fiyatlari/tampon-boyama_6772"
+  },
+  "fiatparca": {
+   "title": "fiatparcacim.com — orijinal Fiat (OPAR) parça fiyatları",
+   "url": "https://www.fiatparcacim.com/urun/on-tampon-fiat-egea-cross-orjinal-fiat-yedek-parca-735753212/"
+  },
+  "otocikma": {
+   "title": "otocikma.com — Fiat Egea sıfır / çıkma parça ilanları (2026)",
+   "url": "https://www.otocikma.com/fiat-egea-kaporta-karoser-on-tampon"
+  },
+  "parcafilosu": {
+   "title": "parcafilosu.com.tr — Egea çamurluk (yan sanayi CEY 2.260 TL / orijinal 5.902 TL)",
+   "url": "https://www.parcafilosu.com.tr/fiat-egea-camurluk-ve-parcalari"
+  },
+  "unluoto": {
+   "title": "unluoto.com.tr — Egea sağ ön çamurluk orijinal 8.088 TL",
+   "url": "https://www.unluoto.com.tr/product/fiat-egea-sag-on-camurluk-orijinal-52012209"
+  },
+  "parcario": {
+   "title": "parcario.com — Egea ön cam OPAR 12.000–14.000 TL",
+   "url": "https://www.parcario.com/meta-etiket/fiat-egea-on-cam-fiyati"
+  },
+  "n11far": {
+   "title": "n11.com — Egea ön far (yan sanayi ~3.540 TL)",
+   "url": "https://www.n11.com/yedek-parca-otomobil/far-ve-aydinlatma/on-far?q=fiat+egea"
+  },
+  "dekra": {
+   "title": "DEKRA Reparatur-Stundensatz (DRS) 2026 — Bundesdurchschnitt netto: Karosserie 173,94 €, Lack (ohne Material) 192,87 €",
+   "url": "https://schaden.news/de/article/link/44861/dekra-reparatur-stundensatz-steigt-2025-26-um-7-5-prozent"
+  },
+  "autodoc_de": {
+   "title": "autodoc.de — VW Golf 7: Stoßstange 73–181 €, Kotflügel 68–154 €, Scheinwerfer 104–280 € (OE bis 1.050 €), Frontscheibe 400–1.200 €",
+   "url": "https://www.autodoc.de/autoteile/stossfanger-einzelteile-10287/vw/golf/golf-vii-5g1-be1"
+  },
+  "amonline": {
+   "title": "AM-online — UK average labour rate June 2026: franchised £92.74, non-franchised £56.42",
+   "url": "https://www.am-online.com/average-labour-rate-in-franchised-and-non-franchised-workshops"
+  },
+  "autodoc_uk": {
+   "title": "autodoc.co.uk — Ford Fiesta: front bumper £26.75–103.62, wing £33–168",
+   "url": "https://www.autodoc.co.uk/s/ford-fiesta-front-bumper"
+  },
+  "fordshop": {
+   "title": "shop.ford.co.uk — Fiesta headlamp unit £204.36; genuine bumper ~£218 (masterofbumpers.com)",
+   "url": "https://shop.ford.co.uk/products/ford-fiesta-front-o-s-headlight-headlamp-indicator-unit"
+  },
+  "nabr": {
+   "title": "NABR Labor Rate Index (Autobody News, June 2026): body $86/h, refinish $85/h",
+   "url": "https://www.autobodynews.com/regional/midwest-regional-news/labor-rate-index-national-data-shows-mechanical-labor-rates-rising-faster-than-body-refinish"
+  },
+  "paintmat": {
+   "title": "US paint & materials ~$38–55 per refinish hour (shop rate cards 2026)",
+   "url": "https://collision702.com/about/labor-rates/"
+  },
+  "rockauto": {
+   "title": "RockAuto — 2020 Toyota Corolla headlamp assembly $231–438",
+   "url": "https://www.rockauto.com/en/catalog/toyota,2020,corolla,2.0l+l4,3444156,body+&+lamp+assembly,headlamp+assembly,10762"
+  },
+  "toyotaoem": {
+   "title": "Toyota OEM parts — 2020 Corolla front bumper cover $143–215 (aftermarket $100–300, go-parts.com)",
+   "url": "https://toyota.oempartsonline.com/v-2020-toyota-corolla--le--1-8l-l4-gas/body--bumper-and-components-front"
+  },
+  "hours": {
+   "title": "Typical refinish hours (CCC ONE / Mitchell examples: bumper cover 2.0 h, hood 3.0 h, door 2.5 h)",
+   "url": "https://www.launchadvisor.co/guides/auto-body-shop-pricing-estimating-labor-rates-auto-body-paint-shop"
+  }
+ },
+ "disclaimer_tr": "Fotoğraftan yapılan kaba bir ön tahmindir; araç modeli, renk, gizli hasar ve servis tipi fiyatı ciddi biçimde değiştirir. Kesin fiyat için eksper / servis teklifi gerekir.",
+ "disclaimer_en": "A rough pre-estimate from one photo; car model, colour, hidden damage and workshop type change the price a lot. A real quote needs an assessor / workshop."
+}

@@ -1,0 +1,180 @@
+{
+ "n_images": 374,
+ "ms_mean": 496,
+ "shipped (conf 0.001, COCO protocol)": {
+  "AP": 59.9,
+  "AP50": 75.7,
+  "AP75": 62.0,
+  "APs": 24.9,
+  "APm": 38.8,
+  "APl": 58.5,
+  "AR100": 70.4,
+  "per_class": {
+   "dent": {
+    "AP": 33.0,
+    "AP50": 58.4
+   },
+   "scratch": {
+    "AP": 38.1,
+    "AP50": 66.5
+   },
+   "crack": {
+    "AP": 31.7,
+    "AP50": 52.1
+   },
+   "glass shatter": {
+    "AP": 93.2,
+    "AP50": 97.2
+   },
+   "lamp broken": {
+    "AP": 76.9,
+    "AP50": 88.3
+   },
+   "tire flat": {
+    "AP": 86.8,
+    "AP50": 91.4
+   }
+  }
+ },
+ "shipped @ on-device conf 0.05": {
+  "AP": 57.8,
+  "AP50": 72.0,
+  "AP75": 59.9,
+  "APs": 24.3,
+  "APm": 36.3,
+  "APl": 56.4,
+  "AR100": 65.0,
+  "per_class": {
+   "dent": {
+    "AP": 31.4,
+    "AP50": 53.8
+   },
+   "scratch": {
+    "AP": 36.9,
+    "AP50": 63.4
+   },
+   "crack": {
+    "AP": 30.8,
+    "AP50": 49.6
+   },
+   "glass shatter": {
+    "AP": 92.0,
+    "AP50": 96.3
+   },
+   "lamp broken": {
+    "AP": 72.6,
+    "AP50": 81.7
+   },
+   "tire flat": {
+    "AP": 83.4,
+    "AP50": 87.1
+   }
+  }
+ },
+ "shipped @ conf 0.25": {
+  "AP": 56.4,
+  "AP50": 68.9,
+  "AP75": 58.6,
+  "APs": 23.2,
+  "APm": 35.0,
+  "APl": 55.0,
+  "AR100": 61.9,
+  "per_class": {
+   "dent": {
+    "AP": 28.8,
+    "AP50": 47.5
+   },
+   "scratch": {
+    "AP": 35.1,
+    "AP50": 60.1
+   },
+   "crack": {
+    "AP": 28.8,
+    "AP50": 45.1
+   },
+   "glass shatter": {
+    "AP": 91.8,
+    "AP50": 94.6
+   },
+   "lamp broken": {
+    "AP": 70.5,
+    "AP50": 79.1
+   },
+   "tire flat": {
+    "AP": 83.4,
+    "AP50": 87.1
+   }
+  }
+ },
+ "flip-TTA concat+NMS": {
+  "AP": 61.3,
+  "AP50": 76.5,
+  "AP75": 63.2,
+  "APs": 26.8,
+  "APm": 41.1,
+  "APl": 60.8,
+  "AR100": 72.3,
+  "per_class": {
+   "dent": {
+    "AP": 35.9,
+    "AP50": 61.4
+   },
+   "scratch": {
+    "AP": 39.9,
+    "AP50": 66.2
+   },
+   "crack": {
+    "AP": 31.0,
+    "AP50": 52.0
+   },
+   "glass shatter": {
+    "AP": 92.8,
+    "AP50": 96.8
+   },
+   "lamp broken": {
+    "AP": 80.9,
+    "AP50": 90.7
+   },
+   "tire flat": {
+    "AP": 87.3,
+    "AP50": 91.9
+   }
+  }
+ },
+ "flip-TTA WBF": {
+  "AP": 62.3,
+  "AP50": 78.1,
+  "AP75": 64.4,
+  "APs": 31.5,
+  "APm": 41.7,
+  "APl": 61.2,
+  "AR100": 73.3,
+  "per_class": {
+   "dent": {
+    "AP": 37.8,
+    "AP50": 64.3
+   },
+   "scratch": {
+    "AP": 42.1,
+    "AP50": 69.9
+   },
+   "crack": {
+    "AP": 32.3,
+    "AP50": 53.8
+   },
+   "glass shatter": {
+    "AP": 93.4,
+    "AP50": 97.3
+   },
+   "lamp broken": {
+    "AP": 80.9,
+    "AP50": 91.1
+   },
+   "tire flat": {
+    "AP": 87.0,
+    "AP50": 91.9
+   }
+  }
+ },
+ "image-level damage recall @0.25": 98.4
+}
