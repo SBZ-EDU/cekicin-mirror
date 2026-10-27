@@ -1,0 +1,174 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:04.717
+Bu video, Çekicin yapay zekâ yol haritasının durum raporudur;
+
+2
+00:00:04.767 --> 00:00:06.885
+26 Ekim 2026'da kontrol edildi.
+
+3
+00:00:06.935 --> 00:00:09.123
+Çekicin ekibi altı modül istedi:
+
+4
+00:00:09.173 --> 00:00:14.299
+fotoğraftan hasar tespiti, onarım ya da değişim kararı ve maliyet tahmini,
+
+5
+00:00:14.349 --> 00:00:19.335
+yedek parça tedarikçileri ve fiyatları, müşteriler için sesli rehberlik,
+
+6
+00:00:19.385 --> 00:00:23.601
+en yakın servis noktaları ve bekleme süresiyle çevresel etki.
+
+7
+00:00:23.651 --> 00:00:26.539
+Yol haritası ortalama yüzde 58 tamamlandı.
+
+8
+00:00:26.589 --> 00:00:30.316
+Her modülün web sitesinde çalışan bir demosu, Telegram
+
+9
+00:00:30.366 --> 00:00:34.023
+botunda bir komutu ve kendi Hugging Face projesi var.
+
+10
+00:00:34.073 --> 00:00:37.870
+Hiçbiri henüz Çekicin mobil uygulamasının içinde değil.
+
+11
+00:00:39.120 --> 00:00:43.416
+Birinci modül, hasar tespiti, yaklaşık yüzde 70 tamamlandı.
+
+12
+00:00:43.466 --> 00:00:49.236
+Bin fotoğraflık bağımsız testte hasarlı araçların yüzde 84'ünde hasarı buluyor;
+
+13
+00:00:49.286 --> 00:00:52.698
+hasarsız araçlarda yanlış alarm oranı yüzde 15.
+
+14
+00:00:52.748 --> 00:00:56.308
+Bugünkü canlı testte yakından çekilmiş bir tampon
+
+15
+00:00:56.358 --> 00:00:59.475
+fotoğrafında çatlak ve çizik doğru bulundu;
+
+16
+00:00:59.525 --> 00:01:02.643
+ancak bir kamyondaki hafif çizik kaçırıldı.
+
+17
+00:01:02.693 --> 00:01:07.726
+İkinci modül, onarım kararı ve maliyet, yaklaşık yüzde 55 tamamlandı.
+
+18
+00:01:07.776 --> 00:01:12.072
+Fiyat aralığı, bin yüz gerçek ilanın yüzde 58'ini kapsıyor.
+
+19
+00:01:12.122 --> 00:01:17.450
+Gerçek servis faturaları ve eksper raporlarıyla kalibrasyon hâlâ gerekli.
+
+20
+00:01:18.700 --> 00:01:23.864
+Üçüncü modül, yedek parça ve fiyatlar, yaklaşık yüzde 60 tamamlandı.
+
+21
+00:01:23.914 --> 00:01:28.312
+Fiyat veritabanında 149 araç tipi için 3 bin 718 ilan var;
+
+22
+00:01:28.362 --> 00:01:32.452
+bunların 2 bin 756'sında parçanın fotoğrafı bulunuyor.
+
+23
+00:01:32.502 --> 00:01:38.817
+Beş yüz satırlık kontrolde fiyat, kaynak ilanla yüzde 99 virgül 8 oranında aynıydı.
+
+24
+00:01:38.867 --> 00:01:42.881
+Tedarikçilerle canlı stok ve fiyat anlaşmaları eksik.
+
+25
+00:01:42.931 --> 00:01:47.635
+Dördüncü modül, sesli rehberlik, yaklaşık yüzde 55 tamamlandı.
+
+26
+00:01:47.685 --> 00:01:53.539
+Sesli mesajlar yüzde 95 ile 97 arasında kelime doğruluğuyla yazıya dökülüyor;
+
+27
+00:01:53.589 --> 00:01:55.609
+ancak cevaplar hâlâ yazılı.
+
+28
+00:01:55.659 --> 00:01:59.520
+Sıradaki adım, Türkçe sesli cevap ve telefon hattı.
+
+29
+00:02:00.770 --> 00:02:06.520
+Beşinci modül, en yakın servis noktaları, yaklaşık yüzde 80 ile en ileri modül.
+
+30
+00:02:06.570 --> 00:02:10.632
+Türkiye'nin 20 büyük ilinin hepsinde 15 kilometre içinde
+
+31
+00:02:10.682 --> 00:02:14.230
+bir servis, 18'inde de bir yedek parçacı bulundu.
+
+32
+00:02:14.280 --> 00:02:18.488
+Bugün İstanbul'da yapılan canlı kontrol 5 servis döndürdü.
+
+33
+00:02:18.538 --> 00:02:24.142
+Altıncı modül, bekleme süresi ve çevresel etki, yaklaşık yüzde 30 tamamlandı:
+
+34
+00:02:24.192 --> 00:02:28.841
+açık bir simülatör var, ancak gerçek veriyle henüz kanıtlanmadı.
+
+35
+00:02:28.891 --> 00:02:32.659
+Çekici mi, yol yardımı mı kararı 21 senaryo testinin
+
+36
+00:02:32.709 --> 00:02:36.550
+hepsini geçiyor ve Telegram asistanı canlı çalışıyor.
+
+37
+00:02:37.800 --> 00:02:40.286
+Her şeyi kendiniz test edebilirsiniz.
+
+38
+00:02:40.336 --> 00:02:45.837
+PDF raporunda Cloudflare üzerindeki test web sitesine, her modülün kendi bölümüne
+
+39
+00:02:45.887 --> 00:02:51.388
+ve her modül için ayrı düğmesi olan Telegram botuna tıklanabilir bağlantılar var.
+
+40
+00:02:51.438 --> 00:02:54.815
+Demodan ürüne geçmek için sıradaki adımlar şunlar:
+
+41
+00:02:54.865 --> 00:02:59.201
+Çekicin uygulamasına entegrasyon, Çekicin'in kendi fotoğrafları,
+
+42
+00:02:59.251 --> 00:03:02.971
+faturaları ve çağrı kayıtlarıyla eğitim ve kalibrasyon,
+
+43
+00:03:03.021 --> 00:03:07.220
+sesli cevaplar ve gerçek bekleme sürelerini ölçecek bir pilot.
+

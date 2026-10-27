@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta name="referrer" content="no-referrer"><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Çekicin · Çevre, güvenlik ve COP31 / Environment, safety and COP31</title>
+<meta name="description" content="Çekicin: bekleme süresi, ikincil kaza riski ve CO₂e için açık simülatör; pilot ölçüm planı; COP31 ve EUREKA/Eurostars ortaklık hazırlığı.">
+<style>
+:root{--blue:#0a6fd1;--blue-s:#e8f3ff;--navy:#08111f;--ink:#0f172a;--muted:#5b677a;--line:#e6edf5;--bg:#f5f8fc;--y:#ffd000;--ok:#0f766e;--warn:#9b1c1c;--green:#15803d}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--ink);font-size:15px;line-height:1.55}
+a{color:var(--blue)}header{background:var(--navy);color:#fff}.top{max-width:1100px;margin:0 auto;padding:16px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.logo{width:40px;height:40px;border-radius:12px;background:var(--green);display:grid;place-items:center;font-weight:900;font-size:22px}.top h1{font-size:19px;margin:0}.top p{margin:0;color:#9fb0c8;font-size:13px}.sp{flex:1}
+.lang button{background:transparent;border:1px solid #33435c;color:#cbd5e1;border-radius:8px;padding:5px 10px;cursor:pointer;font:inherit}.lang button.on{background:var(--y);color:#1a1400;border-color:var(--y);font-weight:700}
+nav.toc{max-width:1100px;margin:0 auto;padding:0 18px 12px;display:flex;gap:8px;flex-wrap:wrap}nav.toc a{color:#cbd5e1;font-size:13px;text-decoration:none;border:1px solid #23324a;border-radius:999px;padding:3px 10px}
+main{max-width:1100px;margin:0 auto;padding:22px 18px 50px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px}
+.card h2{margin:0 0 6px;font-size:20px}.card h3{font-size:16px;margin:18px 0 8px}.lead{color:var(--muted);margin:0 0 12px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--bg);border-radius:14px;padding:14px}.kpi b{display:block;font-size:24px}.kpi span{font-size:12.5px;color:var(--muted)}.kpi.g b{color:var(--green)}
+.scroll{overflow:auto}table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:start;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em}td.num,th.num{text-align:end;white-space:nowrap}td small{color:var(--muted);font-size:11.5px}
+.note{font-size:12.5px;color:var(--muted)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:860px){.grid2{grid-template-columns:1fr}}
+.form{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 14px}@media(max-width:760px){.form{grid-template-columns:1fr 1fr}}
+.form label{font-size:12.5px;color:var(--muted);display:flex;flex-direction:column;gap:3px}.form input[type=number]{font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:10px;width:100%}
+.form label.chk{flex-direction:row;align-items:center;gap:8px;color:var(--ink)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 12px}.btns button{font:inherit;font-size:13px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:5px 12px;cursor:pointer}.btns button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.banner{border-radius:14px;padding:12px 14px;margin:12px 0;font-size:14px}.banner.ok{background:#ecfdf3;border:1px solid #b7ebc9}.banner.no{background:#fff7ed;border:1px solid #fed7aa}
+.bar{display:grid;grid-template-columns:150px 1fr 70px;gap:8px;align-items:center;font-size:13px;margin:5px 0}.bar .t{height:12px;border-radius:6px;background:#e5e7eb;position:relative;overflow:hidden}
+.bar .t i{position:absolute;inset:0 auto 0 0;border-radius:6px}.bar.b i{background:#94a3b8}.bar.c i{background:var(--green)}
+.steps{display:grid;gap:8px}.step{display:grid;grid-template-columns:110px 1fr;gap:10px;border:1px solid var(--line);border-radius:12px;padding:10px 12px}.step b.d{color:var(--blue)}
+pre.copy{white-space:pre-wrap;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;font-size:13px}
+body.l-en .tr{display:none}body.l-tr .en{display:none}
+</style><meta property="og:title" content="Çekicin · Çevre, güvenlik ve COP31 / Environment, safety and COP31">
+<meta property="og:description" content="Çekicin: bekleme süresi, ikincil kaza riski ve CO₂e için açık simülatör; pilot ölçüm planı; COP31 ve EUREKA/Eurostars ortaklık hazırlığı.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sosa123454321-cekicin-site.static.hf.space/ai-lab/impact.html">
+<meta property="og:image" content="https://sosa123454321-cekicin-site.static.hf.space/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style id="de-css">html:not([lang=de]) .de{display:none!important}html[lang=de] .tr,html[lang=de] .en{display:none!important}</style>
+</head>
+<body class="l-tr">
+<header><div class="top"><div class="logo">🌱</div><div>
+<h1><span class="tr">Çekicin · Çevre, güvenlik ve COP31</span><span class="en">Çekicin · Environment, safety and COP31</span><span class="de">Çekicin · Umwelt, Sicherheit und COP31</span></h1>
+<p><span class="tr">Bekleme süresi, ikincil kaza riski ve CO₂e için açık simülatör · pilot ölçüm planı · COP31 ve AB ortaklıkları</span><span class="en">Open simulator for waiting time, secondary-crash risk and CO₂e · pilot measurement plan · COP31 and EU partners</span><span class="de">Offener Simulator für Wartezeit, Sekundärunfallrisiko und CO₂e · Pilot-Messplan · COP31 und EU-Partner</span> · 2026-10-16</p></div>
+<div class="sp"></div><div class="lang"><button data-l="tr">TR</button> <button data-l="en">EN</button><button data-l="de" lang="de">DE</button></div></div>
+<nav class="toc"><a href="#hedef"><span class="tr">Hedefler</span><span class="en">Targets</span><span class="de">Ziele</span></a><a href="#sim"><span class="tr">Simülatör</span><span class="en">Simulator</span><span class="de">Simulator</span></a><a href="#kaza"><span class="tr">İkincil kaza</span><span class="en">Secondary crashes</span><span class="de">Sekundärunfälle</span></a><a href="#olcum"><span class="tr">Pilot ölçüm</span><span class="en">Pilot measurement</span><span class="de">Pilot-Messung</span></a><a href="#cop31">COP31</a><a href="#ab"><span class="tr">AB ortakları</span><span class="en">EU partners</span><span class="de">EU-Partner</span></a><a href="index.html">AI Lab</a></nav>
+</header>
+<main>
+
+<div class="card" id="hedef">
+<h2><span class="tr">Hedefler ve yaklaşımımız</span><span class="en">Targets and our approach</span><span class="de">Ziele und unser Ansatz</span></h2>
+<p class="lead"><span class="tr">Çekicin’in beklenen sonuçları: sürücünün trafikte bekleme süresini %70 azaltmak, çekicinin olay yerine varış ve servise götürme süresini %70 azaltmak, yolu daraltan ve ikinci/üçüncü kazalara yol açabilen bekleyişleri büyük ölçüde önlemek; böylece egzoz gazını, enerji tüketimini, yaralanma ve can kaybını azaltmak.</span>
+<span class="en">Çekicin’s expected outcomes: cut the driver’s waiting time in traffic by 70%, cut the tow truck’s time to the scene and to the workshop by 70%, and largely prevent the lane-narrowing waits that can cause second and third crashes; and so reduce exhaust emissions, energy use, injuries and deaths.</span><span class="de">Erwartete Ergebnisse von Çekicin: die Wartezeit des Fahrers im Verkehr um 70% reduzieren, die Zeit des Abschleppwagens zur Unfallstelle und zur Werkstatt um 70% verkürzen und die spurverengenden Wartezeiten, die zu zweiten und dritten Unfällen führen können, weitgehend verhindern; und so die Abgasemissionen, den Energieverbrauch, Verletzungen und Todesfälle reduzieren.</span></p>
+<div class="banner no"><b><span class="tr">Dürüst ilke:</span><span class="en">Honest principle:</span><span class="de">Ehrliches Prinzip:</span></b>
+<span class="tr">%70 bugün bir <b>hedeftir</b>, ölçülmüş bir sonuç değildir. COP31’de ve fon başvurularında “hedef + ölçüm yöntemi + simülasyon” olarak sunulmalı; gerçek pilot verisi geldikçe aşağıdaki simülatör onunla kalibre edilmelidir. Ölçülmemiş bir %70, değerlendiricilerin ilk itiraz ettiği şeydir.</span>
+<span class="en">Today 70% is a <b>target</b>, not a measured result. At COP31 and in funding applications it should be presented as “target + measurement method + simulation”; the simulator below should be calibrated with real pilot data as it arrives. An unmeasured 70% is the first thing evaluators challenge.</span><span class="de">Heute ist 70% ein <b>Ziel</b>, kein gemessenes Ergebnis. Auf der COP31 und in Förderanträgen sollte es als „Ziel + Messmethode + Simulation“ präsentiert werden; der untenstehende Simulator sollte mit realen Pilotdaten kalibriert werden, wenn diese eintreffen. Ein ungemessenes 70% ist das Erste, was Evaluatoren in Frage stellen.</span></div>
+</div>
+
+<div class="card" id="sim">
+<h2><span class="tr">Çekici yönlendirme simülatörü (İstanbul, 45 × 25 km)</span><span class="en">Tow-dispatch simulator (Istanbul, 45 × 25 km)</span><span class="de">Abschlepp-Simulator (Istanbul, 45 × 25 km)</span></h2>
+<p class="lead"><span class="tr">Aynı kazalar ve aynı çekiciler iki yöntemle yönlendirilir. <b>Bugün (çağrı merkezi):</b> elle yönlendirme gecikmesi; yalnızca bazı çekici firmalarına ve servislere ulaşılır, onların en yakını seçilir. <b>Çekicin (uygulama):</b> kısa otomatik yönlendirme; en erken varabilecek boş çekici seçilir. Bir haftalık kaza akışı (Poisson) tarayıcınızda simüle edilir; tüm değerler değiştirilebilir varsayımlardır.</span>
+<span class="en">The same crashes and the same trucks are dispatched two ways. <b>Today (call centre):</b> manual dispatch delay; only some tow firms and workshops are reached, and the nearest of those is chosen. <b>Çekicin (app):</b> short automatic dispatch; the free truck that can arrive first is chosen. One week of crashes (Poisson) is simulated in your browser; every value is an editable assumption.</span><span class="de">Die gleichen Unfälle und die gleichen Abschleppwagen werden auf zwei Arten entsandt. <b>Heute (Callcenter):</b> manuelle Entsendeverzögerung; nur einige Abschleppunternehmen und Werkstätten werden erreicht, und die nächste davon wird gewählt. <b>Çekicin (App):</b> kurze automatische Entsendung; der freie Abschleppwagen, der zuerst ankommen kann, wird gewählt. Eine Woche Unfälle (Poisson) wird in Ihrem Browser simuliert; jeder Wert ist eine editierbare Annahme.</span></p>
+<div class="btns" id="scen">
+<button data-s="central" class="on"><span class="tr">Merkezi senaryo</span><span class="en">Central scenario</span><span class="de">Zentrales Szenario</span></button>
+<button data-s="best"><span class="tr">+ en yakın servis</span><span class="en">+ nearest workshop</span><span class="de">+ nächstgelegene Werkstatt</span></button>
+<button data-s="cons"><span class="tr">Temkinli</span><span class="en">Conservative</span><span class="de">Konservativ</span></button>
+<button data-s="all"><span class="tr">Çağrı merkezi tüm çekicileri biliyor</span><span class="en">Call centre already knows all trucks</span><span class="de">Callcenter kennt bereits alle Abschleppwagen</span></button>
+</div>
+<div class="form" id="form">
+<label><span><span class="tr">Görevdeki çekici sayısı</span><span class="en">Tow trucks on duty</span><span class="de">Abschleppwagen im Einsatz</span></span><input type="number" id="trucks" min="5" max="400"></label>
+<label><span><span class="tr">Saatlik çağrı</span><span class="en">Calls per hour</span><span class="de">Anrufe pro Stunde</span></span><input type="number" id="perHour" min="1" max="100" step="0.5"></label>
+<label><span><span class="tr">Trafikte ort. hız (km/sa)</span><span class="en">Avg. speed in traffic (km/h)</span><span class="de">Durchschnittsgeschwindigkeit im Verkehr (km/h)</span></span><input type="number" id="speed" min="5" max="80"></label>
+<label><span><span class="tr">Bugün: çağrı → çekici atanması (dk)</span><span class="en">Today: call → truck assigned (min)</span><span class="de">Heute: Anruf → Abschleppwagen zugewiesen (Min)</span></span><input type="number" id="ccMin" min="0" max="120"></label>
+<label><span><span class="tr">Uygulama: otomatik atama (dk)</span><span class="en">App: automatic assignment (min)</span><span class="de">App: automatische Zuweisung (Min)</span></span><input type="number" id="appMin" min="0" max="30" step="0.5"></label>
+<label><span><span class="tr">Bugün ulaşılan firma/servis payı (%)</span><span class="en">Share of firms/workshops reached today (%)</span><span class="de">Anteil der heute erreichten Firmen/Werkstätten (%)</span></span><input type="number" id="share" min="1" max="100"></label>
+<label><span><span class="tr">Yükleme süresi (dk)</span><span class="en">Loading time (min)</span><span class="de">Ladezeit (Min)</span></span><input type="number" id="loadMin" min="0" max="90"></label>
+<label><span><span class="tr">Şerit kapatan olay payı (%)</span><span class="en">Share of lane-blocking incidents (%)</span><span class="de">Anteil der Fahrbahn blockierenden Vorfälle (%)</span></span><input type="number" id="block" min="0" max="100"></label>
+<label><span><span class="tr">Beklerken motoru çalışan araç (%)</span><span class="en">Vehicles idling while waiting (%)</span><span class="de">Fahrzeuge im Leerlauf während des Wartens (%)</span></span><input type="number" id="idleShare" min="0" max="100"></label>
+<label class="chk"><input type="checkbox" id="svcNearest"> <span><span class="tr">Uygulama en yakın servisi seçebilir (sigorta/müşteri izin verirse)</span><span class="en">App may choose the nearest workshop (if insurer/customer allows)</span><span class="de">Die App kann die nächste Werkstatt auswählen (wenn Versicherer/Kunde zustimmt)</span></span></label>
+</div>
+<div class="kpis" id="kpis"></div>
+<div id="check"></div>
+<div class="grid2">
+<div><h3><span class="tr">Karşılaştırma (ortalama, görev başına)</span><span class="en">Comparison (mean, per job)</span><span class="de">Vergleich (Durchschnitt, pro Auftrag)</span></h3><div class="scroll"><table id="tbl"></table></div></div>
+<div><h3><span class="tr">Bugün ve Çekicin</span><span class="en">Today vs Çekicin</span><span class="de">Heute vs Çekicin</span></h3><div id="bars"></div>
+<p class="note"><span class="tr">Gri: bugün · yeşil: Çekicin. Çubuklar bugünkü değere göre ölçeklidir.</span><span class="en">Grey: today · green: Çekicin. Bars are scaled to today’s value.</span><span class="de">Grau: heute · grün: Çekicin. Die Balken sind auf den heutigen Wert skaliert.</span></p></div>
+</div>
+<h3><span class="tr">Senaryolar yan yana</span><span class="en">Scenarios side by side</span><span class="de">Szenarien nebeneinander</span></h3>
+<div class="scroll"><table id="scTbl"></table></div>
+<p class="note"><span class="tr">Model: kazalar ve çekiciler alana rastgele dağılır; yol mesafesi = kuş uçuşu × 1,35; çekici işi bitirince servisin yanında boşa çıkar; boş çekici yoksa kaza sırada bekler. Emisyon: çekici km × 0,706 kg CO₂e/km (UK DESNZ 2025, dolu kamyon, temkinli), rölantide bekleyen araç 0,8 L/sa dizel × 2,51 kg CO₂e/L. İkincil kaza: FHWA kuralı (her dakika +%2,8) ile bugünkü maruziyete göre göreli azalma. Gerçek yol ağı, saat içi trafik ve çekici türleri yok — pilot veriyle kalibre edilmelidir.</span>
+<span class="en">Model: crashes and trucks are spread randomly over the area; road distance = straight line × 1.35; after a job the truck becomes free next to the workshop; if no truck is free the crash waits in a queue. Emissions: truck km × 0.706 kg CO₂e/km (UK DESNZ 2025, laden truck, conservative), idling waiting vehicle 0.8 L/h diesel × 2.51 kg CO₂e/L. Secondary crashes: FHWA rule (+2.8% per minute) as a relative cut versus today’s exposure. No real road network, time-of-day traffic or truck types — calibrate with pilot data.</span><span class="de">Modell: Unfälle und Abschleppwagen sind zufällig über das Gebiet verteilt; Straßenentfernung = Luftlinie × 1,35; nach einem Auftrag wird der Abschleppwagen neben der Werkstatt frei; wenn kein Abschleppwagen frei ist, wartet der Unfall in einer Warteschlange. Emissionen: Abschleppwagen km × 0,706 kg CO₂e/km (UK DESNZ 2025, beladener Abschleppwagen, konservativ), wartendes Fahrzeug im Leerlauf 0,8 L/h Diesel × 2,51 kg CO₂e/L. Sekundäre Unfälle: FHWA-Regel (+2,8 % pro Minute) als relativer Schnitt gegenüber der heutigen Exposition. Kein reales Straßennetz, Verkehrsaufkommen zu bestimmten Tageszeiten oder Abschleppwagentypen — Kalibrieren mit Pilotdaten.</span>
+· <a href="dispatch-sim.js">dispatch-sim.js</a></p>
+</div>
+
+<div class="card" id="kaza">
+<h2><span class="tr">İkincil kazalar: her dakika önemli</span><span class="en">Secondary crashes: every minute counts</span><span class="de">Jede Minute zählt bei sekundären Unfällen</span></h2>
+<div class="grid2">
+<div><p><span class="tr">ABD Federal Karayolu İdaresi (FHWA): birincil olay yolda tehlike oluşturmaya devam ettiği <b>her dakika</b>, ikincil kaza olasılığı <b>%2,8 artar</b>. Maryland’in CHART programı ortalama olay süresini 29 dakikadan 22 dakikaya indirdi ve bunun 2005’te <b>290 ikincil olayı önlediği</b> tahmin edildi.</span>
+<span class="en">US Federal Highway Administration (FHWA): for <b>every minute</b> the primary incident remains a hazard, the likelihood of a secondary crash <b>rises by 2.8%</b>. Maryland’s CHART programme cut average incident duration from 29 to 22 minutes, and this was estimated to have <b>prevented 290 secondary incidents</b> in 2005.</span><span class="de">US Federal Highway Administration (FHWA): Für <b>jede Minute</b>, die der primäre Unfall eine Gefahr bleibt, steigt die Wahrscheinlichkeit eines sekundären Unfalls um <b>2,8 %</b>. Das CHART-Programm von Maryland verkürzte die durchschnittliche Unfalldauer von 29 auf 22 Minuten, und dies wurde auf <b>290 verhinderten sekundären Unfällen</b> im Jahr 2005 geschätzt.</span>
+<a href="https://ops.fhwa.dot.gov/publications/fhwahop15007/presentation/decision_makers.htm" target="_blank" rel="noopener">FHWA TIM briefing</a></p></div>
+<div><p><span class="tr">Çekicin’in güvenlik katkısı bu yüzden “daha hızlı çekici”den fazlasıdır: aracın yolda tehlike oluşturduğu dakikaları azaltmak. Uygulamada eklenebilecek güvenlik adımları: üçgen/ikaz ışığı ve bariyer dışında bekleme hatırlatması, şerit kapatan olayda 112/trafik ekiplerine konum paylaşımı (izinle), yaklaşan sürücülere navigasyon uygulamaları üzerinden uyarı (ortaklıkla).</span>
+<span class="en">So Çekicin’s safety contribution is more than “a faster tow truck”: it reduces the minutes a vehicle stays a hazard on the road. Safety steps the app could add: a reminder to set the warning triangle and hazard lights and to wait behind the barrier; sharing the location with 112 / traffic police for lane-blocking incidents (with consent); warnings to approaching drivers through navigation apps (via partnerships).</span><span class="de">Çekicin trägt also mehr zur Sicherheit bei als „ein schnellerer Abschleppwagen“: Es reduziert die Minuten, die ein Fahrzeug eine Gefahr auf der Straße bleibt. Sicherheitsmaßnahmen, die die App hinzufügen könnte: eine Erinnerung, das Warndreieck und die Warnblinkanlage zu setzen und hinter der Barriere zu warten; das Teilen des Standorts mit 112 / der Verkehrspolizei bei fahrbahnblockierenden Vorfällen (mit Zustimmung); Warnungen an sich nähernde Fahrer über Navigations-Apps (über Partnerschaften).</span></p></div>
+</div>
+<p class="note"><span class="tr">Not: %2,8 ABD otoyol verisinden gelir; Türkiye için yerel kaza verisiyle (EGM/KGM) doğrulanmalıdır. Can kaybı azalması için sayısal bir iddia, yerel veri olmadan yapılmamalıdır.</span><span class="en">Note: 2.8% comes from US motorway data; it must be checked against local crash data for Türkiye (EGM/KGM). No numeric claim about fewer deaths should be made without local data.</span><span class="de">Hinweis: Die 2,8 % stammen aus US-Autobahndaten; sie müssen anhand lokaler Unfalldaten für die Türkei (EGM/KGM) überprüft werden. Ohne lokale Daten sollte keine numerische Aussage über weniger Todesfälle gemacht werden.</span></p>
+</div>
+
+<div class="card" id="olcum">
+<h2><span class="tr">Pilot ölçüm planı: %70’i kanıtlamak için</span><span class="en">Pilot measurement plan: how to prove 70%</span><span class="de">Pilot-Messplan: Wie beweist man 70 %?</span></h2>
+<p class="lead"><span class="tr">Uygulama ve Diji Alfa paneli her görevde şu zaman damgalarını kaydederse, simülatördeki her varsayım gerçek veriyle değişir. Önce 4 hafta “bugünkü” süreç, sonra aynı bölgelerde uygulama ile 4–8 hafta ölçülür (ilçe bazında A/B en güçlü kanıttır).</span>
+<span class="en">If the app and the Diji Alfa panel log these timestamps for every job, every assumption in the simulator is replaced by real data. First measure 4 weeks of the “today” process, then 4–8 weeks with the app in the same areas (district-level A/B is the strongest evidence).</span><span class="de">Wenn die App und das Diji Alfa-Panel diese Zeitstempel für jeden Auftrag protokollieren, wird jede Annahme im Simulator durch reale Daten ersetzt. Zuerst 4 Wochen des „heute“ Prozesses messen, dann 4–8 Wochen mit der App in denselben Gebieten (A/B-Tests auf Bezirksebene sind der stärkste Beweis).</span></p>
+<div class="scroll"><table>
+<thead><tr><th><span class="tr">Olay</span><span class="en">Event</span><span class="de">Ereignis</span></th><th><span class="tr">Kaydedilecek</span><span class="en">What to log</span><span class="de">Was zu protokollieren</span></th><th><span class="tr">Hangi metriği kanıtlar</span><span class="en">Which metric it proves</span><span class="de">Welches Metrik es beweist</span></th></tr></thead>
+<tbody>
+<tr><td>call_created</td><td><span class="tr">zaman, konum (GPS), hasar/arıza türü, şerit kapalı mı</span><span class="en">time, location (GPS), damage/fault type, lane blocked?</span><span class="de">Zeit, Ort (GPS), Schaden/Fehlertyp, Fahrbahn blockiert?</span></td><td><span class="tr">başlangıç noktası</span><span class="en">starting point</span><span class="de">Startpunkt</span></td></tr>
+<tr><td>truck_assigned</td><td><span class="tr">zaman, çekici kimliği, çekicinin konumu</span><span class="en">time, truck id, truck location</span><span class="de">Zeit, Abschleppwagen-ID, Abschleppwagen-Standort</span></td><td><span class="tr">atama süresi (çağrı merkezi ↔ uygulama)</span><span class="en">assignment time (call centre ↔ app)</span><span class="de">Zuweisungszeit (Callcenter ↔ App)</span></td></tr>
+<tr><td>truck_arrived</td><td><span class="tr">zaman, GPS ile kat edilen boş km</span><span class="en">time, empty km driven (GPS)</span><span class="de">Zeit, leere km gefahren (GPS)</span></td><td><span class="tr"><b>bekleme süresi</b> (hedef −%70), boş km → CO₂e</span><span class="en"><b>waiting time</b> (target −70%), empty km → CO₂e</span><span class="de"><b>Wartezeit</b> (Ziel −70 %), leere km → CO₂e</span></td></tr>
+<tr><td>vehicle_cleared</td><td><span class="tr">zaman (araç yoldan kaldırıldı)</span><span class="en">time (vehicle removed from the road)</span><span class="de">Zeit (Fahrzeug von der Straße entfernt)</span></td><td><span class="tr"><b>tehlike dakikaları</b> → ikincil kaza riski</span><span class="en"><b>hazard minutes</b> → secondary-crash risk</span><span class="de"><b>Gefährdungsminuten</b> → Risiko eines Folgeunfalls</span></td></tr>
+<tr><td>delivered</td><td><span class="tr">zaman, servis kimliği, dolu km</span><span class="en">time, workshop id, loaded km</span><span class="de">Zeit, Werkstatt-ID, beladene km</span></td><td><span class="tr"><b>servise teslim süresi</b> (hedef −%70), toplam km</span><span class="en"><b>time to workshop</b> (target −70%), total km</span><span class="de"><b>Zeit bis zur Werkstatt</b> (Ziel −70 %), Gesamt-km</span></td></tr>
+<tr><td>feedback</td><td><span class="tr">müşteri puanı, çağrı merkezine ayrıca arandı mı</span><span class="en">customer rating, did they also phone the call centre?</span><span class="de">Kundenbewertung, haben sie auch das Callcenter angerufen?</span></td><td><span class="tr">çağrı merkezi yükünün azalması</span><span class="en">reduction in call-centre load</span><span class="de">Reduzierung der Callcenter-Belastung</span></td></tr>
+</tbody></table></div>
+<p class="note"><span class="tr">Kişisel veri: konum ve zaman damgaları KVKK kapsamında anonimleştirilmeli; raporda yalnızca toplu metrikler yayınlanmalıdır.</span><span class="en">Personal data: locations and timestamps must be anonymised under KVKK; only aggregate metrics should be published.</span><span class="de">Persönliche Daten: Standorte und Zeitstempel müssen gemäß KVKK anonymisiert werden; nur aggregierte Metriken sollten veröffentlicht werden.</span></p>
+</div>
+
+<div class="card" id="cop31">
+<h2><span class="tr">COP31 Antalya hazırlığı</span><span class="en">Getting ready for COP31 Antalya</span><span class="de">Vorbereitung auf COP31 Antalya</span></h2>
+<p class="lead"><span class="tr">COP31, 9–20 Kasım 2026’da Antalya EXPO Center’da yapılacak; Türkiye başkan ve ev sahibi, müzakereleri Avustralya yönetiyor. Günlük temalarda <b>10 Kasım: Enerji ve Ulaşım</b> günü Çekicin için en uygun gündür. Akredite olmayan ziyaretçiler Green Zone için kayıt olabilir.</span>
+<span class="en">COP31 takes place on 9–20 November 2026 at the Antalya EXPO Center; Türkiye holds the presidency and hosts it, Australia leads the negotiations. Among the daily themes, <b>10 November: Energy and Transport</b> is the best fit for Çekicin. Non-accredited visitors can register for the Green Zone.</span><span class="de">COP31 findet vom 9. bis 20. November 2026 im Antalya EXPO Center statt; Türkiye übernimmt den Vorsitz und ist Gastgeber, Australien leitet die Verhandlungen. Unter den täglichen Themen ist <b>10. November: Energie und Verkehr</b> am besten für Çekicin geeignet. Nicht akkreditierte Besucher können sich für die Green Zone registrieren.</span>
+<a href="https://apollo.eco/cop31-antalya-2026-guide/" target="_blank" rel="noopener">COP31 guide</a> · <a href="https://www.antalyaestate.net/cop31-antalya-guide" target="_blank" rel="noopener"><span class="tr">günlük temalar</span><span class="en">daily themes</span><span class="de">tägliche Themen</span></a> · <a href="https://www.dcceew.gov.au/climate-change/international-climate-action/unfccc-cop/cop31" target="_blank" rel="noopener">DCCEEW</a></p>
+<div class="steps">
+<div class="step"><b class="d"><span class="tr">23 Eki’ye kadar</span><span class="en">By 23 Oct</span><span class="de">Bis zum 23. Okt</span></b><span><span class="tr">Çekicin son 3 ayın anonim görev kayıtlarını paylaşır (çağrı, atama, varış, teslim zamanları; km). Simülatör bu “bugün” verisiyle kalibre edilir.</span><span class="en">Çekicin shares anonymised job logs for the last 3 months (call, assignment, arrival and delivery times; km). The simulator is calibrated with this “today” data.</span><span class="de">Çekicin teilt anonymisierte Arbeitsprotokolle der letzten 3 Monate (Anruf-, Zuweisungs-, Ankunfts- und Lieferzeiten; km). Der Simulator wird mit diesen „heute“-Daten kalibriert.</span></span></div>
+<div class="step"><b class="d"><span class="tr">30 Eki’ye kadar</span><span class="en">By 30 Oct</span><span class="de">Bis zum 30. Okt</span></b><span><span class="tr">Kalibre sonuçlarla TR/EN tek sayfalık özet; Green Zone kaydı; Çevre, Şehircilik ve İklim Değişikliği Bakanlığı / COP31 Eylem Gündemi ile iletişim.</span><span class="en">One-page TR/EN brief with calibrated results; Green Zone registration; contact with the Ministry of Environment, Urbanisation and Climate Change / the COP31 Action Agenda.</span><span class="de">Einseitige TR/EN-Kurzfassung mit kalibrierten Ergebnissen; Registrierung in der Green Zone; Kontakt mit dem Ministerium für Umwelt, Stadtentwicklung und Klimawandel / der COP31-Aktionsagenda.</span></span></div>
+<div class="step"><b class="d"><span class="tr">6 Kas’a kadar</span><span class="en">By 6 Nov</span><span class="de">Bis zum 6. Nov</span></b><span><span class="tr">2 dakikalık demo videosu (AI Lab + simülatör), basılı özet, Türkiye’de açılan ayna siteye QR kod.</span><span class="en">2-minute demo video (AI Lab + simulator), printed brief, QR code to the mirror site that opens in Türkiye.</span><span class="de">2-minütiges Demo-Video (AI-Lab + Simulator), gedruckte Kurzfassung, QR-Code zur Spiegelseite, die in Türkiye geöffnet wird.</span></span></div>
+<div class="step"><b class="d">10 <span class="tr">Kas</span><span class="en">Nov</span><span class="de">November</span></b><span><span class="tr">Enerji ve Ulaşım günü: belediyeler, sigortacılar, yol yardım şirketleri ve AB ortak adaylarıyla görüşmeler.</span><span class="en">Energy and Transport day: meetings with municipalities, insurers, roadside-assistance companies and prospective EU partners.</span><span class="de">Energie- und Verkehrstag: Treffen mit Gemeinden, Versicherern, Pannenhilfe-Unternehmen und potenziellen EU-Partnern.</span></span></div>
+</div>
+<p class="note"><span class="tr">Mesaj önerisi: “Akıllı çekici yönlendirme ile trafikte bekleme süresini ve boş kilometreyi azaltmayı hedefliyoruz; yöntemimiz açık, ölçümümüz pilotla yapılıyor.” Kesin bir %70 yerine simülasyon aralığı ve pilot planı gösterilmelidir.</span><span class="en">Suggested message: “With smart tow dispatch we aim to cut waiting time in traffic and empty kilometres; our method is open and we measure it in a pilot.” Show the simulation range and the pilot plan instead of a flat 70%.</span><span class="de">Vorgeschlagene Nachricht: „Mit der intelligenten Abschleppwagen-Dispatching wollen wir die Wartezeit im Verkehr und die Leerfahrten reduzieren; unsere Methode ist offen und wir messen sie in einem Pilotprojekt.“ Zeigen Sie den Simulationsbereich und den Pilotplan anstelle einer flachen 70%.</span></p>
+</div>
+
+<div class="card" id="ab">
+<h2><span class="tr">AB fonları için ortaklık (EUREKA / Eurostars)</span><span class="en">Partners for EU funding (EUREKA / Eurostars)</span><span class="de">Partner für EU-Förderung (EUREKA / Eurostars)</span></h2>
+<div class="grid2">
+<div>
+<h3><span class="tr">Takvim ve kurallar</span><span class="en">Timeline and rules</span><span class="de">Zeitplan und Regeln</span></h3>
+<ul>
+<li><span class="tr">Eurostars Çağrı 11, 10 Eylül 2026’da kapandı. <b>Çağrı 12: 17 Aralık 2026 açılış, 4 Mart 2027 kapanış.</b></span><span class="en">Eurostars Call 11 closed on 10 September 2026. <b>Call 12: opens 17 December 2026, closes 4 March 2027.</b></span><span class="de">Eurostars Call 11 endete am 10. September 2026. <b>Call 12: eröffnet am 17. Dezember 2026, endet am 4. März 2027.</b></span> <a href="https://www.be-funded.de/en/blog/eureka-eurostars-funding/" target="_blank" rel="noopener">be-funded</a></li>
+<li><span class="tr">Lider bir yenilikçi KOBİ olmalı; en az 2 Eurostars ülkesinden en az 2 bağımsız kuruluş; KOBİ’ler bütçenin en az %50’si; hiçbir ortak veya ülke %70’i aşamaz.</span><span class="en">An innovative SME must lead; at least 2 independent organisations from at least 2 Eurostars countries; SMEs at least 50% of the budget; no partner or country above 70%.</span><span class="de">Ein innovatives KMU muss die Führung übernehmen; mindestens 2 unabhängige Organisationen aus mindestens 2 Eurostars-Ländern; KMUs mindestens 50% des Budgets; kein Partner oder Land über 70%.</span> <a href="https://eurovertice.eu/en/calls/programa-eurostars-3-call-11/" target="_blank" rel="noopener">EuroVértice</a></li>
+<li><span class="tr">Türk ortağı TÜBİTAK finanse eder; Eurostars son tarihiyle aynı anda TÜBİTAK’a ön başvuru gerekir.</span><span class="en">TÜBİTAK funds the Turkish partner; a pre-submission to TÜBİTAK is needed at the same time as the Eurostars deadline.</span><span class="de">TÜBİTAK finanziert den türkischen Partner; eine Vorab-Einreichung bei TÜBİTAK ist gleichzeitig mit dem Eurostars-Stichtag erforderlich.</span> <a href="https://www.eurekanetwork.org/programmes-and-calls/eurostars/eurostars-call-for-projects-september-2026/" target="_blank" rel="noopener">Eureka</a></li>
+</ul>
+<h3><span class="tr">Ülke notları (Çağrı 11 bilgisi)</span><span class="en">Country notes (Call 11 information)</span><span class="de">Länderspezifische Hinweise (Informationen zu Call 11)</span></h3>
+<ul>
+<li><b><span class="tr">Macaristan</span><span class="en">Hungary</span><span class="de">Ungarn</span></b>: <span class="tr">NRDI hibe veriyor (iki çağrı için yıllık 1 milyon €).</span><span class="en">NRDI gives grants (EUR 1 million per year for two calls).</span><span class="de">NRDI gewährt Zuschüsse (EUR 1 Million pro Jahr für zwei Aufrufe).</span></li>
+<li><b>Portekiz / Portugal</b>: <span class="tr">olumlu değerlendirmeden sonra ANI’ye ayrıca başvuru gerekir.</span><span class="en">a separate application to ANI is needed after a positive evaluation.</span><span class="de">ein separater Antrag bei ANI ist nach einer positiven Bewertung erforderlich.</span></li>
+<li><b><span class="tr">İtalya</span><span class="en">Italy</span><span class="de">Italien</span></b>: <span class="tr">Çağrı 11’de bütçe yoktu — Çağrı 12 için kontrol edin.</span><span class="en">no budget in Call 11 — check for Call 12.</span><span class="de">kein Budget in Call 11 — prüfen Sie Call 12.</span></li>
+<li><b><span class="tr">Polonya, Romanya</span><span class="en">Poland, Romania</span><span class="de">Polen, Rumänien</span></b>: <span class="tr">ulusal fon kuruluşunun Çağrı 12 bütçesini kontrol edin.</span><span class="en">check the national funding body’s Call 12 budget.</span><span class="de">prüfen Sie das Budget der nationalen Förderstelle für Call 12.</span></li>
+</ul>
+<p class="note"><span class="tr">Ortak bulma kanalları: Eureka ortak arama, Enterprise Europe Network (Türkiye’de KOSGEB/TOBB/TÜBİTAK ofisleri), TÜBİTAK Eureka ulusal koordinatörü. Önerilen takvim: Kasım–Ocak ortak arama (COP31 görüşmeleri dahil), Şubat konsorsiyum anlaşması, 4 Mart 2027’ye kadar başvuru.</span><span class="en">Partner-search channels: Eureka partner search, Enterprise Europe Network (in Türkiye via KOSGEB/TOBB/TÜBİTAK offices), TÜBİTAK’s Eureka national coordinator. Suggested timeline: partner search Nov–Jan (including COP31 meetings), consortium agreement in February, submission by 4 March 2027.</span><span class="de">Partner-Suchkanäle: Eureka Partner-Suche, Enterprise Europe Network (in Türkiye über KOSGEB/TOBB/TÜBİTAK-Büros), TÜBİTAKs Eureka nationaler Koordinator. Vorgeschlagener Zeitplan: Partner-Suche Nov–Jan (einschließlich COP31-Treffen), Konsortialvereinbarung im Februar, Einreichung bis zum 4. März 2027.</span></p>
+</div>
+<div>
+<h3><span class="tr">Ortaklara gönderilecek kısa profil (EN)</span><span class="en">Short profile to send to partners (EN)</span><span class="de">Kurzbeschreibung für Partner (DE)</span></h3>
+<pre class="copy" id="profile">Çekicin (Alfa Asistans, Türkiye) — smart roadside assistance and tow dispatch.
+We match a stranded driver with the nearest available tow truck through an app, and add AI modules: photo-based damage and repair-cost estimation, a voice assistant that relieves the call centre, and free nearby-service search.
+
+Project idea: "Faster, safer, lower-emission roadside assistance" — reduce driver waiting time in traffic, empty tow-truck kilometres and secondary-crash exposure; measured in a pilot with an open simulation method.
+
+We are looking for:
+• a roadside-assistance, insurance or telematics company (market + data),
+• a university / research institute in traffic safety or transport emissions,
+• optionally an EV-charging or navigation partner.
+
+We offer: an operating platform in Türkiye, a working AI demo (on-device damage detection, open benchmark on Hugging Face), and access to the Turkish market.
+Programme: Eureka Eurostars Call 12 (deadline 4 March 2027). Contact: info@cekicin.com.tr</pre>
+<div class="btns"><button id="copyBtn"><span class="tr">📋 Kopyala</span><span class="en">📋 Copy</span><span class="de">📋 Kopieren</span></button></div>
+</div>
+</div>
+</div>
+
+<p class="note"><a href="../index.html">cekicin.pages.dev</a> · <a href="index.html">AI Lab</a> · <a href="benchmark-1000.html"><span class="tr">1000 fotoğraf testi</span><span class="en">1000-photo benchmark</span><span class="de">1000-Foto-Benchmark</span></a> · <span class="tr">Emisyon faktörleri:</span><span class="en">Emission factors:</span><span class="de">Emissionfaktoren:</span> <a href="https://huggingface.co/datasets/sosa123454321/cekicin-ai-knowledge/blob/main/emission_factors.csv" target="_blank" rel="noopener">emission_factors.csv</a></p>
+</main>
+
+<script>
+/* Çekicin tow-dispatch simulator (Monte Carlo, discrete events). Same incidents, same trucks, two policies:
+   base    = call centre: manual dispatch delay; only a share of trucks/workshops is known; nearest of those.
+   cekicin = app: short automatic dispatch; nearest available truck (by arrival time) and nearest workshop.
+   All inputs are assumptions until replaced by pilot data. */
+(function (root) {
+  function rng(seed) { let a = seed >>> 0; return () => { a = (a + 0x6D2B79F5) >>> 0; let t = a; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+  function simulate(p, seed) {
+    const R = rng(seed || 7), W = p.W, H = p.H, minutes = p.days * 1440;
+    const pt = () => ({ x: R() * W, y: R() * H });
+    const trucks0 = Array.from({ length: p.trucks }, pt), services = Array.from({ length: p.services }, pt);
+    const inc = []; for (let t = 0; ; ) { t += -Math.log(1 - R()) * 60 / p.perHour; if (t > minutes) break; inc.push({ t, ...pt(), block: R() < p.block, u: [] }); }
+    // per-incident random draws for the call-centre subsets, shared by nothing else (keeps runs reproducible)
+    inc.forEach(e => { e.tk = trucks0.map(() => R()); e.sv = services.map(() => R()); });
+    const d = (a, b) => Math.hypot(a.x - b.x, a.y - b.y) * p.circuity;
+    function run(policy) {
+      const tr = trucks0.map(q => ({ x: q.x, y: q.y, free: 0 }));
+      const out = { wait: [], total: [], empty: 0, loaded: 0, hazard: 0, n: 0 };
+      for (const e of inc) {
+        const base = policy === 'base', ready = e.t + (base ? p.ccMin : p.appMin);
+        let best = null, bestArr = Infinity;
+        tr.forEach((q, i) => {
+          if (base && e.tk[i] > p.share && i !== 0) return;          // call centre only reaches some firms (truck 0 = its default contractor)
+          const arr = Math.max(q.free, ready) + d(q, e) / p.speed * 60;
+          if (arr < bestArr) { bestArr = arr; best = q; }
+        });
+        let svc = null, sd = Infinity;
+        // workshop: often chosen by the insurer/customer, so the app may only pick the nearest one when allowed (svcNearest)
+        services.forEach((s, i) => { if ((base || !p.svcNearest) && e.sv[i] > p.share && i !== 0) return; const k = d(e, s); if (k < sd) { sd = k; svc = s; } });
+        const empty = d(best, e), wait = bestArr - e.t, done = bestArr + p.loadMin + sd / p.speed * 60;
+        best.free = done; best.x = svc.x; best.y = svc.y;
+        out.wait.push(wait); out.total.push(done - e.t); out.empty += empty; out.loaded += sd; out.n++;
+        if (e.block) out.hazard += wait + p.loadMin;
+      }
+      const mean = a => a.reduce((s, v) => s + v, 0) / a.length, q = (a, f) => a.slice().sort((x, y) => x - y)[Math.floor(f * (a.length - 1))];
+      return { n: out.n, wait: mean(out.wait), wait90: q(out.wait, 0.9), total: mean(out.total), emptyKm: out.empty / out.n, loadedKm: out.loaded / out.n,
+               hazardPerBlock: out.hazard / Math.max(1, inc.filter(e => e.block).length) };
+    }
+    return { base: run('base'), cekicin: run('cekicin'), incidents: inc.length };
+  }
+  function impact(r, p, ef) {      // per month, from the simulated per-job averages
+    const jobs = p.perHour * 24 * 30, f = s => {
+      const towKg = (s.emptyKm + s.loadedKm) * ef.tow_truck_km, idleKg = p.idleShare * (s.wait / 60) * p.idleLph * ef.diesel_litre;
+      return { towT: jobs * towKg / 1000, idleT: jobs * idleKg / 1000, totT: jobs * (towKg + idleKg) / 1000, emptyKmMonth: jobs * s.emptyKm,
+               hazardMinMonth: jobs * p.block * s.hazardPerBlock };
+    };
+    const b = f(r.base), c = f(r.cekicin), red = (x, y) => (x - y) / x * 100;
+    const savedHazard = r.base.hazardPerBlock - r.cekicin.hazardPerBlock;
+    return { jobs, b, c, waitRed: red(r.base.wait, r.cekicin.wait), totalRed: red(r.base.total, r.cekicin.total), emptyRed: red(r.base.emptyKm, r.cekicin.emptyKm),
+             co2Red: red(b.totT, c.totT), co2SavedT: b.totT - c.totT, hazardMinSaved: savedHazard,
+             secondaryRel: 100 * 0.028 * savedHazard / (1 + 0.028 * r.base.hazardPerBlock) };
+    // FHWA rule of thumb: secondary-crash likelihood +2.8 % per minute the incident remains a hazard -> P(T) ~ 1 + 0.028 T; relative cut vs baseline exposure
+  }
+  const DEFAULTS = { W: 45, H: 25, trucks: 60, services: 80, perHour: 10, speed: 22, circuity: 1.35, ccMin: 20, appMin: 2, share: 0.15,
+                     loadMin: 15, block: 0.35, idleShare: 0.5, idleLph: 0.8, days: 7, svcNearest: false };
+  const EF = { tow_truck_km: 0.70603, diesel_car_km: 0.17336, diesel_litre: 2.51 };
+  root.CekicinSim = { simulate, impact, DEFAULTS, EF };
+  if (typeof module !== 'undefined') module.exports = root.CekicinSim;
+})(typeof window !== 'undefined' ? window : globalThis);
+
+</script>
+<script>
+(function () {
+  const S = window.CekicinSim, b = document.body;
+  const lang = () => b.classList.contains('l-en') ? 'en' : 'tr', L = (tr, en) => lang() === 'en' ? en : tr;
+  const nf = (n, d = 0) => new Intl.NumberFormat(lang() === 'en' ? 'en-GB' : 'tr-TR', { maximumFractionDigits: d, minimumFractionDigits: d }).format(n);
+  const SCEN = { central: {}, best: { svcNearest: true }, cons: { ccMin: 8, share: 40 }, all: { ccMin: 8, share: 100 } };
+  const PCT = ['share', 'block', 'idleShare'], FIELDS = ['trucks', 'perHour', 'speed', 'ccMin', 'appMin', 'share', 'loadMin', 'block', 'idleShare'];
+  let EF = { ...S.EF };
+  function toUI(p) { FIELDS.forEach(k => document.getElementById(k).value = PCT.includes(k) ? Math.round(p[k] * 100) : p[k]); document.getElementById('svcNearest').checked = !!p.svcNearest; }
+  function fromUI() { const p = { ...S.DEFAULTS }; FIELDS.forEach(k => { const v = +document.getElementById(k).value; if (isFinite(v)) p[k] = PCT.includes(k) ? v / 100 : v; });
+    p.svcNearest = document.getElementById('svcNearest').checked; p.trucks = Math.max(1, Math.round(p.trucks)); p.perHour = Math.max(0.5, p.perHour); p.speed = Math.max(3, p.speed); return p; }
+  function scenParams(key) { const o = { ...S.DEFAULTS, ...SCEN[key] }; PCT.forEach(k => { if (SCEN[key][k] !== undefined) o[k] = SCEN[key][k] / 100; }); return o; }
+  function run() {
+    const p = fromUI(), r = S.simulate(p, 7), m = S.impact(r, p, EF);
+    document.getElementById('kpis').innerHTML = [
+      ['−' + nf(m.waitRed) + '%', L('sürücünün bekleme süresi', 'driver waiting time'), true],
+      ['−' + nf(m.totalRed) + '%', L('çağrıdan servise teslime toplam süre', 'total time, call to workshop'), true],
+      [nf(m.co2SavedT) + ' t', L(`CO₂e tasarrufu / ay (−${nf(m.co2Red)}%)`, `CO₂e saved per month (−${nf(m.co2Red)}%)`), true],
+      ['−' + nf(m.secondaryRel) + '%', L('şerit kapatan olayda ikincil kaza olasılığı (FHWA kuralı)', 'secondary-crash likelihood in lane-blocking incidents (FHWA rule)'), true]
+    ].map(([v, l, g]) => `<div class="kpi ${g ? 'g' : ''}"><b>${v}</b><span>${l}</span></div>`).join('');
+    const hit = m.waitRed >= 70;
+    document.getElementById('check').innerHTML = `<div class="banner ${hit ? 'ok' : 'no'}"><b>${L('%70 bekleme hedefi', '70% waiting-time target')}: ${hit ? L('bu varsayımlarla ulaşılıyor', 'reached with these assumptions') : L('bu varsayımlarla ulaşılmıyor', 'not reached with these assumptions')}</b> — ${
+      L(`bugün ort. ${nf(r.base.wait)} dk → Çekicin ${nf(r.cekicin.wait)} dk. Toplam süre −%${nf(m.totalRed)}, CO₂e −%${nf(m.co2Red)}. Kazanç, bugünkü sürecin ne kadar yavaş ve parçalı olduğuna bağlıdır; bunu ancak gerçek kayıtlar gösterir.`,
+        `today avg. ${nf(r.base.wait)} min → Çekicin ${nf(r.cekicin.wait)} min. Total time −${nf(m.totalRed)}%, CO₂e −${nf(m.co2Red)}%. The gain depends on how slow and fragmented today’s process is; only real logs can show that.`)}</div>`;
+    const rows = [
+      [L('Bekleme (çağrı → çekici geldi)', 'Waiting (call → truck arrives)'), r.base.wait, r.cekicin.wait, L('dk', 'min')],
+      [L('Bekleme, en kötü %10', 'Waiting, worst 10%'), r.base.wait90, r.cekicin.wait90, L('dk', 'min')],
+      [L('Toplam (çağrı → serviste)', 'Total (call → at workshop)'), r.base.total, r.cekicin.total, L('dk', 'min')],
+      [L('Boş km (olay yerine)', 'Empty km (to the scene)'), r.base.emptyKm, r.cekicin.emptyKm, 'km'],
+      [L('Dolu km (servise)', 'Loaded km (to workshop)'), r.base.loadedKm, r.cekicin.loadedKm, 'km'],
+      [L('Tehlike süresi (şerit kapalıysa)', 'Hazard time (if lane blocked)'), r.base.hazardPerBlock, r.cekicin.hazardPerBlock, L('dk', 'min')],
+      [L('CO₂e / ay (çekici + rölanti)', 'CO₂e / month (truck + idling)'), m.b.totT, m.c.totT, 't']];
+    document.getElementById('tbl').innerHTML = `<thead><tr><th></th><th class="num">${L('Bugün', 'Today')}</th><th class="num">Çekicin</th><th class="num">${L('Fark', 'Change')}</th></tr></thead><tbody>` +
+      rows.map(([n, x, y, u]) => `<tr><td>${n}</td><td class="num">${nf(x, x < 10 ? 1 : 0)} ${u}</td><td class="num">${nf(y, y < 10 ? 1 : 0)} ${u}</td><td class="num">${x > 0 ? '−' + nf((x - y) / x * 100) + '%' : '–'}</td></tr>`).join('') +
+      `</tbody><tfoot><tr><td colspan="4"><small>${L(`${r.incidents} simüle kaza (7 gün) · ayda ≈ ${nf(m.jobs)} görev`, `${r.incidents} simulated crashes (7 days) · ≈ ${nf(m.jobs)} jobs per month`)}</small></td></tr></tfoot>`;
+    document.getElementById('bars').innerHTML = rows.filter((_, i) => [0, 2, 3, 5, 6].includes(i)).map(([n, x, y]) =>
+      `<div class="bar b"><span>${n}</span><span class="t"><i style="width:100%"></i></span><span class="num">${nf(x, x < 10 ? 1 : 0)}</span></div>` +
+      `<div class="bar c"><span></span><span class="t"><i style="width:${Math.max(1, y / x * 100)}%"></i></span><span class="num">${nf(y, y < 10 ? 1 : 0)}</span></div>`).join('');
+    const names = { central: L('Merkezi', 'Central'), best: L('+ en yakın servis', '+ nearest workshop'), cons: L('Temkinli (8 dk, %40)', 'Conservative (8 min, 40%)'), all: L('Tüm çekiciler biliniyor (8 dk)', 'All trucks known (8 min)') };
+    document.getElementById('scTbl').innerHTML = `<thead><tr><th>${L('Senaryo', 'Scenario')}</th><th class="num">${L('Bekleme', 'Waiting')}</th><th class="num">${L('Toplam süre', 'Total time')}</th><th class="num">${L('Boş km', 'Empty km')}</th><th class="num">CO₂e</th><th class="num">${L('İkincil kaza', 'Secondary crash')}</th></tr></thead><tbody>` +
+      Object.keys(SCEN).map(k => { const q = { ...scenParams(k), trucks: p.trucks, perHour: p.perHour, speed: p.speed }; const rr = S.simulate(q, 7), mm = S.impact(rr, q, EF);
+        return `<tr><td>${names[k]}</td><td class="num">${nf(rr.base.wait)}→${nf(rr.cekicin.wait)} ${L('dk', 'min')} (−${nf(mm.waitRed)}%)</td><td class="num">−${nf(mm.totalRed)}%</td><td class="num">−${nf(mm.emptyRed)}%</td><td class="num">−${nf(mm.co2Red)}%</td><td class="num">−${nf(mm.secondaryRel)}%</td></tr>`; }).join('') + '</tbody>';
+  }
+  document.querySelectorAll('#scen button').forEach(x => x.onclick = () => { document.querySelectorAll('#scen button').forEach(y => y.classList.toggle('on', y === x)); toUI(scenParams(x.dataset.s)); run(); });
+  document.querySelectorAll('#form input').forEach(x => x.oninput = () => { document.querySelectorAll('#scen button').forEach(y => y.classList.remove('on')); run(); });
+  document.getElementById('copyBtn').onclick = () => { try { navigator.clipboard.writeText(document.getElementById('profile').textContent); } catch (e) {} };
+  const set = l => { b.className = 'l-' + l; document.documentElement.lang = l; document.querySelectorAll('.lang button').forEach(x => x.classList.toggle('on', x.dataset.l === l)); try { localStorage.setItem('ck_lang', l); } catch (e) {} run(); };
+  let l0 = 'tr'; try { l0 = localStorage.getItem('ck_lang') || ((navigator.language || 'tr').toLowerCase().startsWith('tr') ? 'tr' : 'en'); } catch (e) {}
+  document.querySelectorAll('.lang button').forEach(x => x.onclick = () => set(x.dataset.l));
+  toUI(scenParams('central')); set(l0 === 'en' ? 'en' : 'tr');
+  // same emission factors as the AI Lab (Hugging Face dataset); embedded values are the fallback
+  fetch('https://huggingface.co/datasets/sosa123454321/cekicin-ai-knowledge/resolve/main/emission_factors.csv').then(r => r.ok ? r.text() : '').then(t => {
+    t.split(/\r?\n/).slice(1).forEach(line => { const k = line.split(',')[0], v = line.match(/,(\d+\.\d+),/); if (k && v && k in EF) EF[k] = +v[1]; }); run(); }).catch(() => {});
+})();
+</script>
+<script>/* on the HF lab Space there is no parent site: send ../ links to the Türkiye-reachable site mirror */(function(){if(!/cekicin-ai-lab/.test(location.host))return;var S="https://sosa123454321-cekicin-site.static.hf.space/";document.querySelectorAll('a[href^="../"]').forEach(function(a){a.href=S+a.getAttribute("href").replace(/^(\.\.\/)+/,"")});})();</script>
+<script id="de-layer">/* DE layer: German texts are static copies (.de) of the English ones; dynamic parts fall back to English */
+(()=>{const H=document.documentElement,K='ck_site_lang',bs=()=>[...document.querySelectorAll('.lang button,[data-de-btn]')];
+function on(){const en=bs().find(b=>b.dataset.l==='en'||/^EN$/.test(b.textContent.trim()));if(en&&H.lang!=='en'&&H.lang!=='de')en.click();H.lang='de';localStorage.setItem(K,'de');bs().forEach(b=>b.classList.toggle('on',b.dataset.l==='de'))}
+function init(){const de=document.querySelector('[data-l="de"]');if(!de)return;de.onclick=e=>{e.preventDefault();on()};
+ bs().filter(b=>b.dataset.l!=='de').forEach(b=>b.addEventListener('click',()=>{localStorage.removeItem(K);de.classList.remove('on')}));
+ const q=new URLSearchParams(location.search).get('lang');if(q==='de'||(!q&&localStorage.getItem(K)==='de'))setTimeout(on,0)}
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init()})();</script>
+</body></html>

@@ -1,0 +1,2459 @@
+{
+ "name": "Çekicin repair-cost estimate",
+ "version": "1.2.0",
+ "date": "2026-10-25",
+ "parts": {
+  "bumper_front": {
+   "tr": "Ön tampon",
+   "en": "Front bumper",
+   "body_h": 2.0,
+   "paint_h": 2.0,
+   "replace_h": 1.0,
+   "plastic": true
+  },
+  "bumper_rear": {
+   "tr": "Arka tampon",
+   "en": "Rear bumper",
+   "body_h": 2.0,
+   "paint_h": 2.0,
+   "replace_h": 1.0,
+   "plastic": true
+  },
+  "bonnet": {
+   "tr": "Kaput",
+   "en": "Bonnet / hood",
+   "body_h": 3.0,
+   "paint_h": 3.0,
+   "replace_h": 1.0
+  },
+  "boot": {
+   "tr": "Bagaj kapağı",
+   "en": "Boot lid",
+   "body_h": 3.0,
+   "paint_h": 2.8,
+   "replace_h": 1.2
+  },
+  "door": {
+   "tr": "Kapı",
+   "en": "Door",
+   "body_h": 3.0,
+   "paint_h": 2.5,
+   "replace_h": 2.5
+  },
+  "fender": {
+   "tr": "Ön çamurluk",
+   "en": "Front fender / wing",
+   "body_h": 2.0,
+   "paint_h": 2.2,
+   "replace_h": 1.5
+  },
+  "quarter_panel": {
+   "tr": "Arka çamurluk",
+   "en": "Quarter panel",
+   "body_h": 4.0,
+   "paint_h": 2.5,
+   "replace_h": 8.0
+  },
+  "roof": {
+   "tr": "Tavan",
+   "en": "Roof",
+   "body_h": 4.0,
+   "paint_h": 3.0,
+   "replace_h": 12.0
+  },
+  "running_board": {
+   "tr": "Marşpiyel",
+   "en": "Rocker panel",
+   "body_h": 2.0,
+   "paint_h": 1.8,
+   "replace_h": 3.0
+  },
+  "windscreen": {
+   "tr": "Ön cam",
+   "en": "Windscreen",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 2.0,
+   "glass": true
+  },
+  "rear_window": {
+   "tr": "Arka cam",
+   "en": "Rear window",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 2.0,
+   "glass": true
+  },
+  "headlight": {
+   "tr": "Far",
+   "en": "Headlight",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 1.0,
+   "lamp": true
+  },
+  "taillight": {
+   "tr": "Stop lambası",
+   "en": "Tail light",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 0.5,
+   "lamp": true
+  },
+  "mirror": {
+   "tr": "Yan ayna",
+   "en": "Side mirror",
+   "body_h": 0,
+   "paint_h": 0.5,
+   "replace_h": 0.7
+  },
+  "tyre": {
+   "tr": "Lastik",
+   "en": "Tyre",
+   "body_h": 0,
+   "paint_h": 0,
+   "replace_h": 0.5
+  }
+ },
+ "countries": {
+  "TR": {
+   "name_tr": "Türkiye",
+   "name_en": "Türkiye",
+   "currency": "TRY",
+   "symbol": "₺",
+   "vat": 0.2,
+   "vehicle": "Fiat Egea (2021+)",
+   "prices_include_vat": false,
+   "body_rate": [
+    1500,
+    3000
+   ],
+   "paint_rate": null,
+   "paint_material": null,
+   "ato_paint": {
+    "bonnet": [
+     16380,
+     18200
+    ],
+    "fender": [
+     12740,
+     15470
+    ],
+    "door": [
+     14560,
+     17290
+    ],
+    "running_board": [
+     10920,
+     12740
+    ],
+    "roof": [
+     16380,
+     18200
+    ],
+    "bumper_front": [
+     12740.0,
+     15470.0
+    ],
+    "bumper_rear": [
+     12740.0,
+     15470.0
+    ],
+    "quarter_panel": [
+     12740.0,
+     15470.0
+    ],
+    "boot": [
+     14560.0,
+     17290.0
+    ],
+    "mirror": [
+     3500,
+     4500
+    ]
+   },
+   "market_floor": 0.45,
+   "market_low": {
+    "repaint": {
+     "plastic": 2083,
+     "metal": 1667
+    },
+    "plastic_repair": {
+     "plastic": 3333
+    },
+    "repair_paint": {
+     "plastic": 3333
+    }
+   },
+   "parts": {
+    "bumper_front": {
+     "min": 4900,
+     "max": 17400,
+     "src": [
+      "pricedb",
+      "otocikma",
+      "fiatparca"
+     ],
+     "est": false,
+     "db": {
+      "n": 8,
+      "n_new": 8,
+      "n_used": 21,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 4735,
+      "p25": 4900,
+      "median": 5808,
+      "p75": 9735,
+      "p90": 17400,
+      "page": "price-db.html?c=TR&p=front_bumper",
+      "examples": [
+       {
+        "id": "PDB-TR-0034",
+        "url": "https://www.otocikma.com/ilan/fiat-egea-yeni-kasa-makyajli-on-tampon-beyaz-temiz-orjinal-5256106",
+        "title": "FİAT EGEA YENİ KASA MAKYAJLI ÖN TAMPON BEYAZ TEMİZ ORJİNAL",
+        "price": 5000.0,
+        "cur": "TRY",
+        "car": "Fiat Egea",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0190",
+        "url": "https://www.n11.com/urun/on-tampon-renault-clio-3-2009-2012-72014029",
+        "title": "Ön Tampon Renault Clio 3 2009-2012",
+        "price": 7940.33,
+        "cur": "TRY",
+        "car": "Renault Clio",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0233",
+        "url": "https://www.n11.com/urun/on-tampon-renault-clio-symbol-2009-2012-74055780",
+        "title": "Ön Tampon Renault Clio Symbol 2009-2012",
+        "price": 5921.3,
+        "cur": "TRY",
+        "car": "Renault Clio",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "bumper_rear": {
+     "min": 4000,
+     "max": 26000,
+     "src": [
+      "pricedb",
+      "otocikma"
+     ],
+     "est": false,
+     "db": {
+      "n": 30,
+      "n_new": 1,
+      "n_used": 30,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 3450,
+      "p25": 4000,
+      "median": 5000,
+      "p75": 8875,
+      "p90": 10000,
+      "page": "price-db.html?c=TR&p=rear_bumper",
+      "examples": [
+       {
+        "id": "PDB-TR-0038",
+        "url": "https://www.otocikma.com/ilan/renault-clio-5.5-arka-tampon-orjinal-cikma-850229783r-5320147",
+        "title": "CLİO 5.5 ARKA TAMPON ORJİNAL ÇIKMA 850229783R",
+        "price": 5000.0,
+        "cur": "TRY",
+        "car": "Renault Clio",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-TR-0049",
+        "url": "https://www.otocikma.com/ilan/renault-megane-2-arka-tampon-cikma-parca-kul-otoda-5350676",
+        "title": "RENAULT MEGANE 2 ARKA TAMPON ÇIKMA PARÇA KUL OTODA",
+        "price": 5000.0,
+        "cur": "TRY",
+        "car": "Renault Megane",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-TR-0170",
+        "url": "https://www.otocikma.com/ilan/renault-megane-e-tech-arka-tampon-alt-orjinal-cikma-5338637",
+        "title": "MEGANE E TECH ARKA TAMPON ALT ORJİNAL ÇIKMA",
+        "price": 5000.0,
+        "cur": "TRY",
+        "car": "Renault Megane",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "fender": {
+     "min": 2942,
+     "max": 8787,
+     "src": [
+      "pricedb",
+      "parcafilosu",
+      "unluoto"
+     ],
+     "est": false,
+     "db": {
+      "n": 15,
+      "n_new": 15,
+      "n_used": 11,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 1798,
+      "p25": 2942,
+      "median": 3568,
+      "p75": 7706,
+      "p90": 8787,
+      "page": "price-db.html?c=TR&p=fender",
+      "examples": [
+       {
+        "id": "PDB-TR-0271",
+        "url": "https://www.n11.com/urun/renault-clio-thalia-camurluk-sol-on-delikli-sembollu-oem-7782709524-142325191",
+        "title": "Renault Clio Thalia Çamurluk Sol Ön Delikli Sembollü Oem 7782709524",
+        "price": 4281.0,
+        "cur": "TRY",
+        "car": "Renault Clio",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0087",
+        "url": "https://www.n11.com/urun/on-camurluk-sag-renault-megane-4-2016-72097308",
+        "title": "Ön Çamurluk Sağ Renault Megane 4 2016-",
+        "price": 4638.83,
+        "cur": "TRY",
+        "car": "Renault Megane",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0265",
+        "url": "https://www.n11.com/urun/fiat-camurluk-on-camurluk-sol-egea-cross-2021-116565686",
+        "title": "Fiat Çamurluk Ön Çamurluk Sol Egea Cross 2021-",
+        "price": 3782.0,
+        "cur": "TRY",
+        "car": "Fiat Egea",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "windscreen": {
+     "min": 3000,
+     "max": 14000,
+     "src": [
+      "pricedb",
+      "otocikma",
+      "parcario"
+     ],
+     "est": false,
+     "db": {
+      "n": 12,
+      "n_new": 0,
+      "n_used": 12,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 2550,
+      "p25": 3000,
+      "median": 6000,
+      "p75": 7125,
+      "p90": 10650,
+      "page": "price-db.html?c=TR&p=windscreen",
+      "examples": [
+       {
+        "id": "PDB-TR-0048",
+        "url": "https://www.otocikma.com/ilan/toyota-corolla-on-cam-88-90-4224676",
+        "title": "TOYOTA COROLLA ÖN CAM 88-90",
+        "price": 6000.0,
+        "cur": "TRY",
+        "car": "Toyota Corolla",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-TR-0106",
+        "url": "https://www.otocikma.com/ilan/fiat-egea-cross-2021-cikma-orjinal-on-cam-son-fiyat-3386887",
+        "title": "fiat egea cross 2021 çıkma orjinal ön cam (son fiyat)",
+        "price": 6000.0,
+        "cur": "TRY",
+        "car": "Fiat Egea",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-TR-0164",
+        "url": "https://www.otocikma.com/ilan/fiat-egea-cross-2022-cikma-orjinal-on-cam-son-fiyat-3519409",
+        "title": "fiat egea cross 2022 çıkma orjinal ön cam (son fiyat)",
+        "price": 6000.0,
+        "cur": "TRY",
+        "car": "Fiat Egea",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "headlight": {
+     "min": 2050,
+     "max": 9339,
+     "src": [
+      "pricedb",
+      "n11far"
+     ],
+     "est": false,
+     "db": {
+      "n": 33,
+      "n_new": 33,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 1598,
+      "p25": 2050,
+      "median": 3168,
+      "p75": 7000,
+      "p90": 9339,
+      "page": "price-db.html?c=TR&p=headlight",
+      "examples": [
+       {
+        "id": "PDB-TR-0085",
+        "url": "https://www.n11.com/urun/renault-megane-2-sag-sol-far-mercekli-manuel-h7-h1-2005-2011-128969060",
+        "title": "Renault Megane 2 Sağ Sol Far Mercekli Manuel H7 H1 2005-2011",
+        "price": 7602.84,
+        "cur": "TRY",
+        "car": "Renault Megane",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0001",
+        "url": "https://www.n11.com/urun/fiat-egea-2015-far-sag-motorlu-no52113795-tst19071-erb1038-140358181",
+        "title": "Fiat Egea 2015 Far Sağ Motorlu No:52113795 Tst19071 - Erb1038",
+        "price": 3650.0,
+        "cur": "TRY",
+        "car": "Fiat Egea",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0019",
+        "url": "https://www.n11.com/urun/far-takim-elektrikli-hyundai-i20-2009-2012-65193313",
+        "title": "Far Takım Elektrikli Hyundaı İ20 2009-2012",
+        "price": 8369.07,
+        "cur": "TRY",
+        "car": "Hyundai i20",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "taillight": {
+     "min": 1435,
+     "max": 6586,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 44,
+      "n_new": 44,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 1156,
+      "p25": 1435,
+      "median": 1978,
+      "p75": 4466,
+      "p90": 6586,
+      "page": "price-db.html?c=TR&p=taillight",
+      "examples": [
+       {
+        "id": "PDB-TR-0242",
+        "url": "https://www.n11.com/urun/leoparts-hyundai-i20-stop-lambasi-dis-sol-2014-2016-92401-c8000-54812937",
+        "title": "Leoparts Hyundai İ20 Stop Lambası Dış Sol 2014-2016 92401-c8000",
+        "price": 2390.76,
+        "cur": "TRY",
+        "car": "Hyundai i20",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0250",
+        "url": "https://www.n11.com/urun/leoparts-volkswagen-passat-stop-lambasi-sol-1996-2000-3b5945095-62649792",
+        "title": "Leoparts Volkswagen Passat Stop Lambası Sol 1996-2000 3b5945095",
+        "price": 2356.2,
+        "cur": "TRY",
+        "car": "Volkswagen Passat",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0229",
+        "url": "https://www.n11.com/urun/fiat-egea-sedan-2015-2021-sol-stop-lambasi-duysuz-mars-35388120",
+        "title": "FIAT EGEA SEDAN 2015-2021 SOL STOP LAMBASI DUYSUZ ( MARS )",
+        "price": 2401.43,
+        "cur": "TRY",
+        "car": "Fiat Egea",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "bonnet": {
+     "min": 9250,
+     "max": 18000,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 22,
+      "n_new": 1,
+      "n_used": 22,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 6000,
+      "p25": 9250,
+      "median": 13250,
+      "p75": 17125,
+      "p90": 19900,
+      "page": "price-db.html?c=TR&p=bonnet",
+      "examples": [
+       {
+        "id": "PDB-TR-0060",
+        "url": "https://www.otocikma.com/ilan/peugeot-2008-kaput-orjinal-sedef-beyaz-5285864",
+        "title": "PEUGEOT 2008 KAPUT ORJİNAL ( SEDEF BEYAZ )",
+        "price": 12500.0,
+        "cur": "TRY",
+        "car": "Peugeot 2008",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-TR-0070",
+        "url": "https://www.otocikma.com/ilan/volkswagen-passat-cc-on-kaput-orjinal-5349005",
+        "title": "VOLKSWAGEN PASSAT CC ÖN KAPUT ORJİNAL",
+        "price": 14000.0,
+        "cur": "TRY",
+        "car": "Volkswagen Passat",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-TR-0107",
+        "url": "https://www.otocikma.com/ilan/renault-clio-4-on-kaput-orjinal-5352874",
+        "title": "RENAULT CLİO 4 ÖN KAPUT ORJİNAL",
+        "price": 14000.0,
+        "cur": "TRY",
+        "car": "Renault Clio",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "boot": {
+     "min": 6500,
+     "max": 17000,
+     "src": [],
+     "est": true
+    },
+    "door": {
+     "min": 8375,
+     "max": 22000,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 36,
+      "n_new": 2,
+      "n_used": 36,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 6000,
+      "p25": 8375,
+      "median": 19000,
+      "p75": 33750,
+      "p90": 50000,
+      "page": "price-db.html?c=TR&p=door",
+      "examples": [
+       {
+        "id": "PDB-TR-0182",
+        "url": "https://www.otocikma.com/ilan/dacia-duster-sol-on-kapi-20bin-5347752",
+        "title": "Dacia duster sol ön kapı 20bin",
+        "price": 20000.0,
+        "cur": "TRY",
+        "car": "Dacia Duster",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-TR-0218",
+        "url": "https://www.otocikma.com/ilan/toyota-corolla-sol-on-kapi-2019-2024-cikma-beyaz-5353965",
+        "title": "TOYOTA COROLLA SOL ÖN KAPI 2019/2024 ÇIKMA BEYAZ",
+        "price": 18000.0,
+        "cur": "TRY",
+        "car": "Toyota Corolla",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-TR-0220",
+        "url": "https://www.otocikma.com/ilan/renault-megane-4-sol-on-kapi-fume-gocuklu-orjinal-cikma-5354918",
+        "title": "MEGANE 4 SOL ÖN KAPI FÜME GÖÇÜKLÜ ORJİNAL ÇIKMA",
+        "price": 20000.0,
+        "cur": "TRY",
+        "car": "Renault Megane",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "quarter_panel": {
+     "min": 6000,
+     "max": 15000,
+     "src": [],
+     "est": true
+    },
+    "roof": {
+     "min": 9000,
+     "max": 25000,
+     "src": [],
+     "est": true
+    },
+    "running_board": {
+     "min": 2500,
+     "max": 8000,
+     "src": [],
+     "est": true
+    },
+    "rear_window": {
+     "min": 4500,
+     "max": 11000,
+     "src": [],
+     "est": true
+    },
+    "mirror": {
+     "min": 1779,
+     "max": 7382,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 36,
+      "n_new": 36,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 1400,
+      "p25": 1779,
+      "median": 2713,
+      "p75": 3587,
+      "p90": 7382,
+      "page": "price-db.html?c=TR&p=mirror",
+      "examples": [
+       {
+        "id": "PDB-TR-0144",
+        "url": "https://www.n11.com/urun/toyota-corolla-uyumlu-dikiz-ayna-sag-m0088099-39563036",
+        "title": "TOYOTA Corolla Uyumlu DİKİZ AYNA SAĞ M008.8099",
+        "price": 3273.6,
+        "cur": "TRY",
+        "car": "Toyota Corolla",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0033",
+        "url": "https://www.n11.com/urun/volkswagen-passat-dikiz-ayna-sag-m0066189-39582233",
+        "title": "VOLKSWAGEN PASSAT DİKİZ AYNA SAĞ M006.6189",
+        "price": 3237.12,
+        "cur": "TRY",
+        "car": "Volkswagen Passat",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-TR-0239",
+        "url": "https://www.n11.com/urun/taiwan-toyota-corolla-2003-2006-dis-dikiz-aynasi-manuel-sag-87901-2040-144211553",
+        "title": "Taıwan Toyota Corolla 2003-2006 Dış Dikiz Aynası Manuel Sağ 87901-2040",
+        "price": 3323.88,
+        "cur": "TRY",
+        "car": "Toyota Corolla",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "tyre": {
+     "min": 2500,
+     "max": 6000,
+     "src": [],
+     "est": true
+    }
+   },
+   "sources": [
+    "pricedb",
+    "ato26",
+    "ato25",
+    "armut",
+    "fiatparca",
+    "otocikma",
+    "parcafilosu",
+    "unluoto",
+    "parcario",
+    "n11far"
+   ],
+   "note_tr": "İşçilik ve boya: ATO 2026 azami tarifesi (üst sınır) ile armut.com piyasa teklifleri (alt sınır) arası; parça: sıfır yan sanayi – orijinal (OPAR). Fiyatlar KDV hariç gösterilir. Parça fiyatları 1.2: 1.100 ilanlık fiyat veritabanından (ilan sayısı ve bağlantılar her satırda).",
+   "note_en": "Labour + paint: between the ATO 2026 maximum tariff (upper bound) and armut.com market quotes (lower bound); parts: new aftermarket – original (OPAR). Shown excluding VAT. Part prices 1.2: from the 1,100-listing price database (count and links on each line)."
+  },
+  "DE": {
+   "name_tr": "Almanya",
+   "name_en": "Germany",
+   "currency": "EUR",
+   "symbol": "€",
+   "vat": 0.19,
+   "vehicle": "VW Golf 7",
+   "prices_include_vat": false,
+   "body_rate": [
+    145.75,
+    235.75
+   ],
+   "paint_rate": [
+    165.25,
+    243.0
+   ],
+   "paint_material": [
+    30,
+    50
+   ],
+   "parts": {
+    "bumper_front": {
+     "min": 79,
+     "max": 317,
+     "src": [
+      "pricedb",
+      "autodoc_de"
+     ],
+     "est": false,
+     "db": {
+      "n": 35,
+      "n_new": 0,
+      "n_used": 35,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 57,
+      "p25": 79,
+      "median": 110,
+      "p75": 318,
+      "p90": 555,
+      "page": "price-db.html?c=DE&p=front_bumper",
+      "examples": [
+       {
+        "id": "PDB-DE-0468",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/vw-golf-7-stossstange-stossfaenger-5g0807221-vorne-2012-2017/3365825155-223-6244",
+        "title": "VW Golf 7 Stoßstange Stoßfänger 5G0807221 vorne 2012-2017",
+        "price": 110.0,
+        "cur": "EUR",
+        "car": "Volkswagen Golf 7",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0495",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/orig-ford-focus-mk4-facelift-stossstange-vorne-nx7b17c831-aa/3124134799-223-1396",
+        "title": "Orig. Ford Focus MK4 Facelift Stoßstange vorne NX7B17C831-AA",
+        "price": 100.0,
+        "cur": "EUR",
+        "car": "Ford Focus",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0504",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/bmw-3er-f30-f31-stossstange-vorne-frontschuerze-stossfaenger-pdc/3521840716-223-1004",
+        "title": "BMW 3er F30 F31 Stoßstange vorne Frontschürze Stoßfänger PDC",
+        "price": 100.0,
+        "cur": "EUR",
+        "car": "BMW 3er F30",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "bumper_rear": {
+     "min": 70,
+     "max": 300,
+     "src": [
+      "pricedb",
+      "autodoc_de"
+     ],
+     "est": false,
+     "db": {
+      "n": 33,
+      "n_new": 1,
+      "n_used": 33,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 42,
+      "p25": 70,
+      "median": 99,
+      "p75": 249,
+      "p90": 298,
+      "page": "price-db.html?c=DE&p=rear_bumper",
+      "examples": [
+       {
+        "id": "PDB-DE-0418",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/mercedes-c-klasse-w205-stossstange-hinten-pdc-kombi-a2058853838/2854247806-223-1942",
+        "title": "Mercedes C klasse w205 stoßstange hinten PDC kombi A2058853838",
+        "price": 99.0,
+        "cur": "EUR",
+        "car": "Mercedes-Benz C-Klasse W205",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0496",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/stossstange-komplett-hinten-ford-focus-mk3-silber-polar-silber-met/3551128927-223-9668",
+        "title": "Stoßstange komplett hinten Ford Focus MK3 Silber Polar Silber Met",
+        "price": 99.0,
+        "cur": "EUR",
+        "car": "Ford Focus",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0514",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/mercedes-c-klasse-w205-stossstange-hinten-limousine-a2058850138/2382987311-223-1942",
+        "title": "Mercedes C klasse W205 Stoßstange hinten limousine A2058850138",
+        "price": 99.0,
+        "cur": "EUR",
+        "car": "Mercedes-Benz C-Klasse W205",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "fender": {
+     "min": 44,
+     "max": 277,
+     "src": [
+      "pricedb",
+      "autodoc_de"
+     ],
+     "est": false,
+     "db": {
+      "n": 28,
+      "n_new": 0,
+      "n_used": 28,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 32,
+      "p25": 44,
+      "median": 74,
+      "p75": 180,
+      "p90": 183,
+      "page": "price-db.html?c=DE&p=fender",
+      "examples": [
+       {
+        "id": "PDB-DE-0433",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/vw-polo-aw-2g-17-23-kotfluegel-links-rechts-in-li7f-i7f-uranograu/3283679474-223-7529",
+        "title": "VW Polo AW 2G 17-23 Kotflügel links rechts in LI7F I7F Uranograu",
+        "price": 149.0,
+        "cur": "EUR",
+        "car": "Volkswagen Polo",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0527",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/vw-polo-aw-2g-17-23-kotfluegel-links-rechts-in-la7w-reflexsilber/2598443016-223-7529",
+        "title": "VW Polo AW 2G 17-23 Kotflügel links rechts in LA7W Reflexsilber",
+        "price": 149.0,
+        "cur": "EUR",
+        "car": "Volkswagen Polo",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0499",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/ford-focus-ii-2-kotfluegel-beifahrerseite-vorne-rechts-2006-2010-/3494542449-223-8795",
+        "title": "Ford Focus II 2 Kotflügel Beifahrerseite vorne rechts 2006-2010",
+        "price": 79.0,
+        "cur": "EUR",
+        "car": "Ford Focus",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "headlight": {
+     "min": 64,
+     "max": 1050,
+     "src": [
+      "pricedb",
+      "autodoc_de"
+     ],
+     "est": false,
+     "db": {
+      "n": 32,
+      "n_new": 2,
+      "n_used": 32,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 29,
+      "p25": 64,
+      "median": 175,
+      "p75": 422,
+      "p90": 700,
+      "page": "price-db.html?c=DE&p=headlight",
+      "examples": [
+       {
+        "id": "PDB-DE-0374",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/vw-golf-7-facelift-scheinwerfer-links-halogen/3260080162-223-8752",
+        "title": "Vw Golf 7 Facelift Scheinwerfer links Halogen",
+        "price": 170.0,
+        "cur": "EUR",
+        "car": "Volkswagen Golf 7",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0515",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/mercedes-benz-w205-c-klasse-scheinwerfer-links-a2058200161-top/3364821007-223-1686",
+        "title": "Mercedes-Benz W205 C-Klasse Scheinwerfer links A2058200161 TOP",
+        "price": 180.0,
+        "cur": "EUR",
+        "car": "Mercedes-Benz C-Klasse W205",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0419",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/mercedes-c-klasse-w205-s205-c205-scheinwerfer-links-a2059066402/3310573578-223-1794",
+        "title": "Mercedes C-Klasse W205 S205 C205 Scheinwerfer Links A2059066402",
+        "price": 150.0,
+        "cur": "EUR",
+        "car": "Mercedes-Benz C-Klasse W205",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "windscreen": {
+     "min": 250,
+     "max": 900,
+     "src": [
+      "autodoc_de"
+     ],
+     "est": false
+    },
+    "taillight": {
+     "min": 24,
+     "max": 350,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 28,
+      "n_new": 1,
+      "n_used": 28,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 15,
+      "p25": 24,
+      "median": 53,
+      "p75": 135,
+      "p90": 211,
+      "page": "price-db.html?c=DE&p=taillight",
+      "examples": [
+       {
+        "id": "PDB-DE-0375",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/original-vw-golf-7-rueckleuchten-innen-l-r-5g0945093a-5g0945094a/3495782031-223-17063",
+        "title": "Original VW Golf 7 Rückleuchten innen L/R 5G0945093A / 5G0945094A",
+        "price": 55.0,
+        "cur": "EUR",
+        "car": "Volkswagen Golf 7",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0471",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/vw-golf-7-kombi-rueckleuchte-nur-r-5g9945095c-5g9945096c/3392984262-223-1942",
+        "title": "VW Golf 7 Kombi Rückleuchte nur R 5G9945095C 5G9945096C",
+        "price": 55.0,
+        "cur": "EUR",
+        "car": "Volkswagen Golf 7",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0535",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/opel-corsa-d-rueckleuchte-heckleuchte-links-93190950/3336830994-223-1952",
+        "title": "Opel Corsa D Rückleuchte Heckleuchte Links 93190950",
+        "price": 60.0,
+        "cur": "EUR",
+        "car": "Opel Corsa",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "bonnet": {
+     "min": 67,
+     "max": 600,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 28,
+      "n_new": 1,
+      "n_used": 28,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 50,
+      "p25": 67,
+      "median": 250,
+      "p75": 796,
+      "p90": 2877,
+      "page": "price-db.html?c=DE&p=bonnet",
+      "examples": [
+       {
+        "id": "PDB-DE-0377",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/golf-7-5g-mk7-motorhaube-frontklappe-original/3548146156-223-4955",
+        "title": "Golf 7 5G MK7 Motorhaube Frontklappe Original",
+        "price": 250.0,
+        "cur": "EUR",
+        "car": "Volkswagen Golf 7",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0452",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/ford-focus-mk2-da3-motorhaube-silber/2567494282-223-3119",
+        "title": "Ford Focus MK2 DA3 Motorhaube Silber",
+        "price": 250.0,
+        "cur": "EUR",
+        "car": "Ford Focus",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0546",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/ford-focus-mk1-motorhaube/3551104608-223-8349",
+        "title": "FORD FOCUS MK1 MOTORHAUBE",
+        "price": 250.0,
+        "cur": "EUR",
+        "car": "Ford Focus",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "boot": {
+     "min": 97,
+     "max": 700,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 28,
+      "n_new": 0,
+      "n_used": 28,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 60,
+      "p25": 97,
+      "median": 200,
+      "p75": 325,
+      "p90": 467,
+      "page": "price-db.html?c=DE&p=tailgate",
+      "examples": [
+       {
+        "id": "PDB-DE-0320",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/bmw-f30-f31-limousine-kombi-320-3er-heckklappe-rueckfahrkamera/2906357221-223-4763",
+        "title": "Bmw F30 F31 Limousine Kombi 320 3er Heckklappe Rückfahrkamera",
+        "price": 199.0,
+        "cur": "EUR",
+        "car": "BMW 3er F30",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0416",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/bmw-3er-f30-heckklappe-475-black-sapphire/3551115995-223-6873",
+        "title": "BMW 3er F30 Heckklappe 475 Black Sapphire",
+        "price": 200.0,
+        "cur": "EUR",
+        "car": "BMW 3er F30",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0341",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/vw-polo-6r-heckklappe-komplett-farbcode-ld5q/2569010816-223-2756",
+        "title": "VW Polo 6R heckklappe komplett farbcode LD5Q",
+        "price": 150.0,
+        "cur": "EUR",
+        "car": "Volkswagen Polo",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "door": {
+     "min": 60,
+     "max": 900,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 29,
+      "n_new": 0,
+      "n_used": 29,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 59,
+      "p25": 60,
+      "median": 159,
+      "p75": 349,
+      "p90": 595,
+      "page": "price-db.html?c=DE&p=door",
+      "examples": [
+       {
+        "id": "PDB-DE-0538",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/opel-corsa-d-tuer-rechts-3-tuerer-ab-2009-original-93191127-/1416777565-223-2036",
+        "title": "Opel Corsa D Tür rechts 3-Türer ab 2009 Original 93191127 ✅",
+        "price": 159.0,
+        "cur": "EUR",
+        "car": "Opel Corsa",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0474",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/orig-golf-vii-7-tuer-hinten-rechts-ab-2012-2020/3365904330-223-1672",
+        "title": "Orig Golf VII 7 Tür hinten rechts ab 2012-2020",
+        "price": 150.0,
+        "cur": "EUR",
+        "car": "Volkswagen Golf 7",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0510",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/bmw-3er-f30-limousine-tuer-hinten-links-blau/3494947977-223-1401",
+        "title": "BMW 3er F30 Limousine Tür hinten Links Blau",
+        "price": 180.0,
+        "cur": "EUR",
+        "car": "BMW 3er F30",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "quarter_panel": {
+     "min": 200,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "roof": {
+     "min": 400,
+     "max": 1200,
+     "src": [],
+     "est": true
+    },
+    "running_board": {
+     "min": 80,
+     "max": 300,
+     "src": [],
+     "est": true
+    },
+    "rear_window": {
+     "min": 200,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "mirror": {
+     "min": 29,
+     "max": 350,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 29,
+      "n_new": 0,
+      "n_used": 29,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 25,
+      "p25": 29,
+      "median": 80,
+      "p75": 150,
+      "p90": 215,
+      "page": "price-db.html?c=DE&p=mirror",
+      "examples": [
+       {
+        "id": "PDB-DE-0436",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/vw-polo-6r-aussenspiegel-spiegel-rechts-6r1857508/2754614072-223-16750",
+        "title": "VW polo 6R Außenspiegel Spiegel rechts 6R1857508",
+        "price": 80.0,
+        "cur": "EUR",
+        "car": "Volkswagen Polo",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0511",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/bmw-1er-3er-f20-f30-f31-aussenspiegel-spiegel-links-rechts-300/3336322275-223-1009",
+        "title": "BMW 1er 3er F20 F30 F31 Außenspiegel Spiegel Links Rechts 300",
+        "price": 199.0,
+        "cur": "EUR",
+        "car": "BMW 3er F30",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-DE-0548",
+        "url": "https://www.kleinanzeigen.de/s-anzeige/ford-focus-cabrio-ii-2-spiegel-aussenspiegel-vorne-links-fahrer/3202203707-223-8795",
+        "title": "Ford Focus Cabrio II 2 Spiegel Außenspiegel vorne links Fahrer",
+        "price": 89.0,
+        "cur": "EUR",
+        "car": "Ford Focus",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "tyre": {
+     "min": 70,
+     "max": 180,
+     "src": [],
+     "est": true
+    }
+   },
+   "sources": [
+    "pricedb",
+    "dekra",
+    "autodoc_de",
+    "hours"
+   ],
+   "note_tr": "İşçilik: DEKRA DRS 2026 (bölgeler arası en düşük – en yüksek, net); parça: autodoc.de yan sanayi – OE. Parça fiyatları 1.2: 1.100 ilanlık fiyat veritabanından (ilan sayısı ve bağlantılar her satırda).",
+   "note_en": "Labour: DEKRA DRS 2026 (cheapest – most expensive region, net); parts: autodoc.de aftermarket – OE. Part prices 1.2: from the 1,100-listing price database (count and links on each line)."
+  },
+  "GB": {
+   "name_tr": "Birleşik Krallık",
+   "name_en": "United Kingdom",
+   "currency": "GBP",
+   "symbol": "£",
+   "vat": 0.2,
+   "vehicle": "Ford Fiesta (Mk7/Mk8)",
+   "prices_include_vat": false,
+   "body_rate": [
+    56.42,
+    92.74
+   ],
+   "paint_rate": [
+    56.42,
+    92.74
+   ],
+   "paint_material": [
+    20,
+    35
+   ],
+   "parts": {
+    "bumper_front": {
+     "min": 146,
+     "max": 218,
+     "src": [
+      "pricedb",
+      "autodoc_uk",
+      "fordshop"
+     ],
+     "est": false,
+     "db": {
+      "n": 26,
+      "n_new": 0,
+      "n_used": 26,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 95,
+      "p25": 146,
+      "median": 177,
+      "p75": 263,
+      "p90": 461,
+      "page": "price-db.html?c=GB&p=front_bumper",
+      "examples": [
+       {
+        "id": "PDB-GB-0620",
+        "url": "https://www.breakeryard.com/online-used-parts/vauxhall-astra-gtc-mk6-3dr-hatch-2009-2016-bumper-front-complete-13264551-42573",
+        "title": "VAUXHALL ASTRA GTC MK6 3DR HATCH 2009-2016 BUMPER FRONT COMPLETE 13264551 42573",
+        "price": 200.0,
+        "cur": "GBP",
+        "car": "Vauxhall Astra",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0623",
+        "url": "https://www.breakeryard.com/online-used-parts/nissan-juke-mk1-facelift-hatch-2014-2018-front-bumper-complete-62026bv80a-vs597",
+        "title": "NISSAN JUKE MK1 FACELIFT HATCH 2014-2018 FRONT BUMPER COMPLETE 62026BV80A VS597",
+        "price": 200.0,
+        "cur": "GBP",
+        "car": "Nissan Juke",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0699",
+        "url": "https://www.breakeryard.com/online-used-parts/volkswagen-polo-moda-mk5-6r-2009-2014-bumper-front-complete-grey-6r0807221-43367",
+        "title": "VOLKSWAGEN POLO MODA MK5 6R 2009-2014 BUMPER FRONT COMPLETE GREY 6R0807221 43367",
+        "price": 224.0,
+        "cur": "GBP",
+        "car": "Volkswagen Polo",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "bumper_rear": {
+     "min": 62,
+     "max": 200,
+     "src": [
+      "pricedb",
+      "autodoc_uk"
+     ],
+     "est": false,
+     "db": {
+      "n": 41,
+      "n_new": 0,
+      "n_used": 41,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 50,
+      "p25": 62,
+      "median": 75,
+      "p75": 125,
+      "p90": 196,
+      "page": "price-db.html?c=GB&p=rear_bumper",
+      "examples": [
+       {
+        "id": "PDB-GB-0551",
+        "url": "https://www.breakeryard.com/online-used-parts/ford-fiesta-mk7-2013-2017-complete-rear-bumper-frozen-white",
+        "title": "Ford Fiesta Mk7 2013-2017 Complete Rear Bumper Frozen White",
+        "price": 90.0,
+        "cur": "GBP",
+        "car": "Ford Fiesta",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0608",
+        "url": "https://www.breakeryard.com/online-used-parts/vauxhall-corsa-e-5-door-2015-2019-complete-rear-bumper-z190-grey",
+        "title": "Vauxhall Corsa E 5 Door 2015-2019 Complete Rear Bumper Z190 Grey",
+        "price": 90.0,
+        "cur": "GBP",
+        "car": "Vauxhall Corsa",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0683",
+        "url": "https://www.breakeryard.com/online-used-parts/vauxhall-corsa-e-sri-3-door-2015-2019-complete-rear-bumper-grey-z195",
+        "title": "Vauxhall Corsa E SRI 3 Door 2015-2019 Complete Rear Bumper Grey Z195",
+        "price": 90.0,
+        "cur": "GBP",
+        "car": "Vauxhall Corsa",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "fender": {
+     "min": 47,
+     "max": 168,
+     "src": [
+      "pricedb",
+      "autodoc_uk"
+     ],
+     "est": false,
+     "db": {
+      "n": 23,
+      "n_new": 0,
+      "n_used": 23,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 35,
+      "p25": 47,
+      "median": 60,
+      "p75": 79,
+      "p90": 103,
+      "page": "price-db.html?c=GB&p=fender",
+      "examples": [
+       {
+        "id": "PDB-GB-0670",
+        "url": "https://www.breakeryard.com/online-used-parts/2009-13-volkswagen-polo-front-driver-wing-20361",
+        "title": "2009-13 VOLKSWAGEN POLO - Front Driver Wing #20361",
+        "price": 72.0,
+        "cur": "GBP",
+        "car": "Volkswagen Polo",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0656",
+        "url": "https://www.breakeryard.com/online-used-parts/2009-15-vauxhall-astra-front-passenger-wing-21077",
+        "title": "2009-15 VAUXHALL ASTRA Front Passenger Wing #21077",
+        "price": 70.0,
+        "cur": "GBP",
+        "car": "Vauxhall Astra",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0572",
+        "url": "https://www.breakeryard.com/online-used-parts/2012-nissan-qashqai-acenta-front-driver-wing-white-9249",
+        "title": "2012 NISSAN QASHQAI ACENTA Front Driver Wing (White) #9249",
+        "price": 80.0,
+        "cur": "GBP",
+        "car": "Nissan Qashqai",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "headlight": {
+     "min": 42,
+     "max": 204,
+     "src": [
+      "pricedb",
+      "fordshop"
+     ],
+     "est": false,
+     "db": {
+      "n": 39,
+      "n_new": 0,
+      "n_used": 39,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 23,
+      "p25": 42,
+      "median": 58,
+      "p75": 92,
+      "p90": 250,
+      "page": "price-db.html?c=GB&p=headlight",
+      "examples": [
+       {
+        "id": "PDB-GB-0824",
+        "url": "https://www.breakeryard.com/online-used-parts/damaged-06-09-nissan-qashqai-nsf-passenger-left-headlightheadlamp-26060-jd01",
+        "title": "DAMAGED 06-09 NISSAN QASHQAI NSF PASSENGER LEFT HEADLIGHT/HEADLAMP 26060 JD01",
+        "price": 69.99,
+        "cur": "GBP",
+        "car": "Nissan Qashqai",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0778",
+        "url": "https://www.breakeryard.com/online-used-parts/vauxhall-astra-headlightheadlamp-driver-side-2009-2015-93178634",
+        "title": "VAUXHALL ASTRA HEADLIGHT/HEADLAMP (DRIVER SIDE) 2009-2015 93178634",
+        "price": 70.0,
+        "cur": "GBP",
+        "car": "Vauxhall Astra",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0722",
+        "url": "https://www.breakeryard.com/online-used-parts/2010-2015-vauxhall-astra-j-headlightheadlamp-driver-side-1lg010011-18",
+        "title": "2010-2015 VAUXHALL ASTRA J HEADLIGHT/HEADLAMP (DRIVER SIDE) 1LG010011-18",
+        "price": 64.99,
+        "cur": "GBP",
+        "car": "Vauxhall Astra",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "windscreen": {
+     "min": 112,
+     "max": 450,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 16,
+      "n_new": 0,
+      "n_used": 16,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 106,
+      "p25": 112,
+      "median": 168,
+      "p75": 213,
+      "p90": 243,
+      "page": "price-db.html?c=GB&p=windscreen",
+      "examples": [
+       {
+        "id": "PDB-GB-0562",
+        "url": "https://www.breakeryard.com/online-used-parts/vw-golf-front-windscreen-windshield-screen-glass-5h0845011be-2020-2025-r273",
+        "title": "VW GOLF FRONT WINDSCREEN WINDSHIELD SCREEN GLASS 5H0845011BE 2020 - 2025 R273",
+        "price": 200.0,
+        "cur": "GBP",
+        "car": "Volkswagen Golf",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0715",
+        "url": "https://www.breakeryard.com/online-used-parts/ford-focus-mk3-zetec-s-front-windscreen-glass-see-photos-2015-2018-hv65",
+        "title": "FORD FOCUS MK3 ZETEC S FRONT WINDSCREEN GLASS (SEE PHOTOS) 2015-2018 HV65",
+        "price": 202.5,
+        "cur": "GBP",
+        "car": "Ford Focus",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0662",
+        "url": "https://www.breakeryard.com/online-used-parts/nissan-juke-f16-front-windscreen-windshield-screen-glass-2021-2024-d11138-w",
+        "title": "NISSAN JUKE F16 FRONT WINDSCREEN WINDSHIELD SCREEN GLASS 2021 - 2024 - D11138 W",
+        "price": 220.0,
+        "cur": "GBP",
+        "car": "Nissan Juke",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "taillight": {
+     "min": 17,
+     "max": 180,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 45,
+      "n_new": 0,
+      "n_used": 45,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 16,
+      "p25": 17,
+      "median": 29,
+      "p75": 62,
+      "p90": 94,
+      "page": "price-db.html?c=GB&p=taillight",
+      "examples": [
+       {
+        "id": "PDB-GB-0820",
+        "url": "https://www.breakeryard.com/online-used-parts/ford-focus-mk3-hatchback-5-door-reartail-light-body-drivers-side",
+        "title": "FORD FOCUS MK3 HATCHBACK 5 Door REAR/TAIL LIGHT ON BODY DRIVERS SIDE",
+        "price": 34.95,
+        "cur": "GBP",
+        "car": "Ford Focus",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0760",
+        "url": "https://www.breakeryard.com/online-used-parts/08-12-ford-fiesta-mk7-3-door-reartail-light-body-passenger-side",
+        "title": "08-12 Ford Fiesta Mk7 3 Door REAR/TAIL LIGHT ON BODY PASSENGER SIDE",
+        "price": 35.0,
+        "cur": "GBP",
+        "car": "Ford Fiesta",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0726",
+        "url": "https://www.breakeryard.com/online-used-parts/2014-nissan-juke-rear-right-driver-side-tail-light-rhd-genuine",
+        "title": "2014 NISSAN JUKE REAR RIGHT DRIVER SIDE TAIL LIGHT RHD GENUINE",
+        "price": 30.0,
+        "cur": "GBP",
+        "car": "Nissan Juke",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "bonnet": {
+     "min": 50,
+     "max": 400,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 11,
+      "n_new": 0,
+      "n_used": 11,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 46,
+      "p25": 50,
+      "median": 127,
+      "p75": 167,
+      "p90": 208,
+      "page": "price-db.html?c=GB&p=bonnet",
+      "examples": [
+       {
+        "id": "PDB-GB-0624",
+        "url": "https://www.breakeryard.com/online-used-parts/nissan-juke-nismo-rs-2015-bonnet-hood-lid-panel-black-metallic-z11",
+        "title": "NISSAN JUKE NISMO RS 2015 BONNET HOOD LID PANEL IN BLACK METALLIC Z11",
+        "price": 151.99,
+        "cur": "GBP",
+        "car": "Nissan Juke",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0604",
+        "url": "https://www.breakeryard.com/online-used-parts/genuine-ford-fiesta-mk7-ink-blue-bonnet-hood-panel-2008-2012",
+        "title": "✅ GENUINE FORD FIESTA MK7 INK BLUE BONNET HOOD PANEL 2008 - 2012",
+        "price": 129.95,
+        "cur": "GBP",
+        "car": "Ford Fiesta",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0695",
+        "url": "https://www.breakeryard.com/online-used-parts/nissan-juke-nismo-rs-bonnet-hood-black-z11-2015-2016-2017-2018-u351",
+        "title": "NISSAN JUKE NISMO RS BONNET HOOD IN - BLACK -- Z11 2015 2016 2017 2018 U351",
+        "price": 180.0,
+        "cur": "GBP",
+        "car": "Nissan Juke",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "boot": {
+     "min": 62,
+     "max": 450,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 41,
+      "n_new": 0,
+      "n_used": 41,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 55,
+      "p25": 62,
+      "median": 112,
+      "p75": 280,
+      "p90": 327,
+      "page": "price-db.html?c=GB&p=tailgate",
+      "examples": [
+       {
+        "id": "PDB-GB-0681",
+        "url": "https://www.breakeryard.com/online-used-parts/ford-fiesta-boot-lid-tailgate-2008-2017-3-door-hatchback-vision-0",
+        "title": "FORD FIESTA Boot Lid Tailgate 2008-2017 3 Door Hatchback Vision",
+        "price": 134.52,
+        "cur": "GBP",
+        "car": "Ford Fiesta",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0799",
+        "url": "https://www.breakeryard.com/online-used-parts/ford-fiesta-boot-lid-tailgate-2008-2017-3-door-hatchback-black-1763986",
+        "title": "FORD FIESTA Boot Lid Tailgate 2008-2017 3 Door Hatchback BLACK 1763986",
+        "price": 133.19,
+        "cur": "GBP",
+        "car": "Ford Fiesta",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0805",
+        "url": "https://www.breakeryard.com/online-used-parts/ford-focus-boot-lid-tailgate-2014-2018-5-door-hatchback-iceberg",
+        "title": "FORD FOCUS Boot Lid Tailgate 2014-2018 5 Door Hatchback Iceberg",
+        "price": 138.74,
+        "cur": "GBP",
+        "car": "Ford Focus",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "door": {
+     "min": 67,
+     "max": 600,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 23,
+      "n_new": 0,
+      "n_used": 23,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 51,
+      "p25": 67,
+      "median": 83,
+      "p75": 117,
+      "p90": 200,
+      "page": "price-db.html?c=GB&p=door",
+      "examples": [
+       {
+        "id": "PDB-GB-0625",
+        "url": "https://www.breakeryard.com/online-used-parts/nissan-juke-f15-door-shell-front-left-12l-man-pet-suv-2015-door-shell",
+        "title": "NISSAN JUKE F15 DOOR SHELL FRONT LEFT 1.2L MAN PET SUV 2015 DOOR SHELL",
+        "price": 99.99,
+        "cur": "GBP",
+        "car": "Nissan Juke",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0684",
+        "url": "https://www.breakeryard.com/online-used-parts/volkswagen-golf-door-shell-passenger-rear-left-door-vw-hatchback-2011",
+        "title": "VOLKSWAGEN GOLF DOOR SHELL PASSENGER REAR LEFT DOOR VW HATCHBACK 2011",
+        "price": 99.99,
+        "cur": "GBP",
+        "car": "Volkswagen Golf",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0801",
+        "url": "https://www.breakeryard.com/online-used-parts/volkswagen-golf-door-shell-driver-rear-right-door-vw-hatchback-2011",
+        "title": "VOLKSWAGEN GOLF DOOR SHELL DRIVER REAR RIGHT DOOR VW HATCHBACK 2011",
+        "price": 99.99,
+        "cur": "GBP",
+        "car": "Volkswagen Golf",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "quarter_panel": {
+     "min": 120,
+     "max": 400,
+     "src": [],
+     "est": true
+    },
+    "roof": {
+     "min": 250,
+     "max": 800,
+     "src": [],
+     "est": true
+    },
+    "running_board": {
+     "min": 50,
+     "max": 200,
+     "src": [],
+     "est": true
+    },
+    "rear_window": {
+     "min": 120,
+     "max": 400,
+     "src": [],
+     "est": true
+    },
+    "mirror": {
+     "min": 26,
+     "max": 200,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 10,
+      "n_new": 0,
+      "n_used": 10,
+      "condition": "used",
+      "rule": "used p25 - 1.1 new max",
+      "p10": 21,
+      "p25": 26,
+      "median": 32,
+      "p75": 50,
+      "p90": 55,
+      "page": "price-db.html?c=GB&p=mirror",
+      "examples": [
+       {
+        "id": "PDB-GB-0557",
+        "url": "https://www.breakeryard.com/online-used-parts/vauxhall-corsa-d-vxr-wing-mirror-electric-passenger-side-arden-blue-2007-2013",
+        "title": "Vauxhall Corsa D VXR Wing Mirror Electric Passenger Side Arden Blue 2007 - 2013",
+        "price": 34.99,
+        "cur": "GBP",
+        "car": "Vauxhall Corsa",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0706",
+        "url": "https://www.breakeryard.com/online-used-parts/vauxhall-corsa-d-vxr-wing-mirror-electric-driver-side-arden-blue-2007-2013",
+        "title": "Vauxhall Corsa D VXR Wing Mirror Electric Driver Side Arden Blue 2007 - 2013",
+        "price": 34.99,
+        "cur": "GBP",
+        "car": "Vauxhall Corsa",
+        "cond": "used"
+       },
+       {
+        "id": "PDB-GB-0566",
+        "url": "https://www.breakeryard.com/online-used-parts/ford-focus-mk4-2018-wing-mirror-manual-fold-front-right-driver-side-grey",
+        "title": "FORD FOCUS MK4 2018 WING MIRROR MANUAL FOLD FRONT RIGHT DRIVER SIDE IN GREY",
+        "price": 41.96,
+        "cur": "GBP",
+        "car": "Ford Focus",
+        "cond": "used"
+       }
+      ]
+     }
+    },
+    "tyre": {
+     "min": 60,
+     "max": 150,
+     "src": [],
+     "est": true
+    }
+   },
+   "sources": [
+    "pricedb",
+    "amonline",
+    "autodoc_uk",
+    "fordshop",
+    "hours"
+   ],
+   "note_tr": "İşçilik: AM-online Haziran 2026 (bağımsız £56 – yetkili £93/saat); parça: autodoc.co.uk – Ford orijinal. Parça fiyatları 1.2: 1.100 ilanlık fiyat veritabanından (ilan sayısı ve bağlantılar her satırda).",
+   "note_en": "Labour: AM-online June 2026 (independent £56 – franchised £93 per hour); parts: autodoc.co.uk – genuine Ford. Part prices 1.2: from the 1,100-listing price database (count and links on each line)."
+  },
+  "US": {
+   "name_tr": "ABD",
+   "name_en": "United States",
+   "currency": "USD",
+   "symbol": "$",
+   "vat": 0.0,
+   "vehicle": "Toyota Corolla (2020)",
+   "prices_include_vat": false,
+   "body_rate": [
+    65,
+    110
+   ],
+   "paint_rate": [
+    65,
+    110
+   ],
+   "paint_material": [
+    38,
+    55
+   ],
+   "parts": {
+    "bumper_front": {
+     "min": 82,
+     "max": 329,
+     "src": [
+      "pricedb",
+      "toyotaoem"
+     ],
+     "est": false,
+     "db": {
+      "n": 38,
+      "n_new": 38,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 60,
+      "p25": 82,
+      "median": 113,
+      "p75": 152,
+      "p90": 329,
+      "page": "price-db.html?c=US&p=front_bumper",
+      "examples": [
+       {
+        "id": "PDB-US-0906",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=16858893&cc=3444154&pt=1344",
+        "title": "Toyota Corolla 2020 bumper cover - TECHPRO TO1000464 (Front; L Model or LE Model",
+        "price": 111.79,
+        "cur": "USD",
+        "car": "Toyota Corolla",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-1019",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=16849565&cc=3443338&pt=1344",
+        "title": "Nissan Altima 2019 bumper cover - TECHPRO NI1000324 (Front; SR Model)",
+        "price": 114.79,
+        "cur": "USD",
+        "car": "Nissan Altima",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-0872",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=10822496&cc=3443338&pt=1344",
+        "title": "Nissan Altima 2019 bumper cover - VARIOUS MFR NI1000324 (Front; SR Model)",
+        "price": 109.89,
+        "cur": "USD",
+        "car": "Nissan Altima",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "bumper_rear": {
+     "min": 71,
+     "max": 247,
+     "src": [
+      "pricedb",
+      "toyotaoem"
+     ],
+     "est": false,
+     "db": {
+      "n": 32,
+      "n_new": 32,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 62,
+      "p25": 71,
+      "median": 92,
+      "p75": 164,
+      "p90": 247,
+      "page": "price-db.html?c=US&p=rear_bumper",
+      "examples": [
+       {
+        "id": "PDB-US-0907",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=16862317&cc=3444154&pt=1344",
+        "title": "Toyota Corolla 2020 bumper cover - TECHPRO TO1100353 (Rear)",
+        "price": 90.79,
+        "cur": "USD",
+        "car": "Toyota Corolla",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-1020",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=10620376&cc=3443338&pt=1344",
+        "title": "Nissan Altima 2019 bumper cover - VARIOUS MFR NI1100330 (Rear; w/ Distance Senso",
+        "price": 93.79,
+        "cur": "USD",
+        "car": "Nissan Altima",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-1064",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=16824713&cc=3443429&pt=1344",
+        "title": "Honda Accord 2019 bumper cover - TECHPRO HO1100311 (Rear; LX Model or Sport; w/o",
+        "price": 89.79,
+        "cur": "USD",
+        "car": "Honda Accord",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "headlight": {
+     "min": 203,
+     "max": 849,
+     "src": [
+      "pricedb",
+      "rockauto"
+     ],
+     "est": false,
+     "db": {
+      "n": 48,
+      "n_new": 48,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 104,
+      "p25": 203,
+      "median": 390,
+      "p75": 612,
+      "p90": 849,
+      "page": "price-db.html?c=US&p=headlight",
+      "examples": [
+       {
+        "id": "PDB-US-1073",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=12237505&cc=3445491&pt=10762",
+        "title": "Toyota RAV4 2020 headlamp assembly - VARIOUS MFR TO2518200 (Left; LE Model; For ",
+        "price": 354.79,
+        "cur": "USD",
+        "car": "Toyota RAV4",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-1088",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=15334289&cc=3443269&pt=10762",
+        "title": "Hyundai Elantra 2019 headlamp assembly - DEPO 3211182LASN2 (Left; Halogen; w/ LE",
+        "price": 424.99,
+        "cur": "USD",
+        "car": "Hyundai Elantra",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-1079",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=10529220&cc=3443338&pt=10762",
+        "title": "Nissan Altima 2019 headlamp assembly - VARIOUS MFR NI2502266 (Left; LED; w/o Aut",
+        "price": 353.89,
+        "cur": "USD",
+        "car": "Nissan Altima",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "fender": {
+     "min": 49,
+     "max": 119,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 42,
+      "n_new": 42,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 43,
+      "p25": 49,
+      "median": 56,
+      "p75": 80,
+      "p90": 119,
+      "page": "price-db.html?c=US&p=fender",
+      "examples": [
+       {
+        "id": "PDB-US-0960",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=17043269&cc=3441619&pt=1380",
+        "title": "Honda CR-V 2018 fender - TECHPRO HO1240193 (Front Left)",
+        "price": 56.99,
+        "cur": "USD",
+        "car": "Honda CR-V",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-0973",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=16953073&cc=3439138&pt=1380",
+        "title": "Ford Escape 2018 fender - TECHPRO FO1240288 (Front Left)",
+        "price": 54.79,
+        "cur": "USD",
+        "car": "Ford Escape",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-1095",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=16953921&cc=3439138&pt=1380",
+        "title": "Ford Escape 2018 fender - TECHPRO FO1241288 (Front Right)",
+        "price": 53.89,
+        "cur": "USD",
+        "car": "Ford Escape",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "windscreen": {
+     "min": 250,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "taillight": {
+     "min": 44,
+     "max": 305,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 48,
+      "n_new": 48,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 29,
+      "p25": 44,
+      "median": 124,
+      "p75": 173,
+      "p90": 305,
+      "page": "price-db.html?c=US&p=taillight",
+      "examples": [
+       {
+        "id": "PDB-US-0896",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=8174900&cc=3439138&pt=807",
+        "title": "Ford Escape 2018 tail lamp assembly - VARIOUS MFR FO2802117 (Left Inner; w/o Spo",
+        "price": 121.79,
+        "cur": "USD",
+        "car": "Ford Escape",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-0935",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=10168844&cc=3443429&pt=807",
+        "title": "Honda Accord 2019 tail lamp assembly - VARIOUS MFR HO2804118 (Left Outer; EX Mod",
+        "price": 126.79,
+        "cur": "USD",
+        "car": "Honda Accord",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-1037",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=8174912&cc=3439138&pt=807",
+        "title": "Ford Escape 2018 tail lamp assembly - VARIOUS MFR FO2803117 (Right Inner; w/o Sp",
+        "price": 121.79,
+        "cur": "USD",
+        "car": "Ford Escape",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "bonnet": {
+     "min": 147,
+     "max": 266,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 19,
+      "n_new": 19,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 142,
+      "p25": 147,
+      "median": 182,
+      "p75": 247,
+      "p90": 266,
+      "page": "price-db.html?c=US&p=bonnet",
+      "examples": [
+       {
+        "id": "PDB-US-0918",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=17042317&cc=3443264&pt=1396",
+        "title": "Honda Civic 2019 hood - TECHPRO HO1230182 (Coupe | Sedan; North America Built Ve",
+        "price": 181.79,
+        "cur": "USD",
+        "car": "Honda Civic",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-0991",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=17042365&cc=3443264&pt=1396",
+        "title": "Honda Civic 2019 hood - TECHPRO HO1230194 (Sedan; For vehicle built in Japan)",
+        "price": 180.79,
+        "cur": "USD",
+        "car": "Honda Civic",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-0904",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=17215509&cc=3441740&pt=1396",
+        "title": "Toyota Tacoma 2018 hood - TECHPRO TO1230240 (w/ Scoop)",
+        "price": 187.99,
+        "cur": "USD",
+        "car": "Toyota Tacoma",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "boot": {
+     "min": 200,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "door": {
+     "min": 250,
+     "max": 900,
+     "src": [],
+     "est": true
+    },
+    "quarter_panel": {
+     "min": 200,
+     "max": 600,
+     "src": [],
+     "est": true
+    },
+    "roof": {
+     "min": 400,
+     "max": 1200,
+     "src": [],
+     "est": true
+    },
+    "running_board": {
+     "min": 80,
+     "max": 300,
+     "src": [],
+     "est": true
+    },
+    "rear_window": {
+     "min": 200,
+     "max": 500,
+     "src": [],
+     "est": true
+    },
+    "mirror": {
+     "min": 41,
+     "max": 337,
+     "src": [
+      "pricedb"
+     ],
+     "est": false,
+     "db": {
+      "n": 47,
+      "n_new": 47,
+      "n_used": 0,
+      "condition": "new",
+      "rule": "new p25-p90",
+      "p10": 31,
+      "p25": 41,
+      "median": 93,
+      "p75": 212,
+      "p90": 337,
+      "page": "price-db.html?c=US&p=mirror",
+      "examples": [
+       {
+        "id": "PDB-US-1003",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=8885648&cc=3439149&pt=1304",
+        "title": "Ford F-150 2018 outside mirror & glass assembly - VARIOUS MFR FO1321522 (Right; ",
+        "price": 92.79,
+        "cur": "USD",
+        "car": "Ford F-150",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-0980",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=12888941&cc=3441740&pt=1304",
+        "title": "Toyota Tacoma 2018 outside mirror & glass assembly - TYC 5290872 (Left; w/ Blind",
+        "price": 99.89,
+        "cur": "USD",
+        "car": "Toyota Tacoma",
+        "cond": "new"
+       },
+       {
+        "id": "PDB-US-0864",
+        "url": "https://www.rockauto.com/en/moreinfo.php?pk=17008353&cc=3443203&pt=1304",
+        "title": "Chevrolet Silverado 1500 2019 outside mirror & glass assembly - TECHPRO GM132058",
+        "price": 100.79,
+        "cur": "USD",
+        "car": "Chevrolet Silverado 1500",
+        "cond": "new"
+       }
+      ]
+     }
+    },
+    "tyre": {
+     "min": 90,
+     "max": 220,
+     "src": [],
+     "est": true
+    }
+   },
+   "sources": [
+    "pricedb",
+    "nabr",
+    "paintmat",
+    "rockauto",
+    "toyotaoem",
+    "hours"
+   ],
+   "note_tr": "İşçilik: NABR Haziran 2026 ortalaması ($86/saat) çevresinde kırsal – büyük şehir aralığı; boya malzemesi $38–55/saat; parça: RockAuto / Toyota OEM. Parça fiyatları 1.2: 1.100 ilanlık fiyat veritabanından (ilan sayısı ve bağlantılar her satırda).",
+   "note_en": "Labour: around the NABR June 2026 average ($86/h), rural – metro range; paint materials $38–55/h; parts: RockAuto / Toyota OEM. Sales tax not included. Part prices 1.2: from the 1,100-listing price database (count and links on each line)."
+  }
+ },
+ "actions": {
+  "scratch": [
+   {
+    "max_area": 0.02,
+    "action": "polish",
+    "tr": "Pasta-cila",
+    "en": "Polish",
+    "body": 0.5,
+    "paint": 0.0,
+    "part": false,
+    "paint_frac": 0.0
+   },
+   {
+    "max_area": 1,
+    "action": "repaint",
+    "tr": "Lokal / parça boya",
+    "en": "Local / panel repaint",
+    "body": 0.5,
+    "paint": 1.0,
+    "part": false,
+    "paint_frac": 0.6
+   }
+  ],
+  "dent": [
+   {
+    "max_area": 0.03,
+    "action": "pdr",
+    "tr": "Boyasız göçük düzeltme",
+    "en": "Paintless dent repair",
+    "body": 0.6,
+    "paint": 0.0,
+    "part": false,
+    "paint_frac": 0.0
+   },
+   {
+    "max_area": 0.15,
+    "action": "repair_paint",
+    "tr": "Düzeltme + boya",
+    "en": "Repair + paint",
+    "body": 1.0,
+    "paint": 1.0,
+    "part": false,
+    "paint_frac": 1.0
+   },
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Panel değişimi + boya",
+    "en": "Replace panel + paint",
+    "body": 0,
+    "paint": 1.0,
+    "part": true,
+    "paint_frac": 1.0
+   }
+  ],
+  "crack": [
+   {
+    "max_area": 0.06,
+    "action": "plastic_repair",
+    "tr": "Plastik kaynak + boya",
+    "en": "Plastic weld + paint",
+    "body": 1.0,
+    "paint": 1.0,
+    "part": false,
+    "paint_frac": 1.0
+   },
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Parça değişimi + boya",
+    "en": "Replace part + paint",
+    "body": 0,
+    "paint": 1.0,
+    "part": true,
+    "paint_frac": 1.0
+   }
+  ],
+  "broken_part": [
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Kırık / eksik parça: değişim + boya",
+    "en": "Broken / missing part: replace + paint",
+    "body": 0,
+    "paint": 1.0,
+    "part": true,
+    "paint_frac": 1.0
+   }
+  ],
+  "glass_shatter": [
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Cam değişimi",
+    "en": "Replace glass",
+    "body": 0,
+    "paint": 0,
+    "part": true,
+    "paint_frac": 0
+   }
+  ],
+  "lamp_broken": [
+   {
+    "max_area": 1,
+    "action": "replace",
+    "tr": "Lamba değişimi",
+    "en": "Replace lamp",
+    "body": 0,
+    "paint": 0,
+    "part": true,
+    "paint_frac": 0
+   }
+  ],
+  "tire_flat": [
+   {
+    "max_area": 1,
+    "action": "tyre",
+    "tr": "Lastik tamiri / değişimi",
+    "en": "Tyre repair / replacement",
+    "body": 0,
+    "paint": 0,
+    "part": true,
+    "paint_frac": 0
+   }
+  ]
+ },
+ "default_part": {
+  "scratch": "door",
+  "dent": "door",
+  "crack": "bumper_front",
+  "broken_part": "bumper_front",
+  "glass_shatter": "windscreen",
+  "lamp_broken": "headlight",
+  "tire_flat": "tyre"
+ },
+ "part_of": {
+  "Front-windscreen-damage": "windscreen",
+  "Rear-windscreen-Damage": "rear_window",
+  "Headlight-damage": "headlight",
+  "Taillight-Damage": "taillight",
+  "Runningboard-Damage": "running_board",
+  "Sidemirror-Damage": "mirror",
+  "bonnet-dent": "bonnet",
+  "boot-dent": "boot",
+  "doorouter-dent": "door",
+  "fender-dent": "fender",
+  "front-bumper-dent": "bumper_front",
+  "quaterpanel-dent": "quarter_panel",
+  "rear-bumper-dent": "bumper_rear",
+  "roof-dent": "roof"
+ },
+ "sources": {
+  "ato26": {
+   "title": "ATO 2026 Oto Kaporta İşçilik Azami Fiyat Tarifesi (Ankara Ticaret Odası, meclis onayı 30.04.2026, KDV hariç)",
+   "url": "https://www.atonet.org.tr/Uploads/Birimler/Internet/Hizmetlerimiz/Azami%20Fiyat%20Tarifleri/2026_azami_fiyat_tarifesi/2026_oto_tamir_iscilik_2026_05_18_v2.pdf"
+  },
+  "ato25": {
+   "title": "ATO 2025 Oto Tamir İşçilik Azami Fiyat Tarifesi (bumper / quarter / boot rows; scaled ×1.30 to 2026)",
+   "url": "https://www.atonet.org.tr/Uploads/Birimler/Internet/Hizmetlerimiz/Azami%20Fiyat%20Tarifleri/2025_azami_fiyat_tarifesi/2025_oto_tamir_iscilik_2025_01_03.pdf"
+  },
+  "armut": {
+   "title": "armut.com — 2026 tampon / lokal boya / kaporta tamiri teklifleri (piyasa alt sınırı)",
+   "url": "https://armut.com/fiyatlari/tampon-boyama_6772"
+  },
+  "fiatparca": {
+   "title": "fiatparcacim.com — orijinal Fiat (OPAR) parça fiyatları",
+   "url": "https://www.fiatparcacim.com/urun/on-tampon-fiat-egea-cross-orjinal-fiat-yedek-parca-735753212/"
+  },
+  "otocikma": {
+   "title": "otocikma.com — Fiat Egea sıfır / çıkma parça ilanları (2026)",
+   "url": "https://www.otocikma.com/fiat-egea-kaporta-karoser-on-tampon"
+  },
+  "parcafilosu": {
+   "title": "parcafilosu.com.tr — Egea çamurluk (yan sanayi CEY 2.260 TL / orijinal 5.902 TL)",
+   "url": "https://www.parcafilosu.com.tr/fiat-egea-camurluk-ve-parcalari"
+  },
+  "unluoto": {
+   "title": "unluoto.com.tr — Egea sağ ön çamurluk orijinal 8.088 TL",
+   "url": "https://www.unluoto.com.tr/product/fiat-egea-sag-on-camurluk-orijinal-52012209"
+  },
+  "parcario": {
+   "title": "parcario.com — Egea ön cam OPAR 12.000–14.000 TL",
+   "url": "https://www.parcario.com/meta-etiket/fiat-egea-on-cam-fiyati"
+  },
+  "n11far": {
+   "title": "n11.com — Egea ön far (yan sanayi ~3.540 TL)",
+   "url": "https://www.n11.com/yedek-parca-otomobil/far-ve-aydinlatma/on-far?q=fiat+egea"
+  },
+  "dekra": {
+   "title": "DEKRA Reparatur-Stundensatz (DRS) 2026 — Bundesdurchschnitt netto: Karosserie 173,94 €, Lack (ohne Material) 192,87 €",
+   "url": "https://schaden.news/de/article/link/44861/dekra-reparatur-stundensatz-steigt-2025-26-um-7-5-prozent"
+  },
+  "autodoc_de": {
+   "title": "autodoc.de — VW Golf 7: Stoßstange 73–181 €, Kotflügel 68–154 €, Scheinwerfer 104–280 € (OE bis 1.050 €), Frontscheibe 400–1.200 €",
+   "url": "https://www.autodoc.de/autoteile/stossfanger-einzelteile-10287/vw/golf/golf-vii-5g1-be1"
+  },
+  "amonline": {
+   "title": "AM-online — UK average labour rate June 2026: franchised £92.74, non-franchised £56.42",
+   "url": "https://www.am-online.com/average-labour-rate-in-franchised-and-non-franchised-workshops"
+  },
+  "autodoc_uk": {
+   "title": "autodoc.co.uk — Ford Fiesta: front bumper £26.75–103.62, wing £33–168",
+   "url": "https://www.autodoc.co.uk/s/ford-fiesta-front-bumper"
+  },
+  "fordshop": {
+   "title": "shop.ford.co.uk — Fiesta headlamp unit £204.36; genuine bumper ~£218 (masterofbumpers.com)",
+   "url": "https://shop.ford.co.uk/products/ford-fiesta-front-o-s-headlight-headlamp-indicator-unit"
+  },
+  "nabr": {
+   "title": "NABR Labor Rate Index (Autobody News, June 2026): body $86/h, refinish $85/h",
+   "url": "https://www.autobodynews.com/regional/midwest-regional-news/labor-rate-index-national-data-shows-mechanical-labor-rates-rising-faster-than-body-refinish"
+  },
+  "paintmat": {
+   "title": "US paint & materials ~$38–55 per refinish hour (shop rate cards 2026)",
+   "url": "https://collision702.com/about/labor-rates/"
+  },
+  "rockauto": {
+   "title": "RockAuto — 2020 Toyota Corolla headlamp assembly $231–438",
+   "url": "https://www.rockauto.com/en/catalog/toyota,2020,corolla,2.0l+l4,3444156,body+&+lamp+assembly,headlamp+assembly,10762"
+  },
+  "toyotaoem": {
+   "title": "Toyota OEM parts — 2020 Corolla front bumper cover $143–215 (aftermarket $100–300, go-parts.com)",
+   "url": "https://toyota.oempartsonline.com/v-2020-toyota-corolla--le--1-8l-l4-gas/body--bumper-and-components-front"
+  },
+  "hours": {
+   "title": "Typical refinish hours (CCC ONE / Mitchell examples: bumper cover 2.0 h, hood 3.0 h, door 2.5 h)",
+   "url": "https://www.launchadvisor.co/guides/auto-body-shop-pricing-estimating-labor-rates-auto-body-paint-shop"
+  },
+  "pricedb": {
+   "title": "Çekicin parça fiyat veritabanı — 1.100 ilan (TR/DE/GB/US), 25.10.2026 / Çekicin parts price DB — 1,100 listings",
+   "url": "https://sosa123454321-cekicin-site.static.hf.space/ai-lab/price-db.html"
+  }
+ },
+ "disclaimer_tr": "Fotoğraftan yapılan kaba bir ön tahmindir; araç modeli, renk, gizli hasar ve servis tipi fiyatı ciddi biçimde değiştirir. Kesin fiyat için eksper / servis teklifi gerekir.",
+ "disclaimer_en": "A rough pre-estimate from one photo; car model, colour, hidden damage and workshop type change the price a lot. A real quote needs an assessor / workshop."
+}

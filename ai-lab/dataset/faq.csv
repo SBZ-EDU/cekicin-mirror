@@ -1,0 +1,25 @@
+topic,question,answer,lang
+1,Çekicin nedir?,"Çekicin, Alfa Asistans altyapısıyla hizmet veren, yolda kalan araç sahipleri ile en yakın çekicileri dijital ortamda buluşturan mobil platformdur.",tr
+1,What is Çekicin?,"Çekicin is a mobile platform, powered by Alfa Asistans, that connects drivers stuck on the road with the nearest tow trucks.",en
+2,Sigorta veya kasko poliçem yoksa hizmet alabilir miyim?,Evet. Poliçeniz olmasa dahi uygulama üzerinden doğrudan plaka ve konum bilginizle bağımsız çekici talebi oluşturabilirsiniz.,tr
+2,Can I get service without an insurance or comprehensive (kasko) policy?,Yes. Even without a policy you can request an independent tow truck in the app with your plate number and location.,en
+3,Çekicinin gelişini nasıl takip edebilirim?,Çağrınız kabul edildiğinde sürücünün canlı konumu harita üzerinde görüntülenir. Ayrıca yola çıkış ve varış süresi bildirim olarak iletilir.,tr
+3,How can I track my tow truck?,"Once your request is accepted, the driver's live location is shown on the map, and you get notifications when the driver sets off and about the arrival time.",en
+4,Çekici firmaları sisteme nasıl katılır?,Çekici esnafı ve firmalar Diji Alfa uygulamasını indirip üyelik başvurusu yapabilir.,tr
+4,How do tow companies join the network?,Tow operators and companies can download the Diji Alfa app and apply for membership.,en
+5,Uygulama ücretli mi?,Mobil uygulamaları indirmek ücretsizdir. Taşıma ücretleri poliçe kapsamına veya talep türüne göre belirlenir.,tr
+5,Is the app free? Does it cost money?,Downloading the mobile apps is free. Towing fees depend on your policy coverage or the type of request.,en
+6,Hangi illerde hizmet veriyorsunuz?,81 ilde hizmet veriyoruz. Ayrıntı için 0850 474 23 23 numarasını arayabilirsiniz.,tr
+6,Which provinces do you serve?,We serve all 81 provinces of Türkiye. For details call 0850 474 23 23.,en
+7,İletişim bilgileriniz nedir?,"Müşteri hizmetleri: 0850 474 23 23 / 0216 251 43 11, e-posta: info@cekicin.com.tr.",tr
+7,What are your contact details?,"Customer service: 0850 474 23 23 / 0216 251 43 11, e-mail: info@cekicin.com.tr.",en
+8,Çekicin'de yapay zekâ ile hasar tespiti var mı? Yapay zekâ yol haritası nedir?,"Henüz yok; yol haritasında. Planlanan modüller: kameradan hasar tespiti (YOLOv8/YOLO11, Mask R-CNN), değişim/onarım kararı ve maliyet tahmini, yedek parça tedarikçisi ve fiyatı, yapay zekâ ile sesli müşteri rehberliği, OpenStreetMap ile ücretsiz yakın nokta araması ve bekleme süresi/çevresel etkinin ölçülmesi.",tr
+8,Does Çekicin have AI damage detection or repair cost estimation? What is the AI roadmap?,"Not yet — these are on the roadmap: camera-based damage detection (YOLOv8/YOLO11, Mask R-CNN), replace/repair decision with cost estimate, spare-part suppliers and prices, AI voice guidance for customers, free nearby-place search with OpenStreetMap, and measuring waiting time and environmental impact.",en
+9,Bekleme süresi %70 azalıyor mu? Çevresel etki / COP31,"%70 daha kısa bekleme bir hedeftir ve henüz gerçek veriyle doğrulanmamıştır. Plan, gerçek müdahale süresi verisini toplayıp bir emisyon modeliyle ölçmektir.",tr
+9,Is waiting time really 70% shorter? Environmental impact / COP31,The 70% shorter wait is a target and is not yet backed by real data. The plan is to collect real response-time data and measure it with an emissions model.,en
+10,Fotoğraftan hasar tespiti nasıl çalışır? Hasar analizi,"Çekicin AI Lab'de aracınızın fotoğrafını yükleyin. YOLO11n modeli 14 hasar türünü (far, cam, tampon, kaput, kapı, çamurluk vb.) tarayıcınızda tespit eder; fotoğraf sunucuya gönderilmez.",tr
+10,How does photo damage detection work? Damage analysis,"Upload a photo of your car in the Çekicin AI Lab. A YOLO11n model finds 14 damage types (headlight, glass, bumper, bonnet, door, fender, etc.) right in your browser; the photo is not uploaded to a server.",en
+11,Tamir mi değişim mi? Onarım maliyeti ne kadar tutar?,"AI Lab, tespit edilen hasarın büyüklüğüne göre boyasız düzeltme, düzeltme + boya veya parça değişimi önerir ve işçilik + parça + boya için tahmini bir aralık verir. Fiyatlar pilot amaçlıdır; kesin fiyat için servisten teklif alın.",tr
+11,Repair or replace? How much will the repair cost?,"The AI Lab suggests paintless repair, repair + paint, or replacement based on how large the detected damage is, and gives an estimated range for labour, parts and paint. Prices are for a pilot; get a quote from a workshop for the exact price.",en
+12,"En yakın yedek parçacı, lastikçi, şarj istasyonu nerede?","AI Lab'deki 'Yakındakiler' sekmesi OpenStreetMap verisiyle yedek parçacı, oto tamir, lastikçi, akaryakıt, şarj istasyonu, çilingir ve oto camcıları ücretsiz olarak listeler.",tr
+12,"Where is the nearest spare-parts shop, tyre shop or charging station?","The 'Nearby' tab in the AI Lab lists spare-parts shops, car repair, tyre shops, fuel, EV charging, locksmiths and auto glass for free using OpenStreetMap data.",en

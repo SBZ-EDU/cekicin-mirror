@@ -1,0 +1,110 @@
+WEBVTT
+
+1
+00:00:00.350 --> 00:00:02.154
+Çekicin yapay zekâ demosu:
+
+2
+00:00:02.204 --> 00:00:06.431
+her bağlantının ne yaptığını gerçek çıktısıyla gösteriyoruz.
+
+3
+00:00:06.481 --> 00:00:08.712
+Birinci bölüm, müşteri demoları.
+
+4
+00:00:08.762 --> 00:00:12.491
+Telegram asistanına hasarlı aracın fotoğrafı gidiyor;
+
+5
+00:00:12.541 --> 00:00:16.483
+birkaç saniyede hasar, tahmini maliyet ve öneri geliyor.
+
+6
+00:00:16.530 --> 00:00:20.062
+Sitedeki fotoğraf testinde aynı fotoğrafı yüklüyoruz:
+
+7
+00:00:20.112 --> 00:00:24.019
+kaputtaki göçük işaretleniyor ve Türkiye için on iki buçuk
+
+8
+00:00:24.069 --> 00:00:27.157
+ile yirmi yedi bin lira arası maliyet çıkıyor.
+
+9
+00:00:27.207 --> 00:00:30.130
+Ülkeyi Almanya yapınca fiyat avroya dönüyor.
+
+10
+00:00:30.200 --> 00:00:36.537
+Parça fiyat veritabanında araç adını yazınca, ilanlar fotoğraf ve fiyatlarıyla listeleniyor.
+
+11
+00:00:37.650 --> 00:00:39.899
+İkinci bölüm, yapay zekâ modülleri.
+
+12
+00:00:39.949 --> 00:00:44.694
+Modüller sayfasında altı modülün test doğruluğu ve demo bağlantıları var.
+
+13
+00:00:44.740 --> 00:00:50.776
+Simülatörde çekici sayısını değiştirince bekleme süresi ve karbon salımı yeniden hesaplanıyor;
+
+14
+00:00:50.826 --> 00:00:52.136
+bu bir simülasyondur.
+
+15
+00:00:52.190 --> 00:00:54.030
+Üçüncü bölüm, raporlar.
+
+16
+00:00:54.080 --> 00:00:56.824
+Rapor sayfasında video ve PDF var;
+
+17
+00:00:56.874 --> 00:00:59.701
+PDF’teki her bağlantı tıklanabilir.
+
+18
+00:01:00.810 --> 00:01:03.159
+Dördüncü bölüm, ortaklık programı:
+
+19
+00:01:03.209 --> 00:01:05.912
+modeller, destek yolları, PDF ve video.
+
+20
+00:01:05.960 --> 00:01:08.006
+Beşinci bölüm, yönetim paneli.
+
+21
+00:01:08.056 --> 00:01:13.037
+Mesajdaki kullanıcı adı ve şifreyle giriş yapınca proje panosu açılıyor;
+
+22
+00:01:13.087 --> 00:01:17.508
+en üstte başlangıç kartı ve bölümlere ayrılmış tüm sayfalar var.
+
+23
+00:01:18.610 --> 00:01:21.531
+Altıncı bölüm, site ve teknik bağlantılar:
+
+24
+00:01:21.581 --> 00:01:24.573
+yapay zekâ ana sayfası ve canlı API sürümü.
+
+25
+00:01:24.630 --> 00:01:28.403
+Her bağlantının altında nasıl test edileceği yazıyor;
+
+26
+00:01:28.453 --> 00:01:31.721
+PDF’te de aynı bağlantılar resimlerin altında.
+
+27
+00:01:31.771 --> 00:01:32.587
+Teşekkürler.
+

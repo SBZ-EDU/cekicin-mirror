@@ -1,0 +1,5 @@
+key,value,unit,note
+labour_rate_try,2250,TRY/hour,"Body-shop labour midpoint 1,500–3,000 TL/h (market estimate, 2026-10); see cost-model.json"
+paint_material_try_per_h,900,TRY/paint-hour,Legacy single-currency formula; the per-country model uses the ATO 2026 per-panel paint tariff for TR (see cost-model.json)
+currency,TRY,,
+status,sourced-2026-10,,"TR/DE/GB/US prices with sources in cost-model.json, cost_countries.csv, parts_prices_by_country.csv; rough pre-estimate, not a quote"

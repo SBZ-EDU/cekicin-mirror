@@ -1,0 +1,15 @@
+part_key,part_tr,part_en,part_price_min_try,part_price_max_try,repair_labour_h,paint_h,replace_labour_h,repairable,source
+windscreen_front,Ön cam,Front windscreen,5000,14000,0,0,2.0,chip_only,https://www.otocikma.com/fiat-egea-kaporta-karoser-on-tampon; https://www.parcario.com/meta-etiket/fiat-egea-on-cam-fiyati
+windscreen_rear,Arka cam,Rear windscreen,4500,11000,0,0,2.0,no, (estimate)
+headlight,Far,Headlight,3540,16000,0,0,1.0,no,https://www.n11.com/yedek-parca-otomobil/far-ve-aydinlatma/on-far?q=fiat+egea (estimate)
+taillight,Stop lambası,Taillight,1800,7000,0,0,0.5,no, (estimate)
+side_mirror,Yan ayna,Side mirror,1500,6500,0,0.5,0.7,glass_only, (estimate)
+bonnet,Kaput,Bonnet,7000,18000,3.0,3.0,1.0,yes, (estimate)
+boot,Bagaj kapağı,Boot lid,6500,17000,3.0,3.0,1.2,yes, (estimate)
+door,Kapı,Door,8000,22000,3.0,3.0,2.5,yes, (estimate)
+fender,Çamurluk,Fender,2260,8090,2.0,2.5,1.5,yes,https://www.parcafilosu.com.tr/fiat-egea-camurluk-ve-parcalari; https://www.unluoto.com.tr/product/fiat-egea-sag-on-camurluk-orijinal-52012209
+quarter_panel,Arka çamurluk,Quarter panel,6000,15000,4.0,3.0,8.0,yes, (estimate)
+bumper_front,Ön tampon,Front bumper,3500,12000,2.0,2.5,1.0,yes,unchanged (no source found)
+bumper_rear,Arka tampon,Rear bumper,3000,10000,2.0,2.5,1.0,yes,unchanged (no source found)
+roof,Tavan,Roof,9000,25000,4.0,4.0,12.0,yes, (estimate)
+running_board,Marşpiyel,Running board,2500,8000,2.0,2.0,2.0,yes, (estimate)

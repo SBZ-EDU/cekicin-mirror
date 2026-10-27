@@ -1,0 +1,1242 @@
+{
+ "ccpd": {
+  "n": 100000,
+  "det_iou50": [
+   99.18,
+   99.12,
+   99.23
+  ],
+  "any_det": [
+   99.78,
+   99.74,
+   99.8
+  ],
+  "exact6": [
+   72.8,
+   72.52,
+   73.07
+  ],
+  "exact6_given_det": [
+   73.05,
+   72.78,
+   73.33
+  ],
+  "char_acc": 92.82,
+  "ms_median": 59.4,
+  "ms_p90": 72.6,
+  "mean_iou": 0.783,
+  "exact6_cnfix": [
+   77.7,
+   77.44,
+   77.95
+  ],
+  "mcnemar_cnfix": {
+   "b": 4900,
+   "c": 0,
+   "p": 0.0
+  },
+  "len_dist": {
+   "0": 257,
+   "1": 1,
+   "2": 1,
+   "3": 2,
+   "4": 22,
+   "5": 1618,
+   "6": 86379,
+   "7": 11671,
+   "8": 49
+  },
+  "ocr_ece": 0.229,
+  "selective": [
+   {
+    "thr": 0,
+    "coverage": 99.2,
+    "acc": 73.05
+   },
+   {
+    "thr": 0.5,
+    "coverage": 99.2,
+    "acc": 73.05
+   },
+   {
+    "thr": 0.7,
+    "coverage": 98.7,
+    "acc": 73.38
+   },
+   {
+    "thr": 0.8,
+    "coverage": 95.1,
+    "acc": 75.87
+   },
+   {
+    "thr": 0.9,
+    "coverage": 84.4,
+    "acc": 82.31
+   },
+   {
+    "thr": 0.95,
+    "coverage": 73.2,
+    "acc": 87.37
+   }
+  ],
+  "by_blur": [
+   {
+    "lo": 2.0,
+    "hi": 19.0,
+    "n": 20000,
+    "det": 98.5,
+    "exact6": [
+     66.34,
+     65.68,
+     66.99
+    ]
+   },
+   {
+    "lo": 19.0,
+    "hi": 30.0,
+    "n": 20000,
+    "det": 99.1,
+    "exact6": [
+     72.64,
+     72.02,
+     73.25
+    ]
+   },
+   {
+    "lo": 30.0,
+    "hi": 45.0,
+    "n": 20000,
+    "det": 99.4,
+    "exact6": [
+     75.3,
+     74.69,
+     75.89
+    ]
+   },
+   {
+    "lo": 45.0,
+    "hi": 72.0,
+    "n": 20000,
+    "det": 99.5,
+    "exact6": [
+     75.53,
+     74.93,
+     76.12
+    ]
+   },
+   {
+    "lo": 72.0,
+    "hi": 1326.0,
+    "n": 20000,
+    "det": 99.5,
+    "exact6": [
+     74.18,
+     73.57,
+     74.78
+    ]
+   }
+  ],
+  "by_bright": [
+   {
+    "lo": 13.0,
+    "hi": 80.0,
+    "n": 20000,
+    "det": 99.2,
+    "exact6": [
+     73.74,
+     73.13,
+     74.35
+    ]
+   },
+   {
+    "lo": 80.0,
+    "hi": 103.0,
+    "n": 20000,
+    "det": 99.4,
+    "exact6": [
+     74.67,
+     74.07,
+     75.27
+    ]
+   },
+   {
+    "lo": 103.0,
+    "hi": 124.0,
+    "n": 20000,
+    "det": 99.2,
+    "exact6": [
+     73.52,
+     72.9,
+     74.12
+    ]
+   },
+   {
+    "lo": 124.0,
+    "hi": 146.0,
+    "n": 20000,
+    "det": 99.2,
+    "exact6": [
+     72.86,
+     72.23,
+     73.47
+    ]
+   },
+   {
+    "lo": 146.0,
+    "hi": 233.0,
+    "n": 20000,
+    "det": 98.8,
+    "exact6": [
+     69.2,
+     68.56,
+     69.84
+    ]
+   }
+  ],
+  "by_area": [
+   {
+    "lo": 3162.0,
+    "hi": 15170.0,
+    "n": 20000,
+    "det": 98.8,
+    "exact6": [
+     69.97,
+     69.33,
+     70.6
+    ]
+   },
+   {
+    "lo": 15170.0,
+    "hi": 20064.0,
+    "n": 20000,
+    "det": 98.9,
+    "exact6": [
+     73.59,
+     72.98,
+     74.2
+    ]
+   },
+   {
+    "lo": 20064.0,
+    "hi": 25650.0,
+    "n": 20000,
+    "det": 99.4,
+    "exact6": [
+     73.83,
+     73.22,
+     74.44
+    ]
+   },
+   {
+    "lo": 25650.0,
+    "hi": 33550.0,
+    "n": 20000,
+    "det": 99.5,
+    "exact6": [
+     73.8,
+     73.18,
+     74.4
+    ]
+   },
+   {
+    "lo": 33550.0,
+    "hi": 143728.0,
+    "n": 20000,
+    "det": 99.3,
+    "exact6": [
+     72.8,
+     72.17,
+     73.41
+    ]
+   }
+  ],
+  "by_tilt": [
+   {
+    "lo": 0.0,
+    "hi": 2.0,
+    "n": 20000,
+    "det": 98.8,
+    "exact6": [
+     73.37,
+     72.75,
+     73.97
+    ]
+   },
+   {
+    "lo": 2.0,
+    "hi": 4.0,
+    "n": 20000,
+    "det": 99.1,
+    "exact6": [
+     74.52,
+     73.91,
+     75.11
+    ]
+   },
+   {
+    "lo": 4.0,
+    "hi": 8.0,
+    "n": 20000,
+    "det": 99.3,
+    "exact6": [
+     74.21,
+     73.6,
+     74.81
+    ]
+   },
+   {
+    "lo": 8.0,
+    "hi": 15.0,
+    "n": 20000,
+    "det": 99.4,
+    "exact6": [
+     72.28,
+     71.65,
+     72.89
+    ]
+   },
+   {
+    "lo": 15.0,
+    "hi": 83.0,
+    "n": 20000,
+    "det": 99.3,
+    "exact6": [
+     69.62,
+     68.98,
+     70.25
+    ]
+   }
+  ],
+  "by_prov": {
+   "沪": {
+    "n": 336,
+    "exact6": 53.6
+   },
+   "浙": {
+    "n": 637,
+    "exact6": 55.1
+   },
+   "皖": {
+    "n": 95894,
+    "exact6": 73.3
+   },
+   "苏": {
+    "n": 1655,
+    "exact6": 56.7
+   },
+   "豫": {
+    "n": 215,
+    "exact6": 68.8
+   }
+  },
+  "top_confusions": [
+   [
+    "1->I",
+    4330
+   ],
+   [
+    "G->6",
+    1914
+   ],
+   [
+    "Q->0",
+    1716
+   ],
+   [
+    "1->7",
+    1084
+   ],
+   [
+    "D->0",
+    1018
+   ],
+   [
+    "A->4",
+    928
+   ],
+   [
+    "0->O",
+    870
+   ],
+   [
+    "U->0",
+    694
+   ],
+   [
+    "Z->2",
+    438
+   ],
+   [
+    "B->8",
+    421
+   ],
+   [
+    "C->0",
+    326
+   ],
+   [
+    "1->5",
+    288
+   ],
+   [
+    "Z->7",
+    277
+   ],
+   [
+    "1->6",
+    275
+   ],
+   [
+    "1->0",
+    272
+   ]
+  ],
+  "err_by_position": {
+   "0": 5.46,
+   "1": 9.61,
+   "2": 8.52,
+   "3": 8.62,
+   "4": 9.07,
+   "5": 5.61
+  },
+  "examples_fail": [
+   {
+    "file": "train/00224137931034-90_87-351&564_451&606-440&599_362&600_359&572_437&571-0_0_3_21_30_28_24-88-5.jpg",
+    "gt6": "ADX640",
+    "pred": "TAOX643",
+    "blur": 5,
+    "bright": 88
+   },
+   {
+    "file": "train/00230363984674-89_91-389&508_481&561-484&551_382&545_385&505_487&511-0_0_5_33_29_25_5-58-6.jpg",
+    "gt6": "AF951F",
+    "pred": "AAF55F",
+    "blur": 6,
+    "bright": 58
+   },
+   {
+    "file": "train/00256944444445-92_87-224&566_311&607-317&602_220&603_218&564_315&563-0_0_24_21_30_29_28-110-8.jpg",
+    "gt6": "A0X654",
+    "pred": "A4XK55",
+    "blur": 8,
+    "bright": 110
+   },
+   {
+    "file": "train/00257423371648-91_91-310&528_419&577-405&575_315&574_318&542_408&543-0_0_11_2_30_26_33-75-7.jpg",
+    "gt6": "AMC629",
+    "pred": "AWC629",
+    "blur": 7,
+    "bright": 75
+   },
+   {
+    "file": "train/00265804597702-91_88-280&520_371&559-365&557_289&556_285&520_361&521-0_0_1_31_2_30_30-91-6.jpg",
+    "gt6": "AB7C66",
+    "pred": "AR7756",
+    "blur": 6,
+    "bright": 91
+   },
+   {
+    "file": "train/00268199233717-93_82-244&553_362&599-352&597_261&594_254&561_345&564-0_0_10_22_29_33_26-104-4.jpg",
+    "gt6": "ALY592",
+    "pred": "1LK599",
+    "blur": 4,
+    "bright": 104
+   },
+   {
+    "file": "train/00278376436781-90_91-262&464_371&503-365&499_266&500_265&467_364&466-0_14_3_33_33_31_26-115-14.jpg",
+    "gt6": "QD9972",
+    "pred": "309972",
+    "blur": 14,
+    "bright": 115
+   },
+   {
+    "file": "train/00283644636015-90_92-338&522_448&553-446&549_343&548_343&517_446&518-0_0_31_26_11_30_25-88-7.jpg",
+    "gt6": "A72M61",
+    "pred": "AA2266",
+    "blur": 7,
+    "bright": 88
+   },
+   {
+    "file": "train/00288433908046-92_89-334&531_434&569-428&575_336&572_337&535_429&538-0_0_3_31_33_25_21-108-5.jpg",
+    "gt6": "AD791X",
+    "pred": "A0791X",
+    "blur": 5,
+    "bright": 108
+   },
+   {
+    "file": "train/00291666666667-90_90-325&466_426&506-416&504_331&501_332&468_417&471-0_0_12_24_25_30_28-107-13.jpg",
+    "gt6": "AN0164",
+    "pred": "AA00164",
+    "blur": 13,
+    "bright": 107
+   },
+   {
+    "file": "train/00293223180076-90_84-299&476_394&520-389&514_312&517_302&479_379&476-0_0_24_19_31_33_24-108-12.jpg",
+    "gt6": "A0V790",
+    "pred": "A90770",
+    "blur": 12,
+    "bright": 108
+   },
+   {
+    "file": "train/00293342911878-90_91-525&413_642&448-636&454_521&454_523&417_638&417-0_0_8_5_24_29_27-83-5.jpg",
+    "gt6": "AJF053",
+    "pred": "4JF0533",
+    "blur": 5,
+    "bright": 83
+   }
+  ]
+ },
+ "dvm": {
+  "n": 100000,
+  "makers": 74,
+  "pairs": 811,
+  "maker_prompt": [
+   37.83,
+   37.53,
+   38.13
+  ],
+  "maker_from_pair": [
+   56.86,
+   56.55,
+   57.17
+  ],
+  "maker_agg": [
+   59.97,
+   59.67,
+   60.28
+  ],
+  "maker_top5_prompt": [
+   68.38,
+   68.09,
+   68.67
+  ],
+  "model": [
+   23.23,
+   22.97,
+   23.49
+  ],
+  "body": [
+   54.57,
+   54.26,
+   54.88
+  ],
+  "n_body": 99630,
+  "ms_median": 70.7,
+  "mcnemar_agg_vs_prompt": {
+   "b": 26072,
+   "c": 3926,
+   "p": 0.0
+  },
+  "ece_maker_agg": 0.106,
+  "ece_body": 0.095,
+  "mean_conf_agg": 0.494,
+  "selective_maker": [
+   {
+    "thr": 0,
+    "coverage": 100.0,
+    "acc": 59.97
+   },
+   {
+    "thr": 0.3,
+    "coverage": 67.9,
+    "acc": 76.92
+   },
+   {
+    "thr": 0.5,
+    "coverage": 42.0,
+    "acc": 92.03
+   },
+   {
+    "thr": 0.7,
+    "coverage": 26.9,
+    "acc": 97.65
+   },
+   {
+    "thr": 0.9,
+    "coverage": 12.1,
+    "acc": 99.6
+   }
+  ],
+  "by_view": {
+   "front": {
+    "n": 25778,
+    "maker": 83.1,
+    "model": 26.5
+   },
+   "front-side 45": {
+    "n": 10084,
+    "maker": 66.3,
+    "model": 29.5
+   },
+   "side 90": {
+    "n": 16082,
+    "maker": 51.4,
+    "model": 23.5
+   },
+   "rear-side 135": {
+    "n": 4645,
+    "maker": 41.5,
+    "model": 16.1
+   },
+   "rear": {
+    "n": 5006,
+    "maker": 51.0,
+    "model": 14.4
+   },
+   "rear-side 225": {
+    "n": 22835,
+    "maker": 46.3,
+    "model": 18.9
+   },
+   "side 270": {
+    "n": 5873,
+    "maker": 36.9,
+    "model": 15.2
+   },
+   "front-side 315": {
+    "n": 9133,
+    "maker": 64.5,
+    "model": 30.1
+   },
+   "front 360": {
+    "n": 564,
+    "maker": 83.7,
+    "model": 37.9
+   }
+  },
+  "by_maker": {
+   "Abarth": {
+    "n": 154,
+    "maker": 22.7,
+    "model": 7.8
+   },
+   "Alfa Romeo": {
+    "n": 416,
+    "maker": 50.2,
+    "model": 33.7
+   },
+   "Audi": {
+    "n": 8365,
+    "maker": 80.1,
+    "model": 20.9
+   },
+   "BMW": {
+    "n": 5979,
+    "maker": 82.8,
+    "model": 26.1
+   },
+   "Bentley": {
+    "n": 440,
+    "maker": 61.8,
+    "model": 53.0
+   },
+   "Chevrolet": {
+    "n": 272,
+    "maker": 39.3,
+    "model": 26.5
+   },
+   "Citroen": {
+    "n": 3504,
+    "maker": 73.7,
+    "model": 19.6
+   },
+   "DS": {
+    "n": 254,
+    "maker": 9.1,
+    "model": 4.7
+   },
+   "Dacia": {
+    "n": 628,
+    "maker": 58.0,
+    "model": 46.3
+   },
+   "Ferrari": {
+    "n": 233,
+    "maker": 90.6,
+    "model": 41.6
+   },
+   "Fiat": {
+    "n": 2363,
+    "maker": 72.9,
+    "model": 17.0
+   },
+   "Ford": {
+    "n": 9857,
+    "maker": 68.6,
+    "model": 27.0
+   },
+   "Honda": {
+    "n": 1921,
+    "maker": 34.1,
+    "model": 19.2
+   },
+   "Hyundai": {
+    "n": 2433,
+    "maker": 53.7,
+    "model": 24.4
+   },
+   "Infiniti": {
+    "n": 163,
+    "maker": 59.5,
+    "model": 19.0
+   },
+   "Isuzu": {
+    "n": 278,
+    "maker": 41.0,
+    "model": 46.0
+   },
+   "Jaguar": {
+    "n": 3087,
+    "maker": 56.1,
+    "model": 36.0
+   },
+   "Jeep": {
+    "n": 531,
+    "maker": 64.2,
+    "model": 22.6
+   },
+   "Kia": {
+    "n": 3002,
+    "maker": 38.4,
+    "model": 18.9
+   },
+   "Land Rover": {
+    "n": 3416,
+    "maker": 70.7,
+    "model": 19.8
+   },
+   "Lexus": {
+    "n": 1178,
+    "maker": 61.9,
+    "model": 3.3
+   },
+   "MG": {
+    "n": 301,
+    "maker": 4.3,
+    "model": 1.0
+   },
+   "MINI": {
+    "n": 1262,
+    "maker": 82.1,
+    "model": 27.8
+   },
+   "Maserati": {
+    "n": 242,
+    "maker": 64.9,
+    "model": 32.2
+   },
+   "Mazda": {
+    "n": 2492,
+    "maker": 43.3,
+    "model": 23.2
+   },
+   "Mercedes-Benz": {
+    "n": 3298,
+    "maker": 57.6,
+    "model": 17.3
+   },
+   "Mitsubishi": {
+    "n": 1319,
+    "maker": 33.9,
+    "model": 22.7
+   },
+   "Nissan": {
+    "n": 5232,
+    "maker": 62.3,
+    "model": 28.3
+   },
+   "Peugeot": {
+    "n": 4183,
+    "maker": 50.0,
+    "model": 14.8
+   },
+   "Porsche": {
+    "n": 1922,
+    "maker": 71.2,
+    "model": 31.5
+   },
+   "Renault": {
+    "n": 2993,
+    "maker": 59.7,
+    "model": 29.5
+   },
+   "SEAT": {
+    "n": 1294,
+    "maker": 45.5,
+    "model": 35.8
+   },
+   "SKODA": {
+    "n": 2539,
+    "maker": 42.4,
+    "model": 25.6
+   },
+   "Saab": {
+    "n": 345,
+    "maker": 19.1,
+    "model": 3.8
+   },
+   "Smart": {
+    "n": 300,
+    "maker": 31.7,
+    "model": 30.0
+   },
+   "Ssangyong": {
+    "n": 311,
+    "maker": 42.1,
+    "model": 16.1
+   },
+   "Subaru": {
+    "n": 540,
+    "maker": 30.0,
+    "model": 20.2
+   },
+   "Suzuki": {
+    "n": 1120,
+    "maker": 24.6,
+    "model": 24.0
+   },
+   "Toyota": {
+    "n": 3692,
+    "maker": 53.5,
+    "model": 19.7
+   },
+   "Vauxhall": {
+    "n": 7729,
+    "maker": 48.7,
+    "model": 17.3
+   },
+   "Volkswagen": {
+    "n": 6706,
+    "maker": 53.3,
+    "model": 22.3
+   },
+   "Volvo": {
+    "n": 3030,
+    "maker": 72.1,
+    "model": 22.4
+   }
+  },
+  "tr_market_makers": {
+   "Renault": {
+    "n": 2993,
+    "maker": 59.7,
+    "model": 29.5
+   },
+   "Fiat": {
+    "n": 2363,
+    "maker": 72.9,
+    "model": 17.0
+   },
+   "Volkswagen": {
+    "n": 6706,
+    "maker": 53.3,
+    "model": 22.3
+   },
+   "Ford": {
+    "n": 9857,
+    "maker": 68.6,
+    "model": 27.0
+   },
+   "Toyota": {
+    "n": 3692,
+    "maker": 53.5,
+    "model": 19.7
+   },
+   "Hyundai": {
+    "n": 2433,
+    "maker": 53.7,
+    "model": 24.4
+   },
+   "Peugeot": {
+    "n": 4183,
+    "maker": 50.0,
+    "model": 14.8
+   },
+   "Vauxhall": {
+    "n": 7729,
+    "maker": 48.7,
+    "model": 17.3
+   },
+   "Dacia": {
+    "n": 628,
+    "maker": 58.0,
+    "model": 46.3
+   },
+   "Citroen": {
+    "n": 3504,
+    "maker": 73.7,
+    "model": 19.6
+   },
+   "Honda": {
+    "n": 1921,
+    "maker": 34.1,
+    "model": 19.2
+   },
+   "SKODA": {
+    "n": 2539,
+    "maker": 42.4,
+    "model": 25.6
+   },
+   "SEAT": {
+    "n": 1294,
+    "maker": 45.5,
+    "model": 35.8
+   },
+   "Kia": {
+    "n": 3002,
+    "maker": 38.4,
+    "model": 18.9
+   },
+   "BMW": {
+    "n": 5979,
+    "maker": 82.8,
+    "model": 26.1
+   },
+   "Mercedes-Benz": {
+    "n": 3298,
+    "maker": 57.6,
+    "model": 17.3
+   },
+   "Audi": {
+    "n": 8365,
+    "maker": 80.1,
+    "model": 20.9
+   },
+   "Nissan": {
+    "n": 5232,
+    "maker": 62.3,
+    "model": 28.3
+   },
+   "Volvo": {
+    "n": 3030,
+    "maker": 72.1,
+    "model": 22.4
+   },
+   "Mazda": {
+    "n": 2492,
+    "maker": 43.3,
+    "model": 23.2
+   }
+  },
+  "top_maker_confusions": [
+   [
+    "Vauxhall -> Renault",
+    911
+   ],
+   [
+    "Volkswagen -> Citroen",
+    828
+   ],
+   [
+    "Peugeot -> Citroen",
+    625
+   ],
+   [
+    "Volkswagen -> Renault",
+    595
+   ],
+   [
+    "Ford -> Citroen",
+    514
+   ],
+   [
+    "Toyota -> Citroen",
+    488
+   ],
+   [
+    "Nissan -> Citroen",
+    482
+   ],
+   [
+    "Vauxhall -> Citroen",
+    478
+   ],
+   [
+    "Renault -> Citroen",
+    465
+   ],
+   [
+    "Ford -> Hyundai",
+    434
+   ],
+   [
+    "Vauxhall -> Toyota",
+    403
+   ],
+   [
+    "Vauxhall -> Hyundai",
+    400
+   ]
+  ],
+  "body_per_class": {
+   "Hatchback": {
+    "n": 38831,
+    "recall": 73.8
+   },
+   "SUV": {
+    "n": 23741,
+    "recall": 38.4
+   },
+   "MPV": {
+    "n": 8431,
+    "recall": 51.6
+   },
+   "Saloon": {
+    "n": 8407,
+    "recall": 80.1
+   },
+   "Coupe": {
+    "n": 6410,
+    "recall": 28.6
+   },
+   "Estate": {
+    "n": 6401,
+    "recall": 13.6
+   },
+   "Convertible": {
+    "n": 5015,
+    "recall": 47.8
+   },
+   "Pickup": {
+    "n": 1856,
+    "recall": 10.2
+   },
+   "Van": {
+    "n": 538,
+    "recall": 43.5
+   }
+  },
+  "by_year": {
+   "2000-2004": 44.4,
+   "2005-2009": 55.6,
+   "2010-2014": 61.8,
+   "2015-2019": 62.5
+  }
+ },
+ "clip_vs_vlm": {
+  "TR-67": {
+   "n": 67,
+   "clip_brand": [
+    40.3,
+    29.4,
+    52.3
+   ],
+   "vlm_brand": [
+    86.6,
+    76.4,
+    92.8
+   ],
+   "p_brand": 9.313225746154785e-10,
+   "clip_model": [
+    4.5,
+    1.5,
+    12.4
+   ],
+   "vlm_model": [
+    55.2,
+    43.4,
+    66.5
+   ],
+   "p_model": 1.076841726899147e-09,
+   "examples": [
+    {
+     "file": "trcars/Renault_Clio_0.jpg",
+     "gt": "Renault Clio",
+     "clip": "Renault Megane",
+     "clip_brand_p": 0.69,
+     "vlm": "Renault Megane"
+    },
+    {
+     "file": "trcars/Renault_Clio_2.jpg",
+     "gt": "Renault Clio",
+     "clip": "DS 4 Crossback",
+     "clip_brand_p": 0.217,
+     "vlm": "Renault Clio"
+    },
+    {
+     "file": "trcars/Renault_Clio_3.jpg",
+     "gt": "Renault Clio",
+     "clip": "Vauxhall ADAM",
+     "clip_brand_p": 0.638,
+     "vlm": "Renault Clio"
+    },
+    {
+     "file": "trcars/Renault_Clio_4.jpg",
+     "gt": "Renault Clio",
+     "clip": "Vauxhall Grandland X",
+     "clip_brand_p": 0.542,
+     "vlm": "Renault Captur"
+    },
+    {
+     "file": "trcars/Renault_Megane_1.jpg",
+     "gt": "Renault Megane",
+     "clip": "Infiniti Q30",
+     "clip_brand_p": 0.155,
+     "vlm": "Renault Megane"
+    },
+    {
+     "file": "trcars/Renault_Megane_4.jpg",
+     "gt": "Renault Megane",
+     "clip": "DS 5",
+     "clip_brand_p": 0.231,
+     "vlm": "Renault Megane"
+    },
+    {
+     "file": "trcars/Tofaş_Şahin_0.jpg",
+     "gt": "Tofaş Şahin",
+     "clip": "Volkswagen Golf",
+     "clip_brand_p": 0.272,
+     "vlm": "Tofaş Şahin"
+    },
+    {
+     "file": "trcars/Tofaş_Şahin_1.jpg",
+     "gt": "Tofaş Şahin",
+     "clip": "Ford Escort",
+     "clip_brand_p": 0.297,
+     "vlm": "Tofaş Şahin"
+    },
+    {
+     "file": "trcars/Tofaş_Şahin_2.jpg",
+     "gt": "Tofaş Şahin",
+     "clip": "Saab 09-Mar",
+     "clip_brand_p": 0.154,
+     "vlm": "Tofaş Şahin"
+    },
+    {
+     "file": "trcars/Tofaş_Şahin_3.jpg",
+     "gt": "Tofaş Şahin",
+     "clip": "Toyota Corolla",
+     "clip_brand_p": 0.16,
+     "vlm": "Tofaş Şahin"
+    },
+    {
+     "file": "trcars/Togg_T10X_0.jpg",
+     "gt": "Togg T10X",
+     "clip": "DS 4 Crossback",
+     "clip_brand_p": 0.441,
+     "vlm": "BYD Atto 3"
+    },
+    {
+     "file": "trcars/Togg_T10X_2.jpg",
+     "gt": "Togg T10X",
+     "clip": "DS 4 Crossback",
+     "clip_brand_p": 0.354,
+     "vlm": "Skylark X55"
+    }
+   ],
+   "n_labels": 887
+  },
+  "SC-120": {
+   "n": 120,
+   "clip_brand": [
+    79.2,
+    71.1,
+    85.5
+   ],
+   "vlm_brand": [
+    79.2,
+    71.1,
+    85.5
+   ],
+   "p_brand": 1.0,
+   "clip_model": [
+    47.5,
+    38.8,
+    56.4
+   ],
+   "vlm_model": [
+    50.8,
+    42.0,
+    59.6
+   ],
+   "p_model": 0.6834892282353375,
+   "examples": [
+    {
+     "file": "sc120/000.jpg",
+     "gt": "AM General Hummer SUV",
+     "clip": "AM General Hummer SUV",
+     "clip_brand_p": 0.711,
+     "vlm": "Hummer H1"
+    },
+    {
+     "file": "sc120/001.jpg",
+     "gt": "Ferrari FF Coupe",
+     "clip": "Ferrari California",
+     "clip_brand_p": 0.951,
+     "vlm": "Ferrari FF"
+    },
+    {
+     "file": "sc120/002.jpg",
+     "gt": "Ferrari FF Coupe",
+     "clip": "Fisker Karma Sedan",
+     "clip_brand_p": 0.441,
+     "vlm": "Porsche 911"
+    },
+    {
+     "file": "sc120/003.jpg",
+     "gt": "Ferrari FF Coupe",
+     "clip": "Ferrari F12berlinetta",
+     "clip_brand_p": 0.943,
+     "vlm": "Ferrari FF"
+    },
+    {
+     "file": "sc120/004.jpg",
+     "gt": "Ferrari California Convertible",
+     "clip": "Ferrari California Convertible",
+     "clip_brand_p": 0.999,
+     "vlm": "Ferrari California"
+    },
+    {
+     "file": "sc120/005.jpg",
+     "gt": "Ferrari 458 Italia Convertible",
+     "clip": "Ferrari 458 Italia Coupe",
+     "clip_brand_p": 0.97,
+     "vlm": "Ferrari 458"
+    },
+    {
+     "file": "sc120/006.jpg",
+     "gt": "Ferrari 458 Italia Coupe",
+     "clip": "Ferrari 458 Italia Coupe",
+     "clip_brand_p": 0.98,
+     "vlm": "Ferrari 458"
+    },
+    {
+     "file": "sc120/007.jpg",
+     "gt": "Ferrari 458 Italia Coupe",
+     "clip": "Ferrari 458",
+     "clip_brand_p": 0.895,
+     "vlm": "Ferrari 458"
+    },
+    {
+     "file": "sc120/008.jpg",
+     "gt": "Fisker Karma Sedan",
+     "clip": "Fisker Karma Sedan",
+     "clip_brand_p": 0.992,
+     "vlm": "Fisker Karma"
+    },
+    {
+     "file": "sc120/009.jpg",
+     "gt": "Fisker Karma Sedan",
+     "clip": "Fisker Karma Sedan",
+     "clip_brand_p": 0.294,
+     "vlm": "Jaguar F-Type"
+    },
+    {
+     "file": "sc120/010.jpg",
+     "gt": "Fisker Karma Sedan",
+     "clip": "Fisker Karma Sedan",
+     "clip_brand_p": 0.947,
+     "vlm": "Fisker Karma"
+    },
+    {
+     "file": "sc120/011.jpg",
+     "gt": "Ford Mustang Convertible",
+     "clip": "Ford Mustang Convertible",
+     "clip_brand_p": 0.945,
+     "vlm": "Ford Mustang"
+    }
+   ],
+   "n_labels": 887
+  }
+ }
+}

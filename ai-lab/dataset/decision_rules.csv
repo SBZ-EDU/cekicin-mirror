@@ -1,0 +1,12 @@
+damage_type,area_ratio_min,area_ratio_max,action,action_tr,action_en
+dent,0,0.03,pdr,Boyasız göçük düzeltme,Paintless dent repair
+dent,0.03,0.15,repair_paint,Düzeltme + boya,Repair + paint
+dent,0.15,1,replace,Parça değişimi,Replace part
+bumper,0,0.06,repair_paint,Plastik onarım + boya,Plastic repair + paint
+bumper,0.06,1,replace,Tampon değişimi,Replace bumper
+panel,0,0.08,repair_paint,Düzeltme + boya,Repair + paint
+panel,0.08,1,replace,Parça değişimi,Replace part
+glass,0,0.02,chip_repair,Taş izi onarımı (reçine),Chip repair (resin)
+glass,0.02,1,replace,Cam değişimi,Replace glass
+lamp,0,1,replace,Lamba değişimi,Replace lamp
+mirror,0,1,replace,Ayna değişimi,Replace mirror

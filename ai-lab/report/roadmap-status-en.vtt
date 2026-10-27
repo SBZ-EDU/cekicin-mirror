@@ -1,0 +1,186 @@
+WEBVTT
+
+1
+00:00:00.500 --> 00:00:03.839
+This is the status report of the Çekicin AI roadmap,
+
+2
+00:00:03.889 --> 00:00:06.707
+checked on the twenty-sixth of October 2026.
+
+3
+00:00:06.757 --> 00:00:09.444
+The Çekicin team asked for six AI modules:
+
+4
+00:00:09.494 --> 00:00:14.723
+damage detection from a photo, a repair or replace decision with a cost estimate,
+
+5
+00:00:14.773 --> 00:00:18.764
+spare-part suppliers and prices, voice guidance for customers,
+
+6
+00:00:18.814 --> 00:00:23.327
+the nearest service points, and waiting time and environmental impact.
+
+7
+00:00:23.377 --> 00:00:27.107
+On average, the roadmap is about fifty-eight percent done.
+
+8
+00:00:27.157 --> 00:00:30.822
+Every module has a working demo on the website, a command
+
+9
+00:00:30.872 --> 00:00:34.341
+in the Telegram bot, and its own Hugging Face project.
+
+10
+00:00:34.391 --> 00:00:37.600
+None of them is inside the Çekicin mobile app yet.
+
+11
+00:00:38.850 --> 00:00:42.428
+Module one, damage detection, is about seventy percent done.
+
+12
+00:00:42.478 --> 00:00:47.327
+On an independent test of one thousand photos, it finds the damage on eighty-four
+
+13
+00:00:47.377 --> 00:00:51.983
+percent of damaged cars, with fifteen percent false alarms on undamaged ones.
+
+14
+00:00:52.033 --> 00:00:56.035
+In today's live test, a close-up bumper photo was correctly flagged
+
+15
+00:00:56.085 --> 00:01:00.268
+with a crack and a scratch, but a light scratch on a truck was missed.
+
+16
+00:01:00.318 --> 00:01:04.803
+Module two, the repair decision and cost, is about fifty-five percent done.
+
+17
+00:01:04.853 --> 00:01:09.338
+The price range covers fifty-eight percent of eleven hundred real listings.
+
+18
+00:01:09.388 --> 00:01:13.390
+It still needs calibration with real invoices and assessor reports.
+
+19
+00:01:14.640 --> 00:01:18.428
+Module three, spare parts and prices, is about sixty percent done.
+
+20
+00:01:18.478 --> 00:01:22.150
+The price database has three thousand seven hundred and eighteen
+
+21
+00:01:22.200 --> 00:01:26.046
+listings for one hundred and forty-nine car types, and two thousand
+
+22
+00:01:26.096 --> 00:01:29.594
+seven hundred and fifty-six of them have a photo of the part.
+
+23
+00:01:29.644 --> 00:01:32.734
+In a check of five hundred rows, the price matched the
+
+24
+00:01:32.784 --> 00:01:35.642
+source listing in ninety-nine point eight percent.
+
+25
+00:01:35.692 --> 00:01:39.073
+Live stock and price agreements with suppliers are missing.
+
+26
+00:01:39.123 --> 00:01:42.678
+Module four, voice guidance, is about fifty-five percent done.
+
+27
+00:01:42.728 --> 00:01:46.342
+Voice messages are transcribed with ninety-five to ninety-seven
+
+28
+00:01:46.392 --> 00:01:49.482
+percent word accuracy, but the answers are still text.
+
+29
+00:01:49.532 --> 00:01:52.390
+Spoken Turkish answers and a phone line come next.
+
+30
+00:01:53.640 --> 00:01:56.148
+Module five, the nearest service points,
+
+31
+00:01:56.198 --> 00:01:59.090
+is the most complete, at about eighty percent.
+
+32
+00:01:59.140 --> 00:02:02.863
+In all twenty of Türkiye's big cities, a workshop was found
+
+33
+00:02:02.913 --> 00:02:06.956
+within fifteen kilometres, and a parts shop in eighteen of them.
+
+34
+00:02:07.006 --> 00:02:10.474
+Today's live check in Istanbul returned five workshops.
+
+35
+00:02:10.524 --> 00:02:15.590
+Module six, waiting time and environmental impact, is about thirty percent done.
+
+36
+00:02:15.640 --> 00:02:19.107
+It is an open simulator, not yet proven with real data.
+
+37
+00:02:19.157 --> 00:02:23.008
+The tow truck or roadside help decision passes all twenty-one
+
+38
+00:02:23.058 --> 00:02:26.270
+scenario tests, and the Telegram assistant is live.
+
+39
+00:02:27.520 --> 00:02:29.563
+You can test everything yourself.
+
+40
+00:02:29.613 --> 00:02:34.827
+The PDF report has clickable links to the test website on Cloudflare, to a separate
+
+41
+00:02:34.877 --> 00:02:39.647
+section for each module, and to the Telegram bot with one button per module.
+
+42
+00:02:39.697 --> 00:02:42.755
+To move from demo to product, the next steps are:
+
+43
+00:02:42.805 --> 00:02:44.848
+integration into the Çekicin app;
+
+44
+00:02:44.898 --> 00:02:49.605
+training and calibration with Çekicin's own photos, invoices and call logs;
+
+45
+00:02:49.655 --> 00:02:50.556
+spoken answers;
+
+46
+00:02:50.606 --> 00:02:53.410
+and a pilot that measures real waiting times.
+

@@ -1,0 +1,128 @@
+{
+ "input": [
+  1,
+  3,
+  640,
+  640
+ ],
+ "output": [
+  1,
+  18,
+  8400
+ ],
+ "format": "cx,cy,w,h + 14 class scores (no objectness), letterbox 640, RGB/255",
+ "classes": [
+  {
+   "id": 0,
+   "label": "Front-windscreen-damage",
+   "part_key": "windscreen_front",
+   "damage_type": "glass",
+   "tr": "Ön cam hasarı",
+   "en": "Front windscreen damage"
+  },
+  {
+   "id": 1,
+   "label": "Headlight-damage",
+   "part_key": "headlight",
+   "damage_type": "lamp",
+   "tr": "Far hasarı",
+   "en": "Headlight damage"
+  },
+  {
+   "id": 2,
+   "label": "Rear-windscreen-Damage",
+   "part_key": "windscreen_rear",
+   "damage_type": "glass",
+   "tr": "Arka cam hasarı",
+   "en": "Rear windscreen damage"
+  },
+  {
+   "id": 3,
+   "label": "Runningboard-Damage",
+   "part_key": "running_board",
+   "damage_type": "panel",
+   "tr": "Marşpiyel hasarı",
+   "en": "Running board damage"
+  },
+  {
+   "id": 4,
+   "label": "Sidemirror-Damage",
+   "part_key": "side_mirror",
+   "damage_type": "mirror",
+   "tr": "Yan ayna hasarı",
+   "en": "Side mirror damage"
+  },
+  {
+   "id": 5,
+   "label": "Taillight-Damage",
+   "part_key": "taillight",
+   "damage_type": "lamp",
+   "tr": "Stop lambası hasarı",
+   "en": "Taillight damage"
+  },
+  {
+   "id": 6,
+   "label": "bonnet-dent",
+   "part_key": "bonnet",
+   "damage_type": "dent",
+   "tr": "Kaput göçüğü",
+   "en": "Bonnet dent"
+  },
+  {
+   "id": 7,
+   "label": "boot-dent",
+   "part_key": "boot",
+   "damage_type": "dent",
+   "tr": "Bagaj kapağı göçüğü",
+   "en": "Boot lid dent"
+  },
+  {
+   "id": 8,
+   "label": "doorouter-dent",
+   "part_key": "door",
+   "damage_type": "dent",
+   "tr": "Kapı göçüğü",
+   "en": "Door dent"
+  },
+  {
+   "id": 9,
+   "label": "fender-dent",
+   "part_key": "fender",
+   "damage_type": "dent",
+   "tr": "Çamurluk göçüğü",
+   "en": "Fender dent"
+  },
+  {
+   "id": 10,
+   "label": "front-bumper-dent",
+   "part_key": "bumper_front",
+   "damage_type": "bumper",
+   "tr": "Ön tampon hasarı",
+   "en": "Front bumper damage"
+  },
+  {
+   "id": 11,
+   "label": "quaterpanel-dent",
+   "part_key": "quarter_panel",
+   "damage_type": "dent",
+   "tr": "Arka çamurluk göçüğü",
+   "en": "Quarter panel dent"
+  },
+  {
+   "id": 12,
+   "label": "rear-bumper-dent",
+   "part_key": "bumper_rear",
+   "damage_type": "bumper",
+   "tr": "Arka tampon hasarı",
+   "en": "Rear bumper damage"
+  },
+  {
+   "id": 13,
+   "label": "roof-dent",
+   "part_key": "roof",
+   "damage_type": "dent",
+   "tr": "Tavan göçüğü",
+   "en": "Roof dent"
+  }
+ ]
+}

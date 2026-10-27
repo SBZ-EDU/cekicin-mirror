@@ -1,0 +1,1081 @@
+{
+ "groups": {
+  "A": {
+   "en": "Claims & study goals",
+   "fa": "ادعاها و هدف تحقیق",
+   "n": 10,
+   "v1": 9,
+   "v2": 20
+  },
+  "B": {
+   "en": "Novelty & positioning",
+   "fa": "نوآوری و جایگاه علمی",
+   "n": 10,
+   "v1": 8,
+   "v2": 18
+  },
+  "C": {
+   "en": "Data quality & documentation",
+   "fa": "کیفیت و مستندسازی داده",
+   "n": 10,
+   "v1": 9,
+   "v2": 19
+  },
+  "D": {
+   "en": "Preprocessing & leakage",
+   "fa": "پیش‌پردازش و نشت داده",
+   "n": 10,
+   "v1": 10,
+   "v2": 18
+  },
+  "E": {
+   "en": "Models & baselines",
+   "fa": "مدل‌ها و خط پایه",
+   "n": 10,
+   "v1": 6,
+   "v2": 19
+  },
+  "F": {
+   "en": "Metrics & statistics",
+   "fa": "معیارها و آمار",
+   "n": 10,
+   "v1": 6,
+   "v2": 20
+  },
+  "G": {
+   "en": "Robustness & limits",
+   "fa": "استحکام و محدودیت‌ها",
+   "n": 10,
+   "v1": 8,
+   "v2": 18
+  },
+  "H": {
+   "en": "Reproducibility & compute",
+   "fa": "تکرارپذیری و محاسبات",
+   "n": 10,
+   "v1": 9,
+   "v2": 18
+  },
+  "I": {
+   "en": "Ethics, law & licences",
+   "fa": "اخلاق، قانون و مجوز",
+   "n": 10,
+   "v1": 16,
+   "v2": 19
+  },
+  "J": {
+   "en": "Writing, figures & review craft",
+   "fa": "نگارش، شکل‌ها و مهارت داوری",
+   "n": 10,
+   "v1": 8,
+   "v2": 20
+  }
+ },
+ "items": [
+  {
+   "id": "A01",
+   "group": "A",
+   "en": "State the population the claim is about (Turkish roads, Turkish-market cars)",
+   "fa": "جامعه هدف ادعا را مشخص کن (جاده‌ها و خودروهای ترکیه)",
+   "source": "REFORMS 1a",
+   "v1": 1,
+   "v2": 2,
+   "note": "v2 defines target distribution per task"
+  },
+  {
+   "id": "A02",
+   "group": "A",
+   "en": "Motivate why that population matters",
+   "fa": "دلیل اهمیت این جامعه را بگو",
+   "source": "REFORMS 1b",
+   "v1": 1,
+   "v2": 2,
+   "note": "towing/insurance use case"
+  },
+  {
+   "id": "A03",
+   "group": "A",
+   "en": "Motivate the use of ML instead of rules",
+   "fa": "دلیل استفاده از یادگیری ماشین را بگو",
+   "source": "REFORMS 1c",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "A04",
+   "group": "A",
+   "en": "Abstract claims match the evidence",
+   "fa": "ادعاهای چکیده با شواهد بخواند",
+   "source": "NeurIPS Q1",
+   "v1": 1,
+   "v2": 2,
+   "note": "v1 implied TR-fix gain; v2 reports it as not significant"
+  },
+  {
+   "id": "A05",
+   "group": "A",
+   "en": "No over-claiming from small samples",
+   "fa": "از نمونه کوچک ادعای بزرگ نکن",
+   "source": "NeurIPS Q1",
+   "v1": 0,
+   "v2": 2,
+   "note": "CIs now shown; n stated next to every number"
+  },
+  {
+   "id": "A06",
+   "group": "A",
+   "en": "Separate measured results from aspirations",
+   "fa": "نتیجه اندازه‌گیری‌شده را از هدف جدا کن",
+   "source": "NeurIPS Q1",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "A07",
+   "group": "A",
+   "en": "List explicit contributions",
+   "fa": "سهم‌های پژوهش را صریح فهرست کن",
+   "source": "CVPR form",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "A08",
+   "group": "A",
+   "en": "Define each task precisely (detection, exact-match OCR, brand vs model)",
+   "fa": "هر وظیفه را دقیق تعریف کن",
+   "source": "REFORMS 3d",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "A09",
+   "group": "A",
+   "en": "State the deployment constraint (zero budget, CPU, browser)",
+   "fa": "محدودیت استقرار را بگو",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "A10",
+   "group": "A",
+   "en": "Say who benefits and how success is judged",
+   "fa": "بگو چه کسی سود می‌برد و موفقیت چطور سنجیده می‌شود",
+   "source": "NeurIPS significance",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "B01",
+   "group": "B",
+   "en": "Position against the closest prior work with citations",
+   "fa": "در برابر نزدیک‌ترین کارهای قبلی با ارجاع موضع بگیر",
+   "source": "CVPR guideline",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "B02",
+   "group": "B",
+   "en": "Back any \"new\" claim with specific references",
+   "fa": "هر ادعای «جدید» را با ارجاع مشخص پشتیبانی کن",
+   "source": "CVPR guideline",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "B03",
+   "group": "B",
+   "en": "Avoid the novelty fallacy (new ≠ good)",
+   "fa": "دچار مغالطه نوآوری نشو",
+   "source": "CVPR training",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "B04",
+   "group": "B",
+   "en": "Explain why numbers from other benchmarks are not head-to-head",
+   "fa": "توضیح بده چرا عدد بنچمارک‌های دیگر قابل مقایسه مستقیم نیست",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "B05",
+   "group": "B",
+   "en": "Identify the actual novelty (Turkish evaluation, browser deployment)",
+   "fa": "نوآوری واقعی را مشخص کن",
+   "source": "CVPR form",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "B06",
+   "group": "B",
+   "en": "Acknowledge that the methods are off-the-shelf",
+   "fa": "بپذیر که روش‌ها آماده‌اند",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "B07",
+   "group": "B",
+   "en": "Cover the Turkish-specific literature",
+   "fa": "ادبیات مخصوص ترکیه را پوشش بده",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 1,
+   "note": "only one TR LPR repo cited; TR journal papers not surveyed"
+  },
+  {
+   "id": "B08",
+   "group": "B",
+   "en": "Cover VLM zero-shot literature",
+   "fa": "ادبیات zero-shot مدل‌های بینایی-زبانی را پوشش بده",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 1,
+   "note": "model cards cited, no systematic VLM-FGVC survey"
+  },
+  {
+   "id": "B09",
+   "group": "B",
+   "en": "State the significance to practitioners",
+   "fa": "اهمیت برای کاربران صنعتی را بگو",
+   "source": "NeurIPS significance",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "B10",
+   "group": "B",
+   "en": "Choose an honest target venue",
+   "fa": "مجله/کنفرانس هدف را صادقانه انتخاب کن",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 2,
+   "note": "see review report"
+  },
+  {
+   "id": "C01",
+   "group": "C",
+   "en": "Give dataset source, link or DOI",
+   "fa": "منبع، لینک یا DOI داده را بده",
+   "source": "REFORMS 2a",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "C02",
+   "group": "C",
+   "en": "Describe how ground truth was produced",
+   "fa": "نحوه تولید برچسب درست را توضیح بده",
+   "source": "REFORMS 3a",
+   "v1": 1,
+   "v2": 2,
+   "note": "file names (TR-250), Commons categories (cars), manual triage (damage)"
+  },
+  {
+   "id": "C03",
+   "group": "C",
+   "en": "State the sampling frame",
+   "fa": "چارچوب نمونه‌گیری را بگو",
+   "source": "REFORMS 3b",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "C04",
+   "group": "C",
+   "en": "Justify dataset usefulness for the task",
+   "fa": "مفید بودن داده برای وظیفه را توجیه کن",
+   "source": "REFORMS 3c",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "C05",
+   "group": "C",
+   "en": "Report sample size and class frequencies",
+   "fa": "اندازه نمونه و فراوانی کلاس‌ها را گزارش کن",
+   "source": "REFORMS 3e",
+   "v1": 1,
+   "v2": 2,
+   "note": "per-model counts table"
+  },
+  {
+   "id": "C06",
+   "group": "C",
+   "en": "Report missing / failed samples",
+   "fa": "داده گمشده یا ناموفق را گزارش کن",
+   "source": "REFORMS 3f",
+   "v1": 1,
+   "v2": 2,
+   "note": "Mistral 24/41 quota failures reported"
+  },
+  {
+   "id": "C07",
+   "group": "C",
+   "en": "Argue representativeness (or admit its absence)",
+   "fa": "نماینده بودن داده را استدلال یا نبودش را اعتراف کن",
+   "source": "REFORMS 3g",
+   "v1": 0,
+   "v2": 2,
+   "note": "Commons ≠ customer photos; TR-250 = dash-cam"
+  },
+  {
+   "id": "C08",
+   "group": "C",
+   "en": "De-duplicate test sets",
+   "fa": "داده تست را تکراری‌زدایی کن",
+   "source": "REFORMS 6b",
+   "v1": 1,
+   "v2": 2,
+   "note": "2 Commons duplicates removed"
+  },
+  {
+   "id": "C09",
+   "group": "C",
+   "en": "Check label noise / audit a sample",
+   "fa": "نویز برچسب را بررسی کن",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 1,
+   "note": "plate GT from file names not re-audited"
+  },
+  {
+   "id": "C10",
+   "group": "C",
+   "en": "Document licences of every dataset",
+   "fa": "مجوز هر دیتاست را مستند کن",
+   "source": "Datasheets",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "D01",
+   "group": "D",
+   "en": "List exclusions with rationale",
+   "fa": "حذف‌ها را با دلیل فهرست کن",
+   "source": "REFORMS 4a",
+   "v1": 1,
+   "v2": 2,
+   "note": "82 → 69 → 67 Commons photos"
+  },
+  {
+   "id": "D02",
+   "group": "D",
+   "en": "Handle corrupt / impossible samples",
+   "fa": "نمونه خراب را مدیریت کن",
+   "source": "REFORMS 4b",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "D03",
+   "group": "D",
+   "en": "Describe every transformation (resize, letterbox, 768 px)",
+   "fa": "همه تبدیل‌ها را توضیح بده",
+   "source": "REFORMS 4c",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "D04",
+   "group": "D",
+   "en": "No test information used for tuning",
+   "fa": "از اطلاعات تست برای تنظیم استفاده نکن",
+   "source": "REFORMS 6a",
+   "v1": 1,
+   "v2": 1,
+   "note": "TR-fix rules and the OCR choice were picked on TR-250 itself — flagged"
+  },
+  {
+   "id": "D05",
+   "group": "D",
+   "en": "Check train/test overlap of pretrained models",
+   "fa": "هم‌پوشانی داده آموزش مدل‌های ازپیش‌آموزش‌دیده را بررسی کن",
+   "source": "REFORMS 6b",
+   "v1": 0,
+   "v2": 1,
+   "note": "cannot verify; contamination risk stated (Commons/Stanford likely in VLM pretraining)"
+  },
+  {
+   "id": "D06",
+   "group": "D",
+   "en": "Inputs legitimate (no label in file name leak)",
+   "fa": "ورودی‌ها مشروع باشند (نشت برچسب از نام فایل نباشد)",
+   "source": "REFORMS 6c",
+   "v1": 1,
+   "v2": 2,
+   "note": "images sent without file names"
+  },
+  {
+   "id": "D07",
+   "group": "D",
+   "en": "Prompt fixed before evaluation",
+   "fa": "پرامپت قبل از ارزیابی ثابت شود",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "D08",
+   "group": "D",
+   "en": "Temperature / determinism stated",
+   "fa": "دما و قطعیت مدل بیان شود",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": "temperature 0"
+  },
+  {
+   "id": "D09",
+   "group": "D",
+   "en": "Same preprocessing in browser and Python verified",
+   "fa": "یکسانی پیش‌پردازش مرورگر و پایتون بررسی شود",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": "93.2 vs 92.8 %"
+  },
+  {
+   "id": "D10",
+   "group": "D",
+   "en": "Version every model file (hash/commit)",
+   "fa": "نسخه هر فایل مدل ثبت شود",
+   "source": "REFORMS 2b",
+   "v1": 1,
+   "v2": 2,
+   "note": "HF repo + commit"
+  },
+  {
+   "id": "E01",
+   "group": "E",
+   "en": "Describe all models used",
+   "fa": "همه مدل‌ها را توصیف کن",
+   "source": "REFORMS 5a",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "E02",
+   "group": "E",
+   "en": "Justify model choice",
+   "fa": "انتخاب مدل را توجیه کن",
+   "source": "REFORMS 5b",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "E03",
+   "group": "E",
+   "en": "Explain evaluation protocol",
+   "fa": "پروتکل ارزیابی را توضیح بده",
+   "source": "REFORMS 5c",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "E04",
+   "group": "E",
+   "en": "Explain how the final model was selected",
+   "fa": "نحوه انتخاب مدل نهایی را بگو",
+   "source": "REFORMS 5d",
+   "v1": 0,
+   "v2": 2,
+   "note": "v2 admits selection by reliability; Mistral better on answered subset"
+  },
+  {
+   "id": "E05",
+   "group": "E",
+   "en": "Report hyper-parameters / thresholds",
+   "fa": "ابرپارامترها و آستانه‌ها را گزارش کن",
+   "source": "REFORMS 5e",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "E06",
+   "group": "E",
+   "en": "Compare against appropriate baselines",
+   "fa": "با خط پایه مناسب مقایسه کن",
+   "source": "REFORMS 5f",
+   "v1": 0,
+   "v2": 1,
+   "note": "cct-xs, raw OCR, second VLM; no trained classifier baseline yet"
+  },
+  {
+   "id": "E07",
+   "group": "E",
+   "en": "Ablate each component (OCR size, TR-fix)",
+   "fa": "هر جزء را حذف و اثرش را بسنج",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "E08",
+   "group": "E",
+   "en": "Paired comparison on identical samples",
+   "fa": "مقایسه جفتی روی نمونه‌های یکسان",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "E09",
+   "group": "E",
+   "en": "Report failure modes per model",
+   "fa": "حالت‌های شکست هر مدل را گزارش کن",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "E10",
+   "group": "E",
+   "en": "Explain why no training was done",
+   "fa": "توضیح بده چرا آموزش انجام نشد",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "F01",
+   "group": "F",
+   "en": "Name all metrics and justify them",
+   "fa": "همه معیارها را نام ببر و توجیه کن",
+   "source": "REFORMS 7a",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "F02",
+   "group": "F",
+   "en": "Give uncertainty (CIs) for main results",
+   "fa": "عدم قطعیت (بازه اطمینان) نتایج اصلی را بده",
+   "source": "REFORMS 7b / NeurIPS Q7",
+   "v1": 0,
+   "v2": 2,
+   "note": "Wilson 95 % + bootstrap"
+  },
+  {
+   "id": "F03",
+   "group": "F",
+   "en": "State how CIs were computed",
+   "fa": "روش محاسبه بازه اطمینان را بگو",
+   "source": "NeurIPS Q7",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "F04",
+   "group": "F",
+   "en": "Use asymmetric intervals for proportions",
+   "fa": "برای نسبت‌ها بازه نامتقارن به کار ببر",
+   "source": "NeurIPS Q7",
+   "v1": 0,
+   "v2": 2,
+   "note": "Wilson"
+  },
+  {
+   "id": "F05",
+   "group": "F",
+   "en": "Justify statistical tests and assumptions",
+   "fa": "آزمون آماری و فرض‌هایش را توجیه کن",
+   "source": "REFORMS 7c",
+   "v1": 0,
+   "v2": 2,
+   "note": "exact McNemar for paired binary outcomes"
+  },
+  {
+   "id": "F06",
+   "group": "F",
+   "en": "Report significance of claimed improvements",
+   "fa": "معناداری بهبودهای ادعاشده را گزارش کن",
+   "source": "NeurIPS Q7",
+   "v1": 0,
+   "v2": 2,
+   "note": "TR-fix p = 1.0; cct-s vs xs p = 2e-6"
+  },
+  {
+   "id": "F07",
+   "group": "F",
+   "en": "Report latency with hardware",
+   "fa": "تأخیر را همراه سخت‌افزار گزارش کن",
+   "source": "NeurIPS Q8",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "F08",
+   "group": "F",
+   "en": "Character-level metric besides exact match",
+   "fa": "معیار سطح حرف کنار تطابق کامل",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "F09",
+   "group": "F",
+   "en": "Calibration of confidence scores",
+   "fa": "کالیبراسیون نمره اطمینان",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 2,
+   "note": "ECE 0.34–0.40, AUROC 0.55–0.59"
+  },
+  {
+   "id": "F10",
+   "group": "F",
+   "en": "Avoid metric cherry-picking",
+   "fa": "از گزینش دلخواه معیار پرهیز کن",
+   "source": "CVPR training",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "G01",
+   "group": "G",
+   "en": "Evidence of external validity",
+   "fa": "شاهد اعتبار بیرونی",
+   "source": "REFORMS 8a",
+   "v1": 1,
+   "v2": 1,
+   "note": "two VLM test sets; plates only one dataset"
+  },
+  {
+   "id": "G02",
+   "group": "G",
+   "en": "Say where results will not hold",
+   "fa": "بگو نتایج کجا صادق نیست",
+   "source": "REFORMS 8b",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "G03",
+   "group": "G",
+   "en": "Stress-test robustness (blur, low-res, JPEG, night, rotation)",
+   "fa": "آزمون استحکام (تاری، وضوح کم، JPEG، شب، چرخش)",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 2,
+   "note": "8 conditions"
+  },
+  {
+   "id": "G04",
+   "group": "G",
+   "en": "Analyse errors qualitatively",
+   "fa": "خطاها را کیفی تحلیل کن",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": "confusion pairs"
+  },
+  {
+   "id": "G05",
+   "group": "G",
+   "en": "Discuss distribution shift to customer photos",
+   "fa": "جابه‌جایی توزیع به عکس مشتری را بحث کن",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "G06",
+   "group": "G",
+   "en": "Separate limitations section",
+   "fa": "بخش جدای محدودیت‌ها",
+   "source": "NeurIPS Q2",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "G07",
+   "group": "G",
+   "en": "Report quota / availability as an operational limit",
+   "fa": "سهمیه و دسترس‌پذیری را محدودیت عملیاتی بدان",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "G08",
+   "group": "G",
+   "en": "Test on new car models (Togg)",
+   "fa": "روی خودروهای جدید (Togg) تست کن",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": "0/4"
+  },
+  {
+   "id": "G09",
+   "group": "G",
+   "en": "Discuss scale-up to 100k photos",
+   "fa": "بزرگ‌مقیاس‌سازی به ۱۰۰ هزار عکس را بحث کن",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 1,
+   "note": "planned, not done"
+  },
+  {
+   "id": "G10",
+   "group": "G",
+   "en": "Threats-to-validity paragraph",
+   "fa": "پاراگراف تهدیدهای اعتبار",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "H01",
+   "group": "H",
+   "en": "Code link with version",
+   "fa": "لینک کد با نسخه",
+   "source": "REFORMS 2b",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "H02",
+   "group": "H",
+   "en": "Describe compute infrastructure",
+   "fa": "زیرساخت محاسباتی را توصیف کن",
+   "source": "REFORMS 2c",
+   "v1": 1,
+   "v2": 2,
+   "note": "2 vCPU, WASM 1 thread, Workers AI"
+  },
+  {
+   "id": "H03",
+   "group": "H",
+   "en": "README with instructions",
+   "fa": "README با دستورالعمل",
+   "source": "REFORMS 2d",
+   "v1": 1,
+   "v2": 1,
+   "note": "HF model README; full repro README still to publish"
+  },
+  {
+   "id": "H04",
+   "group": "H",
+   "en": "One reproduction script for all numbers",
+   "fa": "یک اسکریپت بازتولید همه اعداد",
+   "source": "REFORMS 2e",
+   "v1": 0,
+   "v2": 1,
+   "note": "paper_experiments.py; VLM part needs API key"
+  },
+  {
+   "id": "H05",
+   "group": "H",
+   "en": "Fixed random seeds",
+   "fa": "بذر تصادفی ثابت",
+   "source": "NeurIPS Q4",
+   "v1": 1,
+   "v2": 2,
+   "note": "bootstrap seed 0, noise seed 1"
+  },
+  {
+   "id": "H06",
+   "group": "H",
+   "en": "Total compute time reported",
+   "fa": "زمان کل محاسبات گزارش شود",
+   "source": "NeurIPS Q8",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "H07",
+   "group": "H",
+   "en": "API model identifiers exact",
+   "fa": "شناسه دقیق مدل‌های API",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "H08",
+   "group": "H",
+   "en": "Raw per-sample predictions released",
+   "fa": "پیش‌بینی خام هر نمونه منتشر شود",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": "JSON results"
+  },
+  {
+   "id": "H09",
+   "group": "H",
+   "en": "Data access path for every set",
+   "fa": "مسیر دسترسی هر دیتاست",
+   "source": "REFORMS 2a",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "H10",
+   "group": "H",
+   "en": "Note non-determinism of hosted models",
+   "fa": "عدم قطعیت مدل‌های میزبانی‌شده را یادداشت کن",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "I01",
+   "group": "I",
+   "en": "Privacy of plates (KVKK/GDPR)",
+   "fa": "حریم خصوصی پلاک (KVKK/GDPR)",
+   "source": "NeurIPS ethics",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "I02",
+   "group": "I",
+   "en": "On-device processing where possible",
+   "fa": "پردازش روی دستگاه در صورت امکان",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "I03",
+   "group": "I",
+   "en": "Licence compatibility (AGPL, non-commercial data)",
+   "fa": "سازگاری مجوزها",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "I04",
+   "group": "I",
+   "en": "Attribution of CC images",
+   "fa": "ذکر منبع عکس‌های CC",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "I05",
+   "group": "I",
+   "en": "Misuse risk (surveillance) discussed",
+   "fa": "خطر سوءاستفاده (نظارت) بحث شود",
+   "source": "NeurIPS broader impact",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "I06",
+   "group": "I",
+   "en": "Bias across brands / regions",
+   "fa": "سوگیری میان برندها و مناطق",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 1,
+   "note": "per-model table; no regional plate analysis"
+  },
+  {
+   "id": "I07",
+   "group": "I",
+   "en": "Consent for future customer photos",
+   "fa": "رضایت برای عکس‌های آینده مشتریان",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "I08",
+   "group": "I",
+   "en": "Label the demo as DEMO",
+   "fa": "دمو را دمو بنامید",
+   "source": "user rule",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "I09",
+   "group": "I",
+   "en": "No hidden cached results",
+   "fa": "نتیجه ذخیره‌شده پنهان نباشد",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": "cached fallback is labelled"
+  },
+  {
+   "id": "I10",
+   "group": "I",
+   "en": "Model card / datasheet provided",
+   "fa": "کارت مدل / برگه داده ارائه شود",
+   "source": "Model Cards / Datasheets",
+   "v1": 1,
+   "v2": 2,
+   "note": "appendix"
+  },
+  {
+   "id": "J01",
+   "group": "J",
+   "en": "2–4 sentence summary a reviewer can repeat",
+   "fa": "خلاصه ۲ تا ۴ جمله‌ای",
+   "source": "CVPR training",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "J02",
+   "group": "J",
+   "en": "Clear figure for the pipeline",
+   "fa": "شکل روشن برای خط لوله",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "J03",
+   "group": "J",
+   "en": "Tables with n and CI columns",
+   "fa": "جدول‌ها با ستون n و بازه اطمینان",
+   "source": "supervisor",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "J04",
+   "group": "J",
+   "en": "Every figure referenced in text",
+   "fa": "هر شکل در متن ارجاع داده شود",
+   "source": "NeurIPS Q7",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "J05",
+   "group": "J",
+   "en": "Consistent numbers across page, API, reports",
+   "fa": "یکسانی اعداد در صفحه، API و گزارش‌ها",
+   "source": "supervisor",
+   "v1": 1,
+   "v2": 2,
+   "note": "69→67 fixed everywhere"
+  },
+  {
+   "id": "J06",
+   "group": "J",
+   "en": "References verifiable (DOI/arXiv links)",
+   "fa": "ارجاع‌ها قابل بررسی (DOI/arXiv)",
+   "source": "supervisor",
+   "v1": 2,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "J07",
+   "group": "J",
+   "en": "Strengths listed specifically",
+   "fa": "نقاط قوت مشخص فهرست شوند",
+   "source": "CVPR form",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "J08",
+   "group": "J",
+   "en": "Weaknesses specific with fixes",
+   "fa": "نقاط ضعف مشخص همراه راه‌حل",
+   "source": "CVPR form",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "J09",
+   "group": "J",
+   "en": "Recommendation justified",
+   "fa": "توصیه نهایی مستدل باشد",
+   "source": "CVPR form",
+   "v1": 0,
+   "v2": 2,
+   "note": ""
+  },
+  {
+   "id": "J10",
+   "group": "J",
+   "en": "Avoid unverified claims in the review itself",
+   "fa": "در خود داوری ادعای تأییدنشده نکن",
+   "source": "CVPR training",
+   "v1": 1,
+   "v2": 2,
+   "note": ""
+  }
+ ],
+ "total_pct": {
+  "v1": 44.5,
+  "v2": 94.5
+ },
+ "scale": "2 pass · 1 partial · 0 fail; % = points / 200"
+}

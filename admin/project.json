@@ -1,0 +1,1891 @@
+{
+ "updated": "2026-10-27",
+ "avg": 58,
+ "status": {
+  "ok": 19,
+  "part": 4,
+  "bad": 0
+ },
+ "reports": [
+  {
+   "id": "roadmap-v1",
+   "name": {
+    "tr": "Yol haritası durum raporu",
+    "en": "Roadmap status report",
+    "de": "Statusbericht zur Roadmap",
+    "fa": "گزارش وضعیت نقشهٔ راه"
+   },
+   "ver": "1.1",
+   "date": "2026-10-27",
+   "desc": {
+    "tr": "6 istenen modül · tamamlanma % · ölçülen doğruluk · tıklanabilir test bağlantıları",
+    "en": "6 requested modules · % done · measured accuracy · clickable test links",
+    "de": "6 angeforderte Module · % erledigt · gemessene Genauigkeit · klickbare Testlinks",
+    "fa": "۶ ماژول درخواستی · درصد انجام · دقت اندازه‌گیری‌شده · لینک‌های تست قابل کلیک"
+   },
+   "files": [
+    {
+     "lang": "TR",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/roadmap-status-tr.pdf",
+     "video": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/roadmap-status-tr.mp4",
+     "dur": "3:08",
+     "poster": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/poster-tr.jpg",
+     "vtt": "../ai-lab/report/roadmap-status-tr.vtt",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/tr-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/tr-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/tr-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/tr-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/tr-p5.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/tr-p6.jpg"
+     ]
+    },
+    {
+     "lang": "EN",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/roadmap-status-en.pdf",
+     "video": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/roadmap-status-en.mp4",
+     "dur": "2:54",
+     "poster": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/poster-en.jpg",
+     "vtt": "../ai-lab/report/roadmap-status-en.vtt",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/en-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/en-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/en-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/en-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/en-p5.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/en-p6.jpg"
+     ]
+    }
+   ],
+   "page": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/index.html",
+   "cat": "rep"
+  },
+  {
+   "id": "vehicle-ai-v3",
+   "name": {
+    "tr": "Araç AI v3 raporu: plaka · marka/model · hasar",
+    "en": "Vehicle AI v3 report: plate · make/model · damage",
+    "de": "Fahrzeug-KI v3: Kennzeichen · Marke/Modell · Schaden",
+    "fa": "گزارش هوش مصنوعی خودرو v3: پلاک · برند/مدل · آسیب"
+   },
+   "ver": "3.0",
+   "date": "2026-10-27",
+   "desc": {
+    "tr": "Neden daha iyi · 437 test fotoğrafı · makale bağlantıları · Papers with Code kodları ve lisansları",
+    "en": "Why it is better · 437 test photos · paper links · Papers with Code repos and licences",
+    "de": "Warum besser · 437 Testfotos · Paper-Links · Papers-with-Code-Repos und Lizenzen",
+    "fa": "چرا بهتر است · ۴۳۷ عکس تست · لینک مقاله‌ها · کدهای Papers with Code و مجوزها"
+   },
+   "files": [
+    {
+     "lang": "FA",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/vehicle-ai-v3-fa.pdf",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-fa-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-fa-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-fa-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-fa-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-fa-p5.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-fa-p6.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-fa-p7.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-fa-p8.jpg"
+     ]
+    },
+    {
+     "lang": "TR",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/vehicle-ai-v3-tr.pdf",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-tr-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-tr-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-tr-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-tr-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-tr-p5.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-tr-p6.jpg"
+     ]
+    },
+    {
+     "lang": "EN",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/vehicle-ai-v3-en.pdf",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-en-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-en-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-en-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-en-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-en-p5.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/v3-en-p6.jpg"
+     ]
+    }
+   ],
+   "page": "https://cekicin-site.elasa2next.workers.dev/ai-lab/vehicle-ai.html",
+   "cat": "rep"
+  },
+  {
+   "id": "paper-review-48",
+   "name": {
+    "tr": "Danışman değerlendirmesi (100 beceri)",
+    "en": "Supervisor review (100 skills)",
+    "de": "Betreuer-Gutachten (100 Kriterien)",
+    "fa": "گزارش داوری استاد راهنما (۱۰۰ مهارت)"
+   },
+   "ver": "1.0",
+   "date": "2026-10-27",
+   "desc": {
+    "tr": "Dünya düzeyi değerlendirmesi 5,3/10 · raporlama %44,5→%94,5 · yol haritası",
+    "en": "World-class verdict 5.3/10 · reporting 44.5%→94.5% · roadmap",
+    "de": "Urteil 5,3/10 · Berichtsqualität 44,5→94,5 % · Fahrplan",
+    "fa": "حکم سطح جهانی ۵٫۳ از ۱۰ · گزارش‌دهی ۴۴٫۵٪←۹۴٫۵٪ · نقشه راه"
+   },
+   "files": [
+    {
+     "lang": "FA",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/paper/supervisor-review-fa.pdf",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-fa-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-fa-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-fa-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-fa-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-fa-p5.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-fa-p6.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-fa-p7.jpg"
+     ]
+    },
+    {
+     "lang": "EN",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/paper/supervisor-review-en.pdf",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-en-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-en-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-en-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-en-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-en-p5.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-en-p6.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-en-p7.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/supervisor-review-en-p8.jpg"
+     ]
+    }
+   ],
+   "page": "https://cekicin-site.elasa2next.workers.dev/ai-lab/paper/",
+   "cat": "rep"
+  },
+  {
+   "id": "paper-48",
+   "name": {
+    "tr": "Bilimsel makale v2 (EN)",
+    "en": "Research paper v2",
+    "de": "Forschungsartikel v2",
+    "fa": "مقاله علمی v2 (انگلیسی)"
+   },
+   "ver": "2.0",
+   "date": "2026-10-27",
+   "desc": {
+    "tr": "Plaka · marka/model · hasar — güven aralıkları, McNemar, sağlamlık, kalibrasyon",
+    "en": "Plates · make/model · damage — CIs, McNemar, robustness, calibration",
+    "de": "Kennzeichen · Marke/Modell · Schaden",
+    "fa": "پلاک · برند/مدل · آسیب — بازه اطمینان، McNemar، استحکام، کالیبراسیون"
+   },
+   "files": [
+    {
+     "lang": "EN",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/paper/cekicin-vehicle-ai-paper-v2.pdf",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/cekicin-vehicle-ai-paper-v2-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/cekicin-vehicle-ai-paper-v2-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/cekicin-vehicle-ai-paper-v2-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/cekicin-vehicle-ai-paper-v2-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/cekicin-vehicle-ai-paper-v2-p5.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/cekicin-vehicle-ai-paper-v2-p6.jpg"
+     ]
+    }
+   ],
+   "page": "https://cekicin-site.elasa2next.workers.dev/ai-lab/paper/",
+   "cat": "rep"
+  },
+  {
+   "id": "data-200k-49",
+   "name": {
+    "tr": "200,000 görüntü testi + hata ayıklama",
+    "en": "200,000-image test + debugging",
+    "de": "Test mit 200,000 Bildern + Debugging",
+    "fa": "تست 200,000 عکس + دیباگ"
+   },
+   "ver": "1.0",
+   "date": "2026-10-27",
+   "desc": {
+    "tr": "CCPD 100,000 plaka · DVM-Car 100,000 araç · 20 veri seti",
+    "en": "CCPD 100,000 plates · DVM-Car 100,000 cars · 20 datasets",
+    "de": "CCPD 100,000 Kennzeichen · DVM-Car 100,000 Autos",
+    "fa": "CCPD 100,000 پلاک · DVM-Car 100,000 خودرو · ۲۰ دیتاست"
+   },
+   "files": [
+    {
+     "lang": "FA",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/data100k/report49-fa.pdf",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-fa-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-fa-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-fa-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-fa-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-fa-p5.jpg"
+     ]
+    },
+    {
+     "lang": "EN",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/data100k/report49-en.pdf",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-en-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-en-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-en-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-en-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-en-p5.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/report49-en-p6.jpg"
+     ]
+    }
+   ],
+   "page": "https://cekicin-site.elasa2next.workers.dev/ai-lab/data100k/",
+   "cat": "rep"
+  },
+  {
+   "id": "qa-50",
+   "name": {
+    "tr": "Tam QA + hata ayıklama",
+    "en": "Full QA + debugging",
+    "de": "Voll-QA + Debugging",
+    "fa": "بررسی کامل (QA) + رفع اشکال"
+   },
+   "ver": "1.1",
+   "date": "2026-10-27",
+   "desc": {
+    "tr": "12 hata düzeltildi · CF + HF yedek site · Space’ler · bot 57/59 · API 1.14.3",
+    "en": "12 bugs fixed · CF + HF mirror · Spaces · bot 57/59 · API 1.14.3",
+    "de": "12 Fehler behoben · CF + HF-Spiegel · Spaces · API 1.14.3",
+    "fa": "۱۲ باگ رفع شد · Cloudflare + آینهٔ HF · Spaceها · ربات ۵۷/۵۹ · API 1.14.3"
+   },
+   "files": [
+    {
+     "lang": "FA",
+     "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/qa50-fa.pdf",
+     "pages": [
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/qa50-fa-p1.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/qa50-fa-p2.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/qa50-fa-p3.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/qa50-fa-p4.jpg",
+      "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/pages/qa50-fa-p5.jpg"
+     ]
+    }
+   ]
+  }
+ ],
+ "pages": [
+  {
+   "icon": "🤝",
+   "name": {
+    "tr": "Ortaklık ve Joint Venture programı",
+    "en": "Partnership & joint-venture programme",
+    "de": "Partnerschafts- & Joint-Venture-Programm",
+    "fa": "برنامهٔ مشارکت و جوینت ونچر"
+   },
+   "date": "2026-10-27",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/index.html",
+   "cat": "par"
+  },
+  {
+   "icon": "✅",
+   "name": {
+    "tr": "Görev durumu (canlı kontrol)",
+    "en": "Task status (live check)",
+    "de": "Aufgabenstatus (Live-Überprüfung)",
+    "fa": "وضعیت کارها (بررسی زنده)"
+   },
+   "date": "2026-10-25",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/status.html",
+   "cat": "rep"
+  },
+  {
+   "icon": "🧩",
+   "name": {
+    "tr": "AI modülleri: hedef, %, demo",
+    "en": "AI modules: goal, %, demo",
+    "de": "KI-Module: Ziel, %, Demo",
+    "fa": "ماژول‌های هوش مصنوعی: هدف، درصد، دمو"
+   },
+   "date": "2026-10-25",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/modules.html",
+   "cat": "ai"
+  },
+  {
+   "icon": "📷",
+   "name": {
+    "tr": "Fotoğraf testi (Google tarzı)",
+    "en": "Photo test (Google-like)",
+    "de": "Fototest (Google-ähnlich)",
+    "fa": "تست عکس (به سبک گوگل)"
+   },
+   "date": "2026-10-25",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/model-test.html",
+   "cat": "demo"
+  },
+  {
+   "icon": "📊",
+   "name": {
+    "tr": "Fiyat veritabanı 2.1",
+    "en": "Price database 2.1",
+    "de": "Preisdatenbank 2.1",
+    "fa": "پایگاه دادهٔ قیمت ۲٫۱"
+   },
+   "date": "2026-10-25",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/price-db.html",
+   "cat": "demo"
+  },
+  {
+   "icon": "🔩",
+   "name": {
+    "tr": "Önerilen parçaların fotoğrafları",
+    "en": "Photos of the suggested parts",
+    "de": "Fotos der vorgeschlagenen Ersatzteile",
+    "fa": "عکس قطعات پیشنهادی"
+   },
+   "date": "2026-10-25",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/parts-photos.html",
+   "cat": "demo"
+  },
+  {
+   "icon": "🧮",
+   "name": {
+    "tr": "AI işletme maliyeti hesaplayıcı (işletme için)",
+    "en": "AI running-cost calculator (for the business)",
+    "de": "KI-Betriebskostenrechner (für das Unternehmen)",
+    "fa": "محاسبه‌گر هزینهٔ اجرای هوش مصنوعی (برای کسب‌وکار)"
+   },
+   "date": "2026-10-25",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/maliyet.html",
+   "cat": "tech"
+  },
+  {
+   "icon": "📘",
+   "name": {
+    "tr": "Wiki: model sürümleri ve değişiklikler",
+    "en": "Wiki: model versions and changes",
+    "de": "Wiki: Modellversionen und Änderungen",
+    "fa": "ویکی: نسخه‌های مدل و تغییرات"
+   },
+   "date": "2026-10-23",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/wiki.html",
+   "cat": "ai"
+  },
+  {
+   "icon": "⚖️",
+   "name": {
+    "tr": "Diğer modellerle karşılaştırma",
+    "en": "Comparison with other models",
+    "de": "Vergleich mit anderen Modellen",
+    "fa": "مقایسه با مدل‌های دیگر"
+   },
+   "date": "2026-10-23",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/compare.html",
+   "cat": "ai"
+  },
+  {
+   "icon": "🧪",
+   "name": {
+    "tr": "1000 fotoğraflık test",
+    "en": "1000-photo benchmark",
+    "de": "1000-Foto-Benchmark",
+    "fa": "آزمون ۱۰۰۰ عکسی"
+   },
+   "date": "2026-10-19",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/benchmark-1000.html",
+   "cat": "ai"
+  },
+  {
+   "icon": "🎬",
+   "name": {
+    "tr": "12 senaryo + video",
+    "en": "12 scenarios + video",
+    "de": "12 Szenarien + Video",
+    "fa": "۱۲ سناریو + ویدیو"
+   },
+   "date": "2026-10-17",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/scenarios.html",
+   "cat": "ai"
+  },
+  {
+   "icon": "🌍",
+   "name": {
+    "tr": "Bekleme süresi, emisyon, COP31",
+    "en": "Waiting time, emissions, COP31",
+    "de": "Wartezeit, Emissionen, COP31",
+    "fa": "زمان انتظار، انتشار کربن، COP31"
+   },
+   "date": "2026-10-16",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/impact.html",
+   "cat": "ai"
+  },
+  {
+   "icon": "🗒",
+   "name": {
+    "tr": "Sürüm geçmişi (changelog)",
+    "en": "Version history (changelog)",
+    "de": "Versionsverlauf (Changelog)",
+    "fa": "تاریخچهٔ نسخه‌ها"
+   },
+   "date": "2026-10-27",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html",
+   "cat": "rep"
+  },
+  {
+   "icon": "🚗",
+   "name": {
+    "tr": "Araç AI v3: plaka · marka/model · hasar",
+    "en": "Vehicle AI v3: plate · make/model · damage",
+    "de": "Fahrzeug-KI v3",
+    "fa": "هوش مصنوعی خودرو v3: پلاک · برند/مدل · آسیب"
+   },
+   "date": "2026-10-27",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/vehicle-ai.html",
+   "cat": "ai"
+  },
+  {
+   "icon": "🎓",
+   "name": {
+    "tr": "Makale + danışman değerlendirmesi",
+    "en": "Paper + supervisor review",
+    "de": "Artikel + Gutachten",
+    "fa": "مقاله + داوری استاد راهنما"
+   },
+   "date": "2026-10-27",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/paper/",
+   "cat": "rep"
+  },
+  {
+   "icon": "🧪",
+   "name": {
+    "tr": "200,000 görüntü testi",
+    "en": "200,000-image test",
+    "de": "200,000-Bilder-Test",
+    "fa": "تست 200,000 عکس"
+   },
+   "date": "2026-10-27",
+   "url": "https://cekicin-site.elasa2next.workers.dev/ai-lab/data100k/",
+   "cat": "rep"
+  }
+ ],
+ "modules": [
+  {
+   "n": 1,
+   "icon": "📷",
+   "name": {
+    "tr": "Kameradan hasar tespiti",
+    "en": "Damage detection from the camera",
+    "de": "Schadenserkennung per Kamera",
+    "fa": "تشخیص آسیب از روی عکس دوربین"
+   },
+   "done": 70,
+   "acc": {
+    "tr": "%84 hasar yakalama · %15 yanlış alarm",
+    "en": "84% damage caught · 15% false alarms",
+    "de": "84% Schaden erkannt · 15% Fehlalarme",
+    "fa": "٪۸۴ آسیب‌ها شناسایی شد · ٪۱۵ هشدار اشتباه"
+   },
+   "missing": {
+    "tr": "Uygulamaya entegrasyon, Çekicin'in kendi fotoğraflarıyla eğitim, geniş sahne iyileştirmesi.",
+    "en": "App integration, training on Çekicin's own photos, wide-scene improvement.",
+    "de": "App-Integration, Schulung an Çekicin's eigenen Fotos, Verbesserung des weiten Bildausschnitts",
+    "fa": "یکپارچه‌سازی با اپلیکیشن، آموزش با عکس‌های خود Çekicin، بهبود در عکس‌های باز و دور."
+   },
+   "ver": "Hasar AI 2.3.1",
+   "ver_link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#damage",
+   "links": {
+    "site": "https://cekicin-site.elasa2next.workers.dev/ai-lab/model-test.html",
+    "bot": "https://t.me/Cekicin_bot?start=m1",
+    "space": "https://huggingface.co/spaces/sosa123454321/cekicin-m1-damage",
+    "dataset": "https://huggingface.co/datasets/sosa123454321/cekicin-damage-benchmark",
+    "model": "https://huggingface.co/sosa123454321/cekicin-damage-yolo11m-neg-onnx"
+   }
+  },
+  {
+   "n": 2,
+   "icon": "🧮",
+   "name": {
+    "tr": "Değişim / onarım kararı ve maliyet tahmini",
+    "en": "Replace / repair decision and cost estimate",
+    "de": "Entscheidung Reparatur/Austausch und Kostenschätzung",
+    "fa": "تصمیم تعمیر یا تعویض و برآورد هزینه"
+   },
+   "done": 55,
+   "acc": {
+    "tr": "fiyat aralığı gerçek ilanların %58'ini kapsıyor",
+    "en": "price range covers 58% of real listings",
+    "de": "Preisspanne deckt 58% der realen Inserate ab",
+    "fa": "بازهٔ قیمت ٪۵۸ آگهی‌های واقعی را پوشش می‌دهد"
+   },
+   "missing": {
+    "tr": "Gerçek servis faturaları / eksper raporlarıyla kalibrasyon (Çekicin verisi).",
+    "en": "Calibration with real invoices / assessor reports (Çekicin data).",
+    "de": "Kalibrierung mit echten Rechnungen / Gutachterberichten (Çekicin-Daten).",
+    "fa": "کالیبراسیون با فاکتورهای واقعی و گزارش‌های کارشناس خسارت (دادهٔ Çekicin)."
+   },
+   "ver": "Cost model 1.2",
+   "ver_link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#cost",
+   "links": {
+    "site": "https://cekicin-site.elasa2next.workers.dev/ai-lab/model-test.html",
+    "bot": "https://t.me/Cekicin_bot?start=m2",
+    "space": "https://huggingface.co/spaces/sosa123454321/cekicin-m2-cost",
+    "dataset": "https://huggingface.co/datasets/sosa123454321/cekicin-m2-cost-eval",
+    "model": "https://huggingface.co/sosa123454321/cekicin-m2-cost-model"
+   }
+  },
+  {
+   "n": 3,
+   "icon": "🔩",
+   "name": {
+    "tr": "Yedek parça tedarikçisi ve fiyatı",
+    "en": "Spare-part suppliers and prices",
+    "de": "Ersatzteillieferanten und Preise",
+    "fa": "تأمین‌کنندگان قطعات یدکی و قیمت‌ها"
+   },
+   "done": 60,
+   "acc": {
+    "tr": "ilanların ~%93'ü doğru parça + araç (yeni 2.618: %95)",
+    "en": "~93% of listings are the right part + car (new 2,618: 95%)",
+    "de": "~93% der Inserate sind das richtige Ersatzteil + Auto (neu 2.618: 95%)",
+    "fa": "حدود ٪۹۳ آگهی‌ها قطعه و خودروی درست هستند (۲٬۶۱۸ آگهی جدید: ٪۹۵)"
+   },
+   "missing": {
+    "tr": "Tedarikçi API anlaşmaları (canlı stok/fiyat), düzenli güncelleme, sıfır parça için ikinci TR kaynağı.",
+    "en": "Supplier API agreements (live stock/price), scheduled refresh, a second TR source for new parts.",
+    "de": "Lieferanten-API-Vereinbarungen (Live-Bestand/Preis), geplante Aktualisierung, eine zweite TR-Quelle für neue Teile.",
+    "fa": "قرارداد API با تأمین‌کنندگان (موجودی و قیمت زنده)، به‌روزرسانی زمان‌بندی‌شده، منبع دوم ترکیه برای قطعات نو."
+   },
+   "ver": "Price DB 2.2 (link check 27.10)",
+   "ver_link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#pricedb",
+   "links": {
+    "site": "https://cekicin-site.elasa2next.workers.dev/ai-lab/price-db.html",
+    "bot": "https://t.me/Cekicin_bot?start=m3",
+    "space": "https://huggingface.co/spaces/sosa123454321/cekicin-m3-parts",
+    "dataset": "https://huggingface.co/datasets/sosa123454321/cekicin-price-db",
+    "model": "https://huggingface.co/sosa123454321/cekicin-m3-part-matcher"
+   }
+  },
+  {
+   "n": 4,
+   "icon": "🎙",
+   "name": {
+    "tr": "Yapay zekâ ile sesli müşteri rehberliği",
+    "en": "Voice guidance for customers with AI",
+    "de": "KI-Sprachführung für Kunden",
+    "fa": "راهنمایی صوتی مشتریان با هوش مصنوعی"
+   },
+   "done": 55,
+   "acc": {
+    "tr": "konuşmanın %95–97'si doğru yazıya dökülüyor",
+    "en": "95–97% of words transcribed correctly",
+    "de": "95–97% der Wörter werden korrekt transkribiert",
+    "fa": "٪۹۵ تا ٪۹۷ کلمات درست به متن تبدیل می‌شوند"
+   },
+   "missing": {
+    "tr": "Sesli cevap (Türkçe TTS), telefon hattı / çağrı merkezi entegrasyonu, gerçek arama kayıtlarıyla test.",
+    "en": "Spoken answers (Turkish TTS), phone line / call-centre integration, testing on real call recordings.",
+    "de": "Gesprochene Antworten (Türkische TTS), Telefonleitung / Call-Center-Integration, Tests an echten Anrufaufzeichnungen.",
+    "fa": "پاسخ صوتی (TTS ترکی)، اتصال به خط تلفن و مرکز تماس، آزمایش روی ضبط تماس‌های واقعی."
+   },
+   "ver": "Bot / API 1.14.3",
+   "ver_link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api",
+   "links": {
+    "site": "https://t.me/Cekicin_bot",
+    "bot": "https://t.me/Cekicin_bot?start=m4",
+    "space": "https://huggingface.co/spaces/sosa123454321/cekicin-m4-voice",
+    "dataset": "https://huggingface.co/datasets/sosa123454321/cekicin-m4-voice-eval",
+    "model": "https://huggingface.co/sosa123454321/cekicin-m4-voice-pipeline"
+   }
+  },
+  {
+   "n": 5,
+   "icon": "📍",
+   "name": {
+    "tr": "Ücretsiz yakın nokta araması",
+    "en": "Free nearby-place search",
+    "de": "Kostenlose Umkreissuche",
+    "fa": "جستجوی رایگان نزدیک‌ترین مکان‌ها"
+   },
+   "done": 80,
+   "acc": {
+    "tr": "20/20 büyük ilde 15 km içinde servis bulundu (parçacı 18/20)",
+    "en": "a workshop within 15 km in 20/20 big cities (parts shop 18/20)",
+    "de": "Eine Werkstatt innerhalb von 15 km in 20/20 großen Städten (Teilehändler 18/20)",
+    "fa": "در ۲۰ از ۲۰ شهر بزرگ، تعمیرگاه در شعاع ۱۵ کیلومتر (فروشگاه قطعه ۱۸ از ۲۰)"
+   },
+   "missing": {
+    "tr": "Çekicin'in anlaşmalı servis listesiyle birleştirme; şarj istasyonu verisinin uygulamaya eklenmesi.",
+    "en": "Merge with Çekicin's partner-workshop list; add charging stations in the app.",
+    "de": "Zusammenführung mit der Partner-Werkstatt-Liste von Çekicin; Ladesäulen in der App hinzufügen.",
+    "fa": "ادغام با فهرست تعمیرگاه‌های طرف قرارداد Çekicin؛ افزودن ایستگاه‌های شارژ در اپلیکیشن."
+   },
+   "ver": "API /v1/places 1.14.3",
+   "ver_link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api",
+   "links": {
+    "site": "https://cekicin-site.elasa2next.workers.dev/ai-lab/model-test.html",
+    "bot": "https://t.me/Cekicin_bot?start=m5",
+    "space": "https://huggingface.co/spaces/sosa123454321/cekicin-m5-places",
+    "dataset": "https://huggingface.co/datasets/sosa123454321/cekicin-m5-places-coverage",
+    "model": "https://huggingface.co/sosa123454321/cekicin-m5-places-config"
+   }
+  },
+  {
+   "n": 6,
+   "icon": "🌱",
+   "name": {
+    "tr": "Bekleme süresi ve çevresel etki",
+    "en": "Waiting time and environmental impact",
+    "de": "Wartezeit und Umweltwirkung",
+    "fa": "زمان انتظار و اثر زیست‌محیطی"
+   },
+   "done": 30,
+   "acc": {
+    "tr": "yalnız simülasyon — gerçek veriyle doğrulanmadı",
+    "en": "simulation only — not validated with real data",
+    "de": "nur Simulation — nicht mit echten Daten validiert",
+    "fa": "فقط شبیه‌سازی — هنوز با دادهٔ واقعی تأیید نشده"
+   },
+   "missing": {
+    "tr": "Pilot: gerçek çağrı → varış süreleri (Çekicin kayıtları), emisyon modeliyle ölçüm.",
+    "en": "Pilot: real call → arrival times (Çekicin logs), measured with an emissions model.",
+    "de": "Pilot: Echter Anruf → Ankunftszeiten (Çekicin-Protokolle), gemessen mit einem Emissionsmodell.",
+    "fa": "پایلوت: زمان واقعی از تماس تا رسیدن (سوابق Çekicin)، اندازه‌گیری با مدل انتشار کربن."
+   },
+   "ver": "Simulator 1.0",
+   "ver_link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#site",
+   "links": {
+    "site": "https://cekicin-site.elasa2next.workers.dev/ai-lab/impact.html",
+    "bot": "https://t.me/Cekicin_bot?start=m6",
+    "space": "https://huggingface.co/spaces/sosa123454321/cekicin-m6-impact",
+    "dataset": "https://huggingface.co/datasets/sosa123454321/cekicin-m6-impact-pilot",
+    "model": "https://huggingface.co/sosa123454321/cekicin-m6-impact-simulator"
+   }
+  }
+ ],
+ "versions": {
+  "api": {
+   "name": {
+    "tr": "API + Telegram botu",
+    "en": "API + Telegram bot",
+    "de": "API + Telegram-Bot",
+    "fa": "API + ربات تلگرام"
+   },
+   "live": "https://cekicin-ai-api.elasa2next.workers.dev/v1/health",
+   "hist": "https://huggingface.co/spaces/sosa123454321/cekicin-assistant",
+   "items": [
+    {
+     "v": "1.14.3",
+     "date": "2026-10-27",
+     "en": "Voice demo: quota answer is now 429 with a code and Turkish/English text (was 502 in English); unreadable audio gets a clear 422.",
+     "tr": "Sesli demo: kota yanıtı artık kodlu 429 ve Türkçe/İngilizce metin (önce İngilizce 502); okunamayan ses için açık 422.",
+     "de": "Sprachdemo: Kontingent-Antwort jetzt 429 mit Code und TR/EN-Text (vorher 502 Englisch); unlesbares Audio -> 422.",
+     "fa": "دموی صوتی: پاسخ سهمیه اکنون ۴۲۹ با کد و متن ترکی/انگلیسی است (قبلاً ۵۰۲ انگلیسی)؛ صدای ناخوانا ← ۴۲۲ روشن.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.14.3"
+    },
+    {
+     "v": "1.14.2",
+     "date": "2026-10-27",
+     "en": "Bot: when the daily cloud-AI quota is used up, the message says it resets at 03:00 Türkiye time and links the in-browser damage test.",
+     "tr": "Bot: günlük bulut AI kotası dolunca mesaj 03:00’te (Türkiye) yenileneceğini söyler ve tarayıcıdaki hasar testine bağlantı verir.",
+     "de": "Bot: Bei erschöpftem Tageskontingent nennt die Nachricht den Reset um 03:00 (Türkei) und verlinkt den Browser-Schadentest.",
+     "fa": "ربات: وقتی سهمیهٔ روزانهٔ AI ابری تمام شود، پیام می‌گوید ساعت ۰۳:۰۰ (ترکیه) دوباره فعال می‌شود و به تست آسیب در مرورگر لینک می‌دهد.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.14.2"
+    },
+    {
+     "v": "1.14.1",
+     "date": "2026-10-27",
+     "en": "Price DB link check: 18 removed marketplace listings are no longer shown as buy links (still counted in price statistics).",
+     "tr": "Fiyat DB bağlantı kontrolü: kaldırılmış 18 ilan artık satın alma bağlantısı olarak gösterilmiyor (fiyat istatistiğinde sayılmaya devam ediyor).",
+     "de": "Preis-DB-Linkprüfung: 18 entfernte Inserate werden nicht mehr als Kauflinks gezeigt (in der Preisstatistik weiter gezählt).",
+     "fa": "بررسی لینک پایگاه قیمت: ۱۸ آگهی حذف‌شده دیگر به‌عنوان لینک خرید نشان داده نمی‌شوند (در آمار قیمت همچنان شمرده می‌شوند).",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.14.1"
+    },
+    {
+     "v": "1.14.0",
+     "date": "2026-10-27",
+     "en": "New /v1/vehicle/identify: car make, model, body and years from a photo (vision LLM, zero-shot; 67 Turkish photos: brand 86.6%); clear message when the daily AI quota is used up.",
+     "tr": "Yeni /v1/vehicle/identify: fotoğraftan araç markası, modeli, kasa ve yılları (görsel LLM, sıfır-atış; 67 Türk fotoğrafında marka %86,6); günlük AI kotası dolunca açık mesaj.",
+     "de": "Neu /v1/vehicle/identify: Marke, Modell, Karosserie und Baujahre aus einem Foto (Vision-LLM; 67 türkische Fotos: Marke 86,6 %); klare Meldung bei erschöpftem Tageskontingent.",
+     "fa": "مسیر جدید /v1/vehicle/identify: برند، مدل، نوع بدنه و سال خودرو از روی عکس (LLM تصویری، بدون آموزش؛ ۶۷ عکس ترکیه: برند ۸۶٫۶٪)؛ پیام روشن وقتی سهمیهٔ روزانه تمام شود.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.14.0"
+    },
+    {
+     "v": "1.13.1",
+     "date": "2026-10-27",
+     "en": "Bot cost buttons go to the photo test with a 4-country selector; health shows the version.",
+     "tr": "Bot maliyet düğmeleri 4 ülke seçmeli fotoğraf testine gider; sağlık uç noktası sürümü gösterir.",
+     "de": "Bot-Kostentasten führen zum Fototest mit 4-Länder-Auswahl; Health zeigt die Version.",
+     "fa": "دکمه‌های هزینهٔ ربات به تست عکس با انتخاب ۴ کشور می‌روند؛ health نسخه را نشان می‌دهد.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.13.1"
+    },
+    {
+     "v": "1.13.0",
+     "date": "2026-10-27",
+     "en": "Bot is customer-only; text cost questions (/maliyet) and waiting & safety helper (/bekleme, simulation) added; Turkish word-matching fixes; 37 regression tests.",
+     "tr": "Bot yalnız müşteriler için; metinle maliyet sorusu (/maliyet) ve bekleme-güvenlik yardımcısı (/bekleme, simülasyon) eklendi; Türkçe kelime eşleştirme düzeltmeleri; 37 regresyon testi.",
+     "de": "Bot nur für Kunden; Kostenfragen per Text (/maliyet) und Warte- & Sicherheitshilfe (/bekleme, Simulation); Korrekturen beim türkischen Wortabgleich; 37 Regressionstests.",
+     "fa": "ربات فقط برای مشتریان؛ پرسش هزینه با متن (/maliyet) و راهنمای انتظار و ایمنی (/bekleme، شبیه‌سازی) اضافه شد؛ اصلاح تطبیق کلمات ترکی؛ ۳۷ تست.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.13.0"
+    },
+    {
+     "v": "1.12.0",
+     "date": "2026-10-27",
+     "en": "Bot gets site features: photo test, parts list and link commands, Cloudflare links first, Telegram-safe texts.",
+     "tr": "Bota site özellikleri: fotoğraf testi, parça listesi ve bağlantı komutları, önce Cloudflare bağlantıları, Telegram-güvenli metinler.",
+     "de": "Bot erhält Website-Funktionen: Fototest, Teileliste und Link-Befehle, Cloudflare-Links zuerst.",
+     "fa": "ربات قابلیت‌های سایت را گرفت: تست عکس، فهرست قطعات و دستورهای لینک، اول لینک‌های Cloudflare.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.12.0"
+    },
+    {
+     "v": "1.11.1",
+     "date": "2026-10-27",
+     "en": "Forgiving admin login (case, spaces, Persian digits/keyboard) with lockout after 20 tries.",
+     "tr": "Esnek yönetici girişi (büyük/küçük harf, boşluk, Farsça rakam/klavye), 20 denemeden sonra kilit.",
+     "de": "Toleranter Admin-Login (Groß/Klein, Leerzeichen, persische Ziffern/Tastatur), Sperre nach 20 Versuchen.",
+     "fa": "ورود مدیر انعطاف‌پذیر (حروف بزرگ/کوچک، فاصله، ارقام و کیبورد فارسی) با قفل پس از ۲۰ تلاش.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.11.1"
+    },
+    {
+     "v": "1.11.0",
+     "date": "2026-10-27",
+     "en": "Admin username/password login (7-day read-only viewer token).",
+     "tr": "Yönetici kullanıcı adı/şifre girişi (7 günlük salt-okunur oturum).",
+     "de": "Admin-Login mit Benutzername/Passwort (7-Tage-Lesezugriff).",
+     "fa": "ورود مدیر با نام کاربری و رمز (توکن فقط‌خواندنی ۷ روزه).",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.11.0"
+    },
+    {
+     "v": "1.10.1",
+     "date": "2026-10-25",
+     "en": "Bot sends checked photos of the suggested parts after a damage photo (listing price + link).",
+     "tr": "Bot, hasar fotoğrafından sonra önerilen parçaların kontrollü fotoğraflarını gönderir (ilan fiyatı + bağlantı).",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.10.1",
+     "de": "Der Bot sendet überprüfte Fotos der vorgeschlagenen Teile nach einem Schadensfoto (Inseratspreis + Link).",
+     "fa": "ربات عکس‌های بررسی شده از قطعات پیشنهاد شده پس از عکس آسیب (قیمت لیست + لینک) ارسال می‌کند."
+    },
+    {
+     "v": "1.10.0",
+     "date": "2026-10-25",
+     "en": "Price DB 2.1 photo checks: only checked photos in gallery/album, listing price in captions, price_verified.",
+     "tr": "Fiyat DB 2.1 foto kontrolü: galeride yalnız kontrollü fotoğraflar, açıklamada ilan fiyatı, price_verified.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.10.0",
+     "de": "Preis-DB 2.1 Foto-Prüfungen: nur überprüfte Fotos in der Galerie/im Album, Inseratspreis in den Bildunterschriften, price_verified.",
+     "fa": "بررسی عکس‌های قیمت DB 2.1: فقط عکس‌های بررسی شده در گالری/آلبوم، قیمت لیست در توضیحات، قیمت_تأیید شده."
+    },
+    {
+     "v": "1.9.0",
+     "date": "2026-10-25",
+     "en": "Price DB 2.0 (3,718 listings, 149 car types, 2,756 part photos); /v1/prices gallery; bot /fiyat album.",
+     "tr": "Fiyat DB 2.0 (3.718 ilan, 149 araç tipi, 2.756 parça fotoğrafı); /v1/prices galeri; bot /fiyat albümü.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.9.0",
+     "de": "Preis-DB 2.0 (3.718 Inserate, 149 Autotypen, 2.756 Teilfotos); /v1/prices Galerie; Bot /fiyat Album.",
+     "fa": "قیمت DB 2.0 (3,718 لیست، 149 نوع خودرو، 2,756 عکس قطعه); گالری /v1/قیمت‌ها؛ آلبوم /fiyat ربات."
+    },
+    {
+     "v": "1.8.0",
+     "date": "2026-10-25",
+     "en": "Bot AI-modules menu (/moduller) with tested accuracy before every function; /fiyat; /v1/voice/demo.",
+     "tr": "Bot AI modülleri menüsü (/moduller), her işlevden önce test doğruluğu; /fiyat; /v1/voice/demo.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.8.0",
+     "de": "Bot AI-Module-Menü (/moduller) mit getesteter Genauigkeit vor jeder Funktion; /fiyat; /v1/voice/demo.",
+     "fa": "منوی ماژول‌های هوش مصنوعی ربات (/moduller) با دقت تست شده قبل از هر عملکرد؛ /fiyat؛ /v1/voice/demo."
+    },
+    {
+     "v": "1.7.2",
+     "date": "2026-10-25",
+     "en": "Vision timeout 25 s + faster model order (73 s → 6 s); cost model 1.2 in legacy fields; bot buy links.",
+     "tr": "Görüntü zaman aşımı 25 sn + hızlı model sırası (73 sn → 6 sn); maliyet modeli 1.2; bot satın alma bağlantıları.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.7.2",
+     "de": "Visions-Timeout 25 s + schnelleres Modell (73 s → 6 s); Kostenmodell 1.2 in Legacy-Feldern; Bot-Kauf-Links.",
+     "fa": "تاخیر دیداری 25 ثانیه + سفارش مدل سریع‌تر (73 ثانیه → 6 ثانیه); مدل هزینه 1.2 در فیلدهای قدیمی؛ لینک‌های خرید ربات."
+    },
+    {
+     "v": "1.7.1",
+     "date": "2026-10-25",
+     "en": "GET /v1/places: nearest body/glass and parts shops (OpenStreetMap).",
+     "tr": "GET /v1/places: en yakın kaporta/cam ve yedek parçacılar (OpenStreetMap).",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.7.1",
+     "de": "GET /v1/places: nächste Werkstätten, Glasereien und Teilehändler (OpenStreetMap).",
+     "fa": "GET /v1/places: نزدیک‌ترین فروشگاه‌های بدنه/شیشه و قطعات (OpenStreetMap)."
+    },
+    {
+     "v": "1.7.0",
+     "date": "2026-10-25",
+     "en": "GET /v1/prices (1,100-listing price DB, TR/DE/GB/US); cost model 1.2 with listing links.",
+     "tr": "GET /v1/prices (1.100 ilanlık fiyat DB, TR/DE/GB/US); ilan bağlantılı maliyet modeli 1.2.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.7.0",
+     "de": "GET /v1/preise (1.100-Inserat-Preis-DB, TR/DE/GB/US); Kostenmodell 1.2 mit Inserat-Links.",
+     "fa": "GET /v1/prices (1,100-قیمت لیستینگ پایگاه داده، TR/DE/GB/US); مدل هزینه 1.2 با لینک‌های لیستینگ."
+    },
+    {
+     "v": "1.6.2",
+     "date": "2026-10-23",
+     "en": "Per-country cost estimate (cost model 1.1); Hasar AI 2.3.1.",
+     "tr": "Ülkeye göre maliyet tahmini (maliyet modeli 1.1); Hasar AI 2.3.1.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.6.2",
+     "de": "Länderspezifische Kostenabschätzung (Kostenmodell 1.1); Hasar AI 2.3.1.",
+     "fa": "تخمین هزینه بر اساس کشور (مدل هزینه 1.1); Hasar AI 2.3.1."
+    },
+    {
+     "v": "1.6.1",
+     "date": "2026-10-23",
+     "en": "Hasar AI 2.3.0 decision layer (broken-part head).",
+     "tr": "Hasar AI 2.3.0 karar katmanı (kırık parça başlığı).",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.6.1",
+     "de": "Hasar AI 2.3.0 Entscheidungsmodul (defekter Teilekopf).",
+     "fa": "لایه تصمیم‌گیری Hasar AI 2.3.0 (سر قطعه شکسته)."
+    },
+    {
+     "v": "1.6.0",
+     "date": "2026-10-19",
+     "en": "B2B leads API, İYS-gated email campaigns, opt-in WhatsApp queue, admin panel.",
+     "tr": "B2B lead API, İYS kontrollü e-posta kampanyaları, onaylı WhatsApp kuyruğu, yönetim paneli.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.6.0",
+     "de": "B2B-Lead-API, İYS-geschützte E-Mail-Kampagnen, Opt-in-WhatsApp-Warteschlange, Admin-Panel.",
+     "fa": "API سرنخ‌های B2B، کمپین‌های ایمیل گیرنده ای‌ی‌اس، صف رضایت WhatsApp، پنل مدیریت."
+    },
+    {
+     "v": "1.5.0",
+     "date": "2026-10-17",
+     "en": "Hasar AI 2.0 decision layer, grounded cloud second opinion.",
+     "tr": "Hasar AI 2.0 karar katmanı, yönlendirilmiş bulut ikinci görüşü.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.5.0",
+     "de": "Hasar AI 2.0 Entscheidungsmodul, geerdete Cloud-Zweitmeinung.",
+     "fa": "لایه تصمیم‌گیری Hasar AI 2.0، نظر دوم مبتنی بر ابر."
+    },
+    {
+     "v": "1.4.0",
+     "date": "2026-10-17",
+     "en": "WhatsApp bridge endpoint + outbound templates.",
+     "tr": "WhatsApp köprü uç noktası + giden şablonlar.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.4.0",
+     "de": "WhatsApp-Bridge-Endpunkt + Outbound-Vorlagen.",
+     "fa": "پایان‌نهاد WhatsApp + قالب‌های خروجی."
+    },
+    {
+     "v": "1.3.0",
+     "date": "2026-10-17",
+     "en": "Telegram assistant @Cekicin_bot: photo → damage → 3 questions → advice → nearest places, voice.",
+     "tr": "Telegram asistanı @Cekicin_bot: fotoğraf → hasar → 3 soru → öneri → en yakın yerler, ses.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.3.0",
+     "de": "Telegram-Assistent @Cekicin_bot: Foto → Schaden → 3 Fragen → Rat → nächste Orte, Sprache.",
+     "fa": "ربات Telegram @Cekicin_bot: عکس → آسیب → 3 سؤال → مشاوره → نزدیک‌ترین مکان‌ها، صدا."
+    },
+    {
+     "v": "1.2.0",
+     "date": "2026-10-16",
+     "en": "Hard-case test round: cloud veto, airbag tow reason, clear quota errors.",
+     "tr": "Zor vaka test turu: bulut vetosu, hava yastığı çekici gerekçesi, net kota hataları.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.2.0",
+     "de": "Testrunde für schwierige Fälle: Cloud-Veto, Airbag-Abschleppgrund, Fehlerquote klären.",
+     "fa": "دور آزمایش سخت: veto ابر، دلیل یدک‌کش ایربگ، حذف خطاهای کوته."
+    },
+    {
+     "v": "1.1.0",
+     "date": "2026-10-16",
+     "en": "Bilingual labels, evidence-based tow decision.",
+     "tr": "İki dilli etiketler, kanıta dayalı çekici kararı.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#api-1.1.0",
+     "de": "Zweisprachige Beschriftungen, evidenzbasierte Abschleppentscheidung.",
+     "fa": "برچسب‌های دو زبانه، تصمیم یدک‌کش مبتنی بر شواهد."
+    }
+   ]
+  },
+  "damage": {
+   "name": {
+    "tr": "Hasar modeli (Hasar AI)",
+    "en": "Damage model (Hasar AI)",
+    "de": "Schadensmodell (Hasar AI)",
+    "fa": "مدل تشخیص آسیب (Hasar AI)"
+   },
+   "live": "https://cekicin-site.elasa2next.workers.dev/ai-lab/model-test.html",
+   "hist": "https://huggingface.co/sosa123454321/cekicin-damage-yolo11m-neg-onnx/commits/main",
+   "items": [
+    {
+     "v": "2.3.1",
+     "date": "2026-10-23",
+     "en": "Audit release: broken-part OOD checks, recall 84%, false alarm 15%, macro-F1 0.63 (1,000-photo test).",
+     "tr": "Denetim sürümü: kırık parça kontrolleri, yakalama %84, yanlış alarm %15, macro-F1 0,63 (1.000 fotoğraf testi).",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#damage-2.3.1",
+     "de": "Audit-Freigabe: OOD-Prüfungen für defekte Teile, Trefferquote 84%, Fehlalarm 15%, macro-F1 0,63 (1.000-Foto-Test).",
+     "fa": "رها سازی بررسی: بررسی‌های خارج از محدوده قطعه شکسته، بازخوانی 84٪، هشدار نادرست 15٪، macro-F1 0.63 (آزمایش 1,000 عکس)."
+    },
+    {
+     "v": "2.3.0",
+     "date": "2026-10-23",
+     "en": "Trained with ~1,000 extra broken-part photos; broken-part head.",
+     "tr": "~1.000 ek kırık parça fotoğrafıyla eğitim; kırık parça başlığı.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#damage-2.3.0",
+     "de": "Geschult mit ~1.000 zusätzlichen Fotos von defekten Teilen; defekter Teilekopf.",
+     "fa": "آموزش داده شده با ~1,000 عکس اضافی قطعه شکسته؛ سر قطعه شکسته."
+    },
+    {
+     "v": "2.0",
+     "date": "2026-10-17",
+     "en": "Quality check + calibrated decision layer; F1 0.588 → 0.623.",
+     "tr": "Kalite kontrolü + kalibre karar katmanı; F1 0,588 → 0,623.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#damage-2.0",
+     "de": "Qualitätsprüfung + kalibriertes Entscheidungsmodul; F1 0,588 → 0,623.",
+     "fa": "چک کیفیت + لایه تصمیم‌گیری تنظیم شده؛ F1 0.588 → 0.623."
+    },
+    {
+     "v": "1.3",
+     "date": "2026-10-16",
+     "en": "YOLO11m with hard negatives; false alarms 41% → 20%.",
+     "tr": "Zor negatiflerle YOLO11m; yanlış alarm %41 → %20.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#damage-1.3",
+     "de": "YOLO11m mit schwierigen Negativen; Fehlalarme 41% → 20%.",
+     "fa": "YOLO11m با منفی‌های سخت؛ هشدارهای نادرست 41٪ → 20٪."
+    }
+   ]
+  },
+  "cost": {
+   "name": {
+    "tr": "Maliyet modeli",
+    "en": "Cost model",
+    "de": "Kostenmodell",
+    "fa": "مدل هزینه"
+   },
+   "live": "https://cekicin-site.elasa2next.workers.dev/ai-lab/maliyet.html",
+   "hist": "https://huggingface.co/sosa123454321/cekicin-m2-cost-model/commits/main",
+   "items": [
+    {
+     "v": "1.2",
+     "date": "2026-10-25",
+     "en": "Part price from real listings; range covers 57.9% of 1,100 listings; midpoint error ×1.36.",
+     "tr": "Gerçek ilanlardan parça fiyatı; aralık 1.100 ilanın %57,9’unu kapsar; orta nokta hatası ×1,36.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#cost-1.2",
+     "de": "Teilepreis aus realen Inseraten; Bereich deckt 57,9% von 1.100 Inseraten ab; mittlerer Fehler ×1,36.",
+     "fa": "قیمت قطعه از لیستینگ‌های واقعی؛ محدوده 57.9٪ از 1,100 لیستینگ را پوشش می‌دهد؛ خطای میانگین ×1.36."
+    },
+    {
+     "v": "1.1",
+     "date": "2026-10-23",
+     "en": "Per-country labour + parts (TR / DE / UK / US).",
+     "tr": "Ülkeye göre işçilik + parça (TR / DE / UK / US).",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#cost-1.1",
+     "de": "Länderspezifische Arbeits- + Teilekosten (TR / DE / UK / US).",
+     "fa": "کار و قطعات بر اساس کشور (TR / DE / UK / US)."
+    }
+   ]
+  },
+  "pricedb": {
+   "name": {
+    "tr": "Fiyat veritabanı",
+    "en": "Price database",
+    "de": "Preisdatenbank",
+    "fa": "پایگاه دادهٔ قیمت"
+   },
+   "live": "https://cekicin-site.elasa2next.workers.dev/ai-lab/price-db.html",
+   "hist": "https://huggingface.co/datasets/sosa123454321/cekicin-price-db/commits/main",
+   "items": [
+    {
+     "v": "2.2",
+     "date": "2026-10-27",
+     "en": "All 5,058 listing links re-checked: 18 otocikma listings removed by the seller are marked “listing removed” with an archive link; 135 n11 rows unverified (site blocks bots).",
+     "tr": "5.058 ilan bağlantısının tamamı kontrol edildi: satıcının kaldırdığı 18 otocikma ilanı “ilan kaldırıldı” + arşiv bağlantısıyla işaretlendi; 135 n11 satırı doğrulanamadı (site botları engelliyor).",
+     "de": "Alle 5.058 Inseratslinks geprüft: 18 vom Verkäufer entfernte otocikma-Inserate als „Inserat entfernt“ mit Archivlink markiert; 135 n11-Zeilen ungeprüft (Bot-Sperre).",
+     "fa": "همهٔ ۵٬۰۵۸ لینک آگهی بررسی شد: ۱۸ آگهی otocikma که فروشنده حذف کرده با «آگهی حذف شد» و لینک آرشیو علامت خورد؛ ۱۳۵ ردیف n11 تأییدنشده (سایت ربات را مسدود می‌کند).",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#pricedb-2.2"
+    },
+    {
+     "v": "2.1",
+     "date": "2026-10-25",
+     "en": "500 listings re-checked live (price same 99.8%); 479 photos reviewed, 96 wrong photos hidden.",
+     "tr": "500 ilan canlı kontrol (fiyat %99,8 aynı); 479 fotoğraf incelendi, 96 yanlış fotoğraf gizlendi.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#pricedb-2.1",
+     "de": "500 Inserate live überprüft (Preis gleich 99,8%); 479 Fotos überprüft, 96 falsche Fotos versteckt.",
+     "fa": "500 لیستینگ دوباره بررسی شد (قیمت 99.8% یکسان است); 479 عکس بررسی شد، 96 عکس اشتباه پنهان شد."
+    },
+    {
+     "v": "2.0",
+     "date": "2026-10-25",
+     "en": "3,718 listings, 149 car types, 2,756 with a part photo.",
+     "tr": "3.718 ilan, 149 araç tipi, 2.756 parça fotoğraflı.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#pricedb-2.0",
+     "de": "3.718 Inserate, 149 Fahrzeugtypen, 2.756 mit einem Teilfoto.",
+     "fa": "3,718 لیستینگ، 149 نوع خودرو، 2,756 لیستینگ با عکس قطعه."
+    },
+    {
+     "v": "1.0",
+     "date": "2026-10-25",
+     "en": "1,100 listings, 4 countries, link + part + car + years + 10 fields.",
+     "tr": "1.100 ilan, 4 ülke, bağlantı + parça + araç + yıl + 10 alan.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#pricedb-1.0",
+     "de": "1.100 Inserate, 4 Länder, Link + Teil + Auto + Jahre + 10 Felder.",
+     "fa": "1,100 لیستینگ، 4 کشور، لینک + قطعه + خودرو + سال‌ها + 10 فیلد."
+    }
+   ]
+  },
+  "site": {
+   "name": {
+    "tr": "Web sitesi + AI Lab",
+    "en": "Website + AI Lab",
+    "de": "Website + KI-Labor",
+    "fa": "وب‌سایت + AI Lab"
+   },
+   "live": "https://cekicin-site.elasa2next.workers.dev/index.html",
+   "hist": "https://huggingface.co/spaces/sosa123454321/cekicin-site/commits/main",
+   "items": [
+    {
+     "v": "2026-10-27e",
+     "date": "2026-10-27",
+     "en": "Second QA pass: HF mirror 51 pages clean; M1/M4 Spaces and vehicle-ai show localized quota/limit messages with a no-quota alternative (TR/EN/DE/FA).",
+     "tr": "İkinci QA: HF yedek site 51 sayfa temiz; M1/M4 Space’leri ve araç AI sayfası kota/sınır mesajlarını yerelleştirilmiş ve kotasız alternatifle gösteriyor.",
+     "de": "Zweiter QA-Durchlauf: HF-Spiegel 51 Seiten fehlerfrei; M1/M4 und Fahrzeug-KI zeigen lokalisierte Kontingent-Meldungen mit Alternative.",
+     "fa": "QA دوم: آینهٔ HF با ۵۱ صفحه بدون خطا؛ Spaceهای M1/M4 و صفحهٔ vehicle-ai پیام سهمیه/سقف را محلی و با جایگزین بدون سهمیه نشان می‌دهند.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#site-2026-10-27e"
+    },
+    {
+     "v": "2026-10-27d",
+     "date": "2026-10-27",
+     "en": "Full QA: 56 pages, 1,264 links; fixed AI Lab data loading on Cloudflare (Hugging Face blocks *.workers.dev referrer), iPhone audio (MP3 range), dead paper DOI, 3 removed parts cards, mobile overflow; localized AI-quota message.",
+     "tr": "Tam QA: 56 sayfa, 1.264 bağlantı; Cloudflare’de AI Lab veri yüklemesi düzeltildi (Hugging Face *.workers.dev yönlendireni engelliyor), iPhone ses (MP3 aralık), ölü makale DOI, kaldırılmış 3 parça kartı, mobil taşma; AI kota mesajı yerelleştirildi.",
+     "de": "Voll-QA: 56 Seiten, 1.264 Links; AI-Lab-Datenladen auf Cloudflare repariert (Hugging Face blockiert *.workers.dev-Referrer), iPhone-Audio, toter DOI, 3 entfernte Teilekarten, mobiler Überlauf.",
+     "fa": "QA کامل: ۵۶ صفحه، ۱٬۲۶۴ لینک؛ رفع بارگذاری داده‌های AI Lab روی Cloudflare (Hugging Face ارجاع از ‎*.workers.dev‎ را مسدود می‌کند)، صدای آیفون (MP3 range)، DOI مردهٔ مقاله، ۳ کارت قطعهٔ حذف‌شده، سرریز موبایل؛ پیام سهمیهٔ AI محلی شد.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#site-2026-10-27d"
+    },
+    {
+     "v": "2026-10-27c",
+     "date": "2026-10-27",
+     "en": "Site now also on a Cloudflare Worker (cekicin-site.elasa2next.workers.dev) with the AI models served from Cloudflare; Pages deploy fixed; internal links relative; module anchors #m1–#m6.",
+     "tr": "Site artık Cloudflare Worker’da da (cekicin-site.elasa2next.workers.dev); AI modelleri Cloudflare’den yükleniyor; Pages dağıtımı düzeltildi; iç bağlantılar göreli; modül bağlantıları #m1–#m6.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#site-2026-10-27c",
+     "de": "Seite jetzt auch auf einem Cloudflare Worker (cekicin-site.elasa2next.workers.dev) mit den KI-Modellen von Cloudflare; Seitenbereitstellung fixiert; interne Links relativ; Modulanker #m1–#m6.",
+     "fa": "سایت اکنون نیز بر روی یک کارگر Cloudflare (cekicin-site.elasa2next.workers.dev) است؛ مدل‌های هوش مصنوعی از Cloudflare ارائه می‌شوند؛ صفحات توزیع شده، لینک‌های داخلی نسبی؛ انکرهای ماژول #m1–#m6."
+    },
+    {
+     "v": "2026-10-27b",
+     "date": "2026-10-27",
+     "en": "Admin panel UX audit (30 skills): captions, ARIA tabs, focus, contrast, mobile header.",
+     "tr": "Yönetim paneli UX denetimi (30 beceri): altyazı, ARIA sekmeler, odak, kontrast, mobil başlık.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#site-2026-10-27b",
+     "de": "UX-Audit des Admin-Panels (30 Fähigkeiten): Beschriftungen, ARIA-Tabs, Fokus, Kontrast, mobiler Header.",
+     "fa": "بررسی تجربه کاربری پنل مدیریت (30 مهارت): زیرنویس‌ها، تابلوهای ARIA، فوکوس، کنتراست، هدر موبایل."
+    },
+    {
+     "v": "2026-10-27",
+     "date": "2026-10-27",
+     "en": "Admin panel Project tab; public changelog.",
+     "tr": "Yönetim paneli Proje sekmesi; herkese açık sürüm geçmişi.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#site-2026-10-27",
+     "de": "Projekt-Tab im Admin-Panel; öffentliches Änderungsprotokoll.",
+     "fa": "بخش پروژه پنل مدیریت؛ تغییرات عمومی."
+    },
+    {
+     "v": "2026-10-26",
+     "date": "2026-10-26",
+     "en": "Roadmap report (PDF + video, TR/EN); home page shows % done and current numbers.",
+     "tr": "Yol haritası raporu (PDF + video, TR/EN); ana sayfada tamamlanma % ve güncel sayılar.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#site-2026-10-26",
+     "de": "Roadmap-Bericht (PDF + Video, TR/EN); Startseite zeigt % erledigt und aktuelle Zahlen.",
+     "fa": "گزارش راهنما (PDF + ویدئو، TR/EN); صفحه اصلی درصد انجام شده و اعداد فعلی را نشان می‌دهد."
+    },
+    {
+     "v": "2026-10-25",
+     "date": "2026-10-25",
+     "en": "Status page, modules page, price DB, parts photos.",
+     "tr": "Durum sayfası, modüller sayfası, fiyat DB, parça fotoğrafları.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#site-2026-10-25",
+     "de": "Statusseite, Modulseite, Preis-DB, Teilefotos.",
+     "fa": "صفحه وضعیت، صفحه ماژول‌ها، پایگاه داده قیمت، عکس‌های قطعات."
+    }
+   ]
+  },
+  "report": {
+   "name": {
+    "tr": "Raporlar",
+    "en": "Reports",
+    "de": "Berichte",
+    "fa": "گزارش‌ها"
+   },
+   "live": "https://cekicin-site.elasa2next.workers.dev/ai-lab/report/index.html",
+   "hist": "https://huggingface.co/spaces/sosa123454321/cekicin-site/commits/main",
+   "items": [
+    {
+     "v": "1.1",
+     "date": "2026-10-27",
+     "en": "All report links moved to the Cloudflare site; Hugging Face Space/model/dataset links removed; one link per module section; new slide 5 narration; captions.",
+     "tr": "Tüm rapor bağlantıları Cloudflare sitesine taşındı; Hugging Face Space/model/veri seti bağlantıları kaldırıldı; her modül bölümüne bir bağlantı; yeni 5. slayt anlatımı; altyazı.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#report-1.1",
+     "de": "Alle Berichtslinks zur Cloudflare-Seite verschoben; Hugging Face Space/model/dataset-Links entfernt; ein Link pro Modulabschnitt; neue Erzählung Folie 5; Untertitel.",
+     "fa": "همه لینک‌های گزارش به سایت Cloudflare منتقل شدند؛ لینک‌های Hugging Face Space/model/dataset حذف شدند؛ یک لینک برای هر بخش ماژول؛ توضیح جدید اسلاید 5؛ زیرنویس‌ها."
+    },
+    {
+     "v": "1.0",
+     "date": "2026-10-26",
+     "en": "Roadmap status report v1.0 — PDF + narrated video, TR + EN.",
+     "tr": "Yol haritası durum raporu v1.0 — PDF + sesli video, TR + EN.",
+     "link": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html#report-1.0",
+     "de": "Roadmap-Statusbericht v1.0 — PDF + kommentiertes Video, TR + EN.",
+     "fa": "گزارش وضعیت راهنما نسخه 1.0 — PDF + ویدئو توضیح داده شده، TR + EN."
+    }
+   ]
+  }
+ },
+ "licences": [
+  {
+   "name": "VehiDE / AutoDamageIQ (test photos)",
+   "lic": "CC-BY-4.0",
+   "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  {
+   "name": "CarDD (training data)",
+   "lic": {
+    "tr": "yalnız araştırma / pilot",
+    "en": "research / pilot only",
+    "de": "Forschung / Pilot nur",
+    "fa": "تجربه/پایلوت تنها"
+   },
+   "url": "https://cardd-ustc.github.io/"
+  },
+  {
+   "name": "Ultralytics YOLO11",
+   "lic": "AGPL-3.0",
+   "url": "https://github.com/ultralytics/ultralytics/blob/main/LICENSE"
+  },
+  {
+   "name": "OpenStreetMap (places)",
+   "lic": "ODbL 1.0",
+   "url": "https://www.openstreetmap.org/copyright"
+  },
+  {
+   "name": "CLIP (photo check)",
+   "lic": "MIT",
+   "url": "https://github.com/openai/CLIP/blob/main/LICENSE"
+  }
+ ],
+ "links": {
+  "sites": [
+   [
+    "Site (Cloudflare)",
+    "https://cekicin-site.elasa2next.workers.dev/index.html"
+   ],
+   [
+    "Site mirror (HF, fallback)",
+    "https://sosa123454321-cekicin-site.static.hf.space/index.html"
+   ],
+   [
+    "Cloudflare Pages (blocked in TR)",
+    "https://cekicin.pages.dev/"
+   ],
+   [
+    "AI Lab Space",
+    "https://sosa123454321-cekicin-ai-lab.static.hf.space/index.html"
+   ],
+   [
+    "Telegram bot",
+    "https://t.me/Cekicin_bot"
+   ],
+   [
+    "API health",
+    "https://cekicin-ai-api.elasa2next.workers.dev/v1/health"
+   ]
+  ],
+  "hf": [
+   [
+    "Hugging Face profile",
+    "https://huggingface.co/sosa123454321"
+   ],
+   [
+    "Space M1",
+    "https://huggingface.co/spaces/sosa123454321/cekicin-m1-damage"
+   ],
+   [
+    "Space M2",
+    "https://huggingface.co/spaces/sosa123454321/cekicin-m2-cost"
+   ],
+   [
+    "Space M3",
+    "https://huggingface.co/spaces/sosa123454321/cekicin-m3-parts"
+   ],
+   [
+    "Space M4",
+    "https://huggingface.co/spaces/sosa123454321/cekicin-m4-voice"
+   ],
+   [
+    "Space M5",
+    "https://huggingface.co/spaces/sosa123454321/cekicin-m5-places"
+   ],
+   [
+    "Space M6",
+    "https://huggingface.co/spaces/sosa123454321/cekicin-m6-impact"
+   ],
+   [
+    "Dataset: price DB",
+    "https://huggingface.co/datasets/sosa123454321/cekicin-price-db"
+   ],
+   [
+    "Dataset: damage benchmark",
+    "https://huggingface.co/datasets/sosa123454321/cekicin-damage-benchmark"
+   ],
+   [
+    "Dataset: papers DB",
+    "https://huggingface.co/datasets/sosa123454321/cekicin-ai-papers"
+   ],
+   [
+    "Model: damage ONNX",
+    "https://huggingface.co/sosa123454321/cekicin-damage-yolo11m-neg-onnx"
+   ]
+  ]
+ },
+ "changelog": "https://cekicin-site.elasa2next.workers.dev/ai-lab/changelog.html",
+ "api": "https://cekicin-ai-api.elasa2next.workers.dev",
+ "partners": {
+  "ver": "1.1",
+  "date": "2026-10-27",
+  "page": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/index.html",
+  "title": {
+   "tr": "Ortaklık ve Ortak Geliştirme (Joint Venture) Programı",
+   "en": "Partnership & Joint-Venture Programme",
+   "fa": "برنامهٔ مشارکت و توسعهٔ مشترک (جوینت ونچر)"
+  },
+  "sub": {
+   "tr": "Çekicin uygulamasının yapay zekâ modüllerini birlikte geliştirecek şirket ve araştırma ortakları arıyoruz.",
+   "en": "We are looking for companies and research partners to co-develop the AI modules of the Çekicin app.",
+   "fa": "به‌دنبال شرکت‌ها و مراکز پژوهشی هستیم که ماژول‌های هوش مصنوعی اپلیکیشن Çekicin را با ما توسعه دهند."
+  },
+  "status": {
+   "tr": "DEMO · Yeni bölüm · Henüz imzalı ortak yok",
+   "en": "DEMO · New section · No signed partner yet",
+   "fa": "دمو · بخش جدید · هنوز شریک امضاشده‌ای نیست"
+  },
+  "why": {
+   "tr": "6 yapay zekâ modülü demo olarak çalışıyor; ortalama ilerleme %58. Kalan işin çoğu gerçek veri, saha testi ve entegrasyon gerektiriyor — bunlar ortaklarla daha hızlı ve daha doğru yapılır.",
+   "en": "Six AI modules already work as a demo; average progress is 58%. Most of the remaining work needs real data, field tests and integration — this is faster and more accurate with partners.",
+   "fa": "۶ ماژول هوش مصنوعی به‌صورت دمو کار می‌کنند و میانگین پیشرفت ۵۸٪ است. بیشتر کار باقی‌مانده به دادهٔ واقعی، تست میدانی و یکپارچه‌سازی نیاز دارد که با شریک سریع‌تر و دقیق‌تر انجام می‌شود."
+  },
+  "fundNote": {
+   "tr": "Rakamlar 2026 duyurularından alınmıştır; başvurudan önce güncel çağrı metni kontrol edilmelidir. Destek kararı TÜBİTAK’a aittir.",
+   "en": "Figures are from 2026 announcements; check the current call text before applying. Funding decisions are made by TÜBİTAK.",
+   "fa": "اعداد از اطلاعیه‌های ۲۰۲۶ است؛ پیش از درخواست، متن فراخوان جدید بررسی شود. تصمیم حمایت با TÜBİTAK است."
+  },
+  "files": [
+   {
+    "lang": "TR",
+    "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/cekicin-partnership-tr.pdf",
+    "video": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/cekicin-partnership-tr.mp4",
+    "dur": "3:11",
+    "poster": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/poster-tr.jpg",
+    "vtt": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/cekicin-partnership-tr.vtt",
+    "pages": [
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/tr-p1.jpg",
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/tr-p2.jpg",
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/tr-p3.jpg",
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/tr-p4.jpg",
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/tr-p5.jpg"
+    ]
+   },
+   {
+    "lang": "EN",
+    "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/cekicin-partnership-en.pdf",
+    "video": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/cekicin-partnership-en.mp4",
+    "dur": "3:15",
+    "poster": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/poster-en.jpg",
+    "vtt": "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/cekicin-partnership-en.vtt",
+    "pages": [
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/en-p1.jpg",
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/en-p2.jpg",
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/en-p3.jpg",
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/en-p4.jpg",
+     "https://cekicin-site.elasa2next.workers.dev/ai-lab/partners/pages/en-p5.jpg"
+    ]
+   }
+  ],
+  "models": [
+   {
+    "icon": "🔬",
+    "name": {
+     "tr": "Ar-Ge / araştırma ortaklığı",
+     "en": "R&D / research partnership",
+     "fa": "مشارکت پژوهشی (تحقیق و توسعه)"
+    },
+    "who": {
+     "tr": "Üniversite laboratuvarları, kamu araştırma merkezleri, teknokent Ar-Ge firmaları",
+     "en": "University labs, public research centres, technopark R&D firms",
+     "fa": "آزمایشگاه‌های دانشگاه، مراکز پژوهشی دولتی، شرکت‌های تحقیق و توسعهٔ پارک فناوری"
+    },
+    "deal": {
+     "tr": "Ortak: yöntem, bağımsız test, makale/tez · Çekicin: gerçek problem, KVKK onaylı veri, saha",
+     "en": "Partner: method, independent testing, papers/theses · Çekicin: real problem, KVKK-consented data, field access",
+     "fa": "شریک: روش علمی، تست مستقل، مقاله/پایان‌نامه · Çekicin: مسئلهٔ واقعی، دادهٔ با رضایت KVKK، دسترسی میدانی"
+    },
+    "route": "TÜBİTAK 1505 · 1711"
+   },
+   {
+    "icon": "🤝",
+    "name": {
+     "tr": "Ortak geliştirme / Joint Venture",
+     "en": "Co-development / Joint venture",
+     "fa": "توسعهٔ مشترک / جوینت ونچر"
+    },
+    "who": {
+     "tr": "Bu projenin geliştirme kısmını birlikte yürütecek yazılım / yapay zekâ şirketleri ve araştırma-danışmanlık şirketleri (Türkiye, İsveç / AB)",
+     "en": "Software / AI companies and research & advisory companies (Türkiye, Sweden / EU) that run the development part of this project with us",
+     "fa": "شرکت‌های نرم‌افزار/هوش مصنوعی و شرکت‌های پژوهشی-مشاوره‌ای (ترکیه، سوئد / اتحادیهٔ اروپا) که بخش توسعهٔ همین پروژه را با ما پیش می‌برند"
+    },
+    "deal": {
+     "tr": "Sözleşmeli ortak proje veya ayrı proje şirketi; fikri mülkiyet, gelir payı ve roller sözleşmede belirlenir",
+     "en": "Contract-based joint project or a separate project company; IP, revenue share and roles are set in the contract",
+     "fa": "پروژهٔ مشترک قراردادی یا شرکت پروژهٔ جدا؛ مالکیت فکری، سهم درآمد و نقش‌ها در قرارداد تعیین می‌شود"
+    },
+    "route": "TÜBİTAK 1501 / 1507"
+   },
+   {
+    "icon": "🔌",
+    "name": {
+     "tr": "Teknoloji / entegrasyon ortaklığı",
+     "en": "Technology / integration partnership",
+     "fa": "مشارکت فناوری / یکپارچه‌سازی"
+    },
+    "who": {
+     "tr": "Sigorta, ekspertiz, filo / kiralama ve yedek parça platformları",
+     "en": "Insurers, vehicle assessors, fleet / rental companies, spare-part platforms",
+     "fa": "بیمه‌ها، کارشناسی خودرو، ناوگان/اجاره، پلتفرم‌های قطعه"
+    },
+    "deal": {
+     "tr": "Modülleri API ile kendi sistemlerinde kullanır; lisans veya kullanım başına ücret",
+     "en": "Use the modules in their own systems via API; licence or pay-per-use",
+     "fa": "استفاده از ماژول‌ها در سیستم خودشان با API؛ لایسنس یا پرداخت به ازای استفاده"
+    },
+    "route": "API 1.11"
+   },
+   {
+    "icon": "📸",
+    "name": {
+     "tr": "Veri ortaklığı",
+     "en": "Data partnership",
+     "fa": "مشارکت داده"
+    },
+    "who": {
+     "tr": "Hasar fotoğrafı, onarım faturası, parça fiyatı verisi olan kuruluşlar",
+     "en": "Organisations with damage photos, repair invoices or part-price data",
+     "fa": "سازمان‌هایی که عکس خسارت، فاکتور تعمیر یا دادهٔ قیمت قطعه دارند"
+    },
+    "deal": {
+     "tr": "Yalnızca KVKK açık rızalı veri; karşılığında ortak doğrulama raporu ve daha doğru model",
+     "en": "KVKK explicit-consent data only; in return a joint validation report and a more accurate model",
+     "fa": "فقط دادهٔ با رضایت صریح KVKK؛ در عوض گزارش اعتبارسنجی مشترک و مدل دقیق‌تر"
+    },
+    "route": "KVKK"
+   },
+   {
+    "icon": "🌍",
+    "name": {
+     "tr": "Dağıtım / bölge ortaklığı",
+     "en": "Distribution / regional partnership",
+     "fa": "مشارکت توزیع / منطقه‌ای"
+    },
+    "who": {
+     "tr": "Çekici ağları, servis zincirleri, başka ülkelerdeki yol yardım firmaları",
+     "en": "Tow networks, repair-shop chains, roadside-assistance firms in other countries",
+     "fa": "شبکه‌های یدک‌کش، زنجیره‌های تعمیرگاه، شرکت‌های امداد جاده‌ای در کشورهای دیگر"
+    },
+    "deal": {
+     "tr": "Bölgesel kullanım ve uyarlama (dil, fiyat, adres verisi)",
+     "en": "Regional use and adaptation (language, prices, address data)",
+     "fa": "استفاده و بومی‌سازی منطقه‌ای (زبان، قیمت، دادهٔ آدرس)"
+    },
+    "route": "M5 · 20/20"
+   }
+  ],
+  "fund": [
+   {
+    "name": "TÜBİTAK 1505 — Üniversite-Sanayi İşbirliği",
+    "desc": {
+     "tr": "Üniversite yürütücü, şirket müşteri kuruluş. KOBİ için %75 destek; 2026 TÜBİTAK katkı üst sınırı 2,3 milyon TL; en fazla 24 ay.",
+     "en": "University = executing body, company = customer. 75% support for SMEs; 2026 TÜBİTAK contribution cap 2.3 million TL; up to 24 months.",
+     "fa": "دانشگاه مجری و شرکت کارفرما. حمایت ۷۵٪ برای شرکت‌های کوچک و متوسط؛ سقف سهم TÜBİTAK در ۲۰۲۶: ۲٫۳ میلیون لیر؛ حداکثر ۲۴ ماه."
+    },
+    "url": "https://ettom.ogu.edu.tr/Duyuru/Detay/109/tubitak-teydeb-20261-cagrilari-1501-1505-1507-ve-1707-siparis-ar-ge-destekleri"
+   },
+   {
+    "name": "TÜBİTAK 1711 — Yapay Zekâ Ekosistem",
+    "desc": {
+     "tr": "Müşteri kuruluş + en az bir KOBİ teknoloji sağlayıcı + en az bir üniversite laboratuvarı. En fazla 10 milyon TL, 24 ay. 2026 çağrısı 2 Ekim’de kapandı → hedef: sonraki çağrı.",
+     "en": "Customer company + at least one SME technology provider + at least one university lab. Up to 10 million TL, 24 months. The 2026 call closed on 2 October → target: the next call.",
+     "fa": "کارفرما + دست‌کم یک شرکت کوچک تأمین‌کنندهٔ فناوری + دست‌کم یک آزمایشگاه دانشگاهی. حداکثر ۱۰ میلیون لیر، ۲۴ ماه. فراخوان ۲۰۲۶ در ۲ اکتبر بسته شد ← هدف: فراخوان بعدی."
+    },
+    "url": "https://tubitak.gov.tr/en/funds/industrial/national-support-programs/1711-artificial-intelligence-ecosystem-call"
+   },
+   {
+    "name": "TÜBİTAK 1501 / 1507 — Sanayi & KOBİ Ar-Ge",
+    "desc": {
+     "tr": "Şirketin kendi Ar-Ge projesi; %75 hibe. 1507 (KOBİ başlangıç): 3,5 milyon TL bütçe sınırı, en fazla 18 ay.",
+     "en": "The company’s own R&D project; 75% grant. 1507 (SME start-up): 3.5 million TL budget cap, up to 18 months.",
+     "fa": "پروژهٔ تحقیق و توسعهٔ خود شرکت؛ ۷۵٪ کمک بلاعوض. ۱۵۰۷ (شروع برای شرکت‌های کوچک): سقف بودجه ۳٫۵ میلیون لیر، حداکثر ۱۸ ماه."
+    },
+    "url": "https://ettom.ogu.edu.tr/Duyuru/Detay/109/tubitak-teydeb-20261-cagrilari-1501-1505-1507-ve-1707-siparis-ar-ge-destekleri"
+   },
+   {
+    "name": "Teknokent (ör. Fırat Teknokent, Elazığ)",
+    "desc": {
+     "tr": "Yapay zekâ ve yazılım girişimlerine teknik altyapı, mentorluk ve yatırım ağı.",
+     "en": "Technical infrastructure, mentoring and an investor network for AI and software ventures.",
+     "fa": "زیرساخت فنی، منتورینگ و شبکهٔ سرمایه‌گذاری برای استارتاپ‌های هوش مصنوعی و نرم‌افزار."
+    },
+    "url": "https://firatteknokent.com.tr/"
+   }
+  ],
+  "needs": [
+   {
+    "m": 1,
+    "icon": "📷",
+    "pct": 70,
+    "mod": {
+     "tr": "Hasar tespiti",
+     "en": "Damage detection",
+     "fa": "تشخیص آسیب"
+    },
+    "p": {
+     "tr": "Sigorta / ekspertiz: etiketli gerçek hasar fotoğrafları",
+     "en": "Insurers / assessors: labelled real damage photos",
+     "fa": "بیمه / کارشناسی: عکس‌های واقعی برچسب‌خورده"
+    }
+   },
+   {
+    "m": 2,
+    "icon": "🧮",
+    "pct": 55,
+    "mod": {
+     "tr": "Onarım kararı ve maliyet",
+     "en": "Repair decision & cost",
+     "fa": "تصمیم تعمیر و هزینه"
+    },
+    "p": {
+     "tr": "Servisler: gerçek onarım faturaları",
+     "en": "Repair shops: real repair invoices",
+     "fa": "تعمیرگاه‌ها: فاکتورهای واقعی تعمیر"
+    }
+   },
+   {
+    "m": 3,
+    "icon": "🔩",
+    "pct": 60,
+    "mod": {
+     "tr": "Parça tedarikçileri ve fiyat",
+     "en": "Part suppliers & prices",
+     "fa": "تأمین‌کنندهٔ قطعه و قیمت"
+    },
+    "p": {
+     "tr": "Parça satıcıları: stok ve fiyat API’si",
+     "en": "Part sellers: stock & price API",
+     "fa": "فروشندگان قطعه: API موجودی و قیمت"
+    }
+   },
+   {
+    "m": 4,
+    "icon": "🎙",
+    "pct": 55,
+    "mod": {
+     "tr": "Sesli yönlendirme",
+     "en": "Voice guidance",
+     "fa": "راهنمای صوتی"
+    },
+    "p": {
+     "tr": "Çağrı merkezi / ses firması: Türkçe konuşma testi",
+     "en": "Call centre / speech firm: Turkish speech tests",
+     "fa": "مرکز تماس / شرکت صوت: تست گفتار ترکی"
+    }
+   },
+   {
+    "m": 5,
+    "icon": "📍",
+    "pct": 80,
+    "mod": {
+     "tr": "Yakın yer arama",
+     "en": "Nearby-place search",
+     "fa": "جستجوی مکان نزدیک"
+    },
+    "p": {
+     "tr": "Çekici ve servis ağları: doğrulanmış adresler",
+     "en": "Tow & repair networks: verified addresses",
+     "fa": "شبکه‌های یدک‌کش و تعمیرگاه: آدرس‌های تأییدشده"
+    }
+   },
+   {
+    "m": 6,
+    "icon": "🌱",
+    "pct": 30,
+    "mod": {
+     "tr": "Bekleme süresi ve çevresel etki",
+     "en": "Waiting time & environmental impact",
+     "fa": "زمان انتظار و اثر زیست‌محیطی"
+    },
+    "p": {
+     "tr": "Üniversite: gerçek veriyle doğrulama çalışması",
+     "en": "University: validation study with real data",
+     "fa": "دانشگاه: مطالعهٔ اعتبارسنجی با دادهٔ واقعی"
+    }
+   }
+  ],
+  "steps": [
+   {
+    "tr": "Tanışma görüşmesi + gizlilik sözleşmesi (NDA)",
+    "en": "Intro call + non-disclosure agreement (NDA)",
+    "fa": "جلسهٔ آشنایی + قرارداد محرمانگی (NDA)"
+   },
+   {
+    "tr": "Ortak hedef, veri ve rol planı (1–2 hafta)",
+    "en": "Joint goals, data and roles plan (1–2 weeks)",
+    "fa": "برنامهٔ هدف، داده و نقش‌ها (۱ تا ۲ هفته)"
+   },
+   {
+    "tr": "Pilot: 1 modül, gerçek veriyle ölçüm (4–8 hafta)",
+    "en": "Pilot: 1 module, measured on real data (4–8 weeks)",
+    "fa": "پایلوت: ۱ ماژول، اندازه‌گیری با دادهٔ واقعی (۴ تا ۸ هفته)"
+   },
+   {
+    "tr": "Sözleşme: ortak geliştirme / lisans / destek başvurusu",
+    "en": "Contract: co-development / licence / funding application",
+    "fa": "قرارداد: توسعهٔ مشترک / لایسنس / درخواست حمایت"
+   },
+   {
+    "tr": "Ölçüm raporu ve yeni sürüm (admin panelinde)",
+    "en": "Measurement report and new release (in the admin panel)",
+    "fa": "گزارش اندازه‌گیری و نسخهٔ جدید (در پنل ادمین)"
+   }
+  ],
+  "se": {
+   "title": {
+    "tr": "Uluslararası yol: İsveç araştırma ve danışmanlık ortağı",
+    "en": "International route: a Swedish research & advisory partner",
+    "fa": "مسیر بین‌المللی: شریک پژوهشی و مشاوره‌ای در سوئد"
+   },
+   "profile": {
+    "tr": "Aranan ortak tipi: İsveç’te kurulu küçük bir araştırma ve danışmanlık şirketi (AB – aktiebolag). Kanıt sentezi ve araştırma tasarımı, sorumlu (insan denetimli) yapay zekâ, iklim ve sağlık etkisi ve bilimsel raporlama alanlarında çalışan şirketler.",
+    "en": "Partner type wanted: a small research & advisory company registered in Sweden (AB – aktiebolag), working on evidence synthesis and research design, responsible (human-reviewed) AI, climate and health impact, and scientific communication.",
+    "fa": "نوع شریک موردنظر: یک شرکت کوچک پژوهشی و مشاوره‌ای ثبت‌شده در سوئد (AB). شرکت‌هایی که در سنتز شواهد و طراحی پژوهش، هوش مصنوعی مسئولانه (با نظارت انسانی)، اثر اقلیم و سلامت و گزارش‌نویسی علمی کار می‌کنند."
+   },
+   "types": [
+    {
+     "icon": "🔎",
+     "tr": "Araştırma ve danışmanlık KOBİ’si (ana hedef): kanıt sentezi, sorumlu yapay zekâ, iklim-sağlık, bilimsel iletişim",
+     "en": "Research & advisory SME (main target): evidence synthesis, responsible AI, climate–health, scientific communication",
+     "fa": "شرکت کوچک پژوهشی-مشاوره‌ای (هدف اصلی): سنتز شواهد، هوش مصنوعی مسئولانه، اقلیم-سلامت، ارتباطات علمی"
+    },
+    {
+     "icon": "🏛",
+     "tr": "Devlet araştırma enstitüleri (ör. RISE): uygulamalı araştırma ve test",
+     "en": "State research institutes (e.g. RISE): applied research and testing",
+     "fa": "مؤسسه‌های پژوهشی دولتی (مثلاً RISE): پژوهش کاربردی و تست"
+    },
+    {
+     "icon": "🎓",
+     "tr": "Üniversite araştırma grupları ve AB proje ofisleri",
+     "en": "University research groups and EU grants offices",
+     "fa": "گروه‌های پژوهشی دانشگاه و دفترهای پروژهٔ اتحادیهٔ اروپا"
+    },
+    {
+     "icon": "🚗",
+     "tr": "Mobilite / sigorta teknolojisi KOBİ’leri (Eurostars ortak lideri)",
+     "en": "Mobility / insurtech SMEs (Eurostars co-lead)",
+     "fa": "شرکت‌های کوچک فناوری حمل‌ونقل/بیمه (هم‌رهبر Eurostars)"
+    }
+   ],
+   "gives": [
+    {
+     "m": "M6",
+     "tr": "Çevresel etki modülü (%30): yöntem tasarımı ve gerçek veriyle doğrulama — en büyük açık",
+     "en": "Environmental-impact module (30%): method design and validation with real data — the biggest gap",
+     "fa": "ماژول اثر زیست‌محیطی (۳۰٪): طراحی روش و اعتبارسنجی با دادهٔ واقعی — بزرگ‌ترین کمبود"
+    },
+    {
+     "m": "AI",
+     "tr": "Sorumlu yapay zekâ: insan denetimi, AB Yapay Zekâ Yasası ve GDPR/KVKK hazırlık incelemesi, model kartları",
+     "en": "Responsible AI: human oversight, EU AI Act and GDPR/KVKK readiness review, model cards",
+     "fa": "هوش مصنوعی مسئولانه: نظارت انسانی، بررسی آمادگی برای قانون هوش مصنوعی اتحادیهٔ اروپا و GDPR/KVKK، کارت مدل"
+    },
+    {
+     "m": "M1–M2",
+     "tr": "Kanıt sentezi: literatür ve kıyaslama, doğruluk ölçümünün bağımsız değerlendirmesi",
+     "en": "Evidence synthesis: literature and benchmarks, independent review of accuracy measurements",
+     "fa": "سنتز شواهد: مرور ادبیات و بنچمارک، ارزیابی مستقل اندازه‌گیری دقت"
+    },
+    {
+     "m": "EU",
+     "tr": "Bilimsel iletişim: Eurostars / Horizon başvurusu, İngilizce rapor ve makale",
+     "en": "Scientific communication: Eurostars / Horizon proposals, English reports and papers",
+     "fa": "ارتباطات علمی: نوشتن درخواست Eurostars / Horizon، گزارش و مقالهٔ انگلیسی"
+    }
+   ],
+   "fund": [
+    {
+     "name": "Eurostars (Eureka · Horizon Europe)",
+     "tr": "KOBİ liderliğinde uluslararası Ar-Ge projesi; en az 2 ülke, en fazla 36 ay. İsveç (Vinnova): KOBİ maliyetin %50’sine, araştırma kuruluşu %70’ine kadar; İsveç tarafına en fazla 5 milyon SEK (İsveçli KOBİ yoksa 2 milyon SEK). Türkiye (TÜBİTAK 1709 çağrısı / 1509): KOBİ %75’e, büyük şirket %60’a, üniversite %100’e kadar. 2026 çağrıları kapandı (19 Mart, 10 Eylül) → hedef: 2027’deki sonraki çağrı.",
+     "en": "SME-led international R&D project; at least 2 countries, up to 36 months. Sweden (Vinnova): SMEs up to 50% of costs, research organisations up to 70%; at most SEK 5 million for the Swedish side (SEK 2 million if no Swedish SME). Türkiye (TÜBİTAK 1709 call / 1509): SMEs up to 75%, large companies 60%, universities up to 100%. The 2026 calls have closed (19 March, 10 September) → target: the next call in 2027.",
+     "fa": "پروژهٔ تحقیق و توسعهٔ بین‌المللی به رهبری یک شرکت کوچک؛ دست‌کم ۲ کشور، حداکثر ۳۶ ماه. سوئد (Vinnova): شرکت کوچک تا ۵۰٪ هزینه، مؤسسهٔ پژوهشی تا ۷۰٪؛ سقف طرف سوئدی ۵ میلیون کرون (بدون شرکت کوچک سوئدی ۲ میلیون). ترکیه (TÜBİTAK فراخوان ۱۷۰۹ / ۱۵۰۹): شرکت کوچک تا ۷۵٪، شرکت بزرگ ۶۰٪، دانشگاه تا ۱۰۰٪. فراخوان‌های ۲۰۲۶ بسته شد (۱۹ مارس، ۱۰ سپتامبر) ← هدف: فراخوان بعدی در ۲۰۲۷.",
+     "url": "https://www.eurekanetwork.org/programmes-and-calls/eurostars/eurostars-march-2026/"
+    },
+    {
+     "name": "Vinnova — Eurostars (Sweden)",
+     "tr": "İsveçli başvuranlar için: şirketin net satışı veya özkaynağı talep edilen tutarın en az yarısı olmalı.",
+     "en": "For Swedish applicants: the company’s net sales or equity must be at least half of the requested amount.",
+     "fa": "برای متقاضی سوئدی: فروش خالص یا سرمایهٔ شرکت باید دست‌کم نصف مبلغ درخواستی باشد.",
+     "url": "https://www.vinnova.se/en/calls-for-proposals/eurostars/eurostars-autumn-2026-call-11"
+    },
+    {
+     "name": "Horizon Europe",
+     "tr": "Türkiye 2021’den beri ortak ülke; 3 ülkeden en az 3 ortaklı işbirliği projeleri. İsveçli KOBİ’ler EUSME Support’tan ücretsiz başvuru danışmanlığı alabilir.",
+     "en": "Türkiye has been an associated country since 2021; collaborative projects need at least 3 partners from 3 countries. Swedish SMEs can get free proposal advice from EUSME Support.",
+     "fa": "ترکیه از ۲۰۲۱ کشور وابسته است؛ پروژه‌های مشترک دست‌کم ۳ شریک از ۳ کشور می‌خواهند. شرکت‌های کوچک سوئدی می‌توانند از EUSME Support مشاورهٔ رایگان بگیرند.",
+     "url": "https://research-and-innovation.ec.europa.eu/strategy/strategy-research-and-innovation/europe-world/international-cooperation/association-horizon-europe/turkiye_en"
+    }
+   ],
+   "next": [
+    {
+     "tr": "İsveç’te uygun araştırma-danışmanlık ortağıyla tanışma + NDA",
+     "en": "Intro + NDA with a suitable Swedish research & advisory partner",
+     "fa": "آشنایی + NDA با یک شریک پژوهشی-مشاوره‌ای مناسب در سوئد"
+    },
+    {
+     "tr": "M6 çevresel etki için ortak pilot planı (yöntem + veri)",
+     "en": "Joint pilot plan for M6 environmental impact (method + data)",
+     "fa": "برنامهٔ پایلوت مشترک برای M6 اثر زیست‌محیطی (روش + داده)"
+    },
+    {
+     "tr": "Konsorsiyum sözleşmesi taslağı (IP, roller, gelir payı)",
+     "en": "Draft consortium agreement (IP, roles, revenue share)",
+     "fa": "پیش‌نویس قرارداد کنسرسیوم (مالکیت فکری، نقش‌ها، سهم درآمد)"
+    },
+    {
+     "tr": "Bir sonraki Eurostars çağrısına ortak başvuru (TÜBİTAK + Vinnova)",
+     "en": "Joint application to the next Eurostars call (TÜBİTAK + Vinnova)",
+     "fa": "درخواست مشترک برای فراخوان بعدی Eurostars (TÜBİTAK + Vinnova)"
+    }
+   ]
+  },
+  "jvs": [
+   {
+    "icon": "📑",
+    "name": {
+     "tr": "Sözleşmeli konsorsiyum",
+     "en": "Contractual consortium",
+     "fa": "کنسرسیوم قراردادی"
+    },
+    "d": {
+     "tr": "Ortaklar ayrı şirket olarak kalır; konsorsiyum sözleşmesi IP, roller ve gelir payını belirler. Eurostars / Horizon projeleri için standart yol.",
+     "en": "Partners stay separate companies; a consortium agreement sets IP, roles and revenue share. The standard route for Eurostars / Horizon projects.",
+     "fa": "شرکا شرکت‌های جدا می‌مانند؛ قرارداد کنسرسیوم مالکیت فکری، نقش‌ها و سهم درآمد را تعیین می‌کند. مسیر استاندارد پروژه‌های Eurostars / Horizon."
+    }
+   },
+   {
+    "icon": "🏢",
+    "name": {
+     "tr": "Ortak proje şirketi (equity JV)",
+     "en": "Joint project company (equity JV)",
+     "fa": "شرکت پروژهٔ مشترک (جوینت ونچر سهامی)"
+    },
+    "d": {
+     "tr": "Ürünleşme aşamasında ayrı bir şirket kurulur; paylar katkıya göre belirlenir.",
+     "en": "A separate company is set up at the product stage; shares follow each partner’s contribution.",
+     "fa": "در مرحلهٔ محصول یک شرکت جدا ثبت می‌شود؛ سهم‌ها بر اساس سهم مشارکت هر طرف."
+    }
+   },
+   {
+    "icon": "🔑",
+    "name": {
+     "tr": "Lisans + gelir payı",
+     "en": "Licence + revenue share",
+     "fa": "لایسنس + سهم درآمد"
+    },
+    "d": {
+     "tr": "Araştırma ortağı yöntem ve doğrulama sağlar; ürün Çekicin’de kalır; gelir payı veya lisans ücreti.",
+     "en": "The research partner provides method and validation; the product stays with Çekicin; revenue share or licence fee.",
+     "fa": "شریک پژوهشی روش و اعتبارسنجی می‌دهد؛ محصول نزد Çekicin می‌ماند؛ سهم درآمد یا حق لایسنس."
+    }
+   }
+  ],
+  "jvnote": {
+   "tr": "Yapı seçimi ve sözleşme metni için hukuk ve vergi danışmanlığı alınmalıdır.",
+   "en": "Legal and tax advice is needed to choose the structure and draft the contract.",
+   "fa": "برای انتخاب ساختار و متن قرارداد، مشاورهٔ حقوقی و مالیاتی لازم است."
+  },
+  "pipeline": {
+   "signed": 0,
+   "talks": 0,
+   "targets": [
+    {
+     "fa": "دانشگاه فرات / Fırat Teknokent (الازیغ)",
+     "tr": "Fırat Üniversitesi / Fırat Teknokent (Elazığ)",
+     "en": "Fırat University / Fırat Teknokent (Elazığ)"
+    },
+    {
+     "fa": "شرکت‌های بیمه و کارشناسی خودرو",
+     "tr": "Sigorta ve ekspertiz şirketleri",
+     "en": "Insurers and vehicle assessors"
+    },
+    {
+     "fa": "فروشندگان قطعه و تعمیرگاه‌ها",
+     "tr": "Parça satıcıları ve servisler",
+     "en": "Part sellers and repair shops"
+    },
+    {
+     "fa": "شرکت نرم‌افزاری برای جوینت ونچر توسعه",
+     "tr": "Ortak geliştirme için yazılım şirketi",
+     "en": "Software company for co-development JV"
+    }
+   ]
+  }
+ },
+ "cats": [
+  {
+   "id": "demo",
+   "n": 1,
+   "icon": "🤖",
+   "col": "#16a34a",
+   "name": {
+    "tr": "Müşteri demoları",
+    "en": "Customer demos",
+    "fa": "دموی مشتری"
+   },
+   "who": {
+    "tr": "Sürücülerin kullanacağı özellikler — hemen deneyin",
+    "en": "What drivers will use — try it now",
+    "fa": "امکاناتی که رانندگان استفاده می‌کنند — همین حالا امتحان کنید"
+   }
+  },
+  {
+   "id": "ai",
+   "n": 2,
+   "icon": "🧩",
+   "col": "#7c3aed",
+   "name": {
+    "tr": "AI modülleri ve testler",
+    "en": "AI modules & tests",
+    "fa": "ماژول‌های هوش مصنوعی و تست‌ها"
+   },
+   "who": {
+    "tr": "6 modül, ölçülen doğruluk ve teknik testler",
+    "en": "The 6 modules, measured accuracy and technical tests",
+    "fa": "۶ ماژول، دقت اندازه‌گیری‌شده و تست‌های فنی"
+   }
+  },
+  {
+   "id": "rep",
+   "n": 3,
+   "icon": "📊",
+   "col": "#d97706",
+   "name": {
+    "tr": "Raporlar",
+    "en": "Reports",
+    "fa": "گزارش‌ها"
+   },
+   "who": {
+    "tr": "Yönetim için proje durumu (PDF + video, TR/EN)",
+    "en": "Project status for management (PDF + video, TR/EN)",
+    "fa": "وضعیت پروژه برای مدیریت (PDF + ویدیو، ترکی/انگلیسی)"
+   }
+  },
+  {
+   "id": "par",
+   "n": 4,
+   "icon": "🤝",
+   "col": "#db2777",
+   "name": {
+    "tr": "Ortaklık",
+    "en": "Partnership",
+    "fa": "مشارکت"
+   },
+   "who": {
+    "tr": "Araştırma / ortak geliştirme ortakları için",
+    "en": "For research / co-development partners",
+    "fa": "برای شریک‌های پژوهشی و توسعهٔ مشترک"
+   }
+  },
+  {
+   "id": "adm",
+   "n": 5,
+   "icon": "🔐",
+   "col": "#0f3a6b",
+   "name": {
+    "tr": "Yönetim paneli",
+    "en": "Admin panel",
+    "fa": "پنل مدیریت"
+   },
+   "who": {
+    "tr": "Giriş gerekir — kullanıcı adı ve şifre mesajda",
+    "en": "Login required — username and password are in the message",
+    "fa": "ورود لازم است — نام کاربری و رمز در پیام است"
+   }
+  },
+  {
+   "id": "tech",
+   "n": 6,
+   "icon": "🌐",
+   "col": "#475569",
+   "name": {
+    "tr": "Site, yedek ve teknik",
+    "en": "Site, mirror & technical",
+    "fa": "سایت، نسخهٔ پشتیبان و فنی"
+   },
+   "who": {
+    "tr": "Ana sayfalar, yedek adres, API ve veri setleri",
+    "en": "Home pages, backup address, API and datasets",
+    "fa": "صفحه‌های اصلی، آدرس پشتیبان، API و دیتاست‌ها"
+   }
+  }
+ ],
+ "start": {
+  "hub": "https://cekicin-site.elasa2next.workers.dev/ai-lab/start/",
+  "date": "2026-10-27",
+  "title": {
+   "fa": "شروع از اینجا — همهٔ لینک‌ها در ۶ بخش",
+   "tr": "Buradan başlayın — tüm bağlantılar 6 bölümde",
+   "en": "Start here — all links in 6 sections"
+  },
+  "sub": {
+   "fa": "یک صفحه با همهٔ لینک‌ها، دسته‌بندی‌شده. پیام کوتاه (ترکی + انگلیسی)، ویدیوی معرفی و PDF همین ساختار ۶ بخشی را دارند. رنگ و شمارهٔ هر بخش در همه‌جا یکی است. هر لینک در صفحهٔ شروع یک تصویر از خروجی واقعی، مراحل تست و نتیجهٔ مورد انتظار دارد؛ ویدیوی دمو نشان می‌دهد هنگام کار با سایت چه اتفاقی می‌افتد.",
+   "tr": "Tüm bağlantılar tek sayfada, bölümlere ayrılmış. Kısa mesaj (TR + EN), tanıtım videosu ve PDF aynı 6 bölümü kullanır; her bölümün rengi ve numarası her yerde aynıdır.",
+   "en": "All links on one page, grouped. The short message (TR + EN), intro video and PDF use the same 6 sections; each section keeps its colour and number everywhere."
+  },
+  "hubName": {
+   "fa": "صفحهٔ شروع (همهٔ لینک‌ها)",
+   "tr": "Başlangıç sayfası",
+   "en": "Start page"
+  },
+  "pdfName": {
+   "fa": "PDF پیام + همهٔ لینک‌ها",
+   "tr": "PDF: mesaj + tüm bağlantılar",
+   "en": "PDF: message + all links"
+  },
+  "vidName": {
+   "fa": "ویدیوی معرفی",
+   "tr": "Tanıtım videosu",
+   "en": "Intro video"
+  },
+  "files": [
+   {
+    "lang": "TR",
+    "video": "https://cekicin-site.elasa2next.workers.dev/ai-lab/start/cekicin-intro-tr.mp4",
+    "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/start/cekicin-start-tr.pdf",
+    "poster": "https://cekicin-site.elasa2next.workers.dev/ai-lab/start/poster-tr.jpg",
+    "vtt": "../ai-lab/start/cekicin-intro-tr.vtt",
+    "dur": "1:11",
+    "demo": "https://cekicin-site.elasa2next.workers.dev/ai-lab/start/cekicin-demo-tr.mp4",
+    "demoDur": "1:37"
+   },
+   {
+    "lang": "EN",
+    "video": "https://cekicin-site.elasa2next.workers.dev/ai-lab/start/cekicin-intro-en.mp4",
+    "pdf": "https://cekicin-site.elasa2next.workers.dev/ai-lab/start/cekicin-start-en.pdf",
+    "poster": "https://cekicin-site.elasa2next.workers.dev/ai-lab/start/poster-en.jpg",
+    "vtt": "../ai-lab/start/cekicin-intro-en.vtt",
+    "dur": "1:05",
+    "demo": "https://cekicin-site.elasa2next.workers.dev/ai-lab/start/cekicin-demo-en.mp4",
+    "demoDur": "1:32"
+   }
+  ],
+  "demoName": {
+   "fa": "ویدیوی دمو — کار با سایت (خروجی واقعی هر لینک)",
+   "tr": "Demo videosu — siteyi kullanırken",
+   "en": "Demo video — using the site"
+  },
+  "cardsName": {
+   "fa": "دموی هر لینک: تصویر خروجی + روش تست",
+   "tr": "Her bağlantının demosu: çıktı + nasıl test edilir",
+   "en": "Demo of every link: output + how to test"
+  }
+ }
+}
